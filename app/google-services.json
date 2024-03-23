@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435016968660",
+    "project_id": "software-updater-236e5",
+    "storage_bucket": "software-updater-236e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435016968660:android:a129c49410a1caa5f90e41",
+        "android_client_info": {
+          "package_name": "com.app.update.softwareupdatekkappsstudio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJkKfJQOXyBX2iN4WB9CUmlVJVRPmX8Nc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

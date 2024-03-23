@@ -1,0 +1,35 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">App Update</string>
+    <string name="app_icon">app icon</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="preference_file_key">alarm_pref</string>
+    <!--    <string name="app_id_admob" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
+    //test id
+    <string name="public_ip_address">Ip Address</string>
+    <string name="your_ip_na">N/A</string>
+    <string name="copied_to_clipboard">Copied to Clipboard</string>
+    <string name="your_ip"><xliff:g example="192.168.0.1" id="ip">%s</xliff:g></string>
+    <string name="na">N/A</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+
+    <string-array name="size_array">
+        <item>512 x 512</item>
+        <item>76 x 76</item>
+    </string-array>
+
+    <string-array name="format_array">
+        <item>png</item>
+        <item>jpeg</item>
+    </string-array>
+
+    <string-array name="model_array">
+        <item>icbinp-afterburn</item>
+        <!-- Add other model names if needed -->
+    </string-array>
+
+
+</resources>

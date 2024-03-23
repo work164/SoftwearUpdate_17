@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This is the default state (no menu item is selected) -->
+    <item android:color="@android:color/transparent" android:state_checked="false"/>
+    <!-- This is the state for the selected menu item -->
+    <item android:color="@android:color/transparent" android:state_checked="true"/>
+</selector>

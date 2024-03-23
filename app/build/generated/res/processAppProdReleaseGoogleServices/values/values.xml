@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">435016968660</string>
+    <string name="google_api_key" translatable="false">AIzaSyCJkKfJQOXyBX2iN4WB9CUmlVJVRPmX8Nc</string>
+    <string name="google_app_id" translatable="false">1:435016968660:android:a129c49410a1caa5f90e41</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCJkKfJQOXyBX2iN4WB9CUmlVJVRPmX8Nc</string>
+    <string name="google_storage_bucket" translatable="false">software-updater-236e5.appspot.com</string>
+    <string name="project_id" translatable="false">software-updater-236e5</string>
+</resources>
