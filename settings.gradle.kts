@@ -10,13 +10,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/integers1994/Ads")
 
             credentials {
                 username = "integers1994"
-                password = "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"
+                password = "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"
             }
         }
 
@@ -26,4 +27,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "NewSoftware"
 include(":app")
-include(":adsdk")
+//include(":adsdk")

@@ -739,10 +739,14 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <color name="earned_coin_color">#3DA355</color>
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
+    <color name="fcm_black">#FF000000</color>
+    <color name="fcm_white">#FFFFFFFF</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="get_started_button">#ee7676</color>
     <color name="gray">#F4F4F4</color>
     <color name="grayDark">#A6A6A6</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
@@ -2632,6 +2636,7 @@
     <item name="androidx_compose_ui_view_composition_context" type="id"/>
     <item name="compose_view_saveable_id_tag" type="id"/>
     <item name="consume_window_insets_tag" type="id"/>
+    <item name="dataBinding" type="id"/>
     <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
@@ -2662,6 +2667,8 @@
     <item name="navigation_bar_item_small_label_view" type="id"/>
     <item name="offline_dialog_advertiser_name" type="id"/>
     <item name="offline_dialog_image" type="id"/>
+    <item name="onAttachStateChangeListener" type="id"/>
+    <item name="onDateChanged" type="id"/>
     <item name="parent_matrix" type="id"/>
     <item name="pooling_container_listener_holder_tag" type="id"/>
     <item name="progress_circular" type="id"/>
@@ -2690,6 +2697,7 @@
     <item name="tag_window_insets_animation_callback" type="id"/>
     <item name="text" type="id"/>
     <item name="text2" type="id"/>
+    <item name="textWatcher" type="id"/>
     <item name="text_input_error_icon" type="id"/>
     <item name="textinput_counter" type="id"/>
     <item name="textinput_error" type="id"/>
@@ -2812,6 +2820,8 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns2:g example="Mail" id="application_name">%s</ns2:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="ad">AD</string>
+    <string name="ad_">Ad</string>
     <string name="admob_banner_id" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
     <string name="admob_interal" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
     <string name="admob_splash_fullscreen" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
@@ -2821,7 +2831,22 @@
     <string name="app_name">App Update</string>
     <string name="app_open_l" translatable="false">"ca-app-pub-3940256099942544/3419835294"</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="billing_connection_fail_billing_unavailable"><![CDATA[Billing connection fail===> billing unavailable]]></string>
+    <string name="billing_connection_fail_developer_error"><![CDATA[Billing connection fail===> developer error]]></string>
+    <string name="billing_connection_fail_error"><![CDATA[Billing connection fail===> error]]></string>
+    <string name="billing_connection_fail_feature_not_supported"><![CDATA[Billing connection fail===> feature not supported]]></string>
+    <string name="billing_connection_fail_item_already_own"><![CDATA[Billing connection fail===> item already owned]]></string>
+    <string name="billing_connection_fail_item_not_own"><![CDATA[Billing connection fail===> item not owned]]></string>
+    <string name="billing_connection_fail_item_unavailable"><![CDATA[Billing connection fail===> item unavailable]]></string>
+    <string name="billing_connection_fail_network_error"><![CDATA[Billing connection fail===> network error]]></string>
+    <string name="billing_connection_fail_service_disconnected"><![CDATA[Billing connection fail===> service disconnected]]></string>
+    <string name="billing_connection_fail_service_unavailable"><![CDATA[Billing connection fail===> service unavailable]]></string>
+    <string name="billing_connection_fail_user_cancelled"><![CDATA[Billing connection fail===> user cancelled]]></string>
+    <string name="billing_connection_successful">Billing connection successful</string>
     <string name="billing_product" translatable="false">"android.test.purchased"</string>
+    <string name="billing_service_disconnected">Billing Service Disconnected</string>
+    <string name="billing_setup_finished">Billing Setup Finished</string>
+    <string name="billing_unavailable">Billing is not available</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string description="A description of an accessibility action to collapse the bottom sheet [CHAR LIMIT=NONE]" name="bottomsheet_action_collapse">Collapse the bottom sheet</string>
     <string description="A description of an accessibility action to expand the bottom sheet [CHAR LIMIT=NONE]" name="bottomsheet_action_expand">Expand the bottom sheet</string>
@@ -2843,7 +2868,7 @@
     <string name="close">close</string>
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
-    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">0342075f31954446b3cba811541bdc53</string>
+    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">1393fd744a8f4d7ea5f8817bf2156527</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -2866,12 +2891,17 @@
     <string name="copy_toast_msg">Link copied to clipboard</string>
     <string name="default_error_message">"Invalid input"</string>
     <string name="default_popup_window_title" ns1:ignore="ExtraTranslation">"Pop-Up Window"</string>
+    <string name="developer_error">Error in development</string>
     <string name="dropdown_menu">"Dropdown menu"</string>
     <string name="env_dev" translatable="false">true</string>
+    <string name="error">Some error occurred</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
   </string>
+    <string name="error_cancelling_subs">Error: Can\'t launch intent to cancel subscription.</string>
     <string name="error_icon_content_description">Error</string>
+    <string name="error_in_purchase">Error in Purchasing</string>
+    <string name="error_in_purchasse">Error in purchase</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
@@ -2879,6 +2909,7 @@
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
     <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
+    <string name="feature_not_supported">This feature is not supported</string>
     <string name="gcm_defaultSenderId" translatable="false">435016968660</string>
     <string name="google_api_key" translatable="false">AIzaSyCJkKfJQOXyBX2iN4WB9CUmlVJVRPmX8Nc</string>
     <string name="google_app_id" translatable="false">1:435016968660:android:a129c49410a1caa5f90e41</string>
@@ -2887,9 +2918,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
+    <string name="in_app_purchased">InApp Purchased!</string>
     <string name="in_progress">In progress</string>
     <string name="indeterminate">Partially checked</string>
+    <string name="item_already_owned">This item is already owned by user</string>
+    <string name="item_not_owner">Error in purchase, item is not owned by user</string>
+    <string name="item_unavailable">THis item is not available</string>
     <string name="item_view_role_description">Tab</string>
+    <string name="loading_ad">Loading Ad</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
     <string name="m3_ref_typeface_brand_medium" translatable="false">sans-serif-medium</string>
     <string name="m3_ref_typeface_brand_regular" translatable="false">sans-serif</string>
@@ -3010,6 +3046,16 @@
     Media View
   </string>
     <string name="navigation_menu">"Navigation menu"</string>
+    <string name="network_error">Internet not available or some network error</string>
+    <string name="no_old_subs_found">Error: No old subscription found</string>
+    <string name="no_product_detail_found">No product detail found</string>
+    <string name="no_product_found_against_inapp_key">No product found against this inApp purchase key</string>
+    <string name="no_product_found_against_new_product_key">No product found against new product key</string>
+    <string name="no_purchase_detail_found">No purchase detail found</string>
+    <string name="no_purchase_found">No purchase found</string>
+    <string name="no_purchase_record_found">No purchase record found</string>
+    <string name="no_sub_found_against_sub_key">No product found against this subscription key</string>
+    <string name="not_purchasing_already_purchasing">Not purchasing, because it is already purchased</string>
     <string name="not_selected">Not selected</string>
     <string description="Label on the button to go to settings. [CHAR_LIMIT=20]" name="notifications_permission_confirm">
       Allow</string>
@@ -3018,6 +3064,7 @@
     <string description="Body of the dialog presented when an ad wants to grant notifications permission. [CHAR_LIMIT=NONE]" name="notifications_permission_title">
       Allow app to send you notifications?</string>
     <string name="off">Off</string>
+    <string name="offer_token_details_missing">Error: Offer Token details are missing against this subscription!</string>
     <string description="Describes content of the offline dialog image view. This property is used primarily for accessibility. [CHAR_LIMIT=NONE]" name="offline_dialog_image_description">
       Icon</string>
     <string description="Confirmation text displayed when the user opts in to get a notification. [CHAR_LIMIT=NONE]" name="offline_dialog_text">
@@ -3032,6 +3079,7 @@
       We\'ll send you a notification with a link to the advertiser site.</string>
     <string description="Title of the dialog presented when an ad is clicked while offline. [CHAR_LIMIT=NONE]" name="offline_opt_in_title">
       Open ad when you\'re back online.</string>
+    <string name="old_product_should_be_subs">Old product key should be of type SUBS</string>
     <string name="on">On</string>
     <string name="open">open</string>
     <string name="password_toggle_content_description">Show password</string>
@@ -3040,8 +3088,16 @@
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="preference_file_key">alarm_pref</string>
+    <string name="product_type_should_subs">Product type should be SUBS</string>
+    <string name="products_found_against_inapp_key">products found against this inApp key</string>
+    <string name="products_found_against_subs_key">products found against this subscription key</string>
     <string name="project_id" translatable="false">software-updater-236e5</string>
     <string name="public_ip_address">Ip Address</string>
+    <string name="purchase_consumed_fail">Purchase consumed failed!</string>
+    <string name="purchase_consumed_success">Purchase consumed successfully!</string>
+    <string name="purchase_fail">Purchase fail, unspecified reason, purchase id</string>
+    <string name="purchase_pending">Purchase is pending, purchase id</string>
+    <string name="purchase_success">User purchased successfully</string>
     <string name="range_end">"Range end"</string>
     <string name="range_start">"Range start"</string>
     <string name="s1">Save image</string>
@@ -3058,20 +3114,30 @@
     <string description="Content description for the X button to clear text [CHAR_LIMIT=NONE]" name="searchview_clear_text_content_description">Clear text</string>
     <string description="Content description for the navigation button to return to the previous screen [CHAR_LIMIT=NONE]" name="searchview_navigation_content_description">Back</string>
     <string name="selected">Selected</string>
+    <string name="service_disconnected">Service is disconnected</string>
+    <string name="service_unavailable">Service is not available</string>
     <string description="Title of the side sheet&apos;s accessibility pane that is spoken by TalkBack when the side sheet appears on screen. [CHAR_LIMIT=NONE]" name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="side_sheet_behavior" translatable="false">com.google.android.material.sidesheet.SideSheetBehavior</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="subscription_purchased">Subscription Purchased!</string>
     <string name="switch_role">Switch</string>
     <string name="tab">Tab</string>
     <string name="tedpermission_close">Close</string>
     <string name="tedpermission_confirm">Confirm</string>
     <string name="tedpermission_setting">Setting</string>
     <string name="template_percent"><ns2:g id="percentage">%1$d</ns2:g> percent.</string>
+    <string name="time_out">Service time out</string>
+    <string name="todo">TODO</string>
+    <string name="token_not_found_against_new_product_key">Token not found against new product key</string>
+    <string name="token_not_found_against_old_product_key">Token not found against old product key</string>
+    <string name="universal_tv_remote_control">Universal TV remote control</string>
+    <string name="user_cancelled">User cancel purchase</string>
     <string description="This string appears within a watermark on video ads for debugging. [CHAR_LIMIT=NONE]" name="watermark_label_prefix">
     "AdMob - "
   </string>
     <string name="your_ip"><ns2:g example="192.168.0.1" id="ip">%s</ns2:g></string>
     <string name="your_ip_na">N/A</string>
+    <string name="your_ultimate_smart_tv_amp_ir_devices"><![CDATA[Your Ultimate Smart TV & IR devices]]></string>
     <style name="AdTheme">
         <item name="android:background">@color/black</item>
         <item name="android:windowBackground">@color/black</item>
@@ -12315,6 +12381,7 @@
         <attr format="reference|color" name="setActionButtonTextColor"/>
         <attr format="reference" name="setActionButtonBackground"/>
         <attr format="reference" name="setAdTextBackground"/>
+        <attr format="reference" name="loading_ad_dialog_bg"/>
     </declare-styleable>
     <declare-styleable name="CustomAttribute">
         <attr format="string" name="attributeName"/>
@@ -14015,39 +14082,6 @@
     <attr format="dimension" name="contentPaddingStart"/>
     <attr name="contentPaddingTop"/>
   </declare-styleable>
-    <declare-styleable name="ShimmerFrameLayout">
-    <attr format="boolean" name="shimmer_clip_to_children"/>
-    <attr format="boolean" name="shimmer_colored"/>
-    <attr format="color" name="shimmer_base_color"/>
-    <attr format="color" name="shimmer_highlight_color"/>
-    <attr format="float" name="shimmer_base_alpha"/>
-    <attr format="float" name="shimmer_highlight_alpha"/>
-    <attr format="boolean" name="shimmer_auto_start"/>
-    <attr format="integer" name="shimmer_duration"/>
-    <attr format="integer" name="shimmer_repeat_count"/>
-    <attr format="integer" name="shimmer_repeat_delay"/>
-    <attr format="enum" name="shimmer_repeat_mode">
-      <enum name="restart" value="1"/>
-      <enum name="reverse" value="2"/>
-    </attr>
-    <attr format="enum" name="shimmer_direction">
-      <enum name="left_to_right" value="0"/>
-      <enum name="top_to_bottom" value="1"/>
-      <enum name="right_to_left" value="2"/>
-      <enum name="bottom_to_top" value="3"/>
-    </attr>
-    <attr format="float" name="shimmer_dropoff"/>
-    <attr format="dimension" name="shimmer_fixed_width"/>
-    <attr format="dimension" name="shimmer_fixed_height"/>
-    <attr format="float" name="shimmer_intensity"/>
-    <attr format="float" name="shimmer_width_ratio"/>
-    <attr format="float" name="shimmer_height_ratio"/>
-    <attr format="enum" name="shimmer_shape">
-      <enum name="linear" value="0"/>
-      <enum name="radial" value="1"/>
-    </attr>
-    <attr format="float" name="shimmer_tilt"/>
-  </declare-styleable>
     <declare-styleable name="SideSheetBehavior_Layout">
     
     <attr name="behavior_draggable"/>
@@ -14282,6 +14316,9 @@
         <attr name="stiffness"/>
         <attr name="dampingRatio"/>
         <attr name="dotsClickable"/>
+    </declare-styleable>
+    <declare-styleable name="StartPointSeekBar">
+        <attr format="reference" name="image_tint_color"/>
     </declare-styleable>
     <declare-styleable name="State">
         <attr name="android:id"/>

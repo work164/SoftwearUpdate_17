@@ -21,7 +21,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
-import com.app.update.softwareupdatekkappsstudio.ads.MyApp
 import com.app.update.softwareupdatekkappsstudio.database.Word
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModel
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory

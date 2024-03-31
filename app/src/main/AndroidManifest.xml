@@ -31,7 +31,7 @@
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
-        android:name=".ads.MyApp"
+        android:name=".MyApp"
         android:allowBackup="true"
         android:allowClearUserData="true"
         android:dataExtractionRules="@xml/data_extraction_rules"

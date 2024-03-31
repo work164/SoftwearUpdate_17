@@ -117,7 +117,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation(project(mapOf("path" to ":adsdk")))
+//    implementation(project(mapOf("path" to ":adsdk")))
     implementation("androidx.lifecycle:lifecycle-process:2.6.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -146,6 +146,7 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-ads:23.0.0")
     implementation("com.google.android.ump:user-messaging-platform:2.2.0")
+    implementation ("com.integer.ads:integet-ads:1.0.3")
 
     //billing
     implementation("com.android.billingclient:billing-ktx:6.2.0")
