@@ -21,6 +21,8 @@ class ScanAppFragment : Fragment() {
     private lateinit var wholeAppList: ArrayList<ApplicationInfo>
     val forLaunchInstalledApps: MutableList<ApplicationInfo> = ArrayList()
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
