@@ -12,14 +12,14 @@ android {
     signingConfigs {
 
         create("release") {
-            storeFile = file("D:/Software-Update-master/appupdatekey.jks")
+            storeFile = file("/appupdatekey.jks")
             storePassword = "appupdatekey"
             keyAlias = "key0"
             keyPassword = "appupdatekey"
         }
 
         create("debugs") {
-            storeFile = file("D:/Software-Update-master/appupdatekey.jks")
+            storeFile = file("/appupdatekey.jks")
             storePassword = "appupdatekey"
             keyAlias = "key0"
             keyPassword = "appupdatekey"
@@ -47,10 +47,7 @@ android {
             )
         }
         debug {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            signingConfig = signingConfigs.getByName("debugs")
-
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -108,6 +105,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding=true
     }
 }
 

@@ -14,6 +14,7 @@
     <string name="na">N/A</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="accelerometer">Accelerometer</string>
 
 
     <string-array name="size_array">

@@ -74,7 +74,7 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
         onBackPressedDispatcher.addCallback(
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    exitDialogFragment?.show(supportFragmentManager, "exit_dialog")
+                    exitDialogFragment?.show(supportFragmentManager, exitDialogFragment?.tag)
                 }
             }
         )
@@ -177,7 +177,8 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
                                 try {
                                     selectedFragment = WifiFragment()
                                     supportFragmentManager.beginTransaction()
-                                        .replace(R.id.fragmentContainer, selectedFragment!!).commit()
+                                        .replace(R.id.fragmentContainer, selectedFragment!!)
+                                        .commit()
                                 } catch (e: java.lang.IllegalStateException) {
                                     e.printStackTrace()
                                 }
