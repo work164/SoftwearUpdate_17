@@ -1,3 +1,5 @@
 package com.app.update.softwareupdatekkappsstudio.model
 
-data class SystemModel()
+import android.graphics.drawable.Drawable
+
+data class SystemModel(val image:Drawable,val appName:String,val appDate:String,val appSize:String,val packageName:String)

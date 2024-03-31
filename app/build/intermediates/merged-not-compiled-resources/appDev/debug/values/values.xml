@@ -2843,7 +2843,7 @@
     <string name="close">close</string>
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
-    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">40dd251c28b6427b89a40c4fbcbad671</string>
+    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">d7a674120d0145299449e7c8a387e071</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -10242,6 +10242,10 @@
   </style>
     <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
         <item name="statusBarBackground">#000000</item>
+    </style>
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
     <style name="full_screen_dialog">
         <item name="android:windowFrame">@null</item>

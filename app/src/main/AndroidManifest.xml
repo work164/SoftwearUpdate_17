@@ -54,19 +54,31 @@
         <activity
             android:name=".practice.WifiActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".StartActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 
         <activity
             android:name=".HomeActivity"
             android:exported="true" />
+
         <activity android:name="com.app.update.softwareupdatekkappsstudio.fragments.PrivacyFragment" />
         <activity android:name="com.app.update.softwareupdatekkappsstudio.AlarmActivity" />
 
@@ -91,8 +103,8 @@
         <service
             android:name="com.app.update.softwareupdatekkappsstudio.info.AlarmsForegroundService"
             android:enabled="true"
-            android:foregroundServiceType="shortService"
-            android:exported="false" />
+            android:exported="false"
+            android:foregroundServiceType="shortService" />
     </application>
 
 </manifest>

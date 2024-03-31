@@ -31,6 +31,7 @@ class MyApp : Application() {
     companion object {
         @JvmField
         var startInter = false
+
         @JvmField
         var appopen = true
     }

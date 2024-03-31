@@ -1,0 +1,134 @@
+[
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_splash.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_splash.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_device_information.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_device_information.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_apps_uninstall.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_apps_uninstall.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/system_app.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/system_app.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/activity_wifi.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/activity_wifi.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_wifi.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_wifi.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/activity_intro.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/activity_intro.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_android_update.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_android_update.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_bottom_sheet_exit_frgament.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_bottom_sheet_exit_frgament.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/item_app_uninsatll_info.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/item_app_uninsatll_info.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_onboarding.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_onboarding.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_device_info.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_device_info.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_wifi_details.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_wifi_details.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/activity_main.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/loading_ad.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/loading_ad.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/activity_alarm.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/activity_alarm.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/home_item.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/home_item.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_scan_app.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_scan_app.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/native_with_out_media.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/native_with_out_media.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/item_app_info.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/item_app_info.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/activity_main_try.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/activity_main_try.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/native_ad_layout_old.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/native_ad_layout_old.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_home.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_app_count.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_app_count.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/activity_wifi_details.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/activity_wifi_details.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/activity_start.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/activity_start.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/nav_header_drawer.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/nav_header_drawer.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/dialog_rate_us.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/dialog_rate_us.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/native_ads_main_video.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/native_ads_main_video.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_privacy.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_privacy.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/fragment_system_app.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/fragment_system_app.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/native_with_media.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/native_with_media.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-86:/layout/item_app_setting_info.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-91:/layout/item_app_setting_info.xml"
+    }
+]

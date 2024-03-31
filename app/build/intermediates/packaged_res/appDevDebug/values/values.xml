@@ -38,7 +38,7 @@
     <string name="app_open_l" translatable="false">"ca-app-pub-3940256099942544/3419835294"</string>
     <string name="billing_product" translatable="false">"android.test.purchased"</string>
     <string name="close">close</string>
-    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">40dd251c28b6427b89a40c4fbcbad671</string>
+    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">00000000000000000000000000000000</string>
     <string name="copied_to_clipboard">Copied to Clipboard</string>
     <string name="env_dev" translatable="false">true</string>
     <string name="gcm_defaultSenderId" translatable="false">435016968660</string>
@@ -69,4 +69,8 @@
         <item name="android:minHeight">48dp</item> 
     </style>
     <style name="Theme.NewSoftware" parent="Base.Theme.NewSoftware"/>
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

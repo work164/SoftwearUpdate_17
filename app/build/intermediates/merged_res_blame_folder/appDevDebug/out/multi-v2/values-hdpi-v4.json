@@ -4,7 +4,7 @@
             "outputFile": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-85:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\integ\\.gradle\\caches\\transforms-3\\96cd96335a2faa40d6bbcc4abc975b4e\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\96cd96335a2faa40d6bbcc4abc975b4e\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

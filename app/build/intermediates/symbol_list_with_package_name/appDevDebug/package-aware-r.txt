@@ -3866,6 +3866,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable aboutus
+drawable add_background_home
 drawable admob_close_button_black_circle_white_cross
 drawable admob_close_button_white_circle_black_cross
 drawable admob_close_button_white_cross
@@ -3887,6 +3888,9 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable check_button_background
+drawable checking_update_background
+drawable checking_update_text_background
 drawable collapse
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -3920,9 +3924,11 @@ drawable drawer_bg
 drawable drawer_btn_bg
 drawable drawer_header
 drawable drawer_header_layout
+drawable feature_background
 drawable feedback
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable home_background
 drawable ic_android_icon
 drawable ic_app_bar
 drawable ic_applist_icon
@@ -3937,10 +3943,24 @@ drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_device_icon
+drawable ic_device_info
 drawable ic_frag1
 drawable ic_frag2
 drawable ic_frag3
 drawable ic_frag4
+drawable ic_home_android_version
+drawable ic_home_app_restore
+drawable ic_home_app_usage
+drawable ic_home_battery
+drawable ic_home_gift
+drawable ic_home_install
+drawable ic_home_mobile_sensor
+drawable ic_home_scan
+drawable ic_home_setting
+drawable ic_home_system
+drawable ic_home_system_update
+drawable ic_home_uninstall
+drawable ic_home_wifi
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3954,6 +3974,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_nav_viewbg
 drawable ic_phone
+drawable ic_reverse
 drawable ic_search_black_24
 drawable ic_settings_icon
 drawable ic_star_selected
@@ -4050,9 +4071,11 @@ drawable reload_24px
 drawable rounded_layout
 drawable shareapp
 drawable splash_iconimage
+drawable splash_text_gradient
 drawable spring_dot_background
 drawable spring_dot_stroke_background
 drawable square_shape
+drawable start_background
 drawable system_update
 drawable test_level_drawable
 drawable toggle_off
@@ -4068,12 +4091,17 @@ drawable wifi_icon_forfragment
 drawable wifi_signal_icon
 drawable worm_dot_background
 drawable worm_dot_stroke_background
+font medium
+font regular
 font roboto_bold
+font semibold
+font urbaint_light
 id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id FeatureName
 id META
 id NO_DEBUG
 id SHIFT
@@ -4125,6 +4153,7 @@ id actionUp
 id action_bar
 id action_bar_activity_content
 id action_bar_container
+id action_bar_home
 id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
@@ -4175,6 +4204,7 @@ id antiClockwise
 id anticipate
 id appIcon
 id appName
+id appText
 id appsRecyclerView
 id arc
 id asConfigured
@@ -4184,6 +4214,9 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id automatic
+id back
+id backDevice
+id backImage
 id backbtnDrawer
 id banner_body
 id banner_content_root
@@ -4215,6 +4248,8 @@ id btnOSNext
 id btnRateNow
 id btnSkip
 id btnStart
+id btn_inAppForward
+id btn_inAppForwardDevice
 id btn_inapp
 id button
 id buttonPanel
@@ -4235,9 +4270,12 @@ id center_vertical
 id chain
 id chain2
 id chains
+id check
 id checkButton
+id checkMove
 id checkbox
 id checked
+id checkingUpdate
 id chronometer
 id circle_center
 id clear_text
@@ -4270,6 +4308,7 @@ id custom
 id customPanel
 id cut
 id dark
+id date
 id dateButton
 id date_picker_actions
 id decelerate
@@ -4285,6 +4324,13 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id details
+id device
+id deviceBoard
+id deviceHardware
+id deviceId
+id deviceManufacture
+id deviceModel
+id deviceName
 id dialog_button
 id dimensions
 id direct
@@ -4350,6 +4396,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id gift_home
 id give_us_a_review_landmine_button
 id give_us_a_review_landmine_main_layout
 id give_us_a_review_landmine_text_1
@@ -4358,9 +4405,17 @@ id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
+id group1
+id group2
+id group3
+id group4
+id group5
+id group6
+id group7
 id group_divider
 id grouping
 id groups
+id guideLine
 id hardware
 id header_title
 id hide_ime_id
@@ -4368,6 +4423,9 @@ id hide_in_inspector_tag
 id hideable
 id home
 id homeAsUp
+id home_image
+id home_one
+id home_text1
 id honorRequest
 id horizontal_only
 id icon
@@ -4415,9 +4473,13 @@ id loadingAdCard
 id loadingAdProgress
 id loadingAdText
 id loadingApps
+id lottie1
+id lottie_icon
 id lottie_layer_name
 id m3_side_sheet
 id mainIcon
+id mainText
+id mainText1
 id marquee
 id masked
 id match_constraint
@@ -4565,6 +4627,7 @@ id radio
 id ratingBar
 id ratio
 id rectangles
+id recyclerView
 id relativeLayout
 id remain_to_stop
 id report_drawn
@@ -4603,6 +4666,7 @@ id select_dialog_listview
 id selected
 id selection_type
 id setAlarmButton
+id setting
 id settingsbtn
 id sharedValueSet
 id sharedValueUnset
@@ -4612,6 +4676,8 @@ id showCustom
 id showHome
 id showTitle
 id sin
+id sizeMb
+id sizeText
 id skipCollapsed
 id skipped
 id slide
@@ -4623,6 +4689,7 @@ id software
 id south
 id spacer
 id special_effects_controller_view_tag
+id splashIcon
 id spline
 id split_action_bar
 id spread
@@ -4635,6 +4702,7 @@ id src_in
 id src_over
 id standard
 id start
+id startButton
 id startHorizontal
 id startToEnd
 id startVertical
@@ -4646,6 +4714,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id systemIcon
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -4708,6 +4777,8 @@ id topBannerForHome
 id topImageView
 id topPanel
 id top_to_bottom
+id totalApps
+id totalCount
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -4744,7 +4815,9 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viewDevice
 id viewPager
+id viewSystem
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -4926,10 +4999,16 @@ layout fragment_app_count
 layout fragment_apps_uninstall
 layout fragment_bottom_sheet_exit_frgament
 layout fragment_device_info
+layout fragment_device_information
+layout fragment_home
 layout fragment_onboarding
 layout fragment_privacy
+layout fragment_scan_app
+layout fragment_splash
+layout fragment_system_app
 layout fragment_wifi
 layout fragment_wifi_details
+layout home_item
 layout image
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
@@ -5020,6 +5099,7 @@ layout sp_example
 layout spring_dot_layout
 layout ssp_example
 layout support_simple_spinner_dropdown_item
+layout system_app
 layout worm_dot_layout
 menu bottom_nav_menu
 menu drawer_menu
@@ -5030,6 +5110,8 @@ plurals mtrl_badge_content_description
 raw com_android_billingclient_heterodyne_info
 raw com_android_billingclient_registration_info
 raw firebase_common_keep
+raw ic_icon
+raw ic_lottie
 raw loading_screen
 raw spedometernew
 string abc_action_bar_home_description
@@ -6437,6 +6519,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style circleImageView
 style full_screen_dialog
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity

@@ -5,56 +5,41 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import com.app.update.softwareupdatekkappsstudio.R
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+import com.app.update.softwareupdatekkappsstudio.adapter.HomeAdapter
+import com.app.update.softwareupdatekkappsstudio.databinding.FragmentHomeBinding
+import com.app.update.softwareupdatekkappsstudio.model.HomeViewModel
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+    private lateinit var binding:FragmentHomeBinding
+    private var mList = arrayListOf(
+        HomeViewModel(R.drawable.ic_home_scan,"Scan Apps","4/30"),
+        HomeViewModel(R.drawable.ic_home_install,"Installed Apps","Total 70"),
+        HomeViewModel(R.drawable.ic_home_uninstall,"Uninstall Apps","Total 70"),
+        HomeViewModel(R.drawable.ic_home_system,"System Apps","70"),
+        HomeViewModel(R.drawable.ic_home_app_usage,"App Usage","365day, 24hur,32mint"),
+        HomeViewModel(R.drawable.ic_device_info,"Device Info","Android 13"),
+        HomeViewModel(R.drawable.ic_home_system_update,"System Update","4/30"),
+        HomeViewModel(R.drawable.ic_home_wifi,"Wifi Status","on/off"),
+        HomeViewModel(R.drawable.ic_home_mobile_sensor,"Mobile Sensor","Info"),
+        HomeViewModel(R.drawable.ic_home_app_restore,"App Restore","30"),
+        HomeViewModel(R.drawable.ic_home_battery,"Battery Info","50%"),
+        HomeViewModel(R.drawable.ic_home_android_version,"Android Version","Details")
+        )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView.adapter = HomeAdapter(mList)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
