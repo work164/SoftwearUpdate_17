@@ -96,7 +96,7 @@
             android:name="com.app.update.softwareupdatekkappsstudio.practice.WifiActivity"
             android:exported="true" />
         <activity
-            android:name="com.app.update.softwareupdatekkappsstudio.MainActivity"
+            android:name="com.app.update.softwareupdatekkappsstudio.StartActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

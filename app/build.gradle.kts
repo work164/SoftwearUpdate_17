@@ -32,18 +32,10 @@ android {
         applicationId = "com.app.update.softwareupdatekkappsstudio"
         minSdk = 24
         targetSdk = 34
-        versionCode = 17
+        versionCode = 18
         versionName = "2.7"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-
-
-
-
-
-
-
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -106,6 +98,9 @@ android {
         }
     }
 
+
+    buildFeatures.viewBinding = true
+    buildFeatures.dataBinding = true
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

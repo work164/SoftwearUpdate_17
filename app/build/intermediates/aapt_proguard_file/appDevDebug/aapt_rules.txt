@@ -18,7 +18,7 @@
 -keep class com.app.update.softwareupdatekkappsstudio.AlarmActivity { <init>(); }
 -keep class com.app.update.softwareupdatekkappsstudio.HomeActivity { <init>(); }
 -keep class com.app.update.softwareupdatekkappsstudio.IntroActivity { <init>(); }
--keep class com.app.update.softwareupdatekkappsstudio.MainActivity { <init>(); }
+-keep class com.app.update.softwareupdatekkappsstudio.StartActivity { <init>(); }
 -keep class com.app.update.softwareupdatekkappsstudio.WifiDetailsActivity { <init>(); }
 -keep class com.app.update.softwareupdatekkappsstudio.ads.MyApp { <init>(); }
 -keep class com.app.update.softwareupdatekkappsstudio.fragments.PrivacyFragment { <init>(); }
