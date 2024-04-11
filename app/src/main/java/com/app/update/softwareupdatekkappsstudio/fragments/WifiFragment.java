@@ -1,12 +1,9 @@
 package com.app.update.softwareupdatekkappsstudio.fragments;
 
-import static android.content.Context.CLIPBOARD_SERVICE;
 import static android.content.Context.WIFI_SERVICE;
 
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -36,7 +33,6 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import com.app.update.softwareupdatekkappsstudio.R;
 import com.app.update.softwareupdatekkappsstudio.WifiDetailsActivity;
-import com.app.update.softwareupdatekkappsstudio.practice.SharedPreferencesManager;
 import com.app.update.softwareupdatekkappsstudio.practice.WiFiLiveData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -73,7 +69,7 @@ public class WifiFragment extends Fragment {
     private HandlerThread infoHandlerThread;
     private WifiInfo wifiInfo;
 
-    private int keyCardFreqFormatted = 1000;
+//    private int keyCardFreqFormatted = 1000;
     String info_mac_addr = "";
     BottomNavigationView bottomNavView;
     String info_network_speed = "";
@@ -96,7 +92,7 @@ public class WifiFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(WIFI_SERVICE);
-        keyCardFreqFormatted = Integer.parseInt(new SharedPreferencesManager(getActivity()).retrieveString("card_update_freq", "1000"));
+//        keyCardFreqFormatted = Integer.parseInt(new SharedPreferencesManager(getActivity()).retrieveString("card_update_freq", "1000"));
         bottomNavView = getActivity().findViewById(R.id.bottomNavView);
         textview_network_speed_value = getActivity().findViewById(R.id.textview_network_speed_value);
 
@@ -268,7 +264,7 @@ public class WifiFragment extends Fragment {
             if (isAdded() && getActivity() != null) { // Check if the fragment is added to an activity
                 getActivity().runOnUiThread(() -> textview_ssid.setText(info_ssid));
             }
-            infoHandler.postDelayed(infoRunnable, keyCardFreqFormatted);
+//            infoHandler.postDelayed(infoRunnable, keyCardFreqFormatted);
         }
     };
 

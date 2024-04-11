@@ -19,5 +19,6 @@
     <color name="grayDark">#A6A6A6</color>
     <color name="textcolor">#62AE53</color>
     <color name="device_info_color">#62AE53</color>
+    <color name="green_main">#2FC75C</color>
 
 </resources>

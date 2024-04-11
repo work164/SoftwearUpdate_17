@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/back"
+                android:id="@+id/backHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="13dp"
@@ -25,6 +25,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:src="@drawable/ic_reverse"/>
             <TextView
+                android:id="@+id/appMainText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="System Apps"
@@ -84,6 +85,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/totalCount"/>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

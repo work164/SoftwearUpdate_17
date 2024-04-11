@@ -107,7 +107,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        viewBinding=true
+        viewBinding = true
     }
 }
 
@@ -146,7 +146,6 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-ads:23.0.0")
     implementation("com.google.android.ump:user-messaging-platform:2.2.0")
-    implementation ("com.integer.ads:integet-ads:1.0.3")
 
     //billing
     implementation("com.android.billingclient:billing-ktx:6.2.0")
@@ -180,6 +179,9 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
     implementation("com.tbuonomo:dotsindicator:5.0")
+    // for fragment navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
 
 
 }

@@ -24,11 +24,6 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.app.update.softwareupdatekkappsstudio.ads.LoadAndShowAds.loadBannerLow
-import com.app.update.softwareupdatekkappsstudio.ads.LoadAndShowAds.loadFullScreenLow
-import com.app.update.softwareupdatekkappsstudio.ads.LoadAndShowAds.showFullScreenLow
-import com.app.update.softwareupdatekkappsstudio.ads.billing.Billing6Listener
-import com.app.update.softwareupdatekkappsstudio.ads.billing.Billing6Play
 import com.app.update.softwareupdatekkappsstudio.fragments.AndroidUpdateFragment
 import com.app.update.softwareupdatekkappsstudio.fragments.AppCountFragment
 import com.app.update.softwareupdatekkappsstudio.fragments.AppsUninstallFragment
@@ -42,16 +37,9 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.ktx.BuildConfig
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.normal.TedPermission
-import com.sample.adsdk.constants.Constant.isNetworkAvailable
-import com.sample.adsdk.intertesialAds.AdMobFullScreenListener
-import com.sample.adsdk.intertesialAds.FullScreenAdListener
-import com.sample.adsdk.types.AdTypes
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
+
+class HomeActivity : AppCompatActivity(), ExitDialogListener {
     private var exitDialogFragment: ExitDialogFragment? = null
     private var bottomNavigationView: BottomNavigationView? = null
     private var drawerLayout: DrawerLayout? = null
@@ -61,7 +49,6 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
 
     private var productIds: ArrayList<String> = ArrayList()
     private var subscriptionIds: ArrayList<String> = ArrayList()
-    private var billing6Play: Billing6Play? = null
 
 
     var btn_inapp: ImageView? = null
@@ -83,18 +70,9 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
         subscriptionIds.add("sub_year")//not using
         productIds.add(if (BuildConfig.DEBUG) "android.test.purchased" else "ads_free")//
 
-
-        billing6Play = Billing6Play(
-            activity = this, productIds = productIds, subscriptionIds = subscriptionIds, this
-        )
         admobbannercontainer = findViewById(R.id.topBannerForHome)
         exitDialogFragment = ExitDialogFragment()
-        this@HomeActivity.loadBannerLow(
-            admobbannercontainer ?: return,
-            AdTypes.Adaptive.toString(),
-            getString(R.string.admob_banner_id),
-            true
-        )
+
         btn_inapp = findViewById(R.id.btn_inapp)
         drawerLayout = findViewById(R.id.drawer_layout)
         actionBarDrawerToggle =
@@ -122,7 +100,6 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
         }
         btn_inapp?.setOnClickListener { v: View? ->
 
-            billing6Play?.oneTimeProduct()
         }
     }
 
@@ -195,73 +172,7 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
                     }
                 }
 
-                if (isNetworkAvailable(this)) {
-                    if (adAdShow % 2 == 0) {
-                        if (loadingDialog?.isShowing == false) {
-                            loadingDialog?.show()
-                        }
-                        this@HomeActivity.loadFullScreenLow(
-                            getString(R.string.admob_interal),
-                            true,
-                            object :
-                                FullScreenAdListener {
-                                override fun adAlreadyLoaded() {
-                                    //   adAdShow++
-                                    lifecycleScope.launch {
-                                        delay(1000)
-                                        withContext(Dispatchers.Main) {
-                                            if (loadingDialog?.isShowing == true) {
-                                                loadingDialog?.dismiss()
-                                            }
-                                            showAds()
-                                        }
-                                    }
-                                    super.adAlreadyLoaded()
-                                }
 
-                                override fun adLoaded() {
-                                    //  adAdShow++
-                                    lifecycleScope.launch {
-                                        delay(200)
-                                        withContext(Dispatchers.Main) {
-                                            if (loadingDialog?.isShowing == true) {
-                                                loadingDialog?.dismiss()
-                                            }
-                                            showAds()
-                                        }
-                                    }
-                                    super.adLoaded()
-                                }
-
-                                override fun adFailed() {
-                                    //  adAdShow++
-
-                                    lifecycleScope.launch {
-                                        delay(100)
-                                        withContext(Dispatchers.Main) {
-                                            if (loadingDialog?.isShowing == true) {
-                                                loadingDialog?.dismiss()
-                                            }
-                                            showAds()
-                                        }
-                                    }
-                                    super.adFailed()
-                                }
-
-                                override fun adValidate() {
-                                    if (loadingDialog?.isShowing == true) {
-                                        loadingDialog?.dismiss()
-                                    }
-
-                                    super.adValidate()
-                                }
-
-                            })
-
-
-                    }
-                    adAdShow++
-                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -270,18 +181,7 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
             true
         }
 
-    fun showAds() {
-        this@HomeActivity.showFullScreenLow(getString(R.string.admob_interal), true,
-            object : AdMobFullScreenListener {
-                override fun fullScreenAdNotAvailable() {
 
-                }
-
-                override fun fullScreenAdFailedToShow() {}
-                override fun fullScreenAdDismissed() {}
-                override fun fullScreenAdShow() {}
-            })
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (actionBarDrawerToggle!!.onOptionsItemSelected(item)) {
@@ -298,7 +198,7 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
         }
     }
 
-    fun selectDrawerItem(menuItem: MenuItem) {
+    private fun selectDrawerItem(menuItem: MenuItem) {
         // Handle navigation menu item clicks here
         if (menuItem.itemId == R.id.menu_share_app) {
             val share = Intent(Intent.ACTION_SEND)
@@ -378,15 +278,11 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener, Billing6Listener {
         btnRateNow.setOnClickListener { // Handle Rate Now click
             val rating = ratingBar.rating.toInt()
 
-            // You can use the 'rating' value to send user's rating to your server or perform other actions
-            // For example, you can send the rating in a feedback form
             val uri = Uri.parse("market://details?id=" + getPackageName())
             val rateIntent = Intent(Intent.ACTION_VIEW, uri)
             try {
                 startActivity(rateIntent)
             } catch (e: ActivityNotFoundException) {
-                // Handle the case where the Google Play Store app is not installed on the device
-                // You can show a message to the user or take alternative actions
             }
             dialog.dismiss()
         }

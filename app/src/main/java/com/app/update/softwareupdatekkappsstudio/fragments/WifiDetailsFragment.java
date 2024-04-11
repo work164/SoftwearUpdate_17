@@ -2,7 +2,6 @@ package com.app.update.softwareupdatekkappsstudio.fragments;
 
 import static android.content.Context.CLIPBOARD_SERVICE;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -12,7 +11,6 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -110,20 +108,6 @@ public class WifiDetailsFragment extends Fragment {
                     bottomNavView.setVisibility(View.VISIBLE);
                 }
 
-                // Get the FragmentManager
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new WifiFragment());
-//                FragmentManager fragmentManager = getFragmentManager();
-////                fragmentManager.beginTransaction().add(R.id.fragmentContainer, new WifiFragment());
-//
-//                // Check if there is a fragment in the back stack
-//                if (fragmentManager.getBackStackEntryCount() > 0) {
-//                    // Pop the back stack to return to the previous fragment
-//                    fragmentManager.popBackStack();
-//                } else {
-//                    Toast.makeText(getActivity(), "Please Wait", Toast.LENGTH_SHORT).show();
-//                    // Handle the case where there is no fragment in the back stack
-//                    // For example, you might want to display a message to the user
-//                }
                 FragmentManager fragmentManager = getFragmentManager();
 
                 // Check if there is a fragment in the back stack

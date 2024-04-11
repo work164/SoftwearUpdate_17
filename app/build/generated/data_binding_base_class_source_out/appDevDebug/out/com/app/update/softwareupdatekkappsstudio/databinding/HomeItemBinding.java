@@ -26,11 +26,15 @@ public final class HomeItemBinding implements ViewBinding {
   @NonNull
   public final TextView homeText1;
 
+  @NonNull
+  public final TextView itemCount;
+
   private HomeItemBinding(@NonNull ConstraintLayout rootView, @NonNull ShapeableImageView homeImage,
-      @NonNull TextView homeText1) {
+      @NonNull TextView homeText1, @NonNull TextView itemCount) {
     this.rootView = rootView;
     this.homeImage = homeImage;
     this.homeText1 = homeText1;
+    this.itemCount = itemCount;
   }
 
   @Override
@@ -72,7 +76,13 @@ public final class HomeItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new HomeItemBinding((ConstraintLayout) rootView, homeImage, homeText1);
+      id = R.id.itemCount;
+      TextView itemCount = ViewBindings.findChildViewById(rootView, id);
+      if (itemCount == null) {
+        break missingId;
+      }
+
+      return new HomeItemBinding((ConstraintLayout) rootView, homeImage, homeText1, itemCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,30 +1,34 @@
 package com.app.update.softwareupdatekkappsstudio.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.util.Log
-import android.widget.FrameLayout
-import android.widget.TextView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
-import com.app.update.softwareupdatekkappsstudio.IntroActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
-import com.app.update.softwareupdatekkappsstudio.ads.LoadAndShowAds.loadNativeLow
+import com.app.update.softwareupdatekkappsstudio.databinding.FragmentPrivacyBinding
 
 
-class PrivacyFragment : AppCompatActivity() {
+class PrivacyFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_privacy)
-        findViewById<AppCompatButton>(R.id.accept_btn).setOnClickListener {
-            startActivity(Intent(this, IntroActivity::class.java))
-            finish()
+
+    private lateinit var binding: FragmentPrivacyBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentPrivacyBinding.inflate(inflater, container, false)
+
+        binding.acceptBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_privacyFragment_to_introFragment)
         }
         val fullText = "By Continuing, You agree to terms of service and\nPrivacy Policy"
         val spannable = SpannableString(fullText)
@@ -33,31 +37,28 @@ class PrivacyFragment : AppCompatActivity() {
         val startPrivacy = fullText.indexOf("Privacy Policy")
         val endPrivacy = startPrivacy + "Privacy Policy".length
         spannable.setSpan(
-            ForegroundColorSpan(ContextCompat.getColor(this, R.color.link_color)),
+            ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.link_color)),
             startTerm,
             endTerm,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         spannable.setSpan(
-            ForegroundColorSpan(ContextCompat.getColor(this, R.color.link_color)),
+            ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.link_color)),
             startPrivacy,
             endPrivacy,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-        findViewById<TextView>(R.id.privacyText)?.text = spannable
-        onBackPressedDispatcher.addCallback(
+        binding.privacyText.text = spannable
+        requireActivity().onBackPressedDispatcher.addCallback(
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     Log.d("onBackPressed", "Privacy: ")
                 }
 
             })
-        loadNativeLow(
-            findViewById<FrameLayout>(R.id.privacyNativeAd),
-            getString(R.string.native_id),
-            true
-        )
 
+
+        return binding.root
     }
 
 

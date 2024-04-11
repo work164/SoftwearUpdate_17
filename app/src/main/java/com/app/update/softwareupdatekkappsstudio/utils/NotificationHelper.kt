@@ -9,8 +9,8 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
+import com.app.update.softwareupdatekkappsstudio.MainActivity
 import com.app.update.softwareupdatekkappsstudio.R
-import com.app.update.softwareupdatekkappsstudio.StartActivity
 
 
 object NotificationHelper {
@@ -24,7 +24,7 @@ object NotificationHelper {
         notificationManager =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         mBuilder = NotificationCompat.Builder(context.applicationContext, "notify_001")
-        val intent = Intent(context, StartActivity::class.java)
+        val intent = Intent(context, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent =
             PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)

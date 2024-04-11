@@ -15,6 +15,13 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="accelerometer">Accelerometer</string>
+    <string name="privacu_link">https://unseenmessage.blogspot.com/2023/09/app-updater-privacy-policy.html</string>
+    <string name="lets_update_mobile_software">Lets Update Mobile Software</string>
+    <string name="start">START</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="change_language">Change Language</string>
+    <string name="continue_language">Continue</string>
 
 
     <string-array name="size_array">

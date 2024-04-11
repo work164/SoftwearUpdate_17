@@ -2,10 +2,8 @@ package com.app.update.softwareupdatekkappsstudio
 
 import android.app.Application
 import android.util.Log
-import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.database.WordRepository
 import com.app.update.softwareupdatekkappsstudio.database.WordRoomDatabase
-import com.sample.adsdk.open_app_ad.OpenAppAd
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 

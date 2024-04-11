@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clLanguageItem"
+    android:layout_width="@dimen/_80sdp"
+    android:layout_height="@dimen/_80sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/vSelectedItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ifvLanguageIcon"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/flage_english"
+        app:layout_constraintBottom_toTopOf="@+id/tvCountryName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- <TextView
+         android:id="@+id/tvLanguageName"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="@dimen/_10sdp"
+         android:text="@string/app_name"
+         android:textColor="@color/gray"
+         android:textSize="@dimen/_16sdp"
+         app:layout_constraintBottom_toTopOf="@+id/tvCountryName"
+         app:layout_constraintStart_toEndOf="@id/ifvLanguageIcon"
+         app:layout_constraintTop_toTopOf="parent" />
+ -->
+    <TextView
+        android:id="@+id/tvCountryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/grayDark"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ifvLanguageIcon"
+        app:layout_constraintStart_toStartOf="@+id/ifvLanguageIcon"
+        app:layout_constraintTop_toBottomOf="@+id/ifvLanguageIcon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

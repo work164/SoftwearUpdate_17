@@ -28,7 +28,7 @@ class SystemAdapter(private var mList: ArrayList<SystemModel>,val context: Conte
         val sizeValue= holder.itemView.findViewById<TextView>(R.id.sizeMb)
         val dateCheck = holder.itemView.findViewById<TextView>(R.id.date)
         val checkButton = holder.itemView.findViewById<Button>(R.id.checkMove)
-        image.setImageResource(systemModel.image)
+//        image.setImageResource(systemModel.image)
         allVideo.text = systemModel.appName
         sizeValue.text = systemModel.appSize
         dateCheck.text = systemModel.appDate

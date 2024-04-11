@@ -12,23 +12,18 @@ import android.provider.Settings
 import android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
 import android.util.Log
 import android.view.View
-import android.widget.CheckBox
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
-import com.app.update.softwareupdatekkappsstudio.database.Word
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModel
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
+import com.app.update.softwareupdatekkappsstudio.fragments.DatePickerFragment
+import com.app.update.softwareupdatekkappsstudio.fragments.TimePickerFragment
 import com.app.update.softwareupdatekkappsstudio.listeners.OnDateSet
 import com.app.update.softwareupdatekkappsstudio.listeners.OnTimeSet
-import com.app.update.softwareupdatekkappsstudio.model.AlarmData
-import com.app.update.softwareupdatekkappsstudio.utils.scheduleAlarm
-import com.google.gson.Gson
 import java.util.*
 
 
@@ -43,11 +38,11 @@ class MainActivity : AppCompatActivity() {
     var year: Int = -1
     var month: Int = -1
     var day: Int = -1
-    private var setAlarmButton: AppCompatButton? = null
-    var dateButton: TextView? = null
-    var timeButton: TextView? = null
-    private var alarmNameEdiText: TextView? = null
-    private var isRepeatedCheckBox: CheckBox? = null
+//    private var setAlarmButton: AppCompatButton? = null
+//    var dateButton: TextView? = null
+//    var timeButton: TextView? = null
+//    private var alarmNameEdiText: TextView? = null
+//    private var isRepeatedCheckBox: CheckBox? = null
 
     val resultLauncher =
         registerForActivityResult(StartActivityForResult()) { result ->
@@ -61,18 +56,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        setAlarmButton = findViewById(R.id.setAlarmButton)
-        dateButton = findViewById(R.id.dateButton)
-        timeButton = findViewById(R.id.timeButton)
-        alarmNameEdiText = findViewById(R.id.alarmNameEdiText)
-        isRepeatedCheckBox = findViewById(R.id.isRepeatedCheckBox)
-        setAlarmButton?.setOnClickListener {
-
-            val word = Word("reply")
-            wordViewModel.insert(word)
-
-          //  setAlarm()
-        }
+//        setAlarmButton = findViewById(R.id.setAlarmButton)
+//        dateButton = findViewById(R.id.dateButton)
+//        timeButton = findViewById(R.id.timeButton)
+//        alarmNameEdiText = findViewById(R.id.alarmNameEdiText)
+//        isRepeatedCheckBox = findViewById(R.id.isRepeatedCheckBox)
+//        setAlarmButton?.setOnClickListener {
+//
+//            val word = Word("reply")
+//            wordViewModel.insert(word)
+//
+//          //  setAlarm()
+//        }
         //show dialog for request work in background and over lay
         requestAlertPermission()
 
@@ -91,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 this@MainActivity.day = day
                 this@MainActivity.month = month
                 this@MainActivity.year = year
-                dateButton?.text = "${year}/${month}/${day}"
+              //  dateButton?.text = "${year}/${month}/${day}"
             }
         }).show(supportFragmentManager, "datePicker")
     }
@@ -101,7 +96,7 @@ class MainActivity : AppCompatActivity() {
             override fun pickedTime(hoursOfDay: Int, minutes: Int) {
                 this@MainActivity.hour = hoursOfDay
                 this@MainActivity.minute = minutes
-                timeButton?.text = "$hoursOfDay : $minutes"
+              //  timeButton?.text = "$hoursOfDay : $minutes"
             }
         }).show(supportFragmentManager, "timePicker")
     }
@@ -121,21 +116,21 @@ class MainActivity : AppCompatActivity() {
         newCalendar[Calendar.MINUTE] = minute
         newCalendar[Calendar.SECOND] = 0
         newCalendar[Calendar.MILLISECOND] = 0
-
-        val alarm = AlarmData(
-            alarm_id = 52,
-            time = newCalendar.time.time,
-            repeated = isRepeatedCheckBox?.isChecked?:return,
-            name = alarmNameEdiText?.text.toString()
-        )
+//
+//        val alarm = AlarmData(
+//            alarm_id = 52,
+//            time = newCalendar.time.time,
+//            repeated = isRepeatedCheckBox?.isChecked?:return,
+//            name = alarmNameEdiText?.text.toString()
+//        )
 
         val sharedPref = getSharedPreferences(
             getString(R.string.preference_file_key), Context.MODE_PRIVATE
         )
 
-        sharedPref.edit().putString("alarm_details", Gson().toJson(alarm)).apply()
+    //    sharedPref.edit().putString("alarm_details", Gson().toJson(alarm)).apply()
 
-        scheduleAlarm(this, alarm)
+     //   scheduleAlarm(this, alarm)
     }
 
     private fun requestAlertPermission() {

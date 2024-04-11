@@ -4,14 +4,10 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.app.update.softwareupdatekkappsstudio.R;
@@ -21,42 +17,20 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final AppCompatEditText alarmNameEdiText;
+  public final FragmentContainerView navHostFragment;
 
-  @NonNull
-  public final Button dateButton;
-
-  @NonNull
-  public final CheckBox isRepeatedCheckBox;
-
-  @NonNull
-  public final TextView nextAlarmTime;
-
-  @NonNull
-  public final AppCompatButton setAlarmButton;
-
-  @NonNull
-  public final Button timeButton;
-
-  private ActivityMainBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatEditText alarmNameEdiText, @NonNull Button dateButton,
-      @NonNull CheckBox isRepeatedCheckBox, @NonNull TextView nextAlarmTime,
-      @NonNull AppCompatButton setAlarmButton, @NonNull Button timeButton) {
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull FragmentContainerView navHostFragment) {
     this.rootView = rootView;
-    this.alarmNameEdiText = alarmNameEdiText;
-    this.dateButton = dateButton;
-    this.isRepeatedCheckBox = isRepeatedCheckBox;
-    this.nextAlarmTime = nextAlarmTime;
-    this.setAlarmButton = setAlarmButton;
-    this.timeButton = timeButton;
+    this.navHostFragment = navHostFragment;
   }
 
   @Override
   @NonNull
-  public LinearLayoutCompat getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -81,44 +55,13 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.alarmNameEdiText;
-      AppCompatEditText alarmNameEdiText = ViewBindings.findChildViewById(rootView, id);
-      if (alarmNameEdiText == null) {
+      id = R.id.nav_host_fragment;
+      FragmentContainerView navHostFragment = ViewBindings.findChildViewById(rootView, id);
+      if (navHostFragment == null) {
         break missingId;
       }
 
-      id = R.id.dateButton;
-      Button dateButton = ViewBindings.findChildViewById(rootView, id);
-      if (dateButton == null) {
-        break missingId;
-      }
-
-      id = R.id.isRepeatedCheckBox;
-      CheckBox isRepeatedCheckBox = ViewBindings.findChildViewById(rootView, id);
-      if (isRepeatedCheckBox == null) {
-        break missingId;
-      }
-
-      id = R.id.nextAlarmTime;
-      TextView nextAlarmTime = ViewBindings.findChildViewById(rootView, id);
-      if (nextAlarmTime == null) {
-        break missingId;
-      }
-
-      id = R.id.setAlarmButton;
-      AppCompatButton setAlarmButton = ViewBindings.findChildViewById(rootView, id);
-      if (setAlarmButton == null) {
-        break missingId;
-      }
-
-      id = R.id.timeButton;
-      Button timeButton = ViewBindings.findChildViewById(rootView, id);
-      if (timeButton == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((LinearLayoutCompat) rootView, alarmNameEdiText, dateButton,
-          isRepeatedCheckBox, nextAlarmTime, setAlarmButton, timeButton);
+      return new ActivityMainBinding((ConstraintLayout) rootView, navHostFragment);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

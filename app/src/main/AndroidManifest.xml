@@ -42,37 +42,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewSoftware"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".Settings"
-            android:exported="false" />
-        <activity
-            android:name=".IntroActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".WifiDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".practice.WifiActivity"
-            android:exported="true"
             android:screenOrientation="portrait" />
+
         <activity
-            android:name=".StartActivity"
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AlarmActivity" />
+        <activity
+            android:name="com.app.update.softwareupdatekkappsstudio.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
-        <activity
-            android:name=".HomeActivity"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-        <activity android:name=".fragments.PrivacyFragment" />
-        <activity android:name=".AlarmActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -89,6 +84,7 @@
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
             </intent-filter>
         </receiver>
+
 
         <service
             android:name=".info.AlarmsForegroundService"

@@ -27,7 +27,10 @@ public final class FragmentSystemAppBinding implements ViewBinding {
   public final AppBarLayout actionBar;
 
   @NonNull
-  public final ImageFilterView back;
+  public final TextView appMainText;
+
+  @NonNull
+  public final ImageFilterView backHome;
 
   @NonNull
   public final ImageView btnInAppForward;
@@ -42,12 +45,13 @@ public final class FragmentSystemAppBinding implements ViewBinding {
   public final View viewSystem;
 
   private FragmentSystemAppBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView back,
-      @NonNull ImageView btnInAppForward, @NonNull RecyclerView recyclerView,
-      @NonNull TextView totalCount, @NonNull View viewSystem) {
+      @NonNull AppBarLayout actionBar, @NonNull TextView appMainText,
+      @NonNull ImageFilterView backHome, @NonNull ImageView btnInAppForward,
+      @NonNull RecyclerView recyclerView, @NonNull TextView totalCount, @NonNull View viewSystem) {
     this.rootView = rootView;
     this.actionBar = actionBar;
-    this.back = back;
+    this.appMainText = appMainText;
+    this.backHome = backHome;
     this.btnInAppForward = btnInAppForward;
     this.recyclerView = recyclerView;
     this.totalCount = totalCount;
@@ -87,9 +91,15 @@ public final class FragmentSystemAppBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.back;
-      ImageFilterView back = ViewBindings.findChildViewById(rootView, id);
-      if (back == null) {
+      id = R.id.appMainText;
+      TextView appMainText = ViewBindings.findChildViewById(rootView, id);
+      if (appMainText == null) {
+        break missingId;
+      }
+
+      id = R.id.backHome;
+      ImageFilterView backHome = ViewBindings.findChildViewById(rootView, id);
+      if (backHome == null) {
         break missingId;
       }
 
@@ -117,8 +127,8 @@ public final class FragmentSystemAppBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSystemAppBinding((ConstraintLayout) rootView, actionBar, back,
-          btnInAppForward, recyclerView, totalCount, viewSystem);
+      return new FragmentSystemAppBinding((ConstraintLayout) rootView, actionBar, appMainText,
+          backHome, btnInAppForward, recyclerView, totalCount, viewSystem);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

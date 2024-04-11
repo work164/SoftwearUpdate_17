@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
 import com.app.update.softwareupdatekkappsstudio.R
-import com.app.update.softwareupdatekkappsstudio.ads.LoadAndShowAds.loadNativeLowWithOutMedia
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ExitDialogFragment : BottomSheetDialogFragment() {
@@ -29,7 +28,6 @@ class ExitDialogFragment : BottomSheetDialogFragment() {
         val yesButton = view.findViewById<Button>(R.id.yes_button)
         val noButton = view.findViewById<Button>(R.id.no_button)
         val nativeExit = view.findViewById<FrameLayout>(R.id.flNativeExit)
-        requireActivity().loadNativeLowWithOutMedia(nativeExit, getString(R.string.native_id), true)
         dialog?.window?.setLayout(
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT
