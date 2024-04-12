@@ -24,6 +24,10 @@ class IntroFragment : Fragment() {
     private lateinit var binding: FragmentIntroBinding
 
 
+
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -117,7 +121,7 @@ class IntroFragment : Fragment() {
                 }
 
                 override fun onPageSelected(position: Int) {
-                    if (position < 2) {
+                    if (position < 3) {
                         binding.btnNext.text = "Next"
                     } else {
                         binding.btnNext.text = "Let’s Start"

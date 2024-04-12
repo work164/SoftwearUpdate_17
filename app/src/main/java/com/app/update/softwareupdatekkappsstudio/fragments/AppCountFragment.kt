@@ -11,7 +11,9 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.update.softwareupdatekkappsstudio.AppInfo
@@ -31,6 +33,10 @@ class AppCountFragment : Fragment() {
     private val appsList: MutableList<AppInfo> = ArrayList()
     private var appsAdapter: AppsAdapter? = null
 
+
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,6 +48,17 @@ class AppCountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+
+                }
+            })
+
         textView = view.findViewById(R.id.textView)
         loadingApps = view.findViewById(R.id.loadingApps)
         appsRecyclerView = view.findViewById(R.id.appsRecyclerView)

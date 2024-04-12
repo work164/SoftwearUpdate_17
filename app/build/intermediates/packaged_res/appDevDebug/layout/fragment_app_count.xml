@@ -7,6 +7,10 @@
     android:background="@color/item_gray"
     tools:context=".fragments.AppCountFragment">
 
+
+
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

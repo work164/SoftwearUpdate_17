@@ -61,6 +61,7 @@
     <string name="project_id" translatable="false">software-updater-236e5</string>
     <string name="public_ip_address">Ip Address</string>
     <string name="skip">Skip</string>
+    <string name="software_update">Software Update</string>
     <string name="start">START</string>
     <string name="your_ip"><ns2:g example="192.168.0.1" id="ip">%s</ns2:g></string>
     <string name="your_ip_na">N/A</string>

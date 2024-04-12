@@ -13,7 +13,6 @@ class FragmentSettings : Fragment() {
 
     private var settingsBinding: FragmentSettingsBinding? = null
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,

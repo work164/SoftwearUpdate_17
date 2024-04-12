@@ -2,20 +2,17 @@ package com.app.update.softwareupdatekkappsstudio.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.app.update.softwareupdatekkappsstudio.R
-import com.app.update.softwareupdatekkappsstudio.databinding.HomeItemBinding
-import com.app.update.softwareupdatekkappsstudio.databinding.ItemLanguageBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.ItemHomeBinding
+import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.model.HomeViewModel
-import com.bumptech.glide.Glide
 
-class HomeAdapter(val context: Context, private var mList:ArrayList<HomeViewModel>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(val context: Context, private var mList:ArrayList<HomeViewModel>,val homeClick: HomeClick) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        HomeItemBinding.inflate(LayoutInflater.from(context), parent, false).apply {
+        ItemHomeBinding.inflate(LayoutInflater.from(context), parent, false).apply {
             return ViewHolder(this)
         }
     }
@@ -30,6 +27,9 @@ class HomeAdapter(val context: Context, private var mList:ArrayList<HomeViewMode
             homeImage.setImageResource(homeModel.image)
             homeText1.text = homeModel.featureName
             itemCount.text = homeModel.text
+            holder.itemView.setOnClickListener {
+                homeClick.onItemClick(homeModel.featureName,position)
+            }
 
 
         }
@@ -37,7 +37,7 @@ class HomeAdapter(val context: Context, private var mList:ArrayList<HomeViewMode
 
     }
 
-    inner class ViewHolder(val binding: HomeItemBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(val binding: ItemHomeBinding) : RecyclerView.ViewHolder(binding.root)
 
 
 }

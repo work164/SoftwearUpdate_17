@@ -22,6 +22,7 @@
     <string name="next">Next</string>
     <string name="change_language">Change Language</string>
     <string name="continue_language">Continue</string>
+    <string name="software_update">Software Update</string>
 
 
     <string-array name="size_array">

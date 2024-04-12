@@ -8,6 +8,10 @@
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\home_item.xml"
     },
     {
+        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\item_home.xml",
+        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\item_home.xml"
+    },
+    {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_battery_info.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_battery_info.xml"
     },
@@ -32,28 +36,40 @@
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_onboarding.xml"
     },
     {
-        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\dialog_rate_us.xml",
-        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\dialog_rate_us.xml"
-    },
-    {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_pro.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_pro.xml"
     },
     {
-        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_wifi.xml",
-        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_wifi.xml"
+        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\dialog_rate_us.xml",
+        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\dialog_rate_us.xml"
+    },
+    {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:/layout/fragment_restore_apps.xml",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-102:/layout/fragment_restore_apps.xml"
     },
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_device_info.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_device_info.xml"
     },
     {
+        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_wifi.xml",
+        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_wifi.xml"
+    },
+    {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\nav_header_drawer.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\nav_header_drawer.xml"
     },
     {
+        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_app_usage.xml",
+        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_app_usage.xml"
+    },
+    {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\system_app.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\system_app.xml"
+    },
+    {
+        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_app_details.xml",
+        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_app_details.xml"
     },
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\activity_main.xml",
@@ -68,12 +84,12 @@
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_android_version.xml"
     },
     {
-        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\native_with_out_media.xml",
-        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\native_with_out_media.xml"
-    },
-    {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\activity_alarm.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\activity_alarm.xml"
+    },
+    {
+        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\native_with_out_media.xml",
+        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\native_with_out_media.xml"
     },
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\loading_ad.xml",
@@ -116,12 +132,12 @@
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\fragment_android_update.xml"
     },
     {
-        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\activity_settings.xml",
-        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\activity_settings.xml"
-    },
-    {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\item_app_setting_info.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\item_app_setting_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\activity_settings.xml"
     },
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\fragment_settings.xml",
@@ -142,10 +158,6 @@
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\native_ad_layout_old.xml",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-102:\\layout\\native_ad_layout_old.xml"
-    },
-    {
-        "merged": "com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:/layout/fragment_home.xml",
-        "source": "com.app.update.softwareupdatekkappsstudio.app-main-102:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-mergeAppDevDebugResources-97:\\layout\\activity_main_try.xml",

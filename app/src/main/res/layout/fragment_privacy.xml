@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".fragments.PrivacyFragment">
 
+
+
+
+
     <ImageView
         android:id="@+id/topImageView"
         android:layout_width="match_parent"

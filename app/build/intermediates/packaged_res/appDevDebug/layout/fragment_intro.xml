@@ -8,6 +8,10 @@
     tools:context=".fragments.IntroFragment">
 
 
+
+
+
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="0dp"

@@ -7,6 +7,10 @@
     android:background="@color/item_gray"
     tools:context=".practice.WifiActivity">
 
+
+
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"

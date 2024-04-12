@@ -19,6 +19,11 @@ import com.app.update.softwareupdatekkappsstudio.databinding.FragmentPrivacyBind
 class PrivacyFragment : Fragment() {
 
 
+
+
+
+
+
     private lateinit var binding: FragmentPrivacyBinding
 
     override fun onCreateView(

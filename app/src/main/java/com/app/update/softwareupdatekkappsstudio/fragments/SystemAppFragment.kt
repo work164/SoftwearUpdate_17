@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentSystemAppBinding
 import com.app.update.softwareupdatekkappsstudio.model.SystemModel
 import java.io.File
@@ -22,10 +24,27 @@ class SystemAppFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
+
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+
+                }
+            })
+
+
         binding = FragmentSystemAppBinding.inflate(inflater,container,false)
         return binding.root
     }
