@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,6 +50,9 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
   public final ConstraintLayout proximity;
 
   @NonNull
+  public final FrameLayout sensorNativeAdOrBanner;
+
+  @NonNull
   public final ConstraintLayout total;
 
   @NonNull
@@ -59,8 +63,8 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
       @NonNull ImageView btnInAppForwardDevice, @NonNull ConstraintLayout compass,
       @NonNull ConstraintLayout excel, @NonNull ConstraintLayout gyro,
       @NonNull ConstraintLayout light1, @NonNull ConstraintLayout magneto,
-      @NonNull ConstraintLayout proximity, @NonNull ConstraintLayout total,
-      @NonNull View viewSystem) {
+      @NonNull ConstraintLayout proximity, @NonNull FrameLayout sensorNativeAdOrBanner,
+      @NonNull ConstraintLayout total, @NonNull View viewSystem) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.backDevice = backDevice;
@@ -71,6 +75,7 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
     this.light1 = light1;
     this.magneto = magneto;
     this.proximity = proximity;
+    this.sensorNativeAdOrBanner = sensorNativeAdOrBanner;
     this.total = total;
     this.viewSystem = viewSystem;
   }
@@ -156,6 +161,12 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.sensorNativeAdOrBanner;
+      FrameLayout sensorNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (sensorNativeAdOrBanner == null) {
+        break missingId;
+      }
+
       id = R.id.total;
       ConstraintLayout total = ViewBindings.findChildViewById(rootView, id);
       if (total == null) {
@@ -169,8 +180,8 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
       }
 
       return new FragmentSensorInfoBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, compass, excel, gyro, light1, magneto, proximity, total,
-          viewSystem);
+          btnInAppForwardDevice, compass, excel, gyro, light1, magneto, proximity,
+          sensorNativeAdOrBanner, total, viewSystem);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

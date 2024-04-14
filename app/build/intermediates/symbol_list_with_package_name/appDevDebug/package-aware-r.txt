@@ -239,6 +239,7 @@ attr boxStrokeErrorColor
 attr boxStrokeWidth
 attr boxStrokeWidthFocused
 attr brightness
+attr buildType
 attr buttonBarButtonStyle
 attr buttonBarNegativeButtonStyle
 attr buttonBarNeutralButtonStyle
@@ -650,6 +651,7 @@ attr foregroundInsidePadding
 attr framePosition
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
+attr gnt_template_type
 attr goIcon
 attr graph
 attr guidelineUseRtl
@@ -693,6 +695,7 @@ attr imagePanX
 attr imagePanY
 attr imageRotate
 attr imageZoom
+attr image_tint_color
 attr indeterminateAnimationType
 attr indeterminateProgressStyle
 attr indicatorColor
@@ -842,6 +845,7 @@ attr listPreferredItemPaddingEnd
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
+attr loading_ad_dialog_bg
 attr logo
 attr logoAdjustViewBounds
 attr logoDescription
@@ -994,6 +998,8 @@ attr motion_postLayoutCollision
 attr motion_triggerOnCollision
 attr moveWhenScrollAtTop
 attr multiChoiceItemLayout
+attr native_ad_height
+attr native_ad_id
 attr navGraph
 attr navigationContentDescription
 attr navigationIcon
@@ -1135,6 +1141,14 @@ attr selectableItemBackgroundBorderless
 attr selectedDotColor
 attr selectionRequired
 attr selectorSize
+attr setActionButtonBackground
+attr setActionButtonTextColor
+attr setAdTextBackground
+attr setAdTextColor
+attr setBodyTextColor
+attr setBottomBorder
+attr setTitleTextColor
+attr setTopBorder
 attr setsTag
 attr shapeAppearance
 attr shapeAppearanceCornerExtraLarge
@@ -1560,10 +1574,14 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color earned_coin_color
 color error_color_material_dark
 color error_color_material_light
+color fcm_black
+color fcm_white
 color foreground_material_dark
 color foreground_material_light
+color get_started_button
 color gray
 color grayDark
 color green_main
@@ -2210,6 +2228,9 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_200
+color purple_500
+color purple_700
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -2222,6 +2243,8 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color teal_200
+color teal_700
 color textcolor
 color tooltip_background_dark
 color tooltip_background_light
@@ -3877,6 +3900,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable aboutus
+drawable ad_bg
 drawable add_background_home
 drawable admob_close_button_black_circle_white_cross
 drawable admob_close_button_white_circle_black_cross
@@ -3891,6 +3915,7 @@ drawable baseline_adb_24
 drawable bg_app_usage_selected
 drawable bg_app_usage_un_selected
 drawable bg_bottom_navigation
+drawable btn_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3929,6 +3954,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dialogue_bg_ad
 drawable dot_active
 drawable dot_background
 drawable dot_inactive
@@ -3963,6 +3989,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_close
 drawable ic_device_icon
 drawable ic_device_info
 drawable ic_frag1
@@ -3985,6 +4012,7 @@ drawable ic_home_wifi
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_launcher_round
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -4080,10 +4108,12 @@ drawable notification_oversize_large_icon_bg
 drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
+drawable notify_icon
 drawable notify_panel_notification_icon_bg
 drawable offline_dialog_background
 drawable offline_dialog_default_icon_42dp
 drawable onboarding_nxtbtn
+drawable privacy_btn_bg
 drawable privacypolicy
 drawable pro_icon
 drawable rateus
@@ -4223,15 +4253,14 @@ id action_text
 id action_wifi_to_wifiDetailFragment
 id actions
 id activity_chooser_view_content
-id ad_advertiser
+id ad
 id ad_app_icon
 id ad_body
 id ad_call_to_action
 id ad_frame
 id ad_headline
-id ad_icon
 id ad_media
-id ad_text
+id ad_stars
 id add
 id adjust_height
 id adjust_width
@@ -4244,6 +4273,7 @@ id allStates
 id always
 id androidUpdateFragment
 id androidVersionFragment
+id androidVersionsNativeAdOrBanner
 id androidx_compose_ui_view_composition_context
 id androidx_window_activity_scope
 id animateToEnd
@@ -4254,11 +4284,13 @@ id antiClockwise
 id anticipate
 id appCounterFragment
 id appDetailFragment
+id appDetailsNativeAdOrBanner
 id appIcon
 id appName
 id appProFragment
 id appUninstallFragment
 id appUsageFragment
+id appUsageNativeAdOrBanner
 id appsRecyclerView
 id arc
 id asConfigured
@@ -4270,7 +4302,6 @@ id autoCompleteToStart
 id automatic
 id availableAppsUpdateFragment
 id backDevice
-id backIcon
 id backImage
 id backbtnDrawer
 id banner_body
@@ -4281,6 +4312,7 @@ id banner_title
 id barrier
 id baseline
 id batteryInfoFragment
+id batteryNativeAdOrBanner
 id beginOnFirstDraw
 id beginning
 id bestChoice
@@ -4390,6 +4422,7 @@ id deviceInformationFragment
 id deviceManufacture
 id deviceModel
 id deviceName
+id deviceNativeAdOrBanner
 id deviceStatus
 id deviceTemperature
 id dialog_button
@@ -4446,7 +4479,6 @@ id fitStart
 id fitToContents
 id fitXY
 id fixed
-id flNativeContainer
 id flNativeExit
 id flip
 id floating
@@ -4454,6 +4486,7 @@ id focusCrop
 id forever
 id fragmentContainer
 id fragment_container_view_tag
+id frameLayout
 id frost
 id fullscreen_header
 id ghost_view
@@ -4495,6 +4528,7 @@ id home_text1
 id honorRequest
 id horizontal_only
 id icon
+id iconLayout
 id iconUpdate
 id iconView
 id icon_group
@@ -4522,17 +4556,23 @@ id indeterminate
 id indicatorLayout
 id info
 id inspection_slot_table_set
+id installAppsNativeAdOrBanner
 id introFragment
+id introNativeAdOrBanner
 id invisible
 id inward
 id is_pooling_container_tag
 id italic
 id itemCount
 id item_touch_helper_previous_elevation
+id ivAdIcon
+id ivNotificationIcon
+id ivNotificationImage
 id jumpToEnd
 id jumpToStart
 id labeled
 id languageFragment
+id languageNativeOrBanner
 id layout
 id left
 id leftToRight
@@ -4544,7 +4584,6 @@ id line3
 id linear
 id listMode
 id list_item
-id llBannerCollapesLanguages
 id llDuration
 id loadingAdCard
 id loadingAdProgress
@@ -4633,6 +4672,11 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nativeAdScan
+id nativeAdView
+id nativeMain
+id nativeMainBottom
+id nativeSplash
+id nativeSplashBottom
 id nav_android
 id nav_app
 id nav_controller_view_tag
@@ -4706,9 +4750,10 @@ id postLayout
 id pressed
 id primary_button
 id privacyFragment
-id privacyNativeAd
+id privacyNativeAdOrBanner
 id privacyText
 id progressBar
+id progressBar2
 id progress_circular
 id progress_horizontal
 id proximity
@@ -4721,12 +4766,14 @@ id remain_to_stop
 id report_drawn
 id restart
 id restoreAppsFragment
+id restoreNativeAdOrBanner
 id reverse
 id reverseSawtooth
 id right
 id rightToLeft
 id right_icon
 id right_side
+id root_view
 id rounded
 id row_index_key
 id rtl
@@ -4758,11 +4805,14 @@ id select_dialog_listview
 id selected
 id selection_type
 id sensorFragment
+id sensorNativeAdOrBanner
 id setting
 id settingFragment
+id settingsNativeAdOrBanner
 id settingsbtn
 id sharedValueSet
 id sharedValueUnset
+id shimmerLayout
 id shortcut
 id showCustom
 id showHome
@@ -4810,6 +4860,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id systemAppsFragment
+id systemAppsNativeAdOrBanner
 id systemIcon
 id tabMode
 id tag_accessibility_actions
@@ -4867,10 +4918,10 @@ id toggle
 id toggleWifii
 id toolBar
 id top
-id topActionBar
 id topBannerForHome
 id topImageView
 id topPanel
+id topText
 id total
 id totalUpdateAvailable
 id touch_outside
@@ -4908,6 +4959,8 @@ id tvLastUpdateValue
 id tvLaunches
 id tvNetworkOperator
 id tvNetworkType
+id tvNotificationBody
+id tvNotificationTitle
 id tvScanning
 id tvTextLastUpdate
 id tvThisMonth
@@ -4921,8 +4974,11 @@ id tvWifiMacAddress
 id tvYesterday
 id unchecked
 id uniform
+id uninstallNativeAdOrBanner
 id unlabeled
 id up
+id updateNativeAdOrBanner
+id updatesNativeAdOrBanner
 id useLogo
 id vSelectedItem
 id vertical_only
@@ -5082,6 +5138,7 @@ layout card
 layout card_landscape_inner
 layout card_portrait_inner
 layout custom_dialog
+layout custom_native_add_view
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -5125,6 +5182,7 @@ layout fragment_system_app
 layout fragment_update_available
 layout fragment_wifi
 layout fragment_wifi_details
+layout how_to_use_layout
 layout image
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
@@ -5137,6 +5195,7 @@ layout item_home
 layout item_language
 layout item_system_app
 layout loading_ad
+layout loading_ads_dialog
 layout loading_dialog
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -5191,13 +5250,13 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
-layout native_ad_layout_old
-layout native_ads_main_video
 layout native_with_media
 layout native_with_out_media
 layout nav_header_drawer
 layout notification_action
 layout notification_action_tombstone
+layout notification_layout_collapsed
+layout notification_layout_expanded
 layout notification_media_action
 layout notification_media_cancel_action
 layout notification_template_big_media
@@ -5216,6 +5275,10 @@ layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout shimmer_banner_loading_black
+layout shimmer_banner_loading_white
+layout shimmer_rectangle_loading_black
+layout shimmer_rectangle_loading_white
 layout sp_example
 layout spring_dot_layout
 layout ssp_example
@@ -5265,6 +5328,8 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string accelerometer
 string accept
+string ad
+string ad_
 string admob_banner_id
 string admob_interal
 string admob_splash_fullscreen
@@ -5282,7 +5347,22 @@ string app_usage_fragment_today
 string app_usage_fragment_yesterday
 string app_version
 string appbar_scrolling_view_behavior
+string billing_connection_fail_billing_unavailable
+string billing_connection_fail_developer_error
+string billing_connection_fail_error
+string billing_connection_fail_feature_not_supported
+string billing_connection_fail_item_already_own
+string billing_connection_fail_item_not_own
+string billing_connection_fail_item_unavailable
+string billing_connection_fail_network_error
+string billing_connection_fail_service_disconnected
+string billing_connection_fail_service_unavailable
+string billing_connection_fail_user_cancelled
+string billing_connection_successful
 string billing_product
+string billing_service_disconnected
+string billing_setup_finished
+string billing_unavailable
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand
@@ -5332,11 +5412,16 @@ string copy_toast_msg
 string default_error_message
 string default_popup_window_title
 string dest_title
+string developer_error
 string device_info
 string dropdown_menu
 string env_dev
+string error
 string error_a11y_label
+string error_cancelling_subs
 string error_icon_content_description
+string error_in_purchase
+string error_in_purchasse
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -5344,6 +5429,7 @@ string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
 string fcm_fallback_notification_channel_label
+string feature_not_supported
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -5352,12 +5438,17 @@ string google_storage_bucket
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string in_app_purchased
 string in_progress
 string indeterminate
 string installed_apps
+string item_already_owned
+string item_not_owner
+string item_unavailable
 string item_view_role_description
 string last_update
 string lets_update_mobile_software
+string loading_ad
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -5468,12 +5559,23 @@ string native_media_view
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string navigation_menu
+string network_error
 string next
+string no_old_subs_found
+string no_product_detail_found
+string no_product_found_against_inapp_key
+string no_product_found_against_new_product_key
+string no_purchase_detail_found
+string no_purchase_found
+string no_purchase_record_found
+string no_sub_found_against_sub_key
+string not_purchasing_already_purchasing
 string not_selected
 string notifications_permission_confirm
 string notifications_permission_decline
 string notifications_permission_title
 string off
+string offer_token_details_missing
 string offline_dialog_image_description
 string offline_dialog_text
 string offline_notification_title
@@ -5481,6 +5583,7 @@ string offline_opt_in_confirm
 string offline_opt_in_decline
 string offline_opt_in_message
 string offline_opt_in_title
+string old_product_should_be_subs
 string on
 string open
 string password_toggle_content_description
@@ -5491,8 +5594,16 @@ string path_password_strike_through
 string policy_text
 string preference_file_key
 string privacu_link
+string product_type_should_subs
+string products_found_against_inapp_key
+string products_found_against_subs_key
 string project_id
 string public_ip_address
+string purchase_consumed_fail
+string purchase_consumed_success
+string purchase_fail
+string purchase_pending
+string purchase_success
 string range_end
 string range_start
 string restore_apps
@@ -5510,6 +5621,8 @@ string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string selected
 string sensor
+string service_disconnected
+string service_unavailable
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string skip
@@ -5517,6 +5630,7 @@ string software_update
 string software_update_amp_apps_update
 string start
 string status_bar_notification_info_overflow
+string subscription_purchased
 string switch_role
 string system_update
 string tab
@@ -5524,14 +5638,22 @@ string tedpermission_close
 string tedpermission_confirm
 string tedpermission_setting
 string template_percent
+string time_out
+string todo
+string token_not_found_against_new_product_key
+string token_not_found_against_old_product_key
 string total_update_found
 string uninstalled_apps
+string universal_tv_remote_control
 string update_available
+string update_your_device_software
+string user_cancelled
 string view_on_play_store
 string watermark_label_prefix
 string welcome_to
 string your_ip
 string your_ip_na
+string your_ultimate_smart_tv_amp_ir_devices
 style AdTheme
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -5877,6 +5999,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style RatingBar
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon
@@ -6678,6 +6801,7 @@ style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style circleImageView
+style full_screen_dialog
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -6728,6 +6852,7 @@ styleable ConstraintOverride android_orientation android_id android_visibility a
 styleable ConstraintSet android_orientation android_id android_visibility android_layout_width android_layout_height android_layout_marginLeft android_layout_marginTop android_layout_marginRight android_layout_marginBottom android_maxWidth android_maxHeight android_minWidth android_minHeight android_pivotX android_pivotY android_alpha android_transformPivotX android_transformPivotY android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_layout_marginStart android_layout_marginEnd android_translationZ android_elevation animateCircleAngleTo animateRelativeTo barrierAllowsGoneWidgets barrierDirection barrierMargin chainUseRtl constraintRotate constraint_referenced_ids constraint_referenced_tags deriveConstraintsFrom drawPath flow_firstHorizontalBias flow_firstHorizontalStyle flow_firstVerticalBias flow_firstVerticalStyle flow_horizontalAlign flow_horizontalBias flow_horizontalGap flow_horizontalStyle flow_lastHorizontalBias flow_lastHorizontalStyle flow_lastVerticalBias flow_lastVerticalStyle flow_maxElementsWrap flow_verticalAlign flow_verticalBias flow_verticalGap flow_verticalStyle flow_wrapMode guidelineUseRtl layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBaseline_toBottomOf layout_constraintBaseline_toTopOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTag layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBaseline layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_marginBaseline layout_wrapBehaviorInParent motionProgress motionStagger pathMotionArc pivotAnchor polarRelativeTo quantizeMotionSteps transitionEasing transitionPathRotate
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
+styleable CreateNativeAds buildType loading_ad_dialog_bg native_ad_height native_ad_id setActionButtonBackground setActionButtonTextColor setAdTextBackground setAdTextColor setBodyTextColor setTitleTextColor
 styleable CustomAttribute attributeName customBoolean customColorDrawableValue customColorValue customDimension customFloatValue customIntegerValue customPixelDimension customReference customStringValue methodName
 styleable DialogFragmentNavigator android_name
 styleable DotsIndicator dotsClickable dotsColor dotsCornerRadius dotsElevation dotsSize dotsSpacing dotsWidthFactor progressMode selectedDotColor
@@ -6794,6 +6919,8 @@ styleable MotionLabel android_textSize android_typeface android_textStyle androi
 styleable MotionLayout applyMotionScene currentState layoutDescription motionDebug motionProgress showPaths
 styleable MotionScene defaultDuration layoutDuringTransition
 styleable MotionTelltales telltales_tailColor telltales_tailScale telltales_velocityMode
+styleable MyAdView setBottomBorder setTopBorder
+styleable NativeAdView gnt_template_type
 styleable NavAction android_id destination enterAnim exitAnim launchSingleTop popEnterAnim popExitAnim popUpTo popUpToInclusive popUpToSaveState restoreState
 styleable NavArgument android_name android_defaultValue argType nullable
 styleable NavDeepLink android_autoVerify action mimeType uri
@@ -6832,6 +6959,7 @@ styleable SplitPairFilter primaryActivityName secondaryActivityAction secondaryA
 styleable SplitPairRule clearTop finishPrimaryWithSecondary finishSecondaryWithPrimary splitLayoutDirection splitMinSmallestWidth splitMinWidth splitRatio
 styleable SplitPlaceholderRule placeholderActivityName splitLayoutDirection splitMinSmallestWidth splitMinWidth splitRatio
 styleable SpringDotsIndicator dampingRatio dotsClickable dotsColor dotsCornerRadius dotsSize dotsSpacing dotsStrokeColor dotsStrokeWidth stiffness
+styleable StartPointSeekBar image_tint_color
 styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable

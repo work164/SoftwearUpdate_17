@@ -7,11 +7,6 @@
     android:background="@color/white"
     tools:context=".fragments.IntroFragment">
 
-
-
-
-
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="0dp"
@@ -48,13 +43,13 @@
         android:textSize="15sp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/flNativeContainer"
+        app:layout_constraintBottom_toTopOf="@id/introNativeAdOrBanner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.5" />
 
     <FrameLayout
-        android:id="@+id/flNativeContainer"
+        android:id="@+id/introNativeAdOrBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"

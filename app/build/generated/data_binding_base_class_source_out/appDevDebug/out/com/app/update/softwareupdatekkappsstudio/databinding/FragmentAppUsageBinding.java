@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -27,6 +28,9 @@ public final class FragmentAppUsageBinding implements ViewBinding {
 
   @NonNull
   public final AppBarLayout actionBar;
+
+  @NonNull
+  public final FrameLayout appUsageNativeAdOrBanner;
 
   @NonNull
   public final ImageFilterView backDevice;
@@ -56,13 +60,14 @@ public final class FragmentAppUsageBinding implements ViewBinding {
   public final TextView tvYesterday;
 
   private FragmentAppUsageBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull ImageView btnInAppForwardDevice, @NonNull HorizontalScrollView llDuration,
-      @NonNull ProgressBar progressBar, @NonNull RecyclerView recyclerView,
-      @NonNull TextView tvThisMonth, @NonNull TextView tvThisWeek, @NonNull TextView tvToday,
-      @NonNull TextView tvYesterday) {
+      @NonNull AppBarLayout actionBar, @NonNull FrameLayout appUsageNativeAdOrBanner,
+      @NonNull ImageFilterView backDevice, @NonNull ImageView btnInAppForwardDevice,
+      @NonNull HorizontalScrollView llDuration, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView recyclerView, @NonNull TextView tvThisMonth,
+      @NonNull TextView tvThisWeek, @NonNull TextView tvToday, @NonNull TextView tvYesterday) {
     this.rootView = rootView;
     this.actionBar = actionBar;
+    this.appUsageNativeAdOrBanner = appUsageNativeAdOrBanner;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.llDuration = llDuration;
@@ -104,6 +109,12 @@ public final class FragmentAppUsageBinding implements ViewBinding {
       id = R.id.action_bar;
       AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
       if (actionBar == null) {
+        break missingId;
+      }
+
+      id = R.id.appUsageNativeAdOrBanner;
+      FrameLayout appUsageNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (appUsageNativeAdOrBanner == null) {
         break missingId;
       }
 
@@ -161,9 +172,9 @@ public final class FragmentAppUsageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAppUsageBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, llDuration, progressBar, recyclerView, tvThisMonth, tvThisWeek,
-          tvToday, tvYesterday);
+      return new FragmentAppUsageBinding((ConstraintLayout) rootView, actionBar,
+          appUsageNativeAdOrBanner, backDevice, btnInAppForwardDevice, llDuration, progressBar,
+          recyclerView, tvThisMonth, tvThisWeek, tvToday, tvYesterday);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

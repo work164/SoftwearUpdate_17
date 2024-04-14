@@ -23,9 +23,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentScanAppBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.model.AppModel
+import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.app.update.softwareupdatekkappsstudio.view_model.ViewModelclass
 import com.bumptech.glide.Glide
+import com.example.adssdk.banner_ads.BannerAdUtils
+import com.example.adssdk.constants.AppUtils
+import com.example.adssdk.intertesialAds.InterstitialAdUtils
+import com.example.adssdk.native_ad.NativeAdUtils
 import com.google.android.material.snackbar.Snackbar
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
@@ -51,14 +58,20 @@ class ScanAppFragment : Fragment() {
     var i = 0
     var z = 1
     lateinit var progressDialog: Dialog
+
     companion object {
         val updateAvailableList: ArrayList<AppModel> = ArrayList()
     }
+
     private val blinkAnimation by lazy {
         AnimationUtils.loadAnimation(requireContext(), R.anim.blink_animation)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
@@ -66,8 +79,9 @@ class ScanAppFragment : Fragment() {
                 }
             })
 
-        binding = FragmentScanAppBinding.inflate(inflater, container, false)
 
+        binding = FragmentScanAppBinding.inflate(inflater, container, false)
+        loadAds()
         updateAvailableList.clear()
 
         viewModel = ViewModelProvider(this)[ViewModelclass::class.java]
@@ -99,16 +113,14 @@ class ScanAppFragment : Fragment() {
             }
         }
         thread.start()
-
-        /*   binding?.ifvBack?.setOnClickListener {
-               backPress()
-           }*/
         return binding.root
     }
+
     private fun systemAndDownloadedAppsSeparator() {
 
         allAppList = ArrayList()
-        val flag = PackageManager.GET_META_DATA or PackageManager.GET_SHARED_LIBRARY_FILES or PackageManager.GET_UNINSTALLED_PACKAGES
+        val flag =
+            PackageManager.GET_META_DATA or PackageManager.GET_SHARED_LIBRARY_FILES or PackageManager.GET_UNINSTALLED_PACKAGES
         val listOfAllapps = requireContext().packageManager.getInstalledApplications(flag)
         for (list in listOfAllapps) {
             if (requireContext().packageManager.getLaunchIntentForPackage(list.packageName) != null) {
@@ -125,6 +137,7 @@ class ScanAppFragment : Fragment() {
 
 
     }
+
     private fun checkInternetAvailability(): Boolean {
         try {
             val cm =
@@ -148,15 +161,15 @@ class ScanAppFragment : Fragment() {
                 requireActivity().findViewById(android.R.id.content),
                 e.toString(),
                 Snackbar.LENGTH_LONG
-            )
-                .setActionTextColor(
-                    Color.RED
-                ).show();
+            ).setActionTextColor(
+                Color.RED
+            ).show()
         }
 
 
         return false
     }
+
     private fun backPress() {
         if (checkInternetAvailability()) {
             pause()
@@ -181,6 +194,7 @@ class ScanAppFragment : Fragment() {
         }
 
     }
+
     private fun convertLongToTime(time: Long): String {
 
         val format = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH)
@@ -188,6 +202,7 @@ class ScanAppFragment : Fragment() {
         calendar.timeInMillis = time
         return format.format(calendar.time)
     }
+
     private fun stop() {
 
         exit = true
@@ -195,12 +210,15 @@ class ScanAppFragment : Fragment() {
             onBackWithAd()
         }
     }
+
     private fun pause() {
         wait = true
     }
+
     private fun resume() {
         wait = false
     }
+
     private fun checkUpdate() {
 
         val run = Runnable {
@@ -232,8 +250,9 @@ class ScanAppFragment : Fragment() {
                                     try {
                                         tvUpdateFoundValue.text =
                                             updateAvailableList.size.toString()
-                                        tvCheckingUpdateValue.text = i.toString() + "/" + (allAppList.size - 1)
-                                        checkingUpdate.max = allAppList.size-1
+                                        tvCheckingUpdateValue.text =
+                                            i.toString() + "/" + (allAppList.size - 1)
+                                        checkingUpdate.max = allAppList.size - 1
                                         checkingUpdate.progress = i
 
                                         Glide.with(requireContext()).load(appDataList[i].icon)
@@ -274,6 +293,18 @@ class ScanAppFragment : Fragment() {
 
                     if (isVisible) {
                         findNavController().navigate(R.id.action_scanFragment_to_availableAppsUpdateFragment)
+
+                        InterstitialAdUtils(
+                            requireActivity(),
+                            "fullscreen_scan_app_details"
+                        ).showInterstitialAd(
+                            getString(R.string.admob_splash_fullscreen),
+                            Constants.fullscreen_scan_app_details,
+                            fullScreenAdShow = {},
+                            fullScreenAdDismissed = {},
+                            fullScreenAdFailedToShow = {},
+                            fullScreenAdNotAvailable = {},
+                        )
                     }
                 }
 
@@ -286,6 +317,7 @@ class ScanAppFragment : Fragment() {
         //UAlist.value = updateAvailableList
 
     }
+
     inner class PrepareAppsData() : AsyncTask<Void, Void, String>() {
         val progressDialog = ProgressDialog(requireContext())
         override fun doInBackground(vararg params: Void?): String? {
@@ -308,6 +340,7 @@ class ScanAppFragment : Fragment() {
             checkUpdate()
         }
     }
+
     inner class CheckAppLiveOnPlayStore(val app: AppModel) :
         AsyncTask<String, String, String>() {
 
@@ -335,6 +368,7 @@ class ScanAppFragment : Fragment() {
             return responseStatus.toString()
         }
     }
+
     inner class VersionCracker(val app: AppModel) : AsyncTask<String, String, String>() {
 
 
@@ -394,9 +428,97 @@ class ScanAppFragment : Fragment() {
 
 
     }
+
     private fun onBackWithAd() {
         findNavController().popBackStack()
+        showAd()
 
+    }
+
+
+    private fun loadAds() {
+        if (AppUtils.isNetworkAvailable(requireContext())) {
+            binding.nativeAdScan.visibility = View.VISIBLE
+            val bindAdSystemUpdate = NativeWithOutMediaBinding.inflate(layoutInflater)
+            NativeAdUtils(
+                requireActivity().application,
+                "native_scan"
+            ).setAdCallerName("native_scan")
+                .loadNativeAd(
+                    getString(R.string.native_id),
+                    Constants.native_scan,
+                    binding.nativeAdScan,
+                    bindAdSystemUpdate.root,
+                    bindAdSystemUpdate.adAppIcon,
+                    bindAdSystemUpdate.adHeadline,
+                    bindAdSystemUpdate.adBody,
+                    bindAdSystemUpdate.adCallToAction,
+                    null,
+                    null,
+                    adFailed = {
+                        binding.nativeAdScan.visibility = View.GONE
+                    },
+                    adValidate = {
+                        binding.nativeAdScan.visibility = View.VISIBLE
+                        BannerAdUtils(activity = requireActivity(), screenName = "banner_scan")
+                            .loadBanner(
+                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                remoteConfig = Constants.banner_scan, // give remote config here
+                                adsView = binding.nativeAdScan, //give your frameLayout here
+                                onAdClicked = {}, //if ad clicked you will receive this callback
+                                onAdFailedToLoad = {
+                                    binding.nativeAdScan.visibility = View.GONE
+                                }, // if ad failed to load you will receive this callback
+                                onAdImpression = {}, // if ad impression will receive this callback
+                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdValidate = {
+                                    binding.nativeAdScan.visibility = View.GONE
+                                }) //if remote off or no internet or user is premium user you will receive callback here
+
+                    },
+                    adClicked = {
+
+                    },
+                    adImpression = {
+
+                    }
+                )
+            InterstitialAdUtils(requireActivity(), "fullscreen_scan_back").loadInterstitialAd(
+                getString(R.string.admob_splash_fullscreen),
+                if (Constants.fullscreen_scan_back) Constants.fullscreen_scan_back else Constants.fullscreen_scan_app_details,
+                adAlreadyLoaded = {
+
+                },
+                adLoaded = {
+
+
+                },
+                adFailed = {
+
+
+                },
+                adValidate = {
+
+                },
+            )
+        } else {
+            binding.nativeAdScan.visibility = View.GONE
+        }
+    }
+
+    private fun showAd() {
+        InterstitialAdUtils(
+            requireActivity(),
+            "fullscreen_scan_back"
+        ).showInterstitialAd(
+            getString(R.string.admob_splash_fullscreen),
+            Constants.fullscreen_scan_back,
+            fullScreenAdShow = {},
+            fullScreenAdDismissed = {},
+            fullScreenAdFailedToShow = {},
+            fullScreenAdNotAvailable = {},
+        )
     }
 
 }

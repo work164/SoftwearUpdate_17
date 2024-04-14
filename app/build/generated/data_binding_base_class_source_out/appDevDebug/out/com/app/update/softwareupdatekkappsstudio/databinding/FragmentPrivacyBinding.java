@@ -29,7 +29,7 @@ public final class FragmentPrivacyBinding implements ViewBinding {
   public final TextView details;
 
   @NonNull
-  public final FrameLayout privacyNativeAd;
+  public final FrameLayout privacyNativeAdOrBanner;
 
   @NonNull
   public final TextView privacyText;
@@ -42,12 +42,12 @@ public final class FragmentPrivacyBinding implements ViewBinding {
 
   private FragmentPrivacyBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppCompatButton acceptBtn, @NonNull TextView details,
-      @NonNull FrameLayout privacyNativeAd, @NonNull TextView privacyText,
+      @NonNull FrameLayout privacyNativeAdOrBanner, @NonNull TextView privacyText,
       @NonNull ImageView topImageView, @NonNull TextView welcomeText) {
     this.rootView = rootView;
     this.acceptBtn = acceptBtn;
     this.details = details;
-    this.privacyNativeAd = privacyNativeAd;
+    this.privacyNativeAdOrBanner = privacyNativeAdOrBanner;
     this.privacyText = privacyText;
     this.topImageView = topImageView;
     this.welcomeText = welcomeText;
@@ -92,9 +92,9 @@ public final class FragmentPrivacyBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.privacyNativeAd;
-      FrameLayout privacyNativeAd = ViewBindings.findChildViewById(rootView, id);
-      if (privacyNativeAd == null) {
+      id = R.id.privacyNativeAdOrBanner;
+      FrameLayout privacyNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (privacyNativeAdOrBanner == null) {
         break missingId;
       }
 
@@ -117,7 +117,7 @@ public final class FragmentPrivacyBinding implements ViewBinding {
       }
 
       return new FragmentPrivacyBinding((ConstraintLayout) rootView, acceptBtn, details,
-          privacyNativeAd, privacyText, topImageView, welcomeText);
+          privacyNativeAdOrBanner, privacyText, topImageView, welcomeText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

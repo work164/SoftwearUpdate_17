@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
@@ -38,16 +39,20 @@ public final class FragmentAppsUninstallBinding implements ViewBinding {
   @NonNull
   public final ProgressBar loadingApps;
 
+  @NonNull
+  public final FrameLayout uninstallNativeAdOrBanner;
+
   private FragmentAppsUninstallBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull RecyclerView appsRecyclerView,
       @NonNull ImageFilterView backDevice, @NonNull ImageView btnInAppForwardDevice,
-      @NonNull ProgressBar loadingApps) {
+      @NonNull ProgressBar loadingApps, @NonNull FrameLayout uninstallNativeAdOrBanner) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.appsRecyclerView = appsRecyclerView;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.loadingApps = loadingApps;
+    this.uninstallNativeAdOrBanner = uninstallNativeAdOrBanner;
   }
 
   @Override
@@ -107,8 +112,15 @@ public final class FragmentAppsUninstallBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.uninstallNativeAdOrBanner;
+      FrameLayout uninstallNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (uninstallNativeAdOrBanner == null) {
+        break missingId;
+      }
+
       return new FragmentAppsUninstallBinding((ConstraintLayout) rootView, actionBar,
-          appsRecyclerView, backDevice, btnInAppForwardDevice, loadingApps);
+          appsRecyclerView, backDevice, btnInAppForwardDevice, loadingApps,
+          uninstallNativeAdOrBanner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

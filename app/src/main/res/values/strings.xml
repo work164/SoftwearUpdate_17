@@ -48,6 +48,7 @@
     <string name="sensor">All Sensors</string>
     <string name="update_available">Available Update</string>
     <string name="connection_wifi">Connections Details</string>
+    <string name="update_your_device_software">Update Your Device Software</string>
 
 
     <string-array name="size_array">

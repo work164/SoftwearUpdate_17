@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -24,6 +25,9 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
 
   @NonNull
   public final AppBarLayout actionBar;
+
+  @NonNull
+  public final FrameLayout androidVersionsNativeAdOrBanner;
 
   @NonNull
   public final ImageFilterView backDevice;
@@ -89,11 +93,11 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
   public final View viewBattery;
 
   private FragmentAndroidVersionBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull ImageView btnInAppForwardDevice, @NonNull TextView device,
-      @NonNull TextView deviceBoard, @NonNull TextView deviceHardware, @NonNull TextView deviceId,
-      @NonNull TextView deviceManufacture, @NonNull TextView deviceModel,
-      @NonNull TextView deviceName, @NonNull TextView deviceStatus,
+      @NonNull AppBarLayout actionBar, @NonNull FrameLayout androidVersionsNativeAdOrBanner,
+      @NonNull ImageFilterView backDevice, @NonNull ImageView btnInAppForwardDevice,
+      @NonNull TextView device, @NonNull TextView deviceBoard, @NonNull TextView deviceHardware,
+      @NonNull TextView deviceId, @NonNull TextView deviceManufacture,
+      @NonNull TextView deviceModel, @NonNull TextView deviceName, @NonNull TextView deviceStatus,
       @NonNull TextView deviceTemperature, @NonNull ConstraintLayout group1,
       @NonNull ConstraintLayout group2, @NonNull ConstraintLayout group3,
       @NonNull ConstraintLayout group4, @NonNull ConstraintLayout group5,
@@ -102,6 +106,7 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
       @NonNull View viewBattery) {
     this.rootView = rootView;
     this.actionBar = actionBar;
+    this.androidVersionsNativeAdOrBanner = androidVersionsNativeAdOrBanner;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.device = device;
@@ -155,6 +160,12 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
       id = R.id.action_bar;
       AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
       if (actionBar == null) {
+        break missingId;
+      }
+
+      id = R.id.androidVersionsNativeAdOrBanner;
+      FrameLayout androidVersionsNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (androidVersionsNativeAdOrBanner == null) {
         break missingId;
       }
 
@@ -284,10 +295,11 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAndroidVersionBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, device, deviceBoard, deviceHardware, deviceId, deviceManufacture,
-          deviceModel, deviceName, deviceStatus, deviceTemperature, group1, group2, group3, group4,
-          group5, group6, group7, group8, group9, viewBattery);
+      return new FragmentAndroidVersionBinding((ConstraintLayout) rootView, actionBar,
+          androidVersionsNativeAdOrBanner, backDevice, btnInAppForwardDevice, device, deviceBoard,
+          deviceHardware, deviceId, deviceManufacture, deviceModel, deviceName, deviceStatus,
+          deviceTemperature, group1, group2, group3, group4, group5, group6, group7, group8, group9,
+          viewBattery);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +35,12 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ConstraintLayout homeOne;
 
   @NonNull
+  public final FrameLayout nativeMain;
+
+  @NonNull
+  public final FrameLayout nativeMainBottom;
+
+  @NonNull
   public final RecyclerView recyclerView;
 
   @NonNull
@@ -42,12 +49,15 @@ public final class FragmentHomeBinding implements ViewBinding {
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBarHome, @NonNull ImageView backImage,
       @NonNull ImageView giftHome, @NonNull ConstraintLayout homeOne,
+      @NonNull FrameLayout nativeMain, @NonNull FrameLayout nativeMainBottom,
       @NonNull RecyclerView recyclerView, @NonNull ImageView setting) {
     this.rootView = rootView;
     this.actionBarHome = actionBarHome;
     this.backImage = backImage;
     this.giftHome = giftHome;
     this.homeOne = homeOne;
+    this.nativeMain = nativeMain;
+    this.nativeMainBottom = nativeMainBottom;
     this.recyclerView = recyclerView;
     this.setting = setting;
   }
@@ -103,6 +113,18 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.nativeMain;
+      FrameLayout nativeMain = ViewBindings.findChildViewById(rootView, id);
+      if (nativeMain == null) {
+        break missingId;
+      }
+
+      id = R.id.nativeMainBottom;
+      FrameLayout nativeMainBottom = ViewBindings.findChildViewById(rootView, id);
+      if (nativeMainBottom == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerView;
       RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
       if (recyclerView == null) {
@@ -116,7 +138,7 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       return new FragmentHomeBinding((ConstraintLayout) rootView, actionBarHome, backImage,
-          giftHome, homeOne, recyclerView, setting);
+          giftHome, homeOne, nativeMain, nativeMainBottom, recyclerView, setting);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

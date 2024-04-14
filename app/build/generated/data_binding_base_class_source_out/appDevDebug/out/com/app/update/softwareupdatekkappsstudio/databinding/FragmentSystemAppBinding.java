@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -40,18 +41,23 @@ public final class FragmentSystemAppBinding implements ViewBinding {
   public final ProgressBar loadingApps;
 
   @NonNull
+  public final FrameLayout systemAppsNativeAdOrBanner;
+
+  @NonNull
   public final TextView textView;
 
   private FragmentSystemAppBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull RecyclerView appsRecyclerView,
       @NonNull ImageFilterView backDevice, @NonNull ImageView btnInAppForwardDevice,
-      @NonNull ProgressBar loadingApps, @NonNull TextView textView) {
+      @NonNull ProgressBar loadingApps, @NonNull FrameLayout systemAppsNativeAdOrBanner,
+      @NonNull TextView textView) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.appsRecyclerView = appsRecyclerView;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.loadingApps = loadingApps;
+    this.systemAppsNativeAdOrBanner = systemAppsNativeAdOrBanner;
     this.textView = textView;
   }
 
@@ -112,6 +118,12 @@ public final class FragmentSystemAppBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.systemAppsNativeAdOrBanner;
+      FrameLayout systemAppsNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (systemAppsNativeAdOrBanner == null) {
+        break missingId;
+      }
+
       id = R.id.textView;
       TextView textView = ViewBindings.findChildViewById(rootView, id);
       if (textView == null) {
@@ -119,7 +131,7 @@ public final class FragmentSystemAppBinding implements ViewBinding {
       }
 
       return new FragmentSystemAppBinding((ConstraintLayout) rootView, actionBar, appsRecyclerView,
-          backDevice, btnInAppForwardDevice, loadingApps, textView);
+          backDevice, btnInAppForwardDevice, loadingApps, systemAppsNativeAdOrBanner, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

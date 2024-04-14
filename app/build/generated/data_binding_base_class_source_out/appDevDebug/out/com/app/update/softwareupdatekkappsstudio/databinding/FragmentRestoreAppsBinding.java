@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,13 +31,17 @@ public final class FragmentRestoreAppsBinding implements ViewBinding {
   @NonNull
   public final ImageView btnInAppForwardDevice;
 
+  @NonNull
+  public final FrameLayout restoreNativeAdOrBanner;
+
   private FragmentRestoreAppsBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull ImageView btnInAppForwardDevice) {
+      @NonNull ImageView btnInAppForwardDevice, @NonNull FrameLayout restoreNativeAdOrBanner) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
+    this.restoreNativeAdOrBanner = restoreNativeAdOrBanner;
   }
 
   @Override
@@ -84,8 +89,14 @@ public final class FragmentRestoreAppsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.restoreNativeAdOrBanner;
+      FrameLayout restoreNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (restoreNativeAdOrBanner == null) {
+        break missingId;
+      }
+
       return new FragmentRestoreAppsBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice);
+          btnInAppForwardDevice, restoreNativeAdOrBanner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

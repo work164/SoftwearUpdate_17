@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,17 +30,26 @@ public final class FragmentSplashBinding implements ViewBinding {
   public final TextView mainText;
 
   @NonNull
+  public final FrameLayout nativeSplash;
+
+  @NonNull
+  public final FrameLayout nativeSplashBottom;
+
+  @NonNull
   public final LottieAnimationView splashIcon;
 
   @NonNull
   public final AppCompatButton startButton;
 
   private FragmentSplashBinding(@NonNull ConstraintLayout rootView, @NonNull Guideline guideLine,
-      @NonNull TextView mainText, @NonNull LottieAnimationView splashIcon,
+      @NonNull TextView mainText, @NonNull FrameLayout nativeSplash,
+      @NonNull FrameLayout nativeSplashBottom, @NonNull LottieAnimationView splashIcon,
       @NonNull AppCompatButton startButton) {
     this.rootView = rootView;
     this.guideLine = guideLine;
     this.mainText = mainText;
+    this.nativeSplash = nativeSplash;
+    this.nativeSplashBottom = nativeSplashBottom;
     this.splashIcon = splashIcon;
     this.startButton = startButton;
   }
@@ -83,6 +93,18 @@ public final class FragmentSplashBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.nativeSplash;
+      FrameLayout nativeSplash = ViewBindings.findChildViewById(rootView, id);
+      if (nativeSplash == null) {
+        break missingId;
+      }
+
+      id = R.id.nativeSplashBottom;
+      FrameLayout nativeSplashBottom = ViewBindings.findChildViewById(rootView, id);
+      if (nativeSplashBottom == null) {
+        break missingId;
+      }
+
       id = R.id.splashIcon;
       LottieAnimationView splashIcon = ViewBindings.findChildViewById(rootView, id);
       if (splashIcon == null) {
@@ -95,8 +117,8 @@ public final class FragmentSplashBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSplashBinding((ConstraintLayout) rootView, guideLine, mainText, splashIcon,
-          startButton);
+      return new FragmentSplashBinding((ConstraintLayout) rootView, guideLine, mainText,
+          nativeSplash, nativeSplashBottom, splashIcon, startButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

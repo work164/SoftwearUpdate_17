@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -34,6 +35,9 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
 
   @NonNull
   public final CardView cardView2;
+
+  @NonNull
+  public final FrameLayout deviceNativeAdOrBanner;
 
   @NonNull
   public final TextView tvBluetoothMacAddress;
@@ -101,9 +105,9 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
   private FragmentDeviceInfoBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
       @NonNull ImageView btnInAppForwardDevice, @NonNull CardView cardView2,
-      @NonNull TextView tvBluetoothMacAddress, @NonNull TextView tvBoard, @NonNull TextView tvBrand,
-      @NonNull TextView tvBuildFingerPrint, @NonNull TextView tvCompanyName,
-      @NonNull TextView tvDevice, @NonNull TextView tvDeviceId,
+      @NonNull FrameLayout deviceNativeAdOrBanner, @NonNull TextView tvBluetoothMacAddress,
+      @NonNull TextView tvBoard, @NonNull TextView tvBrand, @NonNull TextView tvBuildFingerPrint,
+      @NonNull TextView tvCompanyName, @NonNull TextView tvDevice, @NonNull TextView tvDeviceId,
       @NonNull TextView tvDeviceManufacturer, @NonNull TextView tvDeviceModel,
       @NonNull TextView tvDeviceName, @NonNull TextView tvDeviceName1,
       @NonNull TextView tvDeviceType, @NonNull TextView tvGAdvertisingId, @NonNull TextView tvGSFId,
@@ -116,6 +120,7 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.cardView2 = cardView2;
+    this.deviceNativeAdOrBanner = deviceNativeAdOrBanner;
     this.tvBluetoothMacAddress = tvBluetoothMacAddress;
     this.tvBoard = tvBoard;
     this.tvBrand = tvBrand;
@@ -187,6 +192,12 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
       id = R.id.cardView2;
       CardView cardView2 = ViewBindings.findChildViewById(rootView, id);
       if (cardView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.deviceNativeAdOrBanner;
+      FrameLayout deviceNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (deviceNativeAdOrBanner == null) {
         break missingId;
       }
 
@@ -317,8 +328,8 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
       }
 
       return new FragmentDeviceInfoBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, cardView2, tvBluetoothMacAddress, tvBoard, tvBrand,
-          tvBuildFingerPrint, tvCompanyName, tvDevice, tvDeviceId, tvDeviceManufacturer,
+          btnInAppForwardDevice, cardView2, deviceNativeAdOrBanner, tvBluetoothMacAddress, tvBoard,
+          tvBrand, tvBuildFingerPrint, tvCompanyName, tvDevice, tvDeviceId, tvDeviceManufacturer,
           tvDeviceModel, tvDeviceName, tvDeviceName1, tvDeviceType, tvGAdvertisingId, tvGSFId,
           tvHardware, tvHardwareSerial, tvNetworkOperator, tvNetworkType, tvUsbDebugging,
           tvWifiMacAddress, viewBattery);

@@ -21,7 +21,7 @@
                 android:id="@+id/backDevice"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:padding="15dp"
+                android:padding="20dp"
                 android:src="@drawable/ic_reverse"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"

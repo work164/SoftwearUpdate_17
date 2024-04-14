@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
-    >
+    android:background="@color/gray">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/action_bar"
@@ -23,7 +22,7 @@
                 android:id="@+id/backDevice"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:padding="15dp"
+                android:padding="20dp"
                 android:src="@drawable/ic_reverse"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
@@ -75,7 +74,7 @@
         android:gravity="center"
         android:paddingHorizontal="@dimen/_10sdp"
         android:text="App Name"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +88,7 @@
         android:gravity="center"
         android:paddingHorizontal="@dimen/_10sdp"
         android:text="App Size"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/_11ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_version"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +126,7 @@
             android:paddingHorizontal="@dimen/_10sdp"
             android:singleLine="true"
             android:text=""
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/last_update"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -169,7 +168,7 @@
             android:paddingHorizontal="@dimen/_10sdp"
             android:singleLine="true"
             android:text=""
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -186,7 +185,7 @@
         android:paddingHorizontal="@dimen/_15sdp"
         android:paddingVertical="@dimen/_7sdp"
         android:text="@string/view_on_play_store"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -217,5 +216,14 @@
         app:layout_constraintStart_toEndOf="@id/ifvAppDetailShare"
         app:layout_constraintTop_toTopOf="@id/ifvAppDetailShare" />
 
-
+    <FrameLayout
+        android:id="@+id/appDetailsNativeAdOrBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="@color/ad_bg"
+        android:minHeight="@dimen/_100sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

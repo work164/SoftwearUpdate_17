@@ -21,45 +21,65 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.update.softwareupdatekkappsstudio.AppInfo
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.adapter.AppsUninstallAdapter
+import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAppInstalledBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAppsUninstallBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
+import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.banner_ads.BannerAdUtils
+import com.example.adssdk.constants.AppUtils
+import com.example.adssdk.intertesialAds.InterstitialAdUtils
+import com.example.adssdk.native_ad.NativeAdUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.Collections
 
 class AppsUninstallFragment : Fragment(), HomeClick {
-    private var textView: TextView? = null
-    private var loadingApps: ProgressBar? = null
-    private var appsRecyclerView: RecyclerView? = null
+    //    private var textView: TextView? = null
+//    private var loadingApps: ProgressBar? = null
+//    private var appsRecyclerView: RecyclerView? = null
     private val appsList: MutableList<AppInfo> = ArrayList()
     private var appsAdapter: AppsUninstallAdapter? = null
+    private lateinit var binding: FragmentAppsUninstallBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     findNavController().popBackStack()
+                    showAd()
+
 
                 }
             })
 
+        binding = FragmentAppsUninstallBinding.inflate(inflater, container, false)
+
+        binding.backDevice.setOnClickListener {
+            findNavController().popBackStack()
+            showAd()
+        }
+        loadAds()
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_apps_uninstall, container, false)
+        return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textView = view.findViewById(R.id.textView)
-        appsRecyclerView = view.findViewById(R.id.appsRecyclerView)
-        loadingApps = view.findViewById(R.id.loadingApps)
-        appsRecyclerView?.layoutManager = LinearLayoutManager(activity)
+//        textView = view.findViewById(R.id.textView)
+//        appsRecyclerView = view.findViewById(R.id.appsRecyclerView)
+//        loadingApps = view.findViewById(R.id.loadingApps)
+        binding.appsRecyclerView.layoutManager = LinearLayoutManager(activity)
         appsAdapter = AppsUninstallAdapter(this, appsList, requireActivity())
-        appsRecyclerView?.adapter = appsAdapter
+        binding.appsRecyclerView.adapter = appsAdapter
         loadInstalledApps()
     }
 
@@ -90,9 +110,9 @@ class AppsUninstallFragment : Fragment(), HomeClick {
                     )
                 })
                 CoroutineScope(Dispatchers.Main).launch {
-                    textView?.text = "Total Apps: " + appsList.size
+//                    binding.textView?.text = "Total Apps: " + appsList.size
                     appsAdapter?.notifyDataSetChanged()
-                    loadingApps?.visibility = View.GONE
+                    binding.loadingApps?.visibility = View.GONE
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -108,7 +128,7 @@ class AppsUninstallFragment : Fragment(), HomeClick {
 
 
     companion object {
-         val DESIRED_SYSTEM_APPS: List<String> = mutableListOf(
+        val DESIRED_SYSTEM_APPS: List<String> = mutableListOf(
             "com.google.android.googlequicksearchbox",  // Google
             "com.facebook.katana",  // Facebook
             "com.google.android.youtube",  // YouTube
@@ -125,27 +145,123 @@ class AppsUninstallFragment : Fragment(), HomeClick {
 
     override fun onUninstallItemClick(name: String, packegeName: String, position: Int) {
 
-        findNavController().navigate(R.id.action_appUninstallFragment_to_appDetailFragment, Bundle().apply {
-            putString("appPackageName", packegeName)
-        })
-
-
-       /* val builder = AlertDialog.Builder(
-            requireContext()
+        findNavController().navigate(
+            R.id.action_appUninstallFragment_to_appDetailFragment,
+            Bundle().apply {
+                putString("appPackageName", packegeName)
+            })
+        InterstitialAdUtils(
+            requireActivity(),
+            "SystemUpdate"
+        ).showInterstitialAd(
+            getString(R.string.admob_splash_fullscreen),
+            Constants.fullscreen_uninstall_app_details,
+            fullScreenAdShow = {},
+            fullScreenAdDismissed = {},
+            fullScreenAdFailedToShow = {},
+            fullScreenAdNotAvailable = {},
         )
-        builder.setTitle("Uninstall App")
-        builder.setMessage("Do you want to uninstall $name?")
-        builder.setPositiveButton("OK") { dialog: DialogInterface?, which: Int ->
-            val packageUri = Uri.parse("package:$packegeName")
-            val uninstallIntent = Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri)
-            startActivity(uninstallIntent)
-            appsAdapter?.notifyDataSetChanged()
-        }
-        builder.setNegativeButton("Cancel", null)
-        builder.show()*/
+
+        /* val builder = AlertDialog.Builder(
+             requireContext()
+         )
+         builder.setTitle("Uninstall App")
+         builder.setMessage("Do you want to uninstall $name?")
+         builder.setPositiveButton("OK") { dialog: DialogInterface?, which: Int ->
+             val packageUri = Uri.parse("package:$packegeName")
+             val uninstallIntent = Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri)
+             startActivity(uninstallIntent)
+             appsAdapter?.notifyDataSetChanged()
+         }
+         builder.setNegativeButton("Cancel", null)
+         builder.show()*/
 
 
 
         super.onUninstallItemClick(name, packegeName, position)
+    }
+
+
+    private fun loadAds() {
+        if (AppUtils.isNetworkAvailable(requireContext())) {
+            binding.uninstallNativeAdOrBanner.visibility = View.VISIBLE
+            val bindAdSystemUpdate = NativeWithOutMediaBinding.inflate(layoutInflater)
+            NativeAdUtils(
+                requireActivity().application,
+                "NativeWithOutMediaBinding"
+            ).setAdCallerName("NativeWithOutMediaBinding")
+                .loadNativeAd(
+                    getString(R.string.native_id),
+                    Constants.native_uninstall,
+                    binding.uninstallNativeAdOrBanner,
+                    bindAdSystemUpdate.root,
+                    bindAdSystemUpdate.adAppIcon,
+                    bindAdSystemUpdate.adHeadline,
+                    bindAdSystemUpdate.adBody,
+                    bindAdSystemUpdate.adCallToAction,
+                    null,
+                    null,
+                    adFailed = {
+                        binding.uninstallNativeAdOrBanner.visibility = View.GONE
+                    },
+                    adValidate = {
+                        binding.uninstallNativeAdOrBanner.visibility = View.VISIBLE
+                        BannerAdUtils(activity = requireActivity(), screenName = "banner_uninstall")
+                            .loadBanner(
+                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                remoteConfig = Constants.banner_uninstall, // give remote config here
+                                adsView = binding.uninstallNativeAdOrBanner, //give your frameLayout here
+                                onAdClicked = {}, //if ad clicked you will receive this callback
+                                onAdFailedToLoad = {
+                                    binding.uninstallNativeAdOrBanner.visibility = View.GONE
+                                }, // if ad failed to load you will receive this callback
+                                onAdImpression = {}, // if ad impression will receive this callback
+                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdValidate = {
+                                    binding.uninstallNativeAdOrBanner.visibility = View.GONE
+                                }) //if remote off or no internet or user is premium user you will receive callback here
+
+                    },
+                    adClicked = {
+
+                    },
+                    adImpression = {
+
+                    }
+                )
+            InterstitialAdUtils(requireActivity(), "fullscreen_uninstall_app_back").loadInterstitialAd(
+                getString(R.string.admob_splash_fullscreen),
+                if (Constants.fullscreen_uninstall_app_back) Constants.fullscreen_uninstall_app_back else Constants.fullscreen_uninstall_app_details,
+                adAlreadyLoaded = {
+
+                },
+                adLoaded = {
+
+
+                },
+                adFailed = {
+
+
+                },
+                adValidate = {},
+            )
+        } else {
+            binding.uninstallNativeAdOrBanner.visibility = View.GONE
+        }
+    }
+
+    private fun showAd() {
+        InterstitialAdUtils(
+            requireActivity(),
+            "fullscreen_uninstall_app_back"
+        ).showInterstitialAd(
+            getString(R.string.admob_splash_fullscreen),
+            Constants.fullscreen_uninstall_app_back,
+            fullScreenAdShow = {},
+            fullScreenAdDismissed = {},
+            fullScreenAdFailedToShow = {},
+            fullScreenAdNotAvailable = {},
+        )
     }
 }

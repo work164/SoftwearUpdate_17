@@ -138,6 +138,7 @@ MERGED from [androidx.databinding:viewbinding:8.1.3] C:\Users\integ\.gradle\cach
 MERGED from [com.intuit.sdp:sdp-android:1.1.0] C:\Users\integ\.gradle\caches\transforms-3\162209c37c195a73669caf7e4f382813\transformed\sdp-android-1.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.intuit.ssp:ssp-android:1.1.0] C:\Users\integ\.gradle\caches\transforms-3\e4ceb047f3beffece3d1a485dae59874\transformed\ssp-android-1.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:fresco:2.5.0] C:\Users\integ\.gradle\caches\transforms-3\850d08886d83d0743781d3aa673fe1e4\transformed\fresco-2.5.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:2:1-13:12
 MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\cf6c834faa030b98fcc5962f1daca068\transformed\transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
@@ -211,6 +212,8 @@ MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Use
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\integ\.gradle\caches\transforms-3\c4c6d89e6f9a84ea8bc5c7b1db4cf542\transformed\play-services-cloud-messaging-17.0.1\AndroidManifest.xml:8:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.0] C:\Users\integ\.gradle\caches\transforms-3\8b077bd0aeb7d2071d1291cd3682e231\transformed\play-services-measurement-sdk-api-21.2.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.0] C:\Users\integ\.gradle\caches\transforms-3\8b077bd0aeb7d2071d1291cd3682e231\transformed\play-services-measurement-sdk-api-21.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:8:5-67
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:8:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
 	android:name
@@ -249,6 +252,8 @@ uses-permission#android.permission.FOREGROUND_SERVICE
 ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:10:5-77
 MERGED from [androidx.work:work-runtime:2.7.0] C:\Users\integ\.gradle\caches\transforms-3\448e3efd1737a1e44159f051be418b10\transformed\work-runtime-2.7.0\AndroidManifest.xml:28:5-77
 MERGED from [androidx.work:work-runtime:2.7.0] C:\Users\integ\.gradle\caches\transforms-3\448e3efd1737a1e44159f051be418b10\transformed\work-runtime-2.7.0\AndroidManifest.xml:28:5-77
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:10:5-77
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:10:5-77
 MERGED from [com.google.android.play:core:1.8.0] C:\Users\integ\.gradle\caches\transforms-3\4f07c0c9b30e102fa9d61130941a4c2f\transformed\core-1.8.0\AndroidManifest.xml:8:3-74
 MERGED from [com.google.android.play:core:1.8.0] C:\Users\integ\.gradle\caches\transforms-3\4f07c0c9b30e102fa9d61130941a4c2f\transformed\core-1.8.0\AndroidManifest.xml:8:3-74
 	android:name
@@ -325,6 +330,8 @@ MERGED from [com.android.billingclient:billing-ktx:6.2.0] C:\Users\integ\.gradle
 MERGED from [com.android.billingclient:billing-ktx:6.2.0] C:\Users\integ\.gradle\caches\transforms-3\83f04be05563e8a6c6b4dccfeb9419a2\transformed\billing-ktx-6.2.0\AndroidManifest.xml:9:5-67
 MERGED from [com.android.billingclient:billing:6.2.0] C:\Users\integ\.gradle\caches\transforms-3\099b6bf6eff357ab1246ba10eb7543e6\transformed\billing-6.2.0\AndroidManifest.xml:10:5-67
 MERGED from [com.android.billingclient:billing:6.2.0] C:\Users\integ\.gradle\caches\transforms-3\099b6bf6eff357ab1246ba10eb7543e6\transformed\billing-6.2.0\AndroidManifest.xml:10:5-67
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:9:5-67
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:9:5-67
 	android:name
 		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:35:22-64
 application
@@ -816,6 +823,8 @@ MERGED from [com.intuit.ssp:ssp-android:1.1.0] C:\Users\integ\.gradle\caches\tra
 MERGED from [com.intuit.ssp:ssp-android:1.1.0] C:\Users\integ\.gradle\caches\transforms-3\e4ceb047f3beffece3d1a485dae59874\transformed\ssp-android-1.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fresco:2.5.0] C:\Users\integ\.gradle\caches\transforms-3\850d08886d83d0743781d3aa673fe1e4\transformed\fresco-2.5.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:2.5.0] C:\Users\integ\.gradle\caches\transforms-3\850d08886d83d0743781d3aa673fe1e4\transformed\fresco-2.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:5:5-44
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:5:5-44
 MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
@@ -924,6 +933,8 @@ MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Use
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\integ\.gradle\caches\transforms-3\c4c6d89e6f9a84ea8bc5c7b1db4cf542\transformed\play-services-cloud-messaging-17.0.1\AndroidManifest.xml:7:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.0] C:\Users\integ\.gradle\caches\transforms-3\8b077bd0aeb7d2071d1291cd3682e231\transformed\play-services-measurement-sdk-api-21.2.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.0] C:\Users\integ\.gradle\caches\transforms-3\8b077bd0aeb7d2071d1291cd3682e231\transformed\play-services-measurement-sdk-api-21.2.0\AndroidManifest.xml:24:5-79
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:7:5-79
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:7:5-79
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\cf6c834faa030b98fcc5962f1daca068\transformed\transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
@@ -1384,6 +1395,8 @@ ADDED from [com.google.firebase:firebase-messaging-ktx:23.1.1] C:\Users\integ\.g
 		ADDED from [com.google.firebase:firebase-messaging-ktx:23.1.1] C:\Users\integ\.gradle\caches\transforms-3\92a7b8c94c03f6b4dfcc7f199541356f\transformed\firebase-messaging-ktx-23.1.1\AndroidManifest.xml:29:17-126
 uses-permission#android.permission.POST_NOTIFICATIONS
 ADDED from [com.google.firebase:firebase-messaging:23.1.1] C:\Users\integ\.gradle\caches\transforms-3\6a2d7d89cd38455720e40bee08481c7e\transformed\firebase-messaging-23.1.1\AndroidManifest.xml:25:5-77
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:11:5-77
+MERGED from [com.integer.ads:integet-ads:1.0.3] C:\Users\integ\.gradle\caches\transforms-3\fcec2d592b717d0c02d2021d9df12944\transformed\integet-ads-1.0.3\AndroidManifest.xml:11:5-77
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:23.1.1] C:\Users\integ\.gradle\caches\transforms-3\6a2d7d89cd38455720e40bee08481c7e\transformed\firebase-messaging-23.1.1\AndroidManifest.xml:25:22-74
 uses-permission#com.google.android.c2dm.permission.RECEIVE

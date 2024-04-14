@@ -4,7 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,7 +30,7 @@ public final class FragmentLanguageBinding implements ViewBinding {
   public final ImageFilterView ifvBack;
 
   @NonNull
-  public final LinearLayout llBannerCollapesLanguages;
+  public final FrameLayout languageNativeOrBanner;
 
   @NonNull
   public final RecyclerView rvLanguage;
@@ -40,12 +40,12 @@ public final class FragmentLanguageBinding implements ViewBinding {
 
   private FragmentLanguageBinding(@NonNull ConstraintLayout rootView,
       @NonNull TextView changeLanguage, @NonNull ImageFilterView ifvBack,
-      @NonNull LinearLayout llBannerCollapesLanguages, @NonNull RecyclerView rvLanguage,
+      @NonNull FrameLayout languageNativeOrBanner, @NonNull RecyclerView rvLanguage,
       @NonNull MaterialToolbar toolBar) {
     this.rootView = rootView;
     this.changeLanguage = changeLanguage;
     this.ifvBack = ifvBack;
-    this.llBannerCollapesLanguages = llBannerCollapesLanguages;
+    this.languageNativeOrBanner = languageNativeOrBanner;
     this.rvLanguage = rvLanguage;
     this.toolBar = toolBar;
   }
@@ -89,9 +89,9 @@ public final class FragmentLanguageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.llBannerCollapesLanguages;
-      LinearLayout llBannerCollapesLanguages = ViewBindings.findChildViewById(rootView, id);
-      if (llBannerCollapesLanguages == null) {
+      id = R.id.languageNativeOrBanner;
+      FrameLayout languageNativeOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (languageNativeOrBanner == null) {
         break missingId;
       }
 
@@ -108,7 +108,7 @@ public final class FragmentLanguageBinding implements ViewBinding {
       }
 
       return new FragmentLanguageBinding((ConstraintLayout) rootView, changeLanguage, ifvBack,
-          llBannerCollapesLanguages, rvLanguage, toolBar);
+          languageNativeOrBanner, rvLanguage, toolBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

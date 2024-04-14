@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,16 +38,20 @@ public final class FragmentAndroidUpdateBinding implements ViewBinding {
   @NonNull
   public final ImageView iconUpdate;
 
+  @NonNull
+  public final FrameLayout updateNativeAdOrBanner;
+
   private FragmentAndroidUpdateBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
       @NonNull ImageView btnInAppForwardDevice, @NonNull AppCompatButton btnOSNext,
-      @NonNull ImageView iconUpdate) {
+      @NonNull ImageView iconUpdate, @NonNull FrameLayout updateNativeAdOrBanner) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.btnOSNext = btnOSNext;
     this.iconUpdate = iconUpdate;
+    this.updateNativeAdOrBanner = updateNativeAdOrBanner;
   }
 
   @Override
@@ -106,8 +111,14 @@ public final class FragmentAndroidUpdateBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.updateNativeAdOrBanner;
+      FrameLayout updateNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (updateNativeAdOrBanner == null) {
+        break missingId;
+      }
+
       return new FragmentAndroidUpdateBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, btnOSNext, iconUpdate);
+          btnInAppForwardDevice, btnOSNext, iconUpdate, updateNativeAdOrBanner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

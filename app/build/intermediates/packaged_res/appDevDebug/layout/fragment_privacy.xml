@@ -72,7 +72,7 @@
         app:layout_constraintWidth_percent="0.5" />
 
     <FrameLayout
-        android:id="@+id/privacyNativeAd"
+        android:id="@+id/privacyNativeAdOrBanner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="5dp"

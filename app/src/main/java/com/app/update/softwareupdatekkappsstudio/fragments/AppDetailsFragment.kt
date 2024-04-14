@@ -16,8 +16,17 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAppDetailsBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
+import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_all_details_back
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_scan_app_details
 import com.app.update.softwareupdatekkappsstudio.utils.toSizeString
 import com.bumptech.glide.Glide
+import com.example.adssdk.banner_ads.BannerAdUtils
+import com.example.adssdk.constants.AppUtils
+import com.example.adssdk.intertesialAds.InterstitialAdUtils
+import com.example.adssdk.native_ad.NativeAdUtils
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -43,13 +52,20 @@ class AppDetailsFragment : Fragment() {
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     findNavController().popBackStack()
+                    showAd()
 
                 }
             })
 
+        binding?.backDevice?.setOnClickListener {
+            findNavController().popBackStack()
+            showAd()
+        }
 
         getAppDetailsByPackageName(appPackageName ?: "", requireContext().packageManager)
         setUpClickListeners()
+
+        loadAds()
         // Inflate the layout for this fragment
         return binding?.root
     }
@@ -139,6 +155,7 @@ class AppDetailsFragment : Fragment() {
         appDetailsIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
         context.startActivity(Intent.createChooser(appDetailsIntent, "Share via"))
     }
+
     // Function to uninstall app
     private fun uninstallApp(packageName: String) {
         try {
@@ -148,7 +165,7 @@ class AppDetailsFragment : Fragment() {
             startActivityForResult(uninstallIntent, UNINSTALL_REQUEST_CODE)
         } catch (e: ClassNotFoundException) {
             e.printStackTrace()
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             e.printStackTrace()
         }
     }
@@ -165,9 +182,98 @@ class AppDetailsFragment : Fragment() {
             }
         }
     }
+
     private fun formatDate(date: Date): String {
         val sdf = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
         return sdf.format(date)
+    }
+
+
+    private fun loadAds() {
+        if (AppUtils.isNetworkAvailable(requireContext())) {
+            binding?.appDetailsNativeAdOrBanner?.visibility = View.VISIBLE
+            val bindAdSystemUpdate = NativeWithOutMediaBinding.inflate(layoutInflater)
+            NativeAdUtils(
+                requireActivity().application,
+                "appDetailsNativeAdOrBanner"
+            ).setAdCallerName("appDetailsNativeAdOrBanner")
+                .loadNativeAd(
+                    getString(R.string.native_id),
+                    Constants.native_app_details,
+                    binding?.appDetailsNativeAdOrBanner,
+                    bindAdSystemUpdate.root,
+                    bindAdSystemUpdate.adAppIcon,
+                    bindAdSystemUpdate.adHeadline,
+                    bindAdSystemUpdate.adBody,
+                    bindAdSystemUpdate.adCallToAction,
+                    null,
+                    null,
+                    adFailed = {
+                        binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE
+                    },
+                    adValidate = {
+                        binding?.appDetailsNativeAdOrBanner?.visibility = View.VISIBLE
+                        BannerAdUtils(
+                            activity = requireActivity(),
+                            screenName = "appDetailsNativeAdOrBanner"
+                        )
+                            .loadBanner(
+                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                remoteConfig = Constants.banner_app_details, // give remote config here
+                                adsView = binding?.appDetailsNativeAdOrBanner
+                                    ?: return@loadNativeAd, //give your frameLayout here
+                                onAdClicked = {}, //if ad clicked you will receive this callback
+                                onAdFailedToLoad = {
+                                    binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE
+                                }, // if ad failed to load you will receive this callback
+                                onAdImpression = {}, // if ad impression will receive this callback
+                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdValidate = {
+                                    binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE
+                                }) //if remote off or no internet or user is premium user you will receive callback here
+
+                    },
+                    adClicked = {
+
+                    },
+                    adImpression = {
+
+                    }
+                )
+            InterstitialAdUtils(requireActivity(), "appDetailsNativeAdOrBanner").loadInterstitialAd(
+                getString(R.string.admob_splash_fullscreen),
+                fullscreen_all_details_back,
+                adAlreadyLoaded = {
+
+                },
+                adLoaded = {
+
+
+                },
+                adFailed = {
+
+
+                },
+                adValidate = {},
+            )
+        } else {
+            binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE
+        }
+    }
+
+    private fun showAd() {
+        InterstitialAdUtils(
+            requireActivity(),
+            "appDetailsNativeAdOrBanner"
+        ).showInterstitialAd(
+            getString(R.string.admob_splash_fullscreen),
+              Constants.fullscreen_all_details_back,
+            fullScreenAdShow = {},
+            fullScreenAdDismissed = {},
+            fullScreenAdFailedToShow = {},
+            fullScreenAdNotAvailable = {},
+        )
     }
 }
 

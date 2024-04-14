@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -24,6 +25,9 @@ public final class FragmentAppDetailsBinding implements ViewBinding {
 
   @NonNull
   public final AppBarLayout actionBar;
+
+  @NonNull
+  public final FrameLayout appDetailsNativeAdOrBanner;
 
   @NonNull
   public final ImageFilterView backDevice;
@@ -71,16 +75,17 @@ public final class FragmentAppDetailsBinding implements ViewBinding {
   public final TextView tvViewOnPlayStore;
 
   private FragmentAppDetailsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull ImageView btnInAppForwardDevice, @NonNull ConstraintLayout clAppVersion,
-      @NonNull ConstraintLayout clLastUpdate, @NonNull ImageFilterView ifvAppDetailLaunch,
-      @NonNull ImageFilterView ifvAppDetailShare, @NonNull ImageFilterView ifvAppDetailUninstall,
-      @NonNull ImageFilterView ifvAppIcon, @NonNull TextView tvAppName, @NonNull TextView tvAppSize,
-      @NonNull TextView tvAppVersion, @NonNull TextView tvLastUpdateValue,
-      @NonNull TextView tvTextLastUpdate, @NonNull TextView tvVersion,
-      @NonNull TextView tvViewOnPlayStore) {
+      @NonNull AppBarLayout actionBar, @NonNull FrameLayout appDetailsNativeAdOrBanner,
+      @NonNull ImageFilterView backDevice, @NonNull ImageView btnInAppForwardDevice,
+      @NonNull ConstraintLayout clAppVersion, @NonNull ConstraintLayout clLastUpdate,
+      @NonNull ImageFilterView ifvAppDetailLaunch, @NonNull ImageFilterView ifvAppDetailShare,
+      @NonNull ImageFilterView ifvAppDetailUninstall, @NonNull ImageFilterView ifvAppIcon,
+      @NonNull TextView tvAppName, @NonNull TextView tvAppSize, @NonNull TextView tvAppVersion,
+      @NonNull TextView tvLastUpdateValue, @NonNull TextView tvTextLastUpdate,
+      @NonNull TextView tvVersion, @NonNull TextView tvViewOnPlayStore) {
     this.rootView = rootView;
     this.actionBar = actionBar;
+    this.appDetailsNativeAdOrBanner = appDetailsNativeAdOrBanner;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.clAppVersion = clAppVersion;
@@ -128,6 +133,12 @@ public final class FragmentAppDetailsBinding implements ViewBinding {
       id = R.id.action_bar;
       AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
       if (actionBar == null) {
+        break missingId;
+      }
+
+      id = R.id.appDetailsNativeAdOrBanner;
+      FrameLayout appDetailsNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (appDetailsNativeAdOrBanner == null) {
         break missingId;
       }
 
@@ -221,10 +232,11 @@ public final class FragmentAppDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAppDetailsBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, clAppVersion, clLastUpdate, ifvAppDetailLaunch, ifvAppDetailShare,
-          ifvAppDetailUninstall, ifvAppIcon, tvAppName, tvAppSize, tvAppVersion, tvLastUpdateValue,
-          tvTextLastUpdate, tvVersion, tvViewOnPlayStore);
+      return new FragmentAppDetailsBinding((ConstraintLayout) rootView, actionBar,
+          appDetailsNativeAdOrBanner, backDevice, btnInAppForwardDevice, clAppVersion, clLastUpdate,
+          ifvAppDetailLaunch, ifvAppDetailShare, ifvAppDetailUninstall, ifvAppIcon, tvAppName,
+          tvAppSize, tvAppVersion, tvLastUpdateValue, tvTextLastUpdate, tvVersion,
+          tvViewOnPlayStore);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

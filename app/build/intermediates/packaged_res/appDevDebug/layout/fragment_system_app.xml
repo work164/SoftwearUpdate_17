@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/item_gray"
-    >
+    android:background="@color/item_gray">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/action_bar"
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:id="@+id/backDevice"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:padding="15dp"
+                android:padding="20dp"
                 android:src="@drawable/ic_reverse"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
@@ -58,9 +58,6 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -75,14 +72,13 @@
         app:layout_constraintVertical_bias="0" />
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/appsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/sensorNativeAdOrBanner"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -95,4 +91,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <FrameLayout
+        android:id="@+id/systemAppsNativeAdOrBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="@color/ad_bg"
+        android:minHeight="@dimen/_100sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

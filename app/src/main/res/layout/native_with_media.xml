@@ -85,7 +85,7 @@
             android:id="@+id/ad_call_to_action"
             android:layout_width="0dp"
             android:layout_height="@dimen/_40sdp"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="@color/device_info_color"
             android:gravity="center|center_vertical"
             android:singleLine="true"
             android:text="@string/app_name"

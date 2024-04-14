@@ -1,4 +1,5 @@
 package com.app.update.softwareupdatekkappsstudio.fragments
+
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
@@ -21,8 +22,15 @@ import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.adapter.AppsAdapter
 import com.app.update.softwareupdatekkappsstudio.adapter.AppsUninstallAdapter
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentSystemAppBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.model.SystemModel
+import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.banner_ads.BannerAdUtils
+import com.example.adssdk.constants.AppUtils
+import com.example.adssdk.intertesialAds.InterstitialAdUtils
+import com.example.adssdk.native_ad.NativeAdUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -49,70 +57,26 @@ class SystemAppFragment : Fragment(), HomeClick {
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     findNavController().popBackStack()
-
+                    showAd()
                 }
             })
 
-
         binding = FragmentSystemAppBinding.inflate(inflater, container, false)
 
+        binding.backDevice.setOnClickListener {
+            findNavController().popBackStack()
+            showAd()
+        }
 
         binding.appsRecyclerView.layoutManager = LinearLayoutManager(activity)
-        appsAdapter = AppsAdapter(this,appsList, requireActivity())
+        appsAdapter = AppsAdapter(this, appsList, requireActivity())
         binding.appsRecyclerView.adapter = appsAdapter
         loadInstalledApps()
-
+        loadAds()
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-//            code = bundle.getString("code")!!
-//            binding.appMainText.text = bundle.getString("check")
-
-    }
-
-    /*
-    private fun systemApp(){
-        val allFlag = PackageManager.GET_META_DATA or PackageManager.GET_SHARED_LIBRARY_FILES
-        listOfApps = this.requireContext().packageManager.getInstalledApplications(allFlag) as ArrayList<ApplicationInfo>
-
-        for (appInfo in listOfApps){
-            if (appInfo.flags and ApplicationInfo.FLAG_SYSTEM>0){
-                systemAppFragment.add(appInfo)
-            }
-            else{
-                installAppInfo.add(appInfo)
-            }
-        }
-    }
-    private fun getMainModel(): ArrayList<SystemModel> {
-        val list: ArrayList<SystemModel> = ArrayList()
-        var modelSystem:SystemModel
-        if (appList.isNotEmpty()){
-            for (info in appList){
-                val packageName = info.packageName
-                val appName = info.loadLabel(requireContext().packageManager).toString()
-                val file= File(info.sourceDir)
-                val sizeInByte = file.length()
-                val lastUpdate = file.lastModified()
-                val sizeApp = (sizeInByte/1024)/1024
-
-                val iconApps:Drawable= info.loadIcon(requireContext().packageManager)
-                modelSystem = SystemModel(
-                    image =iconApps,
-                    appName = appName,
-                    packageName = packageName,
-                    appSize = "size:$sizeApp MB",
-                    appDate = lastUpdate.toString()
-                )
-                list.add(modelSystem)
-
-            }
-        }
-        return list
-    }
-*/
     private fun loadInstalledApps() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -121,7 +85,7 @@ class SystemAppFragment : Fragment(), HomeClick {
                 for (app in apps ?: return@launch) {
                     val packageName = app.packageName
                     // Check if it's a user app OR a desired system app
-                    if (app.flags and ApplicationInfo.FLAG_SYSTEM >0 || AppsUninstallFragment.DESIRED_SYSTEM_APPS.contains(
+                    if (app.flags and ApplicationInfo.FLAG_SYSTEM > 0 || AppsUninstallFragment.DESIRED_SYSTEM_APPS.contains(
                             packageName
                         )
 
@@ -165,5 +129,95 @@ class SystemAppFragment : Fragment(), HomeClick {
                 putString("appPackageName", packegeName)
             })
 
+    }
+
+
+    private fun loadAds() {
+        if (AppUtils.isNetworkAvailable(requireContext())) {
+            binding.systemAppsNativeAdOrBanner.visibility = View.VISIBLE
+            val bindAdSystemUpdate = NativeWithOutMediaBinding.inflate(layoutInflater)
+            NativeAdUtils(
+                requireActivity().application,
+                "native_system_apps"
+            ).setAdCallerName("native_system_apps")
+                .loadNativeAd(
+                    getString(R.string.native_id),
+                    Constants.native_system_apps,
+                    binding.systemAppsNativeAdOrBanner,
+                    bindAdSystemUpdate.root,
+                    bindAdSystemUpdate.adAppIcon,
+                    bindAdSystemUpdate.adHeadline,
+                    bindAdSystemUpdate.adBody,
+                    bindAdSystemUpdate.adCallToAction,
+                    null,
+                    null,
+                    adFailed = {
+                        binding.systemAppsNativeAdOrBanner.visibility = View.GONE
+                    },
+                    adValidate = {
+                        binding.systemAppsNativeAdOrBanner.visibility = View.VISIBLE
+                        BannerAdUtils(
+                            activity = requireActivity(),
+                            screenName = "banner_system_apps"
+                        )
+                            .loadBanner(
+                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                remoteConfig = Constants.banner_system_apps, // give remote config here
+                                adsView = binding.systemAppsNativeAdOrBanner, //give your frameLayout here
+                                onAdClicked = {}, //if ad clicked you will receive this callback
+                                onAdFailedToLoad = {
+                                    binding.systemAppsNativeAdOrBanner.visibility = View.GONE
+                                }, // if ad failed to load you will receive this callback
+                                onAdImpression = {}, // if ad impression will receive this callback
+                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdValidate = {
+                                    binding.systemAppsNativeAdOrBanner.visibility = View.GONE
+                                }) //if remote off or no internet or user is premium user you will receive callback here
+
+                    },
+                    adClicked = {
+
+                    },
+                    adImpression = {
+
+                    }
+                )
+            InterstitialAdUtils(
+                requireActivity(),
+                "fullscreen_system_app_details"
+            ).loadInterstitialAd(
+                getString(R.string.admob_splash_fullscreen),
+                if (Constants.fullscreen_system_app_back) Constants.fullscreen_system_app_back else Constants.fullscreen_system_app_details,
+                adAlreadyLoaded = {
+
+                },
+                adLoaded = {
+
+
+                },
+                adFailed = {
+
+
+                },
+                adValidate = {},
+            )
+        } else {
+            binding.systemAppsNativeAdOrBanner.visibility = View.GONE
+        }
+    }
+
+    private fun showAd() {
+        InterstitialAdUtils(
+            requireActivity(),
+            "fullscreen_system_app_back"
+        ).showInterstitialAd(
+            getString(R.string.admob_splash_fullscreen),
+            Constants.fullscreen_system_app_back,
+            fullScreenAdShow = {},
+            fullScreenAdDismissed = {},
+            fullScreenAdFailedToShow = {},
+            fullScreenAdNotAvailable = {},
+        )
     }
 }

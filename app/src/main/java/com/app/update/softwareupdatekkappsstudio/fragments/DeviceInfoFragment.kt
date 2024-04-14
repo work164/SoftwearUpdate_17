@@ -9,31 +9,20 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
+import com.app.update.softwareupdatekkappsstudio.databinding.FragmentBatteryInfoBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.FragmentDeviceInfoBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
+import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.info.PhoneDetail
+import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.banner_ads.BannerAdUtils
+import com.example.adssdk.constants.AppUtils
+import com.example.adssdk.intertesialAds.InterstitialAdUtils
+import com.example.adssdk.native_ad.NativeAdUtils
 
 class DeviceInfoFragment : Fragment() {
-    var tvCompanyName: TextView? = null
-    var tvDeviceName: TextView? = null
-    var tvDeviceName1: TextView? = null
-    var tvDeviceModel: TextView? = null
-    var tvDeviceManufacturer: TextView? = null
-    var tvDevice: TextView? = null
-    var tvBoard: TextView? = null
-    var tvHardware: TextView? = null
-    var tvBrand: TextView? = null
-    var tvGSFId: TextView? = null
-    var tvGAdvertisingId: TextView? = null
-    var tvDeviceId: TextView? = null
-    var tvHardwareSerial: TextView? = null
-    var tvBuildFingerPrint: TextView? = null
-    var tvDeviceType: TextView? = null
-    var tvNetworkOperator: TextView? = null
-    var tvNetworkType: TextView? = null
-    var tvWifiMacAddress: TextView? = null
-    var tvUsbDebugging: TextView? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var binding: FragmentDeviceInfoBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,53 +35,124 @@ class DeviceInfoFragment : Fragment() {
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     findNavController().popBackStack()
+                    showAd()
 
                 }
             })
 
 
+        binding = FragmentDeviceInfoBinding.inflate(inflater,container,false)
 
-        val view = inflater.inflate(R.layout.fragment_device_info, container, false)
+        binding.backDevice.setOnClickListener {
+            findNavController().popBackStack()
+            showAd()
+        }
+
         val phoneDetail = PhoneDetail(requireContext())
-        tvCompanyName = view.findViewById(R.id.tvCompanyName)
-        tvDeviceName = view.findViewById(R.id.tvDeviceName)
-        tvDeviceName1 = view.findViewById(R.id.tvDeviceName1)
-        tvDeviceModel = view.findViewById(R.id.tvDeviceModel)
-        tvDeviceManufacturer = view.findViewById(R.id.tvDeviceManufacturer)
-        tvDevice = view.findViewById(R.id.tvDevice)
-        tvBoard = view.findViewById(R.id.tvBoard)
-        tvHardware = view.findViewById(R.id.tvHardware)
-        tvBrand = view.findViewById(R.id.tvBrand)
-        tvGSFId = view.findViewById(R.id.tvGSFId)
-        tvGAdvertisingId = view.findViewById(R.id.tvGAdvertisingId)
-        tvDeviceId = view.findViewById(R.id.tvDeviceId)
-        tvHardwareSerial = view.findViewById(R.id.tvHardwareSerial)
-        tvBuildFingerPrint = view.findViewById(R.id.tvBuildFingerPrint)
-        tvDeviceType = view.findViewById(R.id.tvDeviceType)
-        tvNetworkOperator = view.findViewById(R.id.tvNetworkOperator)
-        tvNetworkType = view.findViewById(R.id.tvNetworkType)
-        tvWifiMacAddress = view.findViewById(R.id.tvWifiMacAddress)
-        tvUsbDebugging = view.findViewById(R.id.tvUsbDebugging)
-        tvCompanyName?.text = phoneDetail.deviceManufacturer
-        tvDeviceName?.text = phoneDetail.deviceModel
-        tvDeviceName1?.text = phoneDetail.deviceModel
-        tvDeviceModel?.text = phoneDetail.deviceModel
-        tvDeviceManufacturer?.text = phoneDetail.deviceManufacturer
-        tvDevice?.text = phoneDetail.deviceModel
-        tvBoard?.text = phoneDetail.boardName
-        tvHardware?.text = phoneDetail.hardwareName
-        tvBrand?.text = phoneDetail.deviceManufacturer
-        tvGSFId?.text = phoneDetail.gsFrameworkId
-        tvGAdvertisingId?.text = phoneDetail.advertisingId
-        tvDeviceId?.text = phoneDetail.deviceId
-        tvHardwareSerial?.text = phoneDetail.hardwareSerial
-        tvBuildFingerPrint?.text = phoneDetail.buildFingerprint
-        tvDeviceType?.text = phoneDetail.deviceType
-        tvNetworkOperator?.text = phoneDetail.networkOperatorName
-        tvNetworkType?.text = phoneDetail.networkType
-        tvWifiMacAddress?.text = phoneDetail.wifiMacAddress
-        if (phoneDetail.isUsbDebuggingEnabled) tvUsbDebugging?.text = "on" else tvUsbDebugging?.text =
-            "off"
-        return view
+        binding.tvCompanyName.text = phoneDetail.deviceManufacturer
+        binding.tvDeviceName.text = phoneDetail.deviceModel
+        binding.tvDeviceName1.text = phoneDetail.deviceModel
+        binding.tvDeviceModel.text = phoneDetail.deviceModel
+        binding.tvDeviceManufacturer.text = phoneDetail.deviceManufacturer
+        binding.tvDevice.text = phoneDetail.deviceModel
+        binding.tvBoard.text = phoneDetail.boardName
+        binding.tvHardware.text = phoneDetail.hardwareName
+        binding.tvBrand.text = phoneDetail.deviceManufacturer
+        binding.tvGSFId.text = phoneDetail.gsFrameworkId
+        binding.tvGAdvertisingId.text = phoneDetail.advertisingId
+        binding.tvDeviceId.text = phoneDetail.deviceId
+        binding.tvHardwareSerial.text = phoneDetail.hardwareSerial
+        binding.tvBuildFingerPrint.text = phoneDetail.buildFingerprint
+        binding.tvDeviceType.text = phoneDetail.deviceType
+        binding.tvNetworkOperator.text = phoneDetail.networkOperatorName
+        binding.tvNetworkType.text = phoneDetail.networkType
+        binding.tvWifiMacAddress.text = phoneDetail.wifiMacAddress
+        if (phoneDetail.isUsbDebuggingEnabled) binding.tvUsbDebugging.text = "On" else binding.tvUsbDebugging.text = "Off"
+        loadAds()
+        return binding.root
+    }
+
+
+    private fun loadAds() {
+        if (AppUtils.isNetworkAvailable(requireContext())) {
+            binding.deviceNativeAdOrBanner.visibility = View.VISIBLE
+            val bindAdSystemUpdate = NativeWithOutMediaBinding.inflate(layoutInflater)
+            NativeAdUtils(
+                requireActivity().application,
+                "SystemUpdate"
+            ).setAdCallerName("SystemUpdate")
+                .loadNativeAd(
+                    getString(R.string.native_id),
+                    Constants.native_device_details,
+                    binding.deviceNativeAdOrBanner,
+                    bindAdSystemUpdate.root,
+                    bindAdSystemUpdate.adAppIcon,
+                    bindAdSystemUpdate.adHeadline,
+                    bindAdSystemUpdate.adBody,
+                    bindAdSystemUpdate.adCallToAction,
+                    null,
+                    null,
+                    adFailed = {
+                        binding.deviceNativeAdOrBanner.visibility = View.GONE
+                    },
+                    adValidate = {
+                        binding.deviceNativeAdOrBanner.visibility = View.VISIBLE
+                        BannerAdUtils(activity = requireActivity(), screenName = "SystemUpdate")
+                            .loadBanner(
+                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                remoteConfig = Constants.banner_device_details, // give remote config here
+                                adsView = binding.deviceNativeAdOrBanner, //give your frameLayout here
+                                onAdClicked = {}, //if ad clicked you will receive this callback
+                                onAdFailedToLoad = {
+                                    binding.deviceNativeAdOrBanner.visibility = View.GONE
+                                }, // if ad failed to load you will receive this callback
+                                onAdImpression = {}, // if ad impression will receive this callback
+                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdValidate = {
+                                    binding.deviceNativeAdOrBanner.visibility = View.GONE
+                                }) //if remote off or no internet or user is premium user you will receive callback here
+
+                    },
+                    adClicked = {
+
+                    },
+                    adImpression = {
+
+                    }
+                )
+            InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
+                getString(R.string.admob_splash_fullscreen),
+               Constants.fullscreen_device_details_back,
+                adAlreadyLoaded = {
+
+                },
+                adLoaded = {
+
+
+                },
+                adFailed = {
+
+
+                },
+                adValidate = {},
+            )
+        } else {
+            binding.deviceNativeAdOrBanner.visibility = View.GONE
+        }
+    }
+
+    private fun showAd() {
+        InterstitialAdUtils(
+            requireActivity(),
+            "SystemUpdate"
+        ).showInterstitialAd(
+            getString(R.string.admob_splash_fullscreen),
+            Constants.fullscreen_device_details_back,
+            fullScreenAdShow = {},
+            fullScreenAdDismissed = {},
+            fullScreenAdFailedToShow = {},
+            fullScreenAdNotAvailable = {},
+        )
     }
 }

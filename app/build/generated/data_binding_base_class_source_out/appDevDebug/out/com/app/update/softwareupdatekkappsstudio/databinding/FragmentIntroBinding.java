@@ -30,22 +30,22 @@ public final class FragmentIntroBinding implements ViewBinding {
   public final TextView btnSkip;
 
   @NonNull
-  public final FrameLayout flNativeContainer;
+  public final SpringDotsIndicator indicatorLayout;
 
   @NonNull
-  public final SpringDotsIndicator indicatorLayout;
+  public final FrameLayout introNativeAdOrBanner;
 
   @NonNull
   public final ViewPager viewPager;
 
   private FragmentIntroBinding(@NonNull ConstraintLayout rootView, @NonNull AppCompatButton btnNext,
-      @NonNull TextView btnSkip, @NonNull FrameLayout flNativeContainer,
-      @NonNull SpringDotsIndicator indicatorLayout, @NonNull ViewPager viewPager) {
+      @NonNull TextView btnSkip, @NonNull SpringDotsIndicator indicatorLayout,
+      @NonNull FrameLayout introNativeAdOrBanner, @NonNull ViewPager viewPager) {
     this.rootView = rootView;
     this.btnNext = btnNext;
     this.btnSkip = btnSkip;
-    this.flNativeContainer = flNativeContainer;
     this.indicatorLayout = indicatorLayout;
+    this.introNativeAdOrBanner = introNativeAdOrBanner;
     this.viewPager = viewPager;
   }
 
@@ -88,15 +88,15 @@ public final class FragmentIntroBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.flNativeContainer;
-      FrameLayout flNativeContainer = ViewBindings.findChildViewById(rootView, id);
-      if (flNativeContainer == null) {
-        break missingId;
-      }
-
       id = R.id.indicatorLayout;
       SpringDotsIndicator indicatorLayout = ViewBindings.findChildViewById(rootView, id);
       if (indicatorLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.introNativeAdOrBanner;
+      FrameLayout introNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (introNativeAdOrBanner == null) {
         break missingId;
       }
 
@@ -107,7 +107,7 @@ public final class FragmentIntroBinding implements ViewBinding {
       }
 
       return new FragmentIntroBinding((ConstraintLayout) rootView, btnNext, btnSkip,
-          flNativeContainer, indicatorLayout, viewPager);
+          indicatorLayout, introNativeAdOrBanner, viewPager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

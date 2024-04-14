@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,6 +28,9 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
 
   @NonNull
   public final ImageFilterView backDevice;
+
+  @NonNull
+  public final FrameLayout batteryNativeAdOrBanner;
 
   @NonNull
   public final ImageView btnInAppForwardDevice;
@@ -90,10 +94,10 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
 
   private FragmentBatteryInfoBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull ImageView btnInAppForwardDevice, @NonNull TextView device,
-      @NonNull TextView deviceBoard, @NonNull TextView deviceHardware, @NonNull TextView deviceId,
-      @NonNull TextView deviceManufacture, @NonNull TextView deviceModel,
-      @NonNull TextView deviceName, @NonNull TextView deviceStatus,
+      @NonNull FrameLayout batteryNativeAdOrBanner, @NonNull ImageView btnInAppForwardDevice,
+      @NonNull TextView device, @NonNull TextView deviceBoard, @NonNull TextView deviceHardware,
+      @NonNull TextView deviceId, @NonNull TextView deviceManufacture,
+      @NonNull TextView deviceModel, @NonNull TextView deviceName, @NonNull TextView deviceStatus,
       @NonNull TextView deviceTemperature, @NonNull ConstraintLayout group1,
       @NonNull ConstraintLayout group2, @NonNull ConstraintLayout group3,
       @NonNull ConstraintLayout group4, @NonNull ConstraintLayout group5,
@@ -103,6 +107,7 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.backDevice = backDevice;
+    this.batteryNativeAdOrBanner = batteryNativeAdOrBanner;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.device = device;
     this.deviceBoard = deviceBoard;
@@ -161,6 +166,12 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
       id = R.id.backDevice;
       ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
       if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.batteryNativeAdOrBanner;
+      FrameLayout batteryNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
+      if (batteryNativeAdOrBanner == null) {
         break missingId;
       }
 
@@ -285,9 +296,9 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
       }
 
       return new FragmentBatteryInfoBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, device, deviceBoard, deviceHardware, deviceId, deviceManufacture,
-          deviceModel, deviceName, deviceStatus, deviceTemperature, group1, group2, group3, group4,
-          group5, group6, group7, group8, group9, viewBattery);
+          batteryNativeAdOrBanner, btnInAppForwardDevice, device, deviceBoard, deviceHardware,
+          deviceId, deviceManufacture, deviceModel, deviceName, deviceStatus, deviceTemperature,
+          group1, group2, group3, group4, group5, group6, group7, group8, group9, viewBattery);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
