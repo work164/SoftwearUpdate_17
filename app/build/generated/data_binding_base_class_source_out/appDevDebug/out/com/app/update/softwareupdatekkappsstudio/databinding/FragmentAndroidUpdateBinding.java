@@ -8,10 +8,12 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.utils.widget.ImageFilterView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.app.update.softwareupdatekkappsstudio.R;
+import com.google.android.material.appbar.AppBarLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,14 +23,28 @@ public final class FragmentAndroidUpdateBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final AppBarLayout actionBar;
+
+  @NonNull
+  public final ImageFilterView backDevice;
+
+  @NonNull
+  public final ImageView btnInAppForwardDevice;
+
+  @NonNull
   public final AppCompatButton btnOSNext;
 
   @NonNull
   public final ImageView iconUpdate;
 
   private FragmentAndroidUpdateBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppCompatButton btnOSNext, @NonNull ImageView iconUpdate) {
+      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull AppCompatButton btnOSNext,
+      @NonNull ImageView iconUpdate) {
     this.rootView = rootView;
+    this.actionBar = actionBar;
+    this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.btnOSNext = btnOSNext;
     this.iconUpdate = iconUpdate;
   }
@@ -60,6 +76,24 @@ public final class FragmentAndroidUpdateBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.action_bar;
+      AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
+      if (actionBar == null) {
+        break missingId;
+      }
+
+      id = R.id.backDevice;
+      ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
+      if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
+        break missingId;
+      }
+
       id = R.id.btnOSNext;
       AppCompatButton btnOSNext = ViewBindings.findChildViewById(rootView, id);
       if (btnOSNext == null) {
@@ -72,7 +106,8 @@ public final class FragmentAndroidUpdateBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAndroidUpdateBinding((ConstraintLayout) rootView, btnOSNext, iconUpdate);
+      return new FragmentAndroidUpdateBinding((ConstraintLayout) rootView, actionBar, backDevice,
+          btnInAppForwardDevice, btnOSNext, iconUpdate);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

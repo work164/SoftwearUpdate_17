@@ -31,19 +31,31 @@
     <color name="textcolor">#62AE53</color>
     <color name="white">#FFFFFF</color>
     <string name="accelerometer">Accelerometer</string>
+    <string name="accept">ACCEPT</string>
     <string name="admob_banner_id" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
     <string name="admob_interal" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
     <string name="admob_splash_fullscreen" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="android_version">Android Version</string>
+    <string name="app_details">App Details</string>
     <string name="app_icon">app icon</string>
     <string name="app_id" translatable="false">"ca-app-pub-3940256099942544~3347511713"</string>
     <string name="app_name">App Update</string>
     <string name="app_open_l" translatable="false">"ca-app-pub-3940256099942544/3419835294"</string>
+    <string name="app_usage">App Usage</string>
+    <string name="app_usage_fragment_this_month">Monthly</string>
+    <string name="app_usage_fragment_this_week">Week</string>
+    <string name="app_usage_fragment_today">Today</string>
+    <string name="app_usage_fragment_yesterday">Yesterday</string>
+    <string name="app_version">App Version</string>
     <string name="billing_product" translatable="false">"android.test.purchased"</string>
     <string name="change_language">Change Language</string>
+    <string name="checking_updates">Checking Updates:</string>
     <string name="close">close</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">00000000000000000000000000000000</string>
+    <string name="connection_wifi">Connections Details</string>
     <string name="continue_language">Continue</string>
     <string name="copied_to_clipboard">Copied to Clipboard</string>
+    <string name="device_info">Device Info</string>
     <string name="env_dev" translatable="false">true</string>
     <string name="gcm_defaultSenderId" translatable="false">435016968660</string>
     <string name="google_api_key" translatable="false">AIzaSyCJkKfJQOXyBX2iN4WB9CUmlVJVRPmX8Nc</string>
@@ -51,18 +63,31 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCJkKfJQOXyBX2iN4WB9CUmlVJVRPmX8Nc</string>
     <string name="google_storage_bucket" translatable="false">software-updater-236e5.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="installed_apps">Installed Apps</string>
+    <string name="last_update">Last Update</string>
     <string name="lets_update_mobile_software">Lets Update Mobile Software</string>
     <string name="na">N/A</string>
     <string name="native_id" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
     <string name="next">Next</string>
     <string name="open">open</string>
+    <string name="policy_text">By tapping the ‘Accept’ button, you confirm that you agree with our Privacy Policy.</string>
     <string name="preference_file_key">alarm_pref</string>
     <string name="privacu_link">https://unseenmessage.blogspot.com/2023/09/app-updater-privacy-policy.html</string>
     <string name="project_id" translatable="false">software-updater-236e5</string>
     <string name="public_ip_address">Ip Address</string>
+    <string name="restore_apps">Restore Apps</string>
+    <string name="scanning">Scanning...</string>
+    <string name="sensor">All Sensors</string>
     <string name="skip">Skip</string>
     <string name="software_update">Software Update</string>
+    <string name="software_update_amp_apps_update"><![CDATA[SOFTWARE UPDATE & Apps Update]]></string>
     <string name="start">START</string>
+    <string name="system_update">System Update</string>
+    <string name="total_update_found">Total Update Found</string>
+    <string name="uninstalled_apps">Uninstall Apps</string>
+    <string name="update_available">Available Update</string>
+    <string name="view_on_play_store">View on Play Store</string>
+    <string name="welcome_to">Welcome to</string>
     <string name="your_ip"><ns2:g example="192.168.0.1" id="ip">%s</ns2:g></string>
     <string name="your_ip_na">N/A</string>
     <style name="AdTheme">

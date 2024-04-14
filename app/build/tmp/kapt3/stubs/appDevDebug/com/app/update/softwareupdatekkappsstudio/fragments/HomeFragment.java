@@ -29,4 +29,10 @@ public final class HomeFragment extends androidx.fragment.app.Fragment implement
     public void onItemClick(@org.jetbrains.annotations.NotNull
     java.lang.String name, int position) {
     }
+    
+    @java.lang.Override
+    public void onUninstallItemClick(@org.jetbrains.annotations.NotNull
+    java.lang.String name, @org.jetbrains.annotations.NotNull
+    java.lang.String packegeName, int position) {
+    }
 }

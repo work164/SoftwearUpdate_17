@@ -13,12 +13,6 @@ import com.app.update.softwareupdatekkappsstudio.databinding.FragmentDeviceInfor
 class DeviceInformationFragment : Fragment() {
     private lateinit var binding: FragmentDeviceInformationBinding
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

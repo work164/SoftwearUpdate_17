@@ -13,6 +13,10 @@
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
     <uses-permission
         android:name="android.permission.LOCAL_MAC_ADDRESS"
         tools:ignore="ProtectedPermissions" />
@@ -46,9 +50,6 @@
         <activity
             android:name=".WifiDetailsActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".practice.WifiActivity"
             android:screenOrientation="portrait" />
 
         <activity

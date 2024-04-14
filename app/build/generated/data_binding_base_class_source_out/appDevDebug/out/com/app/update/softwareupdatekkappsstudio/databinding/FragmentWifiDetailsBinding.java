@@ -8,11 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.utils.widget.ImageFilterView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.airbnb.lottie.LottieAnimationView;
 import com.app.update.softwareupdatekkappsstudio.R;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -23,28 +25,25 @@ public final class FragmentWifiDetailsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final AppBarLayout actionBar;
+
+  @NonNull
   public final LottieAnimationView animationView;
 
   @NonNull
   public final ImageView animationViewwifi;
 
   @NonNull
-  public final ConstraintLayout constraintLayout;
+  public final ImageFilterView backDevice;
+
+  @NonNull
+  public final ImageView btnInAppForwardDevice;
 
   @NonNull
   public final ConstraintLayout constraintLayout4;
 
   @NonNull
   public final FloatingActionButton fabUpdateIp;
-
-  @NonNull
-  public final ImageView imageView2;
-
-  @NonNull
-  public final TextView textView2;
-
-  @NonNull
-  public final TextView textView3;
 
   @NonNull
   public final TextView textView4;
@@ -80,24 +79,23 @@ public final class FragmentWifiDetailsBinding implements ViewBinding {
   public final TextView textviewPublicIp;
 
   private FragmentWifiDetailsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull LottieAnimationView animationView, @NonNull ImageView animationViewwifi,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout4,
-      @NonNull FloatingActionButton fabUpdateIp, @NonNull ImageView imageView2,
-      @NonNull TextView textView2, @NonNull TextView textView3, @NonNull TextView textView4,
+      @NonNull AppBarLayout actionBar, @NonNull LottieAnimationView animationView,
+      @NonNull ImageView animationViewwifi, @NonNull ImageFilterView backDevice,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull ConstraintLayout constraintLayout4,
+      @NonNull FloatingActionButton fabUpdateIp, @NonNull TextView textView4,
       @NonNull TextView textView5, @NonNull TextView textView7, @NonNull TextView textviewDns1,
       @NonNull TextView textviewDvs2, @NonNull TextView textviewGatewayIpValue,
       @NonNull TextView textviewMac, @NonNull TextView textviewMacAddressName,
       @NonNull TextView textviewMacAddressValue, @NonNull TextView textviewMacAddressValue2,
       @NonNull TextView textviewPublicIp) {
     this.rootView = rootView;
+    this.actionBar = actionBar;
     this.animationView = animationView;
     this.animationViewwifi = animationViewwifi;
-    this.constraintLayout = constraintLayout;
+    this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.constraintLayout4 = constraintLayout4;
     this.fabUpdateIp = fabUpdateIp;
-    this.imageView2 = imageView2;
-    this.textView2 = textView2;
-    this.textView3 = textView3;
     this.textView4 = textView4;
     this.textView5 = textView5;
     this.textView7 = textView7;
@@ -138,6 +136,12 @@ public final class FragmentWifiDetailsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.action_bar;
+      AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
+      if (actionBar == null) {
+        break missingId;
+      }
+
       id = R.id.animation_view;
       LottieAnimationView animationView = ViewBindings.findChildViewById(rootView, id);
       if (animationView == null) {
@@ -150,9 +154,15 @@ public final class FragmentWifiDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.constraintLayout;
-      ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout == null) {
+      id = R.id.backDevice;
+      ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
+      if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
         break missingId;
       }
 
@@ -165,24 +175,6 @@ public final class FragmentWifiDetailsBinding implements ViewBinding {
       id = R.id.fab_update_ip;
       FloatingActionButton fabUpdateIp = ViewBindings.findChildViewById(rootView, id);
       if (fabUpdateIp == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView2;
-      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView2 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-      if (textView3 == null) {
         break missingId;
       }
 
@@ -252,11 +244,11 @@ public final class FragmentWifiDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentWifiDetailsBinding((ConstraintLayout) rootView, animationView,
-          animationViewwifi, constraintLayout, constraintLayout4, fabUpdateIp, imageView2,
-          textView2, textView3, textView4, textView5, textView7, textviewDns1, textviewDvs2,
-          textviewGatewayIpValue, textviewMac, textviewMacAddressName, textviewMacAddressValue,
-          textviewMacAddressValue2, textviewPublicIp);
+      return new FragmentWifiDetailsBinding((ConstraintLayout) rootView, actionBar, animationView,
+          animationViewwifi, backDevice, btnInAppForwardDevice, constraintLayout4, fabUpdateIp,
+          textView4, textView5, textView7, textviewDns1, textviewDvs2, textviewGatewayIpValue,
+          textviewMac, textviewMacAddressName, textviewMacAddressValue, textviewMacAddressValue2,
+          textviewPublicIp);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

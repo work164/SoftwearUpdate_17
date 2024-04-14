@@ -6,14 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ScanAppFragment">
 
-
-
-
-
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie1"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/guideLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +19,10 @@
         app:lottie_rawRes="@raw/ic_lottie" />
 
     <ImageView
-        android:id="@+id/lottie_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:id="@+id/ifvAppIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/ic_home_scan"
         app:layout_constraintBottom_toBottomOf="@id/lottie1"
         app:layout_constraintEnd_toEndOf="@id/lottie1"
@@ -37,19 +34,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.40" />
+        app:layout_constraintGuide_percent="0.50" />
 
     <TextView
-        android:id="@+id/appText"
+        android:id="@+id/tvScanning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Video Downloader"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/scanning"
+        android:textColor="@color/black"
+        android:textSize="14.5sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAppName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text=""
         android:textColor="#2FC75C"
         android:textSize="18.5sp"
+        app:layout_constraintBottom_toTopOf="@+id/checkingUpdate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideLine" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/checkingUpdate"
@@ -57,86 +72,99 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
         android:layout_marginTop="10dp"
         android:progress="50"
         android:progressBackgroundTint="#E5E5E5"
         android:progressTint="#2FC75C"
+        app:layout_constraintBottom_toTopOf="@+id/totalUpdateAvailable"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appText" />
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/medium"
+        android:gravity="start|center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/checking_updates"
+        android:textColor="#000000"
+        android:textSize="15.5sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/checkingUpdate"
+        app:layout_constraintEnd_toStartOf="@+id/tvCheckingUpdateValue"
+        app:layout_constraintStart_toStartOf="@id/checkingUpdate"
+        app:layout_constraintTop_toTopOf="@id/checkingUpdate" />
+
+    <TextView
+        android:id="@+id/tvCheckingUpdateValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/checkingUpdate"
-        app:layout_constraintTop_toTopOf="@id/checkingUpdate"
-        app:layout_constraintBottom_toBottomOf="@id/checkingUpdate"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:textSize="15.5sp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="@font/medium"
-        android:text="Checking Updates:"
-        android:textColor="#000000"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/checkingUpdate"
-        app:layout_constraintTop_toTopOf="@id/checkingUpdate"
-        app:layout_constraintBottom_toBottomOf="@id/checkingUpdate"
-        android:layout_marginStart="20dp"
         android:gravity="center"
+        android:text=""
+        android:textColor="#000000"
         android:textSize="15.5sp"
-        android:fontFamily="@font/medium"
-        android:text="Checking Updates:"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/totalApps"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="@id/checkingUpdate"
-    app:layout_constraintTop_toTopOf="@id/checkingUpdate"
-    app:layout_constraintBottom_toBottomOf="@id/checkingUpdate"
-    android:layout_marginEnd="20dp"
-    android:gravity="center"
-    android:textSize="15.5sp"
-    android:fontFamily="@font/medium"
-    android:text="5/20"
-    android:textColor="#000000"/>
+        app:layout_constraintBottom_toBottomOf="@id/checkingUpdate"
+        app:layout_constraintEnd_toEndOf="@id/checkingUpdate"
+        app:layout_constraintTop_toTopOf="@id/checkingUpdate" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/totalUpdateAvailable"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginVertical="10dp"
         android:background="@drawable/checking_update_background"
+        app:layout_constraintBottom_toTopOf="@+id/nativeAdScan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkingUpdate">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:fontFamily="@font/regular"
-            android:gravity="center"
-            android:text="Total Update Found"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/total_update_found"
             android:textColor="#FFFFFF"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvUpdateFoundValue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tvUpdateFoundValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/urbaint_light"
-            android:text="05"
+            android:text=""
             android:textColor="#FFFFFF"
             android:textSize="18.5sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <FrameLayout
+        android:id="@+id/nativeAdScan"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

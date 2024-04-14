@@ -102,7 +102,7 @@
             app:destination="@id/batteryInfoFragment" />
 
         <action
-            android:id="@+id/action_homeFragment_to_appCounterFragment"
+            android:id="@+id/action_homeFragment_to_appInstalledFragment"
             app:destination="@id/appCounterFragment" />
 
         <action
@@ -128,7 +128,7 @@
             android:id="@+id/action_homeFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
 
-  <action
+        <action
             android:id="@+id/action_homeFragment_to_restoreAppsFragment"
             app:destination="@id/restoreAppsFragment" />
 
@@ -140,7 +140,13 @@
         android:id="@+id/scanAppsFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.ScanAppFragment"
         android:label="Fragment Scan"
-        tools:layout="@layout/fragment_scan_app" />
+        tools:layout="@layout/fragment_scan_app">
+        <action
+            android:id="@+id/action_scanFragment_to_availableAppsUpdateFragment"
+            app:destination="@id/availableAppsUpdateFragment" />
+
+
+    </fragment>
 
     <fragment
         android:id="@+id/settingFragment"
@@ -175,20 +181,6 @@
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.AndroidUpdateFragment"
         android:label="Fragment Android Update"
         tools:layout="@layout/fragment_android_update">
-        <action
-            android:id="@+id/action_androidUpdateFragment_to_appDetailFragment"
-            app:destination="@id/appDetailFragment" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/appUninstallFragment"
-        android:name="com.app.update.softwareupdatekkappsstudio.fragments.AppsUninstallFragment"
-        android:label="Fragment Android Uninstall"
-        tools:layout="@layout/fragment_apps_uninstall">
-        <action
-            android:id="@+id/action_appUninstallFragment_to_appDetailFragment"
-            app:destination="@id/appDetailFragment" />
 
     </fragment>
 
@@ -205,32 +197,10 @@
         tools:layout="@layout/fragment_battery_info" />
 
     <fragment
-        android:id="@+id/appCounterFragment"
-        android:name="com.app.update.softwareupdatekkappsstudio.fragments.AppCountFragment"
-        android:label="Fragment App Counter"
-        tools:layout="@layout/fragment_app_count">
-        <action
-            android:id="@+id/action_appCounterFragment_to_appDetailFragment"
-            app:destination="@id/appDetailFragment" />
-
-    </fragment>
-
-    <fragment
         android:id="@+id/deviceInformationFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.DeviceInformationFragment"
         android:label="Fragment Device Information"
         tools:layout="@layout/fragment_device_information" />
-
-    <fragment
-        android:id="@+id/systemAppsFragment"
-        android:name="com.app.update.softwareupdatekkappsstudio.fragments.SystemAppFragment"
-        android:label="Fragment System Apps"
-        tools:layout="@layout/fragment_system_app">
-        <action
-            android:id="@+id/action_systemAppsFragment_to_appDetailFragment"
-            app:destination="@id/appDetailFragment" />
-
-    </fragment>
 
     <fragment
         android:id="@+id/wifiFragment"
@@ -249,7 +219,7 @@
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.WifiDetailsFragment"
         android:label="Fragment wifi Detail"
         tools:layout="@layout/fragment_wifi_details" />
-
+    <!--App Details Fragment-->
     <fragment
         android:id="@+id/appDetailFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.AppDetailsFragment"
@@ -257,15 +227,63 @@
         tools:layout="@layout/fragment_app_details" />
 
     <fragment
+        android:id="@+id/appUninstallFragment"
+        android:name="com.app.update.softwareupdatekkappsstudio.fragments.AppsUninstallFragment"
+        android:label="Fragment Android Uninstall"
+        tools:layout="@layout/fragment_apps_uninstall">
+        <action
+            android:id="@+id/action_appUninstallFragment_to_appDetailFragment"
+            app:destination="@id/appDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/appCounterFragment"
+        android:name="com.app.update.softwareupdatekkappsstudio.fragments.AppInstalledFragment"
+        android:label="Fragment App Counter"
+        tools:layout="@layout/fragment_app_installed">
+        <action
+            android:id="@+id/action_appCounterFragment_to_appDetailFragment"
+            app:destination="@id/appDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/systemAppsFragment"
+        android:name="com.app.update.softwareupdatekkappsstudio.fragments.SystemAppFragment"
+        android:label="Fragment System Apps"
+        tools:layout="@layout/fragment_system_app">
+        <action
+            android:id="@+id/action_systemAppsFragment_to_appDetailFragment"
+            app:destination="@id/appDetailFragment" />
+
+    </fragment>
+    <fragment
         android:id="@+id/appUsageFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.AppUsageFragment"
         android:label="Fragment App Usage"
-        tools:layout="@layout/fragment_app_usage" />
+        tools:layout="@layout/fragment_app_usage">
+        <action
+            android:id="@+id/action_appUsageFragment_to_appDetailFragment"
+            app:destination="@id/appDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/restoreAppsFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.RestoreAppsFragment"
         android:label="Fragment App Restore"
-        tools:layout="@layout/fragment_restore_apps" />
+        tools:layout="@layout/fragment_restore_apps">
+        <action
+            android:id="@+id/action_restoreAppsFragment_to_appDetailFragment"
+            app:destination="@id/appDetailFragment" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/availableAppsUpdateFragment"
+        android:name="com.app.update.softwareupdatekkappsstudio.fragments.UpdateAvailableFragment"
+        android:label="Fragment App Updates"
+        tools:layout="@layout/fragment_update_available">
+        <action
+            android:id="@+id/action_availableAppsUpdateFragment_to_appDetailFragment"
+            app:destination="@id/appDetailFragment" />
+
+    </fragment>
 
 </navigation>

@@ -70,7 +70,7 @@ public class WifiDetailsActivity extends AppCompatActivity {
             info_dns2 = getIntent().getStringExtra("info_dns2");
         }
 
-        findViewById(R.id.imageView2).setOnClickListener(view -> {
+        findViewById(R.id.backDevice).setOnClickListener(view -> {
 //            if (bottomNavView != null) {
 //                bottomNavView.setVisibility(View.VISIBLE);
 //            }

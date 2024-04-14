@@ -7,13 +7,11 @@
     tools:context=".fragments.PrivacyFragment">
 
 
-
-
-
     <ImageView
         android:id="@+id/topImageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:contentDescription="@string/app_name"
         android:background="@drawable/top_imag"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.45"
@@ -24,7 +22,7 @@
         android:id="@+id/welcomeText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Welcome to "
+        android:text="@string/welcome_to"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/topImageView"
@@ -36,7 +34,7 @@
         android:id="@+id/details"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="SOFTWARE UPDATE &amp; Apps Update"
+        android:text="@string/software_update_amp_apps_update"
         android:textColor="@color/textcolor"
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
@@ -49,8 +47,7 @@
         android:id="@+id/privacyText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="By tapping the ‘Accept’ button, you confirm that you
-agree with our Privacy Policy."
+        android:text="@string/policy_text"
         android:textColor="@color/black"
         android:textSize="@dimen/_11sdp"
         android:textStyle="normal"
@@ -65,8 +62,8 @@ agree with our Privacy Policy."
         android:layout_height="@dimen/_35sdp"
         android:layout_margin="5dp"
         android:background="@drawable/square_shape"
-        android:paddingHorizontal="20dp"
-        android:text="Accept and Continue"
+        android:paddingHorizontal="50dp"
+        android:text="@string/accept"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

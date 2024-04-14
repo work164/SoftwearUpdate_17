@@ -65,7 +65,7 @@ class HomeFragment : Fragment(), HomeClick {
             }
 
             1 -> {
-                findNavController().navigate(R.id.action_homeFragment_to_appCounterFragment)
+                findNavController().navigate(R.id.action_homeFragment_to_appInstalledFragment)
 
             }
 

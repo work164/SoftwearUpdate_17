@@ -25,10 +25,10 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
   public final AppBarLayout actionBar;
 
   @NonNull
-  public final ImageFilterView back;
+  public final ImageFilterView backDevice;
 
   @NonNull
-  public final ImageView btnInAppForward;
+  public final ImageView btnInAppForwardDevice;
 
   @NonNull
   public final ConstraintLayout compass;
@@ -55,16 +55,16 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
   public final View viewSystem;
 
   private FragmentSensorInfoBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView back,
-      @NonNull ImageView btnInAppForward, @NonNull ConstraintLayout compass,
+      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull ConstraintLayout compass,
       @NonNull ConstraintLayout excel, @NonNull ConstraintLayout gyro,
       @NonNull ConstraintLayout light1, @NonNull ConstraintLayout magneto,
       @NonNull ConstraintLayout proximity, @NonNull ConstraintLayout total,
       @NonNull View viewSystem) {
     this.rootView = rootView;
     this.actionBar = actionBar;
-    this.back = back;
-    this.btnInAppForward = btnInAppForward;
+    this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.compass = compass;
     this.excel = excel;
     this.gyro = gyro;
@@ -108,15 +108,15 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.back;
-      ImageFilterView back = ViewBindings.findChildViewById(rootView, id);
-      if (back == null) {
+      id = R.id.backDevice;
+      ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
+      if (backDevice == null) {
         break missingId;
       }
 
-      id = R.id.btn_inAppForward;
-      ImageView btnInAppForward = ViewBindings.findChildViewById(rootView, id);
-      if (btnInAppForward == null) {
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
         break missingId;
       }
 
@@ -168,8 +168,9 @@ public final class FragmentSensorInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSensorInfoBinding((ConstraintLayout) rootView, actionBar, back,
-          btnInAppForward, compass, excel, gyro, light1, magneto, proximity, total, viewSystem);
+      return new FragmentSensorInfoBinding((ConstraintLayout) rootView, actionBar, backDevice,
+          btnInAppForwardDevice, compass, excel, gyro, light1, magneto, proximity, total,
+          viewSystem);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

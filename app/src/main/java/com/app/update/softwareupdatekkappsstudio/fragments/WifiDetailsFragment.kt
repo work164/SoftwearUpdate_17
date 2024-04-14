@@ -19,6 +19,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.constraintlayout.utils.widget.ImageFilterView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
@@ -94,7 +95,7 @@ class WifiDetailsFragment : Fragment() {
 
             // Use the retrieved data as needed
         }
-        view.findViewById<View>(R.id.imageView2).setOnClickListener {
+        view.findViewById<ImageFilterView>(R.id.backDevice).setOnClickListener {
             if (bottomNavView != null) {
                 bottomNavView?.visibility = View.VISIBLE
             }

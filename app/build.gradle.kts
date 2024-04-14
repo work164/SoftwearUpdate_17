@@ -183,5 +183,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
 
+    implementation("org.jsoup:jsoup:1.13.1")
+    implementation("com.github.TheBotBox:AppsUsageMonitorAPI:1.1")
 
 }

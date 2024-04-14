@@ -10,10 +10,12 @@ import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.utils.widget.ImageFilterView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.app.update.softwareupdatekkappsstudio.R;
+import com.google.android.material.appbar.AppBarLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,7 +25,16 @@ public final class FragmentWifiBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final AppBarLayout actionBar;
+
+  @NonNull
   public final ImageView animationViewwifi;
+
+  @NonNull
+  public final ImageFilterView backDevice;
+
+  @NonNull
+  public final ImageView btnInAppForwardDevice;
 
   @NonNull
   public final ConstraintLayout constraintLayout3;
@@ -46,13 +57,17 @@ public final class FragmentWifiBinding implements ViewBinding {
   @NonNull
   public final CardView wifidetailsbtn;
 
-  private FragmentWifiBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView animationViewwifi, @NonNull ConstraintLayout constraintLayout3,
+  private FragmentWifiBinding(@NonNull ConstraintLayout rootView, @NonNull AppBarLayout actionBar,
+      @NonNull ImageView animationViewwifi, @NonNull ImageFilterView backDevice,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull ConstraintLayout constraintLayout3,
       @NonNull ImageView imageView3, @NonNull TextView textView6,
       @NonNull TextView textviewNetworkSpeedValue, @NonNull TextView textviewSsidValue,
       @NonNull ToggleButton toggleWifii, @NonNull CardView wifidetailsbtn) {
     this.rootView = rootView;
+    this.actionBar = actionBar;
     this.animationViewwifi = animationViewwifi;
+    this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.constraintLayout3 = constraintLayout3;
     this.imageView3 = imageView3;
     this.textView6 = textView6;
@@ -89,9 +104,27 @@ public final class FragmentWifiBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.action_bar;
+      AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
+      if (actionBar == null) {
+        break missingId;
+      }
+
       id = R.id.animation_viewwifi;
       ImageView animationViewwifi = ViewBindings.findChildViewById(rootView, id);
       if (animationViewwifi == null) {
+        break missingId;
+      }
+
+      id = R.id.backDevice;
+      ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
+      if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
         break missingId;
       }
 
@@ -137,9 +170,9 @@ public final class FragmentWifiBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentWifiBinding((ConstraintLayout) rootView, animationViewwifi,
-          constraintLayout3, imageView3, textView6, textviewNetworkSpeedValue, textviewSsidValue,
-          toggleWifii, wifidetailsbtn);
+      return new FragmentWifiBinding((ConstraintLayout) rootView, actionBar, animationViewwifi,
+          backDevice, btnInAppForwardDevice, constraintLayout3, imageView3, textView6,
+          textviewNetworkSpeedValue, textviewSsidValue, toggleWifii, wifidetailsbtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

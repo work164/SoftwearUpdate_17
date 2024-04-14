@@ -4,25 +4,79 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.utils.widget.ImageFilterView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.app.update.softwareupdatekkappsstudio.R;
+import com.google.android.material.appbar.AppBarLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentAppUsageBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentAppUsageBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final AppBarLayout actionBar;
+
+  @NonNull
+  public final ImageFilterView backDevice;
+
+  @NonNull
+  public final ImageView btnInAppForwardDevice;
+
+  @NonNull
+  public final HorizontalScrollView llDuration;
+
+  @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
+  public final RecyclerView recyclerView;
+
+  @NonNull
+  public final TextView tvThisMonth;
+
+  @NonNull
+  public final TextView tvThisWeek;
+
+  @NonNull
+  public final TextView tvToday;
+
+  @NonNull
+  public final TextView tvYesterday;
+
+  private FragmentAppUsageBinding(@NonNull ConstraintLayout rootView,
+      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull HorizontalScrollView llDuration,
+      @NonNull ProgressBar progressBar, @NonNull RecyclerView recyclerView,
+      @NonNull TextView tvThisMonth, @NonNull TextView tvThisWeek, @NonNull TextView tvToday,
+      @NonNull TextView tvYesterday) {
     this.rootView = rootView;
+    this.actionBar = actionBar;
+    this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
+    this.llDuration = llDuration;
+    this.progressBar = progressBar;
+    this.recyclerView = recyclerView;
+    this.tvThisMonth = tvThisMonth;
+    this.tvThisWeek = tvThisWeek;
+    this.tvToday = tvToday;
+    this.tvYesterday = tvYesterday;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +97,75 @@ public final class FragmentAppUsageBinding implements ViewBinding {
 
   @NonNull
   public static FragmentAppUsageBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.action_bar;
+      AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
+      if (actionBar == null) {
+        break missingId;
+      }
 
-    return new FragmentAppUsageBinding((FrameLayout) rootView);
+      id = R.id.backDevice;
+      ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
+      if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.llDuration;
+      HorizontalScrollView llDuration = ViewBindings.findChildViewById(rootView, id);
+      if (llDuration == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      id = R.id.recyclerView;
+      RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.tvThisMonth;
+      TextView tvThisMonth = ViewBindings.findChildViewById(rootView, id);
+      if (tvThisMonth == null) {
+        break missingId;
+      }
+
+      id = R.id.tvThisWeek;
+      TextView tvThisWeek = ViewBindings.findChildViewById(rootView, id);
+      if (tvThisWeek == null) {
+        break missingId;
+      }
+
+      id = R.id.tvToday;
+      TextView tvToday = ViewBindings.findChildViewById(rootView, id);
+      if (tvToday == null) {
+        break missingId;
+      }
+
+      id = R.id.tvYesterday;
+      TextView tvYesterday = ViewBindings.findChildViewById(rootView, id);
+      if (tvYesterday == null) {
+        break missingId;
+      }
+
+      return new FragmentAppUsageBinding((ConstraintLayout) rootView, actionBar, backDevice,
+          btnInAppForwardDevice, llDuration, progressBar, recyclerView, tvThisMonth, tvThisWeek,
+          tvToday, tvYesterday);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

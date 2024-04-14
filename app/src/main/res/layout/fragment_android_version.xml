@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.AndroidVersionFragment">
 
 
@@ -11,327 +11,374 @@
         android:id="@+id/action_bar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/backDevice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="15dp"
+                android:src="@drawable/ic_reverse"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_reverse"/>
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Android Version details"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toEndOf="@id/backDevice"
                 android:layout_marginStart="20dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/android_version"
                 android:textColor="#000000"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/backDevice"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_inAppForwardDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="0dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/pro_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent="0.2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
+
     <View
         android:id="@+id/viewBattery"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="#4F4F4F"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/action_bar"
-        android:background="#4F4F4F"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/viewBattery"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewBattery">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group1"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Device Name:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="realme C17"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="realme C17"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group2"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group1"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group1">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Version:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceModel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Baseband &amp; kernel"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Baseband &amp; kernel"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group3"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group2"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group2">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="realme UI version:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceManufacture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="V2.0"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="V2.0"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group4"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group3"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group3">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Android Version:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/device"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="11"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="11"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group5"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group4"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group4">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Processor:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceHardware"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Qualcomm SDM460"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Qualcomm SDM460"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group5"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group5">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="RAM:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceBoard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6.00GB"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="6.00GB"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group7"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group6"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group6">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Model:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RMX2101"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="RMX2101"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group8"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group7"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group7">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Status:"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceTemperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IMEI &amp; IP"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="IMEI &amp; IP"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/group8"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group8">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Legal information"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
-                android:fontFamily="@font/roboto_bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/deviceStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User Agreement Privacy\nPolicy, and more"
-                android:textSize="15.5sp"
-                android:textColor="#808080"
                 android:fontFamily="@font/medium"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="User Agreement Privacy\nPolicy, and more"
+                android:textColor="#808080"
+                android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

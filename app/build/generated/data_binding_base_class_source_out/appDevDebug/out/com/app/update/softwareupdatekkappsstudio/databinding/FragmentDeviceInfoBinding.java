@@ -4,21 +4,33 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.utils.widget.ImageFilterView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.app.update.softwareupdatekkappsstudio.R;
+import com.google.android.material.appbar.AppBarLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentDeviceInfoBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final ConstraintLayout rootView;
+
+  @NonNull
+  public final AppBarLayout actionBar;
+
+  @NonNull
+  public final ImageFilterView backDevice;
+
+  @NonNull
+  public final ImageView btnInAppForwardDevice;
 
   @NonNull
   public final CardView cardView2;
@@ -83,7 +95,12 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
   @NonNull
   public final TextView tvWifiMacAddress;
 
-  private FragmentDeviceInfoBinding(@NonNull ScrollView rootView, @NonNull CardView cardView2,
+  @NonNull
+  public final View viewBattery;
+
+  private FragmentDeviceInfoBinding(@NonNull ConstraintLayout rootView,
+      @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull CardView cardView2,
       @NonNull TextView tvBluetoothMacAddress, @NonNull TextView tvBoard, @NonNull TextView tvBrand,
       @NonNull TextView tvBuildFingerPrint, @NonNull TextView tvCompanyName,
       @NonNull TextView tvDevice, @NonNull TextView tvDeviceId,
@@ -92,8 +109,12 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
       @NonNull TextView tvDeviceType, @NonNull TextView tvGAdvertisingId, @NonNull TextView tvGSFId,
       @NonNull TextView tvHardware, @NonNull TextView tvHardwareSerial,
       @NonNull TextView tvNetworkOperator, @NonNull TextView tvNetworkType,
-      @NonNull TextView tvUsbDebugging, @NonNull TextView tvWifiMacAddress) {
+      @NonNull TextView tvUsbDebugging, @NonNull TextView tvWifiMacAddress,
+      @NonNull View viewBattery) {
     this.rootView = rootView;
+    this.actionBar = actionBar;
+    this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.cardView2 = cardView2;
     this.tvBluetoothMacAddress = tvBluetoothMacAddress;
     this.tvBoard = tvBoard;
@@ -115,11 +136,12 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
     this.tvNetworkType = tvNetworkType;
     this.tvUsbDebugging = tvUsbDebugging;
     this.tvWifiMacAddress = tvWifiMacAddress;
+    this.viewBattery = viewBattery;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -144,6 +166,24 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.action_bar;
+      AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
+      if (actionBar == null) {
+        break missingId;
+      }
+
+      id = R.id.backDevice;
+      ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
+      if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
+        break missingId;
+      }
+
       id = R.id.cardView2;
       CardView cardView2 = ViewBindings.findChildViewById(rootView, id);
       if (cardView2 == null) {
@@ -270,11 +310,18 @@ public final class FragmentDeviceInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDeviceInfoBinding((ScrollView) rootView, cardView2, tvBluetoothMacAddress,
-          tvBoard, tvBrand, tvBuildFingerPrint, tvCompanyName, tvDevice, tvDeviceId,
-          tvDeviceManufacturer, tvDeviceModel, tvDeviceName, tvDeviceName1, tvDeviceType,
-          tvGAdvertisingId, tvGSFId, tvHardware, tvHardwareSerial, tvNetworkOperator, tvNetworkType,
-          tvUsbDebugging, tvWifiMacAddress);
+      id = R.id.viewBattery;
+      View viewBattery = ViewBindings.findChildViewById(rootView, id);
+      if (viewBattery == null) {
+        break missingId;
+      }
+
+      return new FragmentDeviceInfoBinding((ConstraintLayout) rootView, actionBar, backDevice,
+          btnInAppForwardDevice, cardView2, tvBluetoothMacAddress, tvBoard, tvBrand,
+          tvBuildFingerPrint, tvCompanyName, tvDevice, tvDeviceId, tvDeviceManufacturer,
+          tvDeviceModel, tvDeviceName, tvDeviceName1, tvDeviceType, tvGAdvertisingId, tvGSFId,
+          tvHardware, tvHardwareSerial, tvNetworkOperator, tvNetworkType, tvUsbDebugging,
+          tvWifiMacAddress, viewBattery);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

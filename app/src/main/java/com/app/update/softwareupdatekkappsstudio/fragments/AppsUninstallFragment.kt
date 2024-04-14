@@ -1,5 +1,6 @@
 package com.app.update.softwareupdatekkappsstudio.fragments
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
@@ -12,6 +13,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,12 +21,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.update.softwareupdatekkappsstudio.AppInfo
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.adapter.AppsUninstallAdapter
+import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.Collections
 
-class AppsUninstallFragment : Fragment() {
+class AppsUninstallFragment : Fragment(), HomeClick {
     private var textView: TextView? = null
     private var loadingApps: ProgressBar? = null
     private var appsRecyclerView: RecyclerView? = null
@@ -34,7 +37,6 @@ class AppsUninstallFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
 
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
@@ -50,18 +52,14 @@ class AppsUninstallFragment : Fragment() {
     }
 
 
-
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         textView = view.findViewById(R.id.textView)
         appsRecyclerView = view.findViewById(R.id.appsRecyclerView)
         loadingApps = view.findViewById(R.id.loadingApps)
         appsRecyclerView?.layoutManager = LinearLayoutManager(activity)
-        appsAdapter = AppsUninstallAdapter(appsList, activity)
+        appsAdapter = AppsUninstallAdapter(this, appsList, requireActivity())
         appsRecyclerView?.adapter = appsAdapter
-//        showNumberOfInstalledApps()
         loadInstalledApps()
     }
 
@@ -73,7 +71,10 @@ class AppsUninstallFragment : Fragment() {
                 for (app in apps ?: return@launch) {
                     val packageName = app.packageName
                     // Check if it's a user app OR a desired system app
-                    if (app.flags and ApplicationInfo.FLAG_SYSTEM == 0 || DESIRED_SYSTEM_APPS.contains(packageName)) {
+                    if (app.flags and ApplicationInfo.FLAG_SYSTEM == 0 || DESIRED_SYSTEM_APPS.contains(
+                            packageName
+                        )
+                    ) {
                         val appName = packageManager.getApplicationLabel(app) as String
                         val appIcon = packageManager.getApplicationIcon(app)
                         if (isAvailableOnPlayStore(packageName)) {
@@ -94,7 +95,7 @@ class AppsUninstallFragment : Fragment() {
                     loadingApps?.visibility = View.GONE
                 }
             } catch (e: Exception) {
-               e.printStackTrace()
+                e.printStackTrace()
             }
         }
     }
@@ -106,16 +107,8 @@ class AppsUninstallFragment : Fragment() {
     }
 
 
-    /*
-        private fun showNumberOfInstalledApps() {
-            val packageManager = activity?.packageManager
-            val apps = packageManager?.getInstalledApplications(PackageManager.GET_META_DATA)
-            val appCount = apps?.size
-            //        textView.setText(String.valueOf(appCount));
-        }*/
-
     companion object {
-        private val DESIRED_SYSTEM_APPS: List<String> = mutableListOf(
+         val DESIRED_SYSTEM_APPS: List<String> = mutableListOf(
             "com.google.android.googlequicksearchbox",  // Google
             "com.facebook.katana",  // Facebook
             "com.google.android.youtube",  // YouTube
@@ -127,6 +120,32 @@ class AppsUninstallFragment : Fragment() {
             "com.google.android.apps.maps",  // Google Maps
             "com.google.android.apps.weather" // Weather - Note: this package might differ based on the actual Weather app
         )
-        private const val PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 100
+    }
+
+
+    override fun onUninstallItemClick(name: String, packegeName: String, position: Int) {
+
+        findNavController().navigate(R.id.action_appUninstallFragment_to_appDetailFragment, Bundle().apply {
+            putString("appPackageName", packegeName)
+        })
+
+
+       /* val builder = AlertDialog.Builder(
+            requireContext()
+        )
+        builder.setTitle("Uninstall App")
+        builder.setMessage("Do you want to uninstall $name?")
+        builder.setPositiveButton("OK") { dialog: DialogInterface?, which: Int ->
+            val packageUri = Uri.parse("package:$packegeName")
+            val uninstallIntent = Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri)
+            startActivity(uninstallIntent)
+            appsAdapter?.notifyDataSetChanged()
+        }
+        builder.setNegativeButton("Cancel", null)
+        builder.show()*/
+
+
+
+        super.onUninstallItemClick(name, packegeName, position)
     }
 }

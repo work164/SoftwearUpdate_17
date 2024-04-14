@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-96:12
-INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-96:12
-INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-96:12
-INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-96:12
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:2:1-97:12
 MERGED from [androidx.databinding:databinding-ktx:8.1.3] C:\Users\integ\.gradle\caches\transforms-3\2e9edd6b3caac7c74ab94db286457e35\transformed\databinding-ktx-8.1.3\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.play:core-ktx:1.8.1] C:\Users\integ\.gradle\caches\transforms-3\d1c02f5deea7ccb19c444b46b6238f08\transformed\core-ktx-1.8.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-ads:23.0.0] C:\Users\integ\.gradle\caches\transforms-3\80ab2872eebd5702fac9bfed22b84236\transformed\play-services-ads-23.0.0\AndroidManifest.xml:17:1-25:12
@@ -138,6 +138,7 @@ MERGED from [androidx.databinding:viewbinding:8.1.3] C:\Users\integ\.gradle\cach
 MERGED from [com.intuit.sdp:sdp-android:1.1.0] C:\Users\integ\.gradle\caches\transforms-3\162209c37c195a73669caf7e4f382813\transformed\sdp-android-1.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.intuit.ssp:ssp-android:1.1.0] C:\Users\integ\.gradle\caches\transforms-3\e4ceb047f3beffece3d1a485dae59874\transformed\ssp-android-1.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:fresco:2.5.0] C:\Users\integ\.gradle\caches\transforms-3\850d08886d83d0743781d3aa673fe1e4\transformed\fresco-2.5.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\cf6c834faa030b98fcc5962f1daca068\transformed\transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\integ\.gradle\caches\transforms-3\bf5ca10ff0293af3b11a6fa4af6b909e\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
@@ -274,55 +275,61 @@ uses-permission#android.permission.VIBRATE
 ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:15:5-66
 	android:name
 		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:15:22-63
-uses-permission#android.permission.LOCAL_MAC_ADDRESS
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:16:5-18:47
+uses-permission#android.permission.REQUEST_DELETE_PACKAGES
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:16:5-82
+	android:name
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:16:22-79
+uses-permission#android.permission.PACKAGE_USAGE_STATS
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:17:5-18:47
 	tools:ignore
 		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:18:9-44
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:17:9-60
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:17:22-75
+uses-permission#android.permission.LOCAL_MAC_ADDRESS
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:20:5-22:47
+	tools:ignore
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:22:9-44
+	android:name
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:21:9-60
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:19:5-80
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:23:5-80
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:19:22-77
-uses-permission#android.permission.REQUEST_DELETE_PACKAGES
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:20:5-82
-	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:20:22-79
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:23:22-77
 uses-permission#android.permission.QUERY_ALL_PACKAGES
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:21:5-23:53
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:25:5-27:53
 	tools:ignore
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:23:9-50
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:27:9-50
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:22:9-61
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:26:9-61
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:24:5-76
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:28:5-76
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:24:22-73
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:28:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:25:5-75
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:29:5-75
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:25:22-72
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:29:22-72
 uses-permission#android.permission.READ_PRIVILEGED_PHONE_STATE
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:26:5-28:47
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:30:5-32:47
 	tools:ignore
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:28:9-44
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:32:9-44
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:27:9-70
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:31:9-70
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:29:5-76
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:33:5-76
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:29:22-73
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:33:22-73
 uses-permission#com.android.vending.BILLING
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:31:5-67
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:35:5-67
 MERGED from [com.android.billingclient:billing-ktx:6.2.0] C:\Users\integ\.gradle\caches\transforms-3\83f04be05563e8a6c6b4dccfeb9419a2\transformed\billing-ktx-6.2.0\AndroidManifest.xml:9:5-67
 MERGED from [com.android.billingclient:billing-ktx:6.2.0] C:\Users\integ\.gradle\caches\transforms-3\83f04be05563e8a6c6b4dccfeb9419a2\transformed\billing-ktx-6.2.0\AndroidManifest.xml:9:5-67
 MERGED from [com.android.billingclient:billing:6.2.0] C:\Users\integ\.gradle\caches\transforms-3\099b6bf6eff357ab1246ba10eb7543e6\transformed\billing-6.2.0\AndroidManifest.xml:10:5-67
 MERGED from [com.android.billingclient:billing:6.2.0] C:\Users\integ\.gradle\caches\transforms-3\099b6bf6eff357ab1246ba10eb7543e6\transformed\billing-6.2.0\AndroidManifest.xml:10:5-67
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:31:22-64
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:35:22-64
 application
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:33:5-94:19
-INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:33:5-94:19
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:37:5-95:19
+INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:37:5-95:19
 MERGED from [com.google.android.play:core-ktx:1.8.1] C:\Users\integ\.gradle\caches\transforms-3\d1c02f5deea7ccb19c444b46b6238f08\transformed\core-ktx-1.8.1\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.play:core-ktx:1.8.1] C:\Users\integ\.gradle\caches\transforms-3\d1c02f5deea7ccb19c444b46b6238f08\transformed\core-ktx-1.8.1\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] C:\Users\integ\.gradle\caches\transforms-3\ef188fbbaa2791154e8b928680184ccc\transformed\play-services-ads-lite-23.0.0\AndroidManifest.xml:53:5-93:19
@@ -423,6 +430,8 @@ MERGED from [androidx.window:window:1.0.0] C:\Users\integ\.gradle\caches\transfo
 MERGED from [androidx.window:window:1.0.0] C:\Users\integ\.gradle\caches\transforms-3\7f3a4d16365aec6ba4459a80edacdcbf\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.core:core:1.12.0] C:\Users\integ\.gradle\caches\transforms-3\1f0bd2c40b45e0a7130ffe7f82a1a3b8\transformed\core-1.12.0\AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.12.0] C:\Users\integ\.gradle\caches\transforms-3\1f0bd2c40b45e0a7130ffe7f82a1a3b8\transformed\core-1.12.0\AndroidManifest.xml:28:5-89
+MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:11:5-15:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\cf6c834faa030b98fcc5962f1daca068\transformed\transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
@@ -442,105 +451,99 @@ MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\integ\.gradle\cache
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\integ\.gradle\caches\transforms-3\1f0bd2c40b45e0a7130ffe7f82a1a3b8\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:42:9-35
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:46:9-35
 	android:label
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:40:9-41
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:44:9-41
 	android:allowClearUserData
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:36:9-42
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:40:9-42
 	android:fullBackupContent
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:38:9-54
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:42:9-54
 	android:roundIcon
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:41:9-54
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:45:9-54
 	android:icon
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:39:9-43
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:43:9-43
 	android:allowBackup
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:35:9-35
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:39:9-35
 	android:theme
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:43:9-49
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:47:9-49
 	android:dataExtractionRules
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:37:9-65
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:41:9-65
 	android:usesCleartextTraffic
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:44:9-44
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:48:9-44
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:34:9-30
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:38:9-30
 activity#com.app.update.softwareupdatekkappsstudio.WifiDetailsActivity
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:46:9-49:52
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:50:9-53:52
 	android:screenOrientation
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:49:13-49
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:53:13-49
 	android:exported
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:48:13-37
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:52:13-37
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:47:13-48
-activity#com.app.update.softwareupdatekkappsstudio.practice.WifiActivity
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:50:9-52:52
-	android:screenOrientation
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:52:13-49
-	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:51:13-50
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:51:13-48
 activity#com.app.update.softwareupdatekkappsstudio.HomeActivity
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:54:9-56:52
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:55:9-57:52
 	android:screenOrientation
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:56:13-49
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:57:13-49
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:55:13-41
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:56:13-41
 activity#com.app.update.softwareupdatekkappsstudio.AlarmActivity
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:57:9-51
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:58:9-51
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:57:19-48
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:58:19-48
 activity#com.app.update.softwareupdatekkappsstudio.MainActivity
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:58:9-70:20
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:59:9-71:20
 	android:screenOrientation
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:61:13-49
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:62:13-49
 	android:exported
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:60:13-36
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:61:13-36
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:59:13-82
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:60:13-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:63:13-67:29
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:64:13-68:29
 action#android.intent.action.MAIN
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:64:17-69
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:64:25-66
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:65:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:66:17-77
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:67:17-77
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:66:27-74
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:67:27-74
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:72:9-74:46
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:73:9-75:46
 	android:value
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:74:13-43
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:75:13-43
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:73:13-69
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:74:13-69
 receiver#com.app.update.softwareupdatekkappsstudio.info.AlarmsReceiver
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:76:9-86:20
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:77:9-87:20
 	android:exported
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:78:13-37
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:79:13-37
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:77:13-48
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:78:13-48
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON+category:name:android.intent.category.DEFAULT
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:79:13-85:29
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:80:13-86:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:80:17-79
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:81:17-79
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:80:25-76
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:81:25-76
 category#android.intent.category.DEFAULT
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:82:17-76
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:83:17-76
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:82:27-73
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:83:27-73
 action#android.intent.action.QUICKBOOT_POWERON
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:84:17-82
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:85:17-82
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:84:25-79
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:85:25-79
 service#com.app.update.softwareupdatekkappsstudio.info.AlarmsForegroundService
-ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:89:9-93:60
+ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:90:9-94:60
 	android:enabled
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:91:13-35
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:92:13-35
 	android:exported
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:92:13-37
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:93:13-37
 	android:foregroundServiceType
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:93:13-57
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:94:13-57
 	android:name
-		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:90:13-57
+		ADDED from D:\Software-Update-master\app\src\main\AndroidManifest.xml:91:13-57
 uses-sdk
 INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Software-Update-master\app\src\main\AndroidManifest.xml
@@ -813,6 +816,8 @@ MERGED from [com.intuit.ssp:ssp-android:1.1.0] C:\Users\integ\.gradle\caches\tra
 MERGED from [com.intuit.ssp:ssp-android:1.1.0] C:\Users\integ\.gradle\caches\transforms-3\e4ceb047f3beffece3d1a485dae59874\transformed\ssp-android-1.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fresco:2.5.0] C:\Users\integ\.gradle\caches\transforms-3\850d08886d83d0743781d3aa673fe1e4\transformed\fresco-2.5.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:2.5.0] C:\Users\integ\.gradle\caches\transforms-3\850d08886d83d0743781d3aa673fe1e4\transformed\fresco-2.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\cf6c834faa030b98fcc5962f1daca068\transformed\transport-runtime-3.1.8\AndroidManifest.xml:18:5-20:41
@@ -1603,6 +1608,12 @@ uses-permission#com.app.update.softwareupdatekkappsstudio.DYNAMIC_RECEIVER_NOT_E
 ADDED from [androidx.core:core:1.12.0] C:\Users\integ\.gradle\caches\transforms-3\1f0bd2c40b45e0a7130ffe7f82a1a3b8\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] C:\Users\integ\.gradle\caches\transforms-3\1f0bd2c40b45e0a7130ffe7f82a1a3b8\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+provider#bot.box.appusage.provider.AppUsageProvider
+ADDED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:12:9-14:71
+	android:authorities
+		ADDED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:14:13-68
+	android:name
+		ADDED from [com.github.TheBotBox:AppsUsageMonitorAPI:1.1] C:\Users\integ\.gradle\caches\transforms-3\509e3f4fb943d352f6da3f3ab9f34cf0\transformed\AppsUsageMonitorAPI-1.1\AndroidManifest.xml:13:13-70
 service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
 ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\851178e46c219e3c58910ae773d7cfe6\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\integ\.gradle\caches\transforms-3\cf6c834faa030b98fcc5962f1daca068\transformed\transport-runtime-3.1.8\AndroidManifest.xml:36:9-38:40

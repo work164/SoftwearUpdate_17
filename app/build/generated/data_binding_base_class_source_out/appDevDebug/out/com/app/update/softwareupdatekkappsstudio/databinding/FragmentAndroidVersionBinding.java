@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +27,9 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
 
   @NonNull
   public final ImageFilterView backDevice;
+
+  @NonNull
+  public final ImageView btnInAppForwardDevice;
 
   @NonNull
   public final TextView device;
@@ -86,9 +90,10 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
 
   private FragmentAndroidVersionBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull TextView device, @NonNull TextView deviceBoard, @NonNull TextView deviceHardware,
-      @NonNull TextView deviceId, @NonNull TextView deviceManufacture,
-      @NonNull TextView deviceModel, @NonNull TextView deviceName, @NonNull TextView deviceStatus,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull TextView device,
+      @NonNull TextView deviceBoard, @NonNull TextView deviceHardware, @NonNull TextView deviceId,
+      @NonNull TextView deviceManufacture, @NonNull TextView deviceModel,
+      @NonNull TextView deviceName, @NonNull TextView deviceStatus,
       @NonNull TextView deviceTemperature, @NonNull ConstraintLayout group1,
       @NonNull ConstraintLayout group2, @NonNull ConstraintLayout group3,
       @NonNull ConstraintLayout group4, @NonNull ConstraintLayout group5,
@@ -98,6 +103,7 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.device = device;
     this.deviceBoard = deviceBoard;
     this.deviceHardware = deviceHardware;
@@ -155,6 +161,12 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
       id = R.id.backDevice;
       ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
       if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
         break missingId;
       }
 
@@ -273,9 +285,9 @@ public final class FragmentAndroidVersionBinding implements ViewBinding {
       }
 
       return new FragmentAndroidVersionBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          device, deviceBoard, deviceHardware, deviceId, deviceManufacture, deviceModel, deviceName,
-          deviceStatus, deviceTemperature, group1, group2, group3, group4, group5, group6, group7,
-          group8, group9, viewBattery);
+          btnInAppForwardDevice, device, deviceBoard, deviceHardware, deviceId, deviceManufacture,
+          deviceModel, deviceName, deviceStatus, deviceTemperature, group1, group2, group3, group4,
+          group5, group6, group7, group8, group9, viewBattery);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

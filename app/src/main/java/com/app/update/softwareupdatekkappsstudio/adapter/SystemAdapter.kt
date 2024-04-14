@@ -15,7 +15,7 @@ class SystemAdapter(private var mList: ArrayList<SystemModel>,val context: Conte
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.system_app,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_system_app,parent,false)
         return ViewHolder(view)
     }
     override fun getItemCount(): Int {

@@ -4,15 +4,17 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.utils.widget.ImageFilterView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.app.update.softwareupdatekkappsstudio.R;
+import com.google.android.material.appbar.AppBarLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,21 +24,30 @@ public final class FragmentAppsUninstallBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final AppBarLayout actionBar;
+
+  @NonNull
   public final RecyclerView appsRecyclerView;
+
+  @NonNull
+  public final ImageFilterView backDevice;
+
+  @NonNull
+  public final ImageView btnInAppForwardDevice;
 
   @NonNull
   public final ProgressBar loadingApps;
 
-  @NonNull
-  public final TextView textView;
-
   private FragmentAppsUninstallBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RecyclerView appsRecyclerView, @NonNull ProgressBar loadingApps,
-      @NonNull TextView textView) {
+      @NonNull AppBarLayout actionBar, @NonNull RecyclerView appsRecyclerView,
+      @NonNull ImageFilterView backDevice, @NonNull ImageView btnInAppForwardDevice,
+      @NonNull ProgressBar loadingApps) {
     this.rootView = rootView;
+    this.actionBar = actionBar;
     this.appsRecyclerView = appsRecyclerView;
+    this.backDevice = backDevice;
+    this.btnInAppForwardDevice = btnInAppForwardDevice;
     this.loadingApps = loadingApps;
-    this.textView = textView;
   }
 
   @Override
@@ -66,9 +77,27 @@ public final class FragmentAppsUninstallBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.action_bar;
+      AppBarLayout actionBar = ViewBindings.findChildViewById(rootView, id);
+      if (actionBar == null) {
+        break missingId;
+      }
+
       id = R.id.appsRecyclerView;
       RecyclerView appsRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (appsRecyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.backDevice;
+      ImageFilterView backDevice = ViewBindings.findChildViewById(rootView, id);
+      if (backDevice == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_inAppForwardDevice;
+      ImageView btnInAppForwardDevice = ViewBindings.findChildViewById(rootView, id);
+      if (btnInAppForwardDevice == null) {
         break missingId;
       }
 
@@ -78,14 +107,8 @@ public final class FragmentAppsUninstallBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
-        break missingId;
-      }
-
-      return new FragmentAppsUninstallBinding((ConstraintLayout) rootView, appsRecyclerView,
-          loadingApps, textView);
+      return new FragmentAppsUninstallBinding((ConstraintLayout) rootView, actionBar,
+          appsRecyclerView, backDevice, btnInAppForwardDevice, loadingApps);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

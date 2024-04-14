@@ -1,106 +1,402 @@
 package com.app.update.softwareupdatekkappsstudio.fragments
 
-import android.content.Context.CONNECTIVITY_SERVICE
+import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.core.content.getSystemService
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentScanAppBinding
+import com.app.update.softwareupdatekkappsstudio.model.AppModel
+import com.app.update.softwareupdatekkappsstudio.view_model.ViewModelclass
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.select.Elements
+import java.io.EOFException
+import java.net.HttpURLConnection
+import java.net.URL
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class ScanAppFragment : Fragment() {
-    private lateinit var binding:FragmentScanAppBinding
-    private lateinit var wholeAppList: ArrayList<ApplicationInfo>
-    val forLaunchInstalledApps: MutableList<ApplicationInfo> = ArrayList()
-
-
-
-
-
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    private lateinit var binding: FragmentScanAppBinding
+    private lateinit var allAppList: ArrayList<ApplicationInfo>
+    lateinit var newupdatedDate: Date
+    lateinit var lastModifiedDate: Date
+    private var appDataList = ArrayList<AppModel>()
+    lateinit var viewModel: ViewModelclass
+    private val launchableInstalledApps: MutableList<ApplicationInfo> = ArrayList()
+    private var exit = false
+    private var wait = false
+    var i = 0
+    var z = 1
+    lateinit var progressDialog: Dialog
+    companion object {
+        val updateAvailableList: ArrayList<AppModel> = ArrayList()
+    }
+    private val blinkAnimation by lazy {
+        AnimationUtils.loadAnimation(requireContext(), R.anim.blink_animation)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    findNavController().popBackStack()
-
+                    backPress()
                 }
             })
 
+        binding = FragmentScanAppBinding.inflate(inflater, container, false)
 
-        binding = FragmentScanAppBinding.inflate(inflater,container,false)
+        updateAvailableList.clear()
+
+        viewModel = ViewModelProvider(this)[ViewModelclass::class.java]
+        binding.tvScanning.startAnimation(blinkAnimation)
+        progressDialog = Dialog(requireContext())
+        progressDialog.setContentView(R.layout.loading_dialog)
+        progressDialog.show()
+        val thread: Thread = object : Thread() {
+            override fun run() {
+                try {
+                    systemAndDownloadedAppsSeparator()
+                } catch (e: PackageManager.NameNotFoundException) {
+                    e.printStackTrace()
+                }
+                requireActivity().runOnUiThread {
+                    if (checkInternetAvailability()) {
+                        appDataList = viewModel.getInto(requireActivity(), allAppList)
+                        PrepareAppsData().execute()
+                    } else {
+                        Toast.makeText(
+                            requireContext(),
+                            "You are not connected to Internet",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        findNavController().popBackStack()
+                    }
+                    progressDialog.dismiss()
+                }
+            }
+        }
+        thread.start()
+
+        /*   binding?.ifvBack?.setOnClickListener {
+               backPress()
+           }*/
         return binding.root
     }
+    private fun systemAndDownloadedAppsSeparator() {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-    private fun scanAllApplications(){
-        wholeAppList = ArrayList()
-        val flag1 = PackageManager.GET_META_DATA or
-                PackageManager.GET_SHARED_LIBRARY_FILES or
-                PackageManager.GET_UNINSTALLED_PACKAGES
-        val listOfWholeApps = requireContext().packageManager.getInstalledApplications(flag1)
-        for (list in listOfWholeApps) {
-            if (requireContext().packageManager.
-                getLaunchIntentForPackage(list.packageName) != null
-                ) {
-                forLaunchInstalledApps.add(list)
+        allAppList = ArrayList()
+        val flag = PackageManager.GET_META_DATA or PackageManager.GET_SHARED_LIBRARY_FILES or PackageManager.GET_UNINSTALLED_PACKAGES
+        val listOfAllapps = requireContext().packageManager.getInstalledApplications(flag)
+        for (list in listOfAllapps) {
+            if (requireContext().packageManager.getLaunchIntentForPackage(list.packageName) != null) {
+                //If you're here, then this is a launch-able app//
+                launchableInstalledApps.add(list);
             }
         }
-        for (apInfo in forLaunchInstalledApps){
-            if (apInfo.flags and ApplicationInfo.FLAG_SYSTEM > 0) {
-                wholeAppList.add(apInfo)
-            }
+        for (apInfo in launchableInstalledApps) {
+
+            allAppList.add(apInfo)
+
+
         }
+
+
     }
-    private fun forCheckInternet(): Boolean {
+    private fun checkInternetAvailability(): Boolean {
         try {
-            val cm1 = requireContext().getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
-            val onNetwork = cm1.activeNetworkInfo
-            if (onNetwork != null){
-                if (onNetwork.type==ConnectivityManager.TYPE_WIFI){
-                    if (onNetwork.state == NetworkInfo.State.CONNECTED){
+            val cm =
+                requireContext().getSystemService(AppCompatActivity.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val activeNetwork = cm.activeNetworkInfo
+            if (activeNetwork != null) {
+                if (activeNetwork.type == ConnectivityManager.TYPE_WIFI) {
+                    if (activeNetwork.state == NetworkInfo.State.CONNECTED) {
                         return true
+
                     }
-                } else if (onNetwork.type == ConnectivityManager.TYPE_MOBILE) {
-                    if (onNetwork.state == NetworkInfo.State.CONNECTED) {
+                } else if (activeNetwork.type == ConnectivityManager.TYPE_MOBILE) {
+                    if (activeNetwork.state == NetworkInfo.State.CONNECTED) {
                         return true
+
                     }
                 }
             }
-        } catch (e:Exception) {
+        } catch (e: Exception) {
             Snackbar.make(
                 requireActivity().findViewById(android.R.id.content),
                 e.toString(),
                 Snackbar.LENGTH_LONG
-            ).setActionTextColor(
-                Color.RED
-            ).show()
+            )
+                .setActionTextColor(
+                    Color.RED
+                ).show();
         }
+
+
         return false
     }
+    private fun backPress() {
+        if (checkInternetAvailability()) {
+            pause()
+            AlertDialog.Builder(requireContext()).apply {
+                setTitle("Please confirm.")
+                setMessage("Are you want to stop scanning update?")
 
+                setPositiveButton("Stop") { _, _ ->
+                    // if user press yes, then finish the current activity
+                    stop()
+                }
+
+                setNegativeButton("No") { _, _ ->
+                    // if user press no, then return the activity
+                    resume()
+                }
+
+                setCancelable(false)
+            }.create().show()
+        } else {
+            findNavController().popBackStack()
+        }
+
+    }
+    private fun convertLongToTime(time: Long): String {
+
+        val format = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH)
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = time
+        return format.format(calendar.time)
+    }
+    private fun stop() {
+
+        exit = true
+        if (findNavController().currentDestination?.id == R.id.scanAppsFragment) {
+            onBackWithAd()
+        }
+    }
+    private fun pause() {
+        wait = true
+    }
+    private fun resume() {
+        wait = false
+    }
+    private fun checkUpdate() {
+
+        val run = Runnable {
+
+            while (allAppList.isNotEmpty() && (i <= (allAppList.size - 1)) && !exit) {
+                try {
+                    println("hello for while")
+                    if (!wait) {
+                        println("hello not wait")
+                        if (i != z) {
+                            z = i
+
+                            val time = requireContext().packageManager.getPackageInfo(
+                                appDataList[i].packageName,
+                                0
+                            ).lastUpdateTime
+
+                            val lastModifiedTime = convertLongToTime(time)
+
+                            lastModifiedDate =
+                                SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).parse(
+                                    lastModifiedTime
+                                )!!
+
+
+                            requireActivity().runOnUiThread {
+                                binding?.run {
+
+                                    try {
+                                        tvUpdateFoundValue.text =
+                                            updateAvailableList.size.toString()
+                                        tvCheckingUpdateValue.text = i.toString() + "/" + (allAppList.size - 1)
+                                        checkingUpdate.max = allAppList.size-1
+                                        checkingUpdate.progress = i
+
+                                        Glide.with(requireContext()).load(appDataList[i].icon)
+                                            .into(ifvAppIcon)
+                                        tvAppName.text = appDataList[i].appName
+                                    } catch (e: IndexOutOfBoundsException) {
+                                        e.printStackTrace()
+                                    } catch (e: java.lang.Exception) {
+                                        e.printStackTrace()
+                                    }
+                                }
+                            }
+
+                            val statuscode = CheckAppLiveOnPlayStore(appDataList[i]).execute().get()
+                            Log.e("status code", statuscode)
+                            if (statuscode.toInt() == 200) {
+
+                                VersionCracker(appDataList[i]).execute()
+
+                            } else {
+                                i++
+                            }
+                        }
+                    }
+
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+            }
+
+            if (exit) {
+//                if (findNavController().currentDestination?.id == R.id.scanAppsFragment){
+//                    findNavController().popBackStack()
+//                }
+            } else {
+                requireActivity().runOnUiThread {
+
+                    if (isVisible) {
+                        findNavController().navigate(R.id.action_scanFragment_to_availableAppsUpdateFragment)
+                    }
+                }
+
+            }
+
+        }
+
+        val objBgThread = Thread(run)
+        objBgThread.start()
+        //UAlist.value = updateAvailableList
+
+    }
+    inner class PrepareAppsData() : AsyncTask<Void, Void, String>() {
+        val progressDialog = ProgressDialog(requireContext())
+        override fun doInBackground(vararg params: Void?): String? {
+
+
+            return null
+        }
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+            progressDialog.setTitle("wait ")
+            progressDialog.setMessage("Preparing apps data, please wait")
+            progressDialog.show()
+
+        }
+
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            progressDialog.dismiss()
+            checkUpdate()
+        }
+    }
+    inner class CheckAppLiveOnPlayStore(val app: AppModel) :
+        AsyncTask<String, String, String>() {
+
+
+        override fun doInBackground(vararg p0: String?): String? {
+            var responseStatus: Int? = null
+            try {
+                val conn = URL("https://play.google.com/store/apps/details?id=${app.packageName}")
+                    .openConnection() as HttpURLConnection
+                // conn.useCaches = false
+                conn.connect()
+                responseStatus = conn.responseCode
+                conn.disconnect()
+            } catch (e: EOFException) {
+                e.printStackTrace()
+            } catch (e: java.net.ConnectException) {
+                e.printStackTrace()
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+            }
+
+
+            // Log.e("status",status.toString())
+
+            return responseStatus.toString()
+        }
+    }
+    inner class VersionCracker(val app: AppModel) : AsyncTask<String, String, String>() {
+
+
+        override fun doInBackground(vararg p0: String?): String? {
+
+            try {
+                val document: Document? =
+                    Jsoup.connect("https://play.google.com/store/apps/details?id=${app.packageName}")
+                        .timeout(30000)
+                        .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+                        .referrer("http://www.google.com")
+                        .get()
+                // Log.e("helloo", "helloo")
+                if (document != null) {
+
+                    val element: Elements = document.getElementsByClass("lXlx5")
+                    //  Log.e("element", element.toString())
+                    for (ele in element) {
+                        if (ele.siblingElements() != null) {
+                            val sibElemets: Elements = ele.siblingElements()
+                            for (sibElemet in sibElemets) {
+                                val newUpdatedDate = sibElemet.text()
+                                //Log.e("newupdatedDate1222", newUpdatedDate)
+                                // val formatter =
+                                // DateTimeFormatter.ofPattern("MMM d, yyyy", Locale.ENGLISH)
+                                newupdatedDate =
+                                    SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).parse(
+                                        newUpdatedDate
+                                    )!!
+
+                                // Log.e("newupdatedDate", newupdatedDate.toString())
+
+
+                                if (lastModifiedDate < newupdatedDate) {
+                                    updateAvailableList.add(app)
+                                    i++
+
+                                } else {
+                                    i++
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+            } catch (e: EOFException) {
+                e.printStackTrace()
+            } catch (e: java.net.ConnectException) {
+                e.printStackTrace()
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+            }
+
+            return null
+        }
+
+
+    }
+    private fun onBackWithAd() {
+        findNavController().popBackStack()
+
+    }
 
 }

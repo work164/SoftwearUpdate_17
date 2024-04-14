@@ -23,9 +23,8 @@ import androidx.appcompat.widget.AppCompatRatingBar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.app.update.softwareupdatekkappsstudio.fragments.AndroidUpdateFragment
-import com.app.update.softwareupdatekkappsstudio.fragments.AppCountFragment
+import com.app.update.softwareupdatekkappsstudio.fragments.AppInstalledFragment
 import com.app.update.softwareupdatekkappsstudio.fragments.AppsUninstallFragment
 import com.app.update.softwareupdatekkappsstudio.fragments.DeviceInfoFragment
 import com.app.update.softwareupdatekkappsstudio.fragments.ExitDialogFragment
@@ -84,7 +83,7 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener {
         bottomNavigationView = findViewById(R.id.bottomNavView)
         bottomNavigationView?.setOnNavigationItemSelectedListener(navListener)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, AppCountFragment()).commit()
+            .replace(R.id.fragmentContainer, AppInstalledFragment()).commit()
 
         // Check if we have the required permission, if not request it.
         val settingsButton = findViewById<ImageView>(R.id.settingsbtn)
@@ -123,7 +122,7 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener {
             try {
                 when (item.itemId) {
                     R.id.nav_app -> {
-                        selectedFragment = AppCountFragment()
+                        selectedFragment = AppInstalledFragment()
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.fragmentContainer, selectedFragment!!).commit()
                     }

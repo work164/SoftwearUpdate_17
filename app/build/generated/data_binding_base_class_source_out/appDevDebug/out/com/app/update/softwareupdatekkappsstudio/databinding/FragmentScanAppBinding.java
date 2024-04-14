@@ -4,6 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,34 +25,52 @@ public final class FragmentScanAppBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView appText;
-
-  @NonNull
   public final ProgressBar checkingUpdate;
 
   @NonNull
   public final Guideline guideLine;
 
   @NonNull
+  public final ImageView ifvAppIcon;
+
+  @NonNull
   public final LottieAnimationView lottie1;
 
   @NonNull
-  public final ImageView lottieIcon;
+  public final FrameLayout nativeAdScan;
 
   @NonNull
-  public final TextView totalApps;
+  public final ConstraintLayout totalUpdateAvailable;
 
-  private FragmentScanAppBinding(@NonNull ConstraintLayout rootView, @NonNull TextView appText,
+  @NonNull
+  public final TextView tvAppName;
+
+  @NonNull
+  public final TextView tvCheckingUpdateValue;
+
+  @NonNull
+  public final TextView tvScanning;
+
+  @NonNull
+  public final TextView tvUpdateFoundValue;
+
+  private FragmentScanAppBinding(@NonNull ConstraintLayout rootView,
       @NonNull ProgressBar checkingUpdate, @NonNull Guideline guideLine,
-      @NonNull LottieAnimationView lottie1, @NonNull ImageView lottieIcon,
-      @NonNull TextView totalApps) {
+      @NonNull ImageView ifvAppIcon, @NonNull LottieAnimationView lottie1,
+      @NonNull FrameLayout nativeAdScan, @NonNull ConstraintLayout totalUpdateAvailable,
+      @NonNull TextView tvAppName, @NonNull TextView tvCheckingUpdateValue,
+      @NonNull TextView tvScanning, @NonNull TextView tvUpdateFoundValue) {
     this.rootView = rootView;
-    this.appText = appText;
     this.checkingUpdate = checkingUpdate;
     this.guideLine = guideLine;
+    this.ifvAppIcon = ifvAppIcon;
     this.lottie1 = lottie1;
-    this.lottieIcon = lottieIcon;
-    this.totalApps = totalApps;
+    this.nativeAdScan = nativeAdScan;
+    this.totalUpdateAvailable = totalUpdateAvailable;
+    this.tvAppName = tvAppName;
+    this.tvCheckingUpdateValue = tvCheckingUpdateValue;
+    this.tvScanning = tvScanning;
+    this.tvUpdateFoundValue = tvUpdateFoundValue;
   }
 
   @Override
@@ -81,12 +100,6 @@ public final class FragmentScanAppBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.appText;
-      TextView appText = ViewBindings.findChildViewById(rootView, id);
-      if (appText == null) {
-        break missingId;
-      }
-
       id = R.id.checkingUpdate;
       ProgressBar checkingUpdate = ViewBindings.findChildViewById(rootView, id);
       if (checkingUpdate == null) {
@@ -99,26 +112,57 @@ public final class FragmentScanAppBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ifvAppIcon;
+      ImageView ifvAppIcon = ViewBindings.findChildViewById(rootView, id);
+      if (ifvAppIcon == null) {
+        break missingId;
+      }
+
       id = R.id.lottie1;
       LottieAnimationView lottie1 = ViewBindings.findChildViewById(rootView, id);
       if (lottie1 == null) {
         break missingId;
       }
 
-      id = R.id.lottie_icon;
-      ImageView lottieIcon = ViewBindings.findChildViewById(rootView, id);
-      if (lottieIcon == null) {
+      id = R.id.nativeAdScan;
+      FrameLayout nativeAdScan = ViewBindings.findChildViewById(rootView, id);
+      if (nativeAdScan == null) {
         break missingId;
       }
 
-      id = R.id.totalApps;
-      TextView totalApps = ViewBindings.findChildViewById(rootView, id);
-      if (totalApps == null) {
+      id = R.id.totalUpdateAvailable;
+      ConstraintLayout totalUpdateAvailable = ViewBindings.findChildViewById(rootView, id);
+      if (totalUpdateAvailable == null) {
         break missingId;
       }
 
-      return new FragmentScanAppBinding((ConstraintLayout) rootView, appText, checkingUpdate,
-          guideLine, lottie1, lottieIcon, totalApps);
+      id = R.id.tvAppName;
+      TextView tvAppName = ViewBindings.findChildViewById(rootView, id);
+      if (tvAppName == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCheckingUpdateValue;
+      TextView tvCheckingUpdateValue = ViewBindings.findChildViewById(rootView, id);
+      if (tvCheckingUpdateValue == null) {
+        break missingId;
+      }
+
+      id = R.id.tvScanning;
+      TextView tvScanning = ViewBindings.findChildViewById(rootView, id);
+      if (tvScanning == null) {
+        break missingId;
+      }
+
+      id = R.id.tvUpdateFoundValue;
+      TextView tvUpdateFoundValue = ViewBindings.findChildViewById(rootView, id);
+      if (tvUpdateFoundValue == null) {
+        break missingId;
+      }
+
+      return new FragmentScanAppBinding((ConstraintLayout) rootView, checkingUpdate, guideLine,
+          ifvAppIcon, lottie1, nativeAdScan, totalUpdateAvailable, tvAppName, tvCheckingUpdateValue,
+          tvScanning, tvUpdateFoundValue);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
