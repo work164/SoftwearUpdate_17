@@ -67,6 +67,9 @@ class SystemAppFragment : Fragment(), HomeClick {
             findNavController().popBackStack()
             showAd()
         }
+        binding.btnInAppForwardDevice.setOnClickListener {
+            findNavController().navigate(R.id.action_systemAppsFragment_to_appProFragment)
+        }
 
         binding.appsRecyclerView.layoutManager = LinearLayoutManager(activity)
         appsAdapter = AppsAdapter(this, appsList, requireActivity())

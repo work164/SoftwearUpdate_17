@@ -9,7 +9,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#F5F5F5">
+        android:background="@drawable/apps_info_bg"
+        >
         <ImageView
             android:id="@+id/systemIcon"
             android:layout_width="40dp"

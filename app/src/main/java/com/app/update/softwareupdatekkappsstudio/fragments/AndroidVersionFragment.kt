@@ -41,7 +41,9 @@ class AndroidVersionFragment : Fragment() {
             findNavController().popBackStack()
             showAd()
         }
-
+        binding.btnInAppForwardDevice.setOnClickListener {
+            findNavController().navigate(R.id.action_androidVersionFragment_to_appProFragment)
+        }
 
         loadAds()
         return binding.root

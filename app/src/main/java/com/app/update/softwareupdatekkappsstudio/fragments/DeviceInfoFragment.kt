@@ -47,7 +47,9 @@ class DeviceInfoFragment : Fragment() {
             findNavController().popBackStack()
             showAd()
         }
-
+        binding.btnInAppForwardDevice.setOnClickListener {
+            findNavController().navigate(R.id.action_deviceInfoFragment_to_appProFragment)
+        }
         val phoneDetail = PhoneDetail(requireContext())
         binding.tvCompanyName.text = phoneDetail.deviceManufacturer
         binding.tvDeviceName.text = phoneDetail.deviceModel

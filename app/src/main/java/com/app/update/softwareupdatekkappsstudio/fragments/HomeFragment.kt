@@ -15,14 +15,22 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaB
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.model.HomeViewModel
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_android_versions
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_app_usage
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_battery
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_device_info
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_install_apps
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_menu_scan_apps
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_restore_apps
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_sensor
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_settings
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_system_apps
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_system_update
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_main_uninstall
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
 import com.example.adssdk.native_ad.NativeAdUtils
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment(), HomeClick {
     private lateinit var binding: FragmentHomeBinding
@@ -49,7 +57,8 @@ class HomeFragment : Fragment(), HomeClick {
         with(binding) {
             setting.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
-                showAd()
+                showAd(fullscreen_main_settings)
+
             }
             giftHome.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_appProFragment)
@@ -116,7 +125,7 @@ class HomeFragment : Fragment(), HomeClick {
                 )
             InterstitialAdUtils(requireActivity(), "MainMenu").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                Constants.fullscreen_main_menu,
+                Constants.fullscreen_main_load,
                 adAlreadyLoaded = {
 
                 },
@@ -152,68 +161,79 @@ class HomeFragment : Fragment(), HomeClick {
         when (position) {
             0 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_scanFragment)
-                showAd()
+                showAd(fullscreen_main_menu_scan_apps)
             }
 
             1 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_appInstalledFragment)
-                showAd()
+                showAd(fullscreen_main_install_apps)
             }
 
             2 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_appUninstallFragment)
-                showAd()
+                showAd(fullscreen_main_uninstall)
+
             }
 
             3 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_systemAppsFragment)
-                showAd()
+                showAd(fullscreen_main_system_apps)
+
             }
 
             4 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_appUsageFragment)
-                showAd()
+                showAd(fullscreen_main_app_usage)
+
             }
 
             5 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_deviceInfoFragment)
 //                findNavController().navigate(R.id.action_homeFragment_to_deviceInformationFragment)
-                showAd()
+                showAd(fullscreen_main_device_info)
+
             }
 
             6 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_androidUpdateFragment)
-                showAd()
+                showAd(fullscreen_main_system_update)
+
             }
 
             7 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_wifiFragment)
-                showAd()
+                showAd(fullscreen_main_menu_scan_apps)
+
             }
 
             8 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_sensorFragment)
-                showAd()
+                showAd(fullscreen_main_sensor)
+
             }
 
             9 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_restoreAppsFragment)
-                showAd()
+                showAd(fullscreen_main_restore_apps)
+
             }
 
             10 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_batteryInfoFragment)
-                showAd()
+                showAd(fullscreen_main_battery)
+
             }
 
             11 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_androidVersionFragment)
-                showAd()
+                showAd(fullscreen_main_android_versions)
+
             }
 
             else -> {
                 findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
-                showAd()
+                showAd(fullscreen_main_settings)
+
             }
 
 
@@ -224,13 +244,13 @@ class HomeFragment : Fragment(), HomeClick {
         super.onItemClick(name, position)
     }
 
-    private fun showAd() {
+    private fun showAd(remoteConf: Boolean) {
         InterstitialAdUtils(
             requireActivity(),
             "MainMenu"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_main_menu,
+            remoteConf,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

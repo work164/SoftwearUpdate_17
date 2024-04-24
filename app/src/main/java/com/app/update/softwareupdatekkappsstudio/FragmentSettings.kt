@@ -41,6 +41,10 @@ class FragmentSettings : Fragment() {
             findNavController().popBackStack()
             showAd()
         }
+
+        settingsBinding?.btnInAppForwardDevice?.setOnClickListener {
+            findNavController().navigate(R.id.action_settingFragment_to_appProFragment)
+        }
         loadAds()
         return settingsBinding?.root!!
     }

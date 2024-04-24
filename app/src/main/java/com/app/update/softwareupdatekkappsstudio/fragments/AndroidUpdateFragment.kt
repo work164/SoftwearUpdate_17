@@ -39,23 +39,13 @@ class AndroidUpdateFragment : Fragment() {
 
                 }
             })
+
         binding.backDevice.setOnClickListener {
             findNavController().popBackStack()
             showAd()
         }
         binding.btnInAppForwardDevice.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_appProFragment)
-            InterstitialAdUtils(
-                requireActivity(),
-                "SystemUpdateDetails"
-            ).showInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
-                Constants.fullscreen_system_update_details,
-                fullScreenAdShow = {},
-                fullScreenAdDismissed = {},
-                fullScreenAdFailedToShow = {},
-                fullScreenAdNotAvailable = {},
-            )
+            findNavController().navigate(R.id.action_androidUpdateFragment_to_appProFragment)
         }
 
         return binding.root
@@ -92,7 +82,7 @@ class AndroidUpdateFragment : Fragment() {
     private fun loadAds() {
         if (AppUtils.isNetworkAvailable(requireContext())) {
             binding.updateNativeAdOrBanner.visibility = View.VISIBLE
-            val bindAdSystemUpdate = NativeWithOutMediaBinding.inflate(layoutInflater)
+            val bindAdSystemUpdate = NativeWithMediaBinding.inflate(layoutInflater)
             NativeAdUtils(
                 requireActivity().application,
                 "SystemUpdate"
@@ -106,7 +96,7 @@ class AndroidUpdateFragment : Fragment() {
                     bindAdSystemUpdate.adHeadline,
                     bindAdSystemUpdate.adBody,
                     bindAdSystemUpdate.adCallToAction,
-                    null,
+                    bindAdSystemUpdate.adMedia,
                     null,
                     adFailed = {
                         binding.updateNativeAdOrBanner.visibility = View.GONE

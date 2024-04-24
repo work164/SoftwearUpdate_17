@@ -41,6 +41,9 @@ class SensorInfoFragment : Fragment() {
             findNavController().popBackStack()
             showAd()
         }
+        binding.btnInAppForwardDevice.setOnClickListener {
+            findNavController().navigate(R.id.action_sensorFragment_to_appProFragment)
+        }
         loadAds()
         return binding.root
     }

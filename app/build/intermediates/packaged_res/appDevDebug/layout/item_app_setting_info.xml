@@ -8,7 +8,7 @@
     android:layout_marginEnd="@dimen/_5sdp"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/ic_applistbg"
+    android:background="@drawable/apps_info_bg"
     android:padding="8dp">
 
     <ImageView

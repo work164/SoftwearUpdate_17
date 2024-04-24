@@ -44,7 +44,9 @@ class RestoreAppsFragment : Fragment() {
             findNavController().popBackStack()
             showAd()
         }
-
+        binding.btnInAppForwardDevice.setOnClickListener {
+            findNavController().navigate(R.id.action_restoreAppsFragment_to_appProFragment)
+        }
         //TODO Ad and Back emd Remaining
         /*
         *

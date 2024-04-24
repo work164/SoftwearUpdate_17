@@ -65,6 +65,9 @@ class AppsUninstallFragment : Fragment(), HomeClick {
             findNavController().popBackStack()
             showAd()
         }
+        binding.btnInAppForwardDevice.setOnClickListener {
+            findNavController().navigate(R.id.action_appUninstallFragment_to_appProFragment)
+        }
         loadAds()
 
         // Inflate the layout for this fragment

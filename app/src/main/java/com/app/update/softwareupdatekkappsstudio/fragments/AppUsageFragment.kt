@@ -102,6 +102,9 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
             backDevice.setOnClickListener {
                 onBackWithAd()
             }
+            btnInAppForwardDevice.setOnClickListener {
+                findNavController().navigate(R.id.action_appUsageFragment_to_appProFragment)
+            }
         }
     }
 

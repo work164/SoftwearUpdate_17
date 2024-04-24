@@ -61,7 +61,9 @@ class AppDetailsFragment : Fragment() {
             findNavController().popBackStack()
             showAd()
         }
-
+        binding?.btnInAppForwardDevice?.setOnClickListener {
+            findNavController().navigate(R.id.action_appDetailFragment_to_appProFragment)
+        }
         getAppDetailsByPackageName(appPackageName ?: "", requireContext().packageManager)
         setUpClickListeners()
 
@@ -192,7 +194,7 @@ class AppDetailsFragment : Fragment() {
     private fun loadAds() {
         if (AppUtils.isNetworkAvailable(requireContext())) {
             binding?.appDetailsNativeAdOrBanner?.visibility = View.VISIBLE
-            val bindAdSystemUpdate = NativeWithOutMediaBinding.inflate(layoutInflater)
+            val bindAdSystemUpdate = NativeWithMediaBinding.inflate(layoutInflater)
             NativeAdUtils(
                 requireActivity().application,
                 "appDetailsNativeAdOrBanner"
@@ -206,7 +208,7 @@ class AppDetailsFragment : Fragment() {
                     bindAdSystemUpdate.adHeadline,
                     bindAdSystemUpdate.adBody,
                     bindAdSystemUpdate.adCallToAction,
-                    null,
+                    bindAdSystemUpdate.adMedia,
                     null,
                     adFailed = {
                         binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE

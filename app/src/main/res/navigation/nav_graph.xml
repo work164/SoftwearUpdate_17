@@ -145,6 +145,10 @@
             android:id="@+id/action_scanFragment_to_availableAppsUpdateFragment"
             app:destination="@id/availableAppsUpdateFragment" />
 
+        <action
+            android:id="@+id/action_scanAppsFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
 
     </fragment>
 
@@ -156,31 +160,54 @@
         <action
             android:id="@+id/action_settingsFragment_to_languageFragment"
             app:destination="@id/languageFragment" />
+
+        <action
+            android:id="@+id/action_settingFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/sensorFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.SensorInfoFragment"
         android:label="Fragment Setting"
-        tools:layout="@layout/fragment_sensor_info" />
+        tools:layout="@layout/fragment_sensor_info">
+        <action
+            android:id="@+id/action_sensorFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/deviceInfoFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.DeviceInfoFragment"
         android:label="Fragment Device Info"
-        tools:layout="@layout/fragment_device_info" />
+        tools:layout="@layout/fragment_device_info">
+        <action
+            android:id="@+id/action_deviceInfoFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/androidVersionFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.AndroidVersionFragment"
         android:label="Fragment Android Version"
-        tools:layout="@layout/fragment_android_version" />
+        tools:layout="@layout/fragment_android_version">
+        <action
+            android:id="@+id/action_androidVersionFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/androidUpdateFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.AndroidUpdateFragment"
         android:label="Fragment Android Update"
         tools:layout="@layout/fragment_android_update">
+        <action
+            android:id="@+id/action_androidUpdateFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
 
     </fragment>
 
@@ -194,13 +221,23 @@
         android:id="@+id/batteryInfoFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.BatteryInfoFragment"
         android:label="Fragment Battery Info"
-        tools:layout="@layout/fragment_battery_info" />
+        tools:layout="@layout/fragment_battery_info">
+        <action
+            android:id="@+id/action_batteryInfoFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/deviceInformationFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.DeviceInformationFragment"
         android:label="Fragment Device Information"
-        tools:layout="@layout/fragment_device_information" />
+        tools:layout="@layout/fragment_device_information">
+        <action
+            android:id="@+id/action_deviceInformationFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/wifiFragment"
@@ -212,19 +249,35 @@
             android:id="@+id/action_wifi_to_wifiDetailFragment"
             app:destination="@id/wifiDetailFragment" />
 
+        <action
+            android:id="@+id/action_wifiFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
+
     </fragment>
 
     <fragment
         android:id="@+id/wifiDetailFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.WifiDetailsFragment"
         android:label="Fragment wifi Detail"
-        tools:layout="@layout/fragment_wifi_details" />
+        tools:layout="@layout/fragment_wifi_details" >
+        <action
+            android:id="@+id/action_wifiDetailFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+    </fragment>
     <!--App Details Fragment-->
+
+
     <fragment
         android:id="@+id/appDetailFragment"
         android:name="com.app.update.softwareupdatekkappsstudio.fragments.AppDetailsFragment"
         android:label="Fragment wifi Detail"
-        tools:layout="@layout/fragment_app_details" />
+        tools:layout="@layout/fragment_app_details">
+        <action
+            android:id="@+id/action_appDetailFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/appUninstallFragment"
@@ -234,6 +287,9 @@
         <action
             android:id="@+id/action_appUninstallFragment_to_appDetailFragment"
             app:destination="@id/appDetailFragment" />
+        <action
+            android:id="@+id/action_appUninstallFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
 
     </fragment>
     <fragment
@@ -244,7 +300,9 @@
         <action
             android:id="@+id/action_appCounterFragment_to_appDetailFragment"
             app:destination="@id/appDetailFragment" />
-
+        <action
+            android:id="@+id/action_appCounterFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
     </fragment>
     <fragment
         android:id="@+id/systemAppsFragment"
@@ -254,7 +312,9 @@
         <action
             android:id="@+id/action_systemAppsFragment_to_appDetailFragment"
             app:destination="@id/appDetailFragment" />
-
+        <action
+            android:id="@+id/action_systemAppsFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
     </fragment>
     <fragment
         android:id="@+id/appUsageFragment"
@@ -264,6 +324,9 @@
         <action
             android:id="@+id/action_appUsageFragment_to_appDetailFragment"
             app:destination="@id/appDetailFragment" />
+        <action
+            android:id="@+id/action_appUsageFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
     </fragment>
     <fragment
         android:id="@+id/restoreAppsFragment"
@@ -273,7 +336,9 @@
         <action
             android:id="@+id/action_restoreAppsFragment_to_appDetailFragment"
             app:destination="@id/appDetailFragment" />
-
+        <action
+            android:id="@+id/action_restoreAppsFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
     </fragment>
     <fragment
         android:id="@+id/availableAppsUpdateFragment"
@@ -283,7 +348,9 @@
         <action
             android:id="@+id/action_availableAppsUpdateFragment_to_appDetailFragment"
             app:destination="@id/appDetailFragment" />
-
+        <action
+            android:id="@+id/action_availableAppsUpdateFragment_to_appProFragment"
+            app:destination="@id/appProFragment" />
     </fragment>
 
 </navigation>

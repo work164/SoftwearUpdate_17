@@ -71,7 +71,12 @@ class AppInstalledFragment : Fragment(), HomeClick {
             findNavController().popBackStack()
             showAd()
         }
+        binding.btnInAppForwardDevice.setOnClickListener {
+            findNavController().navigate(R.id.action_appCounterFragment_to_appProFragment)
+        }
         appsAdapter = AppsAdapter(this,appsList, requireActivity())
+        binding.appsRecyclerView.layoutManager = LinearLayoutManager(activity)
+
         binding.appsRecyclerView.adapter = appsAdapter
         showNumberOfInstalledApps()
         CoroutineScope(Dispatchers.IO).launch {
@@ -105,6 +110,7 @@ class AppInstalledFragment : Fragment(), HomeClick {
 
         InterstitialAdUtils(
             requireActivity(),
+
             "fullscreen_install_app_details"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
@@ -231,7 +237,7 @@ class AppInstalledFragment : Fragment(), HomeClick {
     private fun showAd() {
         InterstitialAdUtils(
             requireActivity(),
-            "SystemUpdate"
+            "fullscreen_install_app_back"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
             Constants.fullscreen_install_app_back,

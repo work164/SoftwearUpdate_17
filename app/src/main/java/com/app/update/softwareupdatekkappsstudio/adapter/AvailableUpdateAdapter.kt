@@ -39,17 +39,8 @@ class AvailableUpdateAdapter(val context: Context, val onItemClick: (AppModel) -
             Glide.with(context).load(item.icon).into(ifvIcon)
 
             mbClickItem.setOnClickListener {
-                val intent = Intent()
-                intent.action = Intent.ACTION_VIEW
-                val dataset = Uri.parse("https://play.google.com/store/apps/details?id=" + item.packageName)
-                intent.data = dataset
-                try {
-                    context.startActivity(intent)
-                } catch (e: ClassNotFoundException) {
-                    e.printStackTrace()
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
+                onItemClick.invoke(item)
+
             }
 
         }

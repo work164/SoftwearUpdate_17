@@ -35,6 +35,21 @@ class UpdateAvailableFragment : Fragment() {
                 Bundle().apply {
                     putString("appPackageName", it.packageName)
                 }
+
+
+                /*
+                *   /* val intent = Intent()
+                intent.action = Intent.ACTION_VIEW
+                val dataset = Uri.parse("https://play.google.com/store/apps/details?id=" + item.packageName)
+                intent.data = dataset
+                try {
+                    context.startActivity(intent)
+                } catch (e: ClassNotFoundException) {
+                    e.printStackTrace()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }*/
+                * */
             )
 
             InterstitialAdUtils(
@@ -98,6 +113,9 @@ class UpdateAvailableFragment : Fragment() {
                 findNavController().popBackStack()
                 showAd()
             }
+            btnInAppForwardDevice.setOnClickListener {
+                findNavController().navigate(R.id.action_androidUpdateFragment_to_appProFragment)
+            }
         }
     }
 
@@ -125,7 +143,10 @@ class UpdateAvailableFragment : Fragment() {
                     },
                     adValidate = {
                         binding?.updatesNativeAdOrBanner?.visibility = View.VISIBLE
-                        BannerAdUtils(activity = requireActivity(), screenName = "updatesNativeAdOrBanner")
+                        BannerAdUtils(
+                            activity = requireActivity(),
+                            screenName = "updatesNativeAdOrBanner"
+                        )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
                                 remoteConfig = Constants.banner_scan_apps, // give remote config here
