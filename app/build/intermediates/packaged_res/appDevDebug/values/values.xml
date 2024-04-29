@@ -33,9 +33,6 @@
     <color name="white">#FFFFFF</color>
     <string name="accelerometer">Accelerometer</string>
     <string name="accept">ACCEPT</string>
-    <string name="admob_banner_id" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
-    <string name="admob_interal" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
-    <string name="admob_splash_fullscreen" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
     <string name="android_version">Android Version</string>
     <string name="app_details">App Details</string>
     <string name="app_icon">app icon</string>
@@ -74,7 +71,6 @@
     <string name="lifeTime">Life Time</string>
     <string name="monthly">Monthly</string>
     <string name="na">N/A</string>
-    <string name="native_id" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
     <string name="next">Next</string>
     <string name="open">open</string>
     <string name="policy_text">By tapping the ‘Accept’ button, you confirm that you agree with our Privacy Policy.</string>
@@ -103,6 +99,65 @@
     <string name="update">Update</string>
     <string name="update_available">Available Update</string>
     <string name="update_your_device_software">Update Your Device Software</string>
+    <string name="val_banner_android_details" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_app_details" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_app_usage" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_apps_restore" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_battery_info" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_device_details" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_install" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_intro" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_language" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_main_menu_bottom" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_main_menu_top" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_mobile_sensor" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_privacy" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_scan" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_scan_apps" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_setting" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_system_apps" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_system_update" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_banner_uninstall" translatable="false">"ca-app-pub-3940256099942544/6300978111"</string>
+    <string name="val_fullscreen_all_details_back" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_android_details_back" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_app_restore_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_app_usage_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_battery_details_back" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_device_details_back" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_device_sensor_back" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_install_app_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_intro" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_language_from_app" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_main_load" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_scan_app_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_setting_back" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_splash" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_system_app_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_system_update_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_uninstall_app_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_fullscreen_update_app_details" translatable="false">"ca-app-pub-3940256099942544/1033173712"</string>
+    <string name="val_native_android_details" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_app_details" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_app_usage" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_apps_restore" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_battery_info" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_device_details" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_exit" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_install" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_intro" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_language" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_main_menu_bottom" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_main_menu_top" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_mobile_sensor" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_privacy" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_scan" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_scan_apps" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_setting" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_splash_bottom" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_splash_top" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_system_apps" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_system_update" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="val_native_uninstall" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
     <string name="view_on_play_store">View on Play Store</string>
     <string name="weekly">Weekly</string>
     <string name="welcome_to">Welcome to</string>

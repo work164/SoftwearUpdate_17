@@ -84,7 +84,7 @@ class DeviceInfoFragment : Fragment() {
                 "SystemUpdate"
             ).setAdCallerName("SystemUpdate")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_device_details),
                     Constants.val_native_device_details,
                     binding.deviceNativeAdOrBanner,
                     bindAdSystemUpdate.root,
@@ -101,7 +101,7 @@ class DeviceInfoFragment : Fragment() {
                         binding.deviceNativeAdOrBanner.visibility = View.VISIBLE
                         BannerAdUtils(activity = requireActivity(), screenName = "SystemUpdate")
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_device_details), // give ad id here
                                 remoteConfig = Constants.val_banner_device_details, // give remote config here
                                 adsView = binding.deviceNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -124,7 +124,7 @@ class DeviceInfoFragment : Fragment() {
                     }
                 )
             InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
+                getString(R.string.val_fullscreen_device_details_back),
                Constants.val_fullscreen_device_details_back,
                 adAlreadyLoaded = {
 
@@ -149,7 +149,7 @@ class DeviceInfoFragment : Fragment() {
             requireActivity(),
             "SystemUpdate"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_device_details_back),
             Constants.val_fullscreen_device_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

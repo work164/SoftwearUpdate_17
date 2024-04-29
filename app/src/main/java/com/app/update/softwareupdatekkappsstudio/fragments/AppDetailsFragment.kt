@@ -208,7 +208,7 @@ class AppDetailsFragment : Fragment() {
                 "appDetailsNativeAdOrBanner"
             ).setAdCallerName("appDetailsNativeAdOrBanner")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_app_details),
                     Constants.val_native_app_details,
                     binding?.appDetailsNativeAdOrBanner,
                     bindAdSystemUpdate.root,
@@ -228,7 +228,7 @@ class AppDetailsFragment : Fragment() {
                             screenName = "appDetailsNativeAdOrBanner"
                         )
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_app_details), // give ad id here
                                 remoteConfig = Constants.val_banner_app_details, // give remote config here
                                 adsView = binding?.appDetailsNativeAdOrBanner
                                     ?: return@loadNativeAd, //give your frameLayout here
@@ -252,7 +252,7 @@ class AppDetailsFragment : Fragment() {
                     }
                 )
             InterstitialAdUtils(requireActivity(), "appDetailsNativeAdOrBanner").loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
+                getString(R.string.val_fullscreen_all_details_back),
                 Constants.val_fullscreen_all_details_back,
                 adAlreadyLoaded = {
 
@@ -277,7 +277,7 @@ class AppDetailsFragment : Fragment() {
             requireActivity(),
             "appDetailsNativeAdOrBanner"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_all_details_back),
               Constants.val_fullscreen_all_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

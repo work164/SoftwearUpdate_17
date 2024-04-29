@@ -78,7 +78,7 @@ class RestoreAppsFragment : Fragment() {
                 "native_apps_restore"
             ).setAdCallerName("native_apps_restore")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_apps_restore),
                     Constants.val_native_apps_restore,
                     binding.restoreNativeAdOrBanner,
                     bindAdSystemUpdate.root,
@@ -95,7 +95,7 @@ class RestoreAppsFragment : Fragment() {
                         binding.restoreNativeAdOrBanner.visibility = View.VISIBLE
                         BannerAdUtils(activity = requireActivity(), screenName = "restoreNativeAdOrBanner")
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_apps_restore), // give ad id here
                                 remoteConfig = Constants.val_banner_apps_restore, // give remote config here
                                 adsView = binding.restoreNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -118,7 +118,7 @@ class RestoreAppsFragment : Fragment() {
                     }
                 )
             InterstitialAdUtils(requireActivity(), "fullscreen_app_restore_back").loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
+                getString(R.string.val_fullscreen_app_restore_details),
                 if (Constants.val_fullscreen_app_restore_back) Constants.val_fullscreen_app_restore_back else Constants.val_fullscreen_app_restore_details,
                 adAlreadyLoaded = {
 
@@ -143,7 +143,7 @@ class RestoreAppsFragment : Fragment() {
             requireActivity(),
             "fullscreen_app_restore_back"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_app_restore_details),
             Constants.val_fullscreen_app_restore_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

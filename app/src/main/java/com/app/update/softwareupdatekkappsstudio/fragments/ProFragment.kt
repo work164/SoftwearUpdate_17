@@ -228,13 +228,13 @@ class ProFragment : Fragment(), Billing6Listener {
 
         val termsClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                openUrl("https://unseenmessage.blogspot.com/2023/12/term-and-conditions.html")
+                openUrl(getString(R.string.privacu_link))
             }
         }
 
         val privacyClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                openUrl("https://mobiledatatransferapp.blogspot.com/2023/12/privacy-policy.html")
+                openUrl(getString(R.string.privacu_link))
             }
         }
         val manageClickableSpan = object : ClickableSpan() {

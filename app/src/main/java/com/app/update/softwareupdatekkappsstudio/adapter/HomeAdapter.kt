@@ -28,7 +28,7 @@ class HomeAdapter(val context: Context, private var mList:ArrayList<HomeViewMode
             homeText1.text = homeModel.featureName
             itemCount.text = homeModel.text
             holder.itemView.setOnClickListener {
-                homeClick.onItemClick(homeModel.featureName,position)
+                homeClick.onItemClick(homeModel.featureName,homeModel.position)
             }
 
 

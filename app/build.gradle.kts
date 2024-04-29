@@ -38,8 +38,8 @@ android {
     }
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -61,34 +61,145 @@ android {
             resValue("string", "app_id", "\"ca-app-pub-3940256099942544~3347511713\"")
 
             resValue("string", "app_open_l", "\"ca-app-pub-3940256099942544/3419835294\"")
-            resValue("string", "admob_banner_id", "\"ca-app-pub-3940256099942544/6300978111\"")
-            resValue(
-                "string",
-                "admob_splash_fullscreen",
-                "\"ca-app-pub-3940256099942544/1033173712\""
-            )
-            resValue("string", "admob_interal", "\"ca-app-pub-3940256099942544/1033173712\"")
-            resValue("string", "native_id", "\"ca-app-pub-3940256099942544/2247696110\"")
 
+            resValue("string", "val_banner_intro", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_language", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_privacy", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_main_menu_bottom", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_main_menu_top", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_setting", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_scan", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_scan_apps", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_app_details", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_install", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_uninstall", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_system_apps", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_app_usage", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_device_details", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_system_update", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_mobile_sensor", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_apps_restore", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_battery_info", "\"ca-app-pub-3940256099942544/6300978111\"")
+            resValue("string", "val_banner_android_details", "\"ca-app-pub-3940256099942544/6300978111\"")
 
+            resValue("string", "val_fullscreen_splash", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_language_from_app", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_intro", "\"ca-app-pub-3940256099942544/1033173712\"")
+
+            resValue("string", "val_fullscreen_main_load", "\"ca-app-pub-3940256099942544/1033173712\"")
+
+            resValue("string", "val_fullscreen_scan_app_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_update_app_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_install_app_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_uninstall_app_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_system_app_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_app_usage_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_system_update_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_app_restore_details", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_android_details_back", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_battery_details_back", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_device_sensor_back", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_device_details_back", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_all_details_back", "\"ca-app-pub-3940256099942544/1033173712\"")
+            resValue("string", "val_fullscreen_setting_back", "\"ca-app-pub-3940256099942544/1033173712\"")
+
+            resValue("string", "val_native_splash_top", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_splash_bottom", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_intro", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_language", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_privacy", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_main_menu_bottom", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_main_menu_top", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_setting", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_scan", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_scan_apps", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_app_details", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_uninstall", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_install", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_system_apps", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_app_usage", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_device_details", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_system_update", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_mobile_sensor", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_apps_restore", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_battery_info", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_android_details", "\"ca-app-pub-3940256099942544/2247696110\"")
+            resValue("string", "val_native_exit", "\"ca-app-pub-3940256099942544/2247696110\"")
 
             resValue("string", "billing_product", "\"android.test.purchased\"")
             resValue("string", "env_dev", "true")
         }
         create("appProd") {
 
-
             resValue("string", "app_id", "\"ca-app-pub-7553272958179684~8377819593\"")
 
             resValue("string", "app_open_l", "\"ca-app-pub-7553272958179684/4619204570\"")
-            resValue("string", "admob_banner_id", "\"ca-app-pub-7553272958179684/6670082023\"")
-            resValue(
-                "string",
-                "admob_splash_fullscreen",
-                "\"ca-app-pub-7553272958179684/3852346991\""
-            )
-            resValue("string", "admob_interal", "\"ca-app-pub-7553272958179684/8721530290\"")
-            resValue("string", "native_id", "\"ca-app-pub-7553272958179684/9843040276\"")
+
+            resValue("string", "val_banner_intro", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_language", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_privacy", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_main_menu_bottom", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_main_menu_top", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_setting", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_scan", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_scan_apps", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_app_details", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_install", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_uninstall", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_system_apps", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_app_usage", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_device_details", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_system_update", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_mobile_sensor", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_apps_restore", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_battery_info", "\"ca-app-pub-7553272958179684/6670082023\"")
+            resValue("string", "val_banner_android_details", "\"ca-app-pub-7553272958179684/6670082023\"")
+
+            resValue("string", "val_fullscreen_splash", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_language_from_app", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_intro", "\"ca-app-pub-7553272958179684/3852346991\"")
+
+            resValue("string", "val_fullscreen_main_load", "\"ca-app-pub-7553272958179684/3852346991\"")
+
+            resValue("string", "val_fullscreen_scan_app_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_update_app_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_install_app_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_uninstall_app_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_system_app_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_app_usage_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_system_update_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_app_restore_details", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_android_details_back", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_battery_details_back", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_device_sensor_back", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_device_details_back", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_all_details_back", "\"ca-app-pub-7553272958179684/3852346991\"")
+            resValue("string", "val_fullscreen_setting_back", "\"ca-app-pub-7553272958179684/3852346991\"")
+
+            resValue("string", "val_native_splash_top", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_splash_bottom", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_intro", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_language", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_privacy", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_main_menu_bottom", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_main_menu_top", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_setting", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_scan", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_scan_apps", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_app_details", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_uninstall", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_install", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_system_apps", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_app_usage", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_device_details", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_system_update", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_mobile_sensor", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_apps_restore", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_battery_info", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_android_details", "\"ca-app-pub-7553272958179684/9843040276\"")
+            resValue("string", "val_native_exit", "\"ca-app-pub-7553272958179684/9843040276\"")
+
+
 
             resValue("string", "billing_product", "\"ads_free\"")
             resValue("string", "env_dev", "false")
@@ -185,5 +296,6 @@ dependencies {
 
     implementation("org.jsoup:jsoup:1.13.1")
     implementation("com.github.TheBotBox:AppsUsageMonitorAPI:1.1")
+    implementation ("com.facebook.infer.annotation:infer-annotation:0.18.0")
 
 }

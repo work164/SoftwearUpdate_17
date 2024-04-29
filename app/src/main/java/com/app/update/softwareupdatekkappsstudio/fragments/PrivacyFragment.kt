@@ -64,7 +64,7 @@ class PrivacyFragment : Fragment() {
             val bindAdPrivacy = NativeWithMediaBinding.inflate(layoutInflater)
             NativeAdUtils(requireActivity().application, "Privacy").setAdCallerName("Privacy")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_privacy),
                     Constants.val_native_privacy,
                     binding.privacyNativeAdOrBanner,
                     bindAdPrivacy.root,
@@ -81,7 +81,7 @@ class PrivacyFragment : Fragment() {
                         binding.privacyNativeAdOrBanner.visibility = View.VISIBLE
                         BannerAdUtils(activity = requireActivity(), screenName = "Privacy")
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_privacy), // give ad id here
                                 remoteConfig = Constants.val_banner_privacy, // give remote config here
                                 adsView = binding.privacyNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback

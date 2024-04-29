@@ -152,7 +152,7 @@ class BatteryInfoFragment : Fragment() {
                 "batteryNativeAdOrBanner"
             ).setAdCallerName("batteryNativeAdOrBanner")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_battery_info),
                     Constants.val_native_battery_info,
                     binding.batteryNativeAdOrBanner,
                     bindAdSystemUpdate.root,
@@ -170,7 +170,7 @@ class BatteryInfoFragment : Fragment() {
                         binding.batteryNativeAdOrBanner.visibility = View.VISIBLE
                         BannerAdUtils(activity = requireActivity(), screenName = "batteryNativeAdOrBanner")
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_battery_info), // give ad id here
                                 remoteConfig = Constants.val_banner_battery_info, // give remote config here
                                 adsView = binding.batteryNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -193,7 +193,7 @@ class BatteryInfoFragment : Fragment() {
                     }
                 )
             InterstitialAdUtils(requireActivity(), "batteryNativeAdOrBanner").loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
+                getString(R.string.val_fullscreen_battery_details_back),
                  Constants.val_fullscreen_battery_details_back,
                 adAlreadyLoaded = {
 
@@ -218,7 +218,7 @@ class BatteryInfoFragment : Fragment() {
             requireActivity(),
             "batteryNativeAdOrBanner"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_battery_details_back),
             Constants.val_fullscreen_battery_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

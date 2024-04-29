@@ -460,6 +460,10 @@
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-103:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
     },
     {
+        "merged": "com.app.update.softwareupdatekkappsstudio.app-merged_res-99:/layout_fragment_home.xml.flat",
+        "source": "com.app.update.softwareupdatekkappsstudio.app-main-103:/layout/fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-merged_res-99:\\menu_drawer_menu.xml.flat",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-103:\\menu\\drawer_menu.xml"
     },
@@ -630,10 +634,6 @@
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-merged_res-99:\\drawable_ic_home_system_update.xml.flat",
         "source": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-main-103:\\drawable\\ic_home_system_update.xml"
-    },
-    {
-        "merged": "com.app.update.softwareupdatekkappsstudio.app-merged_res-99:/xml_remote_config_defaults.xml.flat",
-        "source": "com.app.update.softwareupdatekkappsstudio.app-main-103:/xml/remote_config_defaults.xml"
     },
     {
         "merged": "C:\\Users\\integ\\.gradle\\daemon\\8.0\\com.app.update.softwareupdatekkappsstudio.app-merged_res-99:\\layout_item_app_setting_info.xml.flat",

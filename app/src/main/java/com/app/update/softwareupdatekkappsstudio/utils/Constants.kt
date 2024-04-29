@@ -31,19 +31,19 @@ object Constants {
     var val_fullscreen_splash = true
     var val_fullscreen_language_from_app = true
     var val_fullscreen_intro = true
-    var val_fullscreen_main_menu_scan_apps = true
-    var val_fullscreen_main_install_apps = true
-    var val_fullscreen_main_uninstall = true
-    var val_fullscreen_main_system_apps = true
-    var val_fullscreen_main_app_usage = true
-    var val_fullscreen_main_device_info = true
-    var val_fullscreen_main_system_update = true
-    var val_fullscreen_main_settings = true
-    var val_fullscreen_main_sensor = true
-    var val_fullscreen_main_restore_apps = true
-    var val_fullscreen_main_battery = true
-    var val_fullscreen_main_android_versions = true
-    var val_fullscreen_main_load = true
+    var val_fullscreen_main_menu_scan_apps = false
+    var val_fullscreen_main_install_apps = false
+    var val_fullscreen_main_uninstall = false
+    var val_fullscreen_main_system_apps = false
+    var val_fullscreen_main_app_usage = false
+    var val_fullscreen_main_device_info = false
+    var val_fullscreen_main_system_update = false
+    var val_fullscreen_main_settings = false
+    var val_fullscreen_main_sensor = false
+    var val_fullscreen_main_restore_apps = false
+    var val_fullscreen_main_battery = false
+    var val_fullscreen_main_android_versions = false
+    var val_fullscreen_main_load = false
 
     var val_fullscreen_scan_back = true
     var val_fullscreen_scan_app_details = true
@@ -86,7 +86,7 @@ object Constants {
     var val_native_privacy = true
 
     var val_native_main_menu_bottom = true
-    var val_native_main_menu_top = true
+    var val_native_main_menu_top = false
 
     var val_native_setting = true
     var val_native_scan = true
@@ -106,29 +106,27 @@ object Constants {
     var val_native_exit = true
 
     /*Banner*/
-    var val_banner_intro = true
-    var val_banner_language = true
-    var val_banner_privacy = true
+    var val_banner_intro = false
+    var val_banner_language = false
+    var val_banner_privacy = false
 
-    var val_banner_main_menu_bottom = true
-    var val_banner_main_menu_top = true
+    var val_banner_main_menu_bottom = false
+    var val_banner_main_menu_top = false
 
-    var val_banner_setting = true
-    var val_banner_scan = true
-    var val_banner_scan_apps = true
-    var val_banner_app_details = true
-    var val_banner_install = true
-    var val_banner_uninstall = true
-    var val_banner_system_apps = true
-    var val_banner_app_usage = true
-    var val_banner_device_details = true
-    var val_banner_system_update = true
-    var val_banner_mobile_sensor = true
-    var val_banner_apps_restore = true
-    var val_banner_battery_info = true
-    var val_banner_android_details = true
-
-
+    var val_banner_setting = false
+    var val_banner_scan = false
+    var val_banner_scan_apps = false
+    var val_banner_app_details = false
+    var val_banner_install = false
+    var val_banner_uninstall = false
+    var val_banner_system_apps = false
+    var val_banner_app_usage = false
+    var val_banner_device_details = false
+    var val_banner_system_update = false
+    var val_banner_mobile_sensor = false
+    var val_banner_apps_restore = false
+    var val_banner_battery_info = false
+    var val_banner_android_details = false
 
 
     val key_fullscreen_splash = "fullscreen_splash"

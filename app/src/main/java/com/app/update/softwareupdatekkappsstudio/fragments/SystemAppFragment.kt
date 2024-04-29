@@ -145,7 +145,7 @@ class SystemAppFragment : Fragment(), HomeClick {
                 "native_system_apps"
             ).setAdCallerName("native_system_apps")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_system_apps),
                     Constants.val_native_system_apps,
                     binding.systemAppsNativeAdOrBanner,
                     bindAdSystemUpdate.root,
@@ -165,7 +165,7 @@ class SystemAppFragment : Fragment(), HomeClick {
                             screenName = "banner_system_apps"
                         )
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_system_apps), // give ad id here
                                 remoteConfig = Constants.val_banner_system_apps, // give remote config here
                                 adsView = binding.systemAppsNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -191,7 +191,7 @@ class SystemAppFragment : Fragment(), HomeClick {
                 requireActivity(),
                 "fullscreen_system_app_details"
             ).loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
+                getString(R.string.val_fullscreen_system_app_details),
                 if (Constants.val_fullscreen_system_app_back) Constants.val_fullscreen_system_app_back else Constants.val_fullscreen_system_app_details,
                 adAlreadyLoaded = {
 
@@ -216,7 +216,7 @@ class SystemAppFragment : Fragment(), HomeClick {
             requireActivity(),
             "fullscreen_system_app_back"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_system_app_details),
             Constants.val_fullscreen_system_app_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

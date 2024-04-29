@@ -45,11 +45,11 @@ class HomeFragment : Fragment(), HomeClick {
         HomeViewModel(R.drawable.ic_home_app_usage, "App Usage", "", 4),
         HomeViewModel(R.drawable.ic_device_info, "Device Info", "", 5),
         HomeViewModel(R.drawable.ic_home_system_update, "System Update", "", 6),
-        HomeViewModel(R.drawable.ic_home_wifi, "Wifi Status", "", 7),
-        HomeViewModel(R.drawable.ic_home_mobile_sensor, "Mobile Sensor", "", 8),
-        HomeViewModel(R.drawable.ic_home_app_restore, "App Restore", "", 9),
+//        HomeViewModel(R.drawable.ic_home_wifi, "Wifi Status", "", 7),
+//        HomeViewModel(R.drawable.ic_home_mobile_sensor, "Mobile Sensor", "", 8),
+//        HomeViewModel(R.drawable.ic_home_app_restore, "App Restore", "", 9),
         HomeViewModel(R.drawable.ic_home_battery, "Battery Info", "", 10),
-        HomeViewModel(R.drawable.ic_home_android_version, "Android Version", "", 11)
+//        HomeViewModel(R.drawable.ic_home_android_version, "Android Version", "", 11)
     )
 
     override fun onCreateView(
@@ -80,87 +80,7 @@ class HomeFragment : Fragment(), HomeClick {
 
             }
         }
-        if (AppUtils.isNetworkAvailable(requireContext())) {
-            if (Constants.val_native_main_menu_top) binding.nativeMain.visibility = View.GONE
-            else binding.nativeMainBottom.visibility = View.GONE
-            val bindAdMainMenu = NativeWithOutMediaBinding.inflate(layoutInflater)
-            NativeAdUtils(requireActivity().application, "MainMenu").setAdCallerName("MainMenu")
-                .loadNativeAd(
-                    if (Constants.val_native_main_menu_top) getString(R.string.native_id) else getString(
-                        R.string.native_id
-                    ),
-                    if (Constants.val_native_main_menu_top) Constants.val_native_main_menu_top else Constants.val_native_main_menu_bottom,
-                    if (Constants.val_native_main_menu_top) binding.nativeMainBottom else binding.nativeMain,
-                    bindAdMainMenu.root,
-                    bindAdMainMenu.adAppIcon,
-                    bindAdMainMenu.adHeadline,
-                    bindAdMainMenu.adBody,
-                    bindAdMainMenu.adCallToAction,
-                    null,
-                    null,
-                    adFailed = {
 
-                        binding.nativeMainBottom.visibility = View.GONE
-                        binding.nativeMain.visibility = View.GONE
-                    },
-                    adValidate = {
-                        if (Constants.val_banner_main_menu_top) binding.nativeMain.visibility =
-                            View.GONE
-                        else binding.nativeMainBottom.visibility = View.GONE
-                        BannerAdUtils(activity = requireActivity(), screenName = "MainMenu")
-                            .loadBanner(
-                                adsKey = if (Constants.val_banner_main_menu_top) getString(R.string.admob_banner_id) else getString(
-                                    R.string.admob_banner_id
-                                ), // give ad id here
-                                remoteConfig = if (Constants.val_banner_main_menu_top) Constants.val_banner_main_menu_top else Constants.val_banner_main_menu_bottom, // give remote config here
-                                adsView = if (Constants.val_banner_main_menu_top) binding.nativeMainBottom else binding.nativeMain, //give your frameLayout here
-                                onAdClicked = {}, //if ad clicked you will receive this callback
-                                onAdFailedToLoad = {
-                                    binding.nativeMainBottom.visibility = View.GONE
-                                    binding.nativeMain.visibility = View.GONE
-                                }, // if ad failed to load you will receive this callback
-                                onAdImpression = {}, // if ad impression will receive this callback
-                                onAdLoaded = {}, // if ad loaded you will receive this callback
-                                onAdOpened = {}, // if ad opened you will receive this callback
-                                onAdValidate = {
-                                    binding.nativeMainBottom.visibility = View.GONE
-                                    binding.nativeMain.visibility = View.GONE
-                                }) //if remote off or no internet or user is premium user you will receive callback here
-
-
-                    },
-                    adClicked = {
-
-
-                    },
-                    adImpression = {
-
-
-                    }
-                )
-            InterstitialAdUtils(requireActivity(), "MainMenu").loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
-                Constants.val_fullscreen_main_load,
-                adAlreadyLoaded = {
-
-                },
-                adLoaded = {
-
-
-                },
-                adFailed = {
-
-
-                },
-                adValidate = {
-
-
-                },
-            )
-        } else {
-            binding.nativeMainBottom.visibility = View.GONE
-            binding.nativeMain.visibility = View.GONE
-        }
 
         return binding.root
     }
@@ -259,12 +179,100 @@ class HomeFragment : Fragment(), HomeClick {
         super.onItemClick(name, position)
     }
 
+
+    override fun onResume() {
+
+        if (AppUtils.isNetworkAvailable(requireContext())) {
+            if (Constants.val_native_main_menu_top) binding.nativeMain.visibility = View.GONE
+            else binding.nativeMainBottom.visibility = View.GONE
+            val bindAdMainMenu = NativeWithOutMediaBinding.inflate(layoutInflater)
+            NativeAdUtils(requireActivity().application, "MainMenu").setAdCallerName("MainMenu")
+                .loadNativeAd(
+                    if (Constants.val_native_main_menu_top) getString(R.string.val_native_main_menu_top) else getString(
+                        R.string.val_native_main_menu_bottom
+                    ),
+                    if (Constants.val_native_main_menu_top) Constants.val_native_main_menu_top else Constants.val_native_main_menu_bottom,
+                    if (Constants.val_native_main_menu_top) binding.nativeMainBottom else binding.nativeMain,
+                    bindAdMainMenu.root,
+                    bindAdMainMenu.adAppIcon,
+                    bindAdMainMenu.adHeadline,
+                    bindAdMainMenu.adBody,
+                    bindAdMainMenu.adCallToAction,
+                    null,
+                    null,
+                    adFailed = {
+
+                        binding.nativeMainBottom.visibility = View.GONE
+                        binding.nativeMain.visibility = View.GONE
+                    },
+                    adValidate = {
+                        if (Constants.val_banner_main_menu_top) binding.nativeMain.visibility =
+                            View.GONE
+                        else binding.nativeMainBottom.visibility = View.GONE
+                        BannerAdUtils(activity = requireActivity(), screenName = "MainMenu")
+                            .loadBanner(
+                                adsKey = if (Constants.val_banner_main_menu_top) getString(R.string.val_banner_main_menu_top) else getString(
+                                    R.string.val_banner_main_menu_bottom
+                                ), // give ad id here
+                                remoteConfig = if (Constants.val_banner_main_menu_top) Constants.val_banner_main_menu_top else Constants.val_banner_main_menu_bottom, // give remote config here
+                                adsView = if (Constants.val_banner_main_menu_top) binding.nativeMainBottom else binding.nativeMain, //give your frameLayout here
+                                onAdClicked = {}, //if ad clicked you will receive this callback
+                                onAdFailedToLoad = {
+                                    binding.nativeMainBottom.visibility = View.GONE
+                                    binding.nativeMain.visibility = View.GONE
+                                }, // if ad failed to load you will receive this callback
+                                onAdImpression = {}, // if ad impression will receive this callback
+                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdValidate = {
+                                    binding.nativeMainBottom.visibility = View.GONE
+                                    binding.nativeMain.visibility = View.GONE
+                                }) //if remote off or no internet or user is premium user you will receive callback here
+
+
+                    },
+                    adClicked = {
+
+
+                    },
+                    adImpression = {
+
+
+                    }
+                )
+            InterstitialAdUtils(requireActivity(), "MainMenu").loadInterstitialAd(
+                getString(R.string.val_fullscreen_main_load),
+                Constants.val_fullscreen_main_load,
+                adAlreadyLoaded = {
+
+                },
+                adLoaded = {
+
+
+                },
+                adFailed = {
+
+
+                },
+                adValidate = {
+
+
+                },
+            )
+        } else {
+            binding.nativeMainBottom.visibility = View.GONE
+            binding.nativeMain.visibility = View.GONE
+        }
+        super.onResume()
+    }
+
+
     private fun showAd(remoteConf: Boolean) {
         InterstitialAdUtils(
             requireActivity(),
             "MainMenu"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_main_load),
             remoteConf,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

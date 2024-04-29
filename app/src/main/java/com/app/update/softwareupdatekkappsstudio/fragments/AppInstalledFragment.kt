@@ -113,7 +113,7 @@ class AppInstalledFragment : Fragment(), HomeClick {
 
             "fullscreen_install_app_details"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_install_app_details),
             Constants.val_fullscreen_install_app_details,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
@@ -174,7 +174,7 @@ class AppInstalledFragment : Fragment(), HomeClick {
                 "installAppsNativeAdOrBanner"
             ).setAdCallerName("installAppsNativeAdOrBanner")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_install),
                     Constants.val_native_install,
                     binding.installAppsNativeAdOrBanner,
                     bindAdSystemUpdate.root,
@@ -191,7 +191,7 @@ class AppInstalledFragment : Fragment(), HomeClick {
                         binding.installAppsNativeAdOrBanner.visibility = View.VISIBLE
                         BannerAdUtils(activity = requireActivity(), screenName = "installAppsNativeAdOrBanner")
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_install), // give ad id here
                                 remoteConfig = Constants.val_banner_install, // give remote config here
                                 adsView = binding.installAppsNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -214,7 +214,7 @@ class AppInstalledFragment : Fragment(), HomeClick {
                     }
                 )
             InterstitialAdUtils(requireActivity(), "installAppsNativeAdOrBanner").loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
+                getString(R.string.val_fullscreen_install_app_details),
                 if (Constants.val_fullscreen_install_app_back) Constants.val_fullscreen_install_app_back else Constants.val_fullscreen_install_app_details,
                 adAlreadyLoaded = {
 
@@ -239,7 +239,7 @@ class AppInstalledFragment : Fragment(), HomeClick {
             requireActivity(),
             "fullscreen_install_app_back"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_install_app_details),
             Constants.val_fullscreen_install_app_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

@@ -298,7 +298,7 @@ class ScanAppFragment : Fragment() {
                             requireActivity(),
                             "fullscreen_scan_app_details"
                         ).showInterstitialAd(
-                            getString(R.string.admob_splash_fullscreen),
+                            getString(R.string.val_fullscreen_scan_app_details),
                             Constants.val_fullscreen_scan_app_details,
                             fullScreenAdShow = {},
                             fullScreenAdDismissed = {},
@@ -445,7 +445,7 @@ class ScanAppFragment : Fragment() {
                 "native_scan"
             ).setAdCallerName("native_scan")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_scan),
                     Constants.val_native_scan,
                     binding.nativeAdScan,
                     bindAdSystemUpdate.root,
@@ -462,7 +462,7 @@ class ScanAppFragment : Fragment() {
                         binding.nativeAdScan.visibility = View.VISIBLE
                         BannerAdUtils(activity = requireActivity(), screenName = "banner_scan")
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_scan), // give ad id here
                                 remoteConfig = Constants.val_banner_scan, // give remote config here
                                 adsView = binding.nativeAdScan, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -485,7 +485,7 @@ class ScanAppFragment : Fragment() {
                     }
                 )
             InterstitialAdUtils(requireActivity(), "fullscreen_scan_back").loadInterstitialAd(
-                getString(R.string.admob_splash_fullscreen),
+                getString(R.string.val_fullscreen_scan_app_details),
                 if (Constants.val_fullscreen_scan_back) Constants.val_fullscreen_scan_back else Constants.val_fullscreen_scan_app_details,
                 adAlreadyLoaded = {
 
@@ -512,7 +512,7 @@ class ScanAppFragment : Fragment() {
             requireActivity(),
             "fullscreen_scan_back"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_scan_app_details),
             Constants.val_fullscreen_scan_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

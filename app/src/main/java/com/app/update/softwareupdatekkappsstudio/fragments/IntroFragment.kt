@@ -72,7 +72,7 @@ class IntroFragment : Fragment() {
                 val bindAdIntro = NativeWithOutMediaBinding.inflate(layoutInflater)
                 NativeAdUtils(requireActivity().application, "Intro").setAdCallerName("Intro")
                     .loadNativeAd(
-                        getString(R.string.native_id),
+                        getString(R.string.val_native_intro),
                         Constants.val_native_intro,
                         binding.introNativeAdOrBanner,
                         bindAdIntro.root,
@@ -89,7 +89,7 @@ class IntroFragment : Fragment() {
                             binding.introNativeAdOrBanner.visibility = View.VISIBLE
                             BannerAdUtils(activity = requireActivity(), screenName = "Intro")
                                 .loadBanner(
-                                    adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                    adsKey = getString(R.string.val_banner_intro), // give ad id here
                                     remoteConfig = Constants.val_banner_intro, // give remote config here
                                     adsView = binding.introNativeAdOrBanner, //give your frameLayout here
                                     onAdClicked = {}, //if ad clicked you will receive this callback
@@ -112,7 +112,7 @@ class IntroFragment : Fragment() {
                         }
                     )
                 InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
-                    getString(R.string.admob_splash_fullscreen),
+                    getString(R.string.val_fullscreen_intro),
                     Constants.val_fullscreen_intro,
                     adAlreadyLoaded = {
 
@@ -230,7 +230,7 @@ class IntroFragment : Fragment() {
             requireActivity(),
             "Intro"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_intro),
             Constants.val_fullscreen_intro,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},

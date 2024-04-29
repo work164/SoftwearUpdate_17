@@ -65,7 +65,7 @@ class LanguageFragment : Fragment() {
             val bindAdLanguage = NativeWithMediaBinding.inflate(layoutInflater)
             NativeAdUtils(requireActivity().application, "Language").setAdCallerName("Language")
                 .loadNativeAd(
-                    getString(R.string.native_id),
+                    getString(R.string.val_native_language),
                     Constants.val_native_language,
                     binding.languageNativeOrBanner,
                     bindAdLanguage.root,
@@ -82,7 +82,7 @@ class LanguageFragment : Fragment() {
                         binding.languageNativeOrBanner.visibility = View.VISIBLE
                         BannerAdUtils(activity = requireActivity(), screenName = "Language")
                             .loadBanner(
-                                adsKey = getString(R.string.admob_banner_id), // give ad id here
+                                adsKey = getString(R.string.val_banner_language), // give ad id here
                                 remoteConfig = Constants.val_banner_language, // give remote config here
                                 adsView = binding.languageNativeOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -119,7 +119,7 @@ class LanguageFragment : Fragment() {
                 if (arguments?.getString("from") != "SplashFragment") {
                     visibility = View.VISIBLE
                     InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
-                        getString(R.string.admob_splash_fullscreen),
+                        getString(R.string.val_fullscreen_language_from_app),
                         Constants.val_fullscreen_language_from_app,
                         adAlreadyLoaded = {
 
@@ -166,7 +166,7 @@ class LanguageFragment : Fragment() {
             requireActivity(),
             "Language"
         ).showInterstitialAd(
-            getString(R.string.admob_splash_fullscreen),
+            getString(R.string.val_fullscreen_language_from_app),
             Constants.val_fullscreen_language_from_app,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
