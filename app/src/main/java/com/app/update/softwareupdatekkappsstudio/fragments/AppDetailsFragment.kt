@@ -24,7 +24,7 @@ import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAppDetailsBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_all_details_back
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_all_details_back
 import com.app.update.softwareupdatekkappsstudio.utils.toSizeString
 import com.bumptech.glide.Glide
 import com.example.adssdk.banner_ads.BannerAdUtils
@@ -183,7 +183,7 @@ class AppDetailsFragment : Fragment() {
         if (requestCode == UNINSTALL_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 // Uninstallation successful
-                val word = Word("reply","reply","reply","reply",)
+                val word = Word(0,"reply","reply","reply","reply",)
                 wordViewModel.insert(word)
                 findNavController().popBackStack()
             } else {
@@ -209,7 +209,7 @@ class AppDetailsFragment : Fragment() {
             ).setAdCallerName("appDetailsNativeAdOrBanner")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_app_details,
+                    Constants.val_native_app_details,
                     binding?.appDetailsNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -229,7 +229,7 @@ class AppDetailsFragment : Fragment() {
                         )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_app_details, // give remote config here
+                                remoteConfig = Constants.val_banner_app_details, // give remote config here
                                 adsView = binding?.appDetailsNativeAdOrBanner
                                     ?: return@loadNativeAd, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -253,7 +253,7 @@ class AppDetailsFragment : Fragment() {
                 )
             InterstitialAdUtils(requireActivity(), "appDetailsNativeAdOrBanner").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                fullscreen_all_details_back,
+                Constants.val_fullscreen_all_details_back,
                 adAlreadyLoaded = {
 
                 },
@@ -278,7 +278,7 @@ class AppDetailsFragment : Fragment() {
             "appDetailsNativeAdOrBanner"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-              Constants.fullscreen_all_details_back,
+              Constants.val_fullscreen_all_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

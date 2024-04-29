@@ -15,9 +15,9 @@ import com.app.update.softwareupdatekkappsstudio.databinding.FragmentLanguageBin
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.banner_language
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_language_from_app
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.native_language
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_banner_language
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_language_from_app
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_native_language
 import com.app.update.softwareupdatekkappsstudio.utils.setLocale
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
@@ -66,7 +66,7 @@ class LanguageFragment : Fragment() {
             NativeAdUtils(requireActivity().application, "Language").setAdCallerName("Language")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    native_language,
+                    Constants.val_native_language,
                     binding.languageNativeOrBanner,
                     bindAdLanguage.root,
                     bindAdLanguage.adAppIcon,
@@ -83,7 +83,7 @@ class LanguageFragment : Fragment() {
                         BannerAdUtils(activity = requireActivity(), screenName = "Language")
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = banner_language, // give remote config here
+                                remoteConfig = Constants.val_banner_language, // give remote config here
                                 adsView = binding.languageNativeOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -120,7 +120,7 @@ class LanguageFragment : Fragment() {
                     visibility = View.VISIBLE
                     InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
                         getString(R.string.admob_splash_fullscreen),
-                        fullscreen_language_from_app,
+                        Constants.val_fullscreen_language_from_app,
                         adAlreadyLoaded = {
 
                         },
@@ -167,7 +167,7 @@ class LanguageFragment : Fragment() {
             "Language"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            fullscreen_language_from_app,
+            Constants.val_fullscreen_language_from_app,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

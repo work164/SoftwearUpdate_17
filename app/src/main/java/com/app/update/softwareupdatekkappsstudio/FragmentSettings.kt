@@ -60,7 +60,7 @@ class FragmentSettings : Fragment() {
             ).setAdCallerName("native_setting")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_setting,
+                    Constants.val_native_setting,
                     settingsBinding?.settingsNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -80,7 +80,7 @@ class FragmentSettings : Fragment() {
                         )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_setting, // give remote config here
+                                remoteConfig = Constants.val_banner_setting, // give remote config here
                                 adsView = settingsBinding?.settingsNativeAdOrBanner
                                     ?: return@loadNativeAd, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -109,7 +109,7 @@ class FragmentSettings : Fragment() {
                 "fullscreen_system_app_details"
             ).loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                Constants.fullscreen_setting_back,
+                Constants.val_fullscreen_setting_back,
                 adAlreadyLoaded = {
 
                 },
@@ -134,7 +134,7 @@ class FragmentSettings : Fragment() {
             "fullscreen_setting_back"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_setting_back,
+            Constants.val_fullscreen_setting_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

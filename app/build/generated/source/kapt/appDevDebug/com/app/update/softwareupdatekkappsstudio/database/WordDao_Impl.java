@@ -38,16 +38,32 @@ public final class WordDao_Impl implements WordDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR IGNORE INTO `word_table` (`word`) VALUES (?)";
+        return "INSERT OR IGNORE INTO `word_table` (`id`,`name`,`size`,`vcode`,`link`) VALUES (nullif(?, 0),?,?,?,?)";
       }
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
           @NonNull final Word entity) {
+        statement.bindLong(1, entity.getId());
         if (entity.getWord() == null) {
-          statement.bindNull(1);
+          statement.bindNull(2);
         } else {
-          statement.bindString(1, entity.getWord());
+          statement.bindString(2, entity.getWord());
+        }
+        if (entity.getSize() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getSize());
+        }
+        if (entity.getVcode() == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindString(4, entity.getVcode());
+        }
+        if (entity.getLink() == null) {
+          statement.bindNull(5);
+        } else {
+          statement.bindString(5, entity.getLink());
         }
       }
     };
@@ -104,7 +120,7 @@ public final class WordDao_Impl implements WordDao {
 
   @Override
   public Flow<List<Word>> getAlphabetizedWords() {
-    final String _sql = "SELECT * FROM word_table ORDER BY word ASC";
+    final String _sql = "SELECT * FROM word_table ORDER BY link ASC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.createFlow(__db, false, new String[] {"word_table"}, new Callable<List<Word>>() {
       @Override
@@ -112,17 +128,41 @@ public final class WordDao_Impl implements WordDao {
       public List<Word> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "word");
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
+          final int _cursorIndexOfSize = CursorUtil.getColumnIndexOrThrow(_cursor, "size");
+          final int _cursorIndexOfVcode = CursorUtil.getColumnIndexOrThrow(_cursor, "vcode");
+          final int _cursorIndexOfLink = CursorUtil.getColumnIndexOrThrow(_cursor, "link");
           final List<Word> _result = new ArrayList<Word>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Word _item;
+            final int _tmpId;
+            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpWord;
             if (_cursor.isNull(_cursorIndexOfWord)) {
               _tmpWord = null;
             } else {
               _tmpWord = _cursor.getString(_cursorIndexOfWord);
             }
-            _item = new Word(_tmpWord);
+            final String _tmpSize;
+            if (_cursor.isNull(_cursorIndexOfSize)) {
+              _tmpSize = null;
+            } else {
+              _tmpSize = _cursor.getString(_cursorIndexOfSize);
+            }
+            final String _tmpVcode;
+            if (_cursor.isNull(_cursorIndexOfVcode)) {
+              _tmpVcode = null;
+            } else {
+              _tmpVcode = _cursor.getString(_cursorIndexOfVcode);
+            }
+            final String _tmpLink;
+            if (_cursor.isNull(_cursorIndexOfLink)) {
+              _tmpLink = null;
+            } else {
+              _tmpLink = _cursor.getString(_cursorIndexOfLink);
+            }
+            _item = new Word(_tmpId,_tmpWord,_tmpSize,_tmpVcode,_tmpLink);
             _result.add(_item);
           }
           return _result;

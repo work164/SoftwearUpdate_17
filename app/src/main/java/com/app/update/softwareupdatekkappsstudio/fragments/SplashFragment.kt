@@ -12,9 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentSplashBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_splash
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.native_splash_bottom
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.native_splash_top
+import com.app.update.softwareupdatekkappsstudio.model.RemoteModel
+import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.example.adssdk.advert.PurchasePrefs
 import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.consentform.AdmobConsentForm
@@ -74,9 +73,95 @@ class SplashFragment : Fragment() {
 
             if (AppUtils.isNetworkAvailable(requireContext())) {
 
-//                RemoteConfiguration(requireActivity()).initializeConfig(1,"0", onSuccess-> {})
-            }
+                RemoteConfiguration(requireActivity()).initializeConfig(
+                    R.xml.remote_config_defaults,
+                    "ads_update",
+                    onSuccess = {
+                        val data = Gson().fromJson(it, RemoteModel::class.java)
+                         Constants.val_fullscreen_splash = data.val_fullscreen_splash?:true
+                         Constants.val_fullscreen_language_from_app = data.val_fullscreen_language_from_app?:true
+                         Constants.val_fullscreen_intro = data.val_fullscreen_intro?:true
+                         Constants.val_fullscreen_main_menu_scan_apps = data.val_fullscreen_main_menu_scan_apps?:true
+                         Constants.val_fullscreen_main_install_apps = data.val_fullscreen_main_install_apps?:true
+                         Constants.val_fullscreen_main_uninstall = data.val_fullscreen_main_uninstall?:true
+                         Constants.val_fullscreen_main_system_apps = data.val_fullscreen_main_system_apps?:true
+                         Constants.val_fullscreen_main_app_usage = data.val_fullscreen_main_app_usage?:true
+                         Constants.val_fullscreen_main_device_info = data.val_fullscreen_main_device_info?:true
+                         Constants.val_fullscreen_main_system_update = data.val_fullscreen_main_system_update?:true
+                         Constants.val_fullscreen_main_settings = data.val_fullscreen_main_settings?:true
+                         Constants.val_fullscreen_main_sensor = data.val_fullscreen_main_sensor?:true
+                         Constants.val_fullscreen_main_restore_apps = data.val_fullscreen_main_restore_apps?:true
+                         Constants.val_fullscreen_main_battery = data.val_fullscreen_main_battery?:true
+                         Constants.val_fullscreen_main_android_versions = data.val_fullscreen_main_android_versions?:true
+                         Constants.val_fullscreen_main_load = data.val_fullscreen_main_load?:true
+                         Constants.val_fullscreen_scan_back = data.val_fullscreen_scan_back?:true
+                         Constants.val_fullscreen_scan_app_details = data.val_fullscreen_scan_app_details?:true
+                         Constants.val_fullscreen_update_back = data.val_fullscreen_update_back?:true
+                         Constants.val_fullscreen_update_app_details = data.val_fullscreen_update_app_details?:true
+                         Constants.val_fullscreen_install_app_back = data.val_fullscreen_install_app_back?:true
+                         Constants.val_fullscreen_install_app_details = data.val_fullscreen_install_app_details?:true
+                         Constants.val_fullscreen_uninstall_app_back = data.val_fullscreen_uninstall_app_back?:true
+                         Constants.val_fullscreen_uninstall_app_details = data.val_fullscreen_uninstall_app_details?:true
+                         Constants.val_fullscreen_system_app_back = data.val_fullscreen_system_app_back?:true
+                         Constants.val_fullscreen_system_app_details = data.val_fullscreen_system_app_details?:true
+                         Constants.val_fullscreen_app_usage_back = data.val_fullscreen_app_usage_back?:true
+                         Constants.val_fullscreen_app_usage_details = data.val_fullscreen_app_usage_details?:true
+                         Constants.val_fullscreen_system_update_back = data.val_fullscreen_system_update_back?:true
+                         Constants.val_fullscreen_system_update_details = data.val_fullscreen_system_update_details?:true
+                         Constants.val_fullscreen_app_restore_back = data.val_fullscreen_app_restore_back?:true
+                         Constants.val_fullscreen_app_restore_details = data.val_fullscreen_app_restore_details?:true
+                         Constants.val_fullscreen_mobile_sensor_back = data.val_fullscreen_mobile_sensor_back?:true
+                         Constants.val_fullscreen_android_details_back = data.val_fullscreen_android_details_back?:true
+                         Constants.val_fullscreen_battery_details_back = data.val_fullscreen_battery_details_back?:true
+                         Constants.val_fullscreen_device_details_back = data.val_fullscreen_device_details_back?:true
+                         Constants.val_fullscreen_all_details_back = data.val_fullscreen_all_details_back?:true
+                         Constants.val_fullscreen_setting_back = data.val_fullscreen_setting_back?:true
+                         Constants.val_native_splash_top = data.val_native_splash_top?:true
+                         Constants.val_native_splash_bottom = data.val_native_splash_bottom?:true
+                         Constants.val_native_intro = data.val_native_intro?:true
+                         Constants.val_native_language = data.val_native_language?:true
+                         Constants.val_native_privacy = data.val_native_privacy?:true
+                         Constants.val_native_main_menu_bottom = data.val_native_main_menu_bottom?:true
+                         Constants.val_native_main_menu_top = data.val_native_main_menu_top?:true
+                         Constants.val_native_setting = data.val_native_setting?:true
+                         Constants.val_native_scan = data.val_native_scan?:true
+                         Constants.val_native_scan_apps = data.val_native_scan_apps?:true
+                         Constants.val_native_app_details = data.val_native_app_details?:true
+                         Constants.val_native_uninstall = data.val_native_uninstall?:true
+                         Constants.val_native_install = data.val_native_install?:true
+                         Constants.val_native_system_apps = data.val_native_system_apps?:true
+                         Constants.val_native_app_usage = data.val_native_app_usage?:true
+                         Constants.val_native_device_details = data.val_native_device_details?:true
+                         Constants.val_native_system_update = data.val_native_system_update?:true
+                         Constants.val_native_mobile_sensor = data.val_native_mobile_sensor?:true
+                         Constants.val_native_apps_restore = data.val_native_apps_restore?:true
+                         Constants.val_native_battery_info = data.val_native_battery_info?:true
+                         Constants.val_native_android_details = data.val_native_android_details?:true
+                         Constants.val_native_exit = data.val_native_exit?:true
+                         Constants.val_banner_intro = data.val_banner_intro?:true
+                         Constants.val_banner_language = data.val_banner_language?:true
+                         Constants.val_banner_privacy = data.val_banner_privacy?:true
+                         Constants.val_banner_main_menu_bottom = data.val_banner_main_menu_bottom?:true
+                         Constants.val_banner_main_menu_top = data.val_banner_main_menu_top?:true
+                         Constants.val_banner_setting = data.val_banner_setting?:true
+                         Constants.val_banner_scan = data.val_banner_scan?:true
+                         Constants.val_banner_scan_apps = data.val_banner_scan_apps?:true
+                         Constants.val_banner_app_details = data.val_banner_app_details?:true
+                         Constants.val_banner_install = data.val_banner_install?:true
+                         Constants.val_banner_uninstall = data.val_banner_uninstall?:true
+                         Constants.val_banner_system_apps = data.val_banner_system_apps?:true
+                         Constants.val_banner_app_usage = data.val_banner_app_usage?:true
+                         Constants.val_banner_device_details = data.val_banner_device_details?:true
+                         Constants.val_banner_system_update = data.val_banner_system_update?:true
+                         Constants.val_banner_mobile_sensor = data.val_banner_mobile_sensor?:true
+                         Constants.val_banner_apps_restore = data.val_banner_apps_restore?:true
+                         Constants.val_banner_battery_info = data.val_banner_battery_info?:true
+                         Constants.val_banner_android_details = data.val_banner_android_details?:true
+                    },
+                    onFailure = {
 
+                    })
+            }
 
 
         } catch (e: Exception) {
@@ -88,14 +173,14 @@ class SplashFragment : Fragment() {
 
     private fun showAndMove(timeIn: Long) {
         if (!shouldStart && AppUtils.isNetworkAvailable(requireContext())) {
-            if (native_splash_bottom) binding.nativeSplash.visibility = View.GONE
+            if (Constants.val_native_splash_bottom) binding.nativeSplash.visibility = View.GONE
             else binding.nativeSplashBottom.visibility = View.GONE
             val bindAdSplash = NativeWithOutMediaBinding.inflate(layoutInflater)
             NativeAdUtils(requireActivity().application, "Splash").setAdCallerName("Splash")
                 .loadNativeAd(
-                    if (native_splash_bottom) getString(R.string.native_id) else getString(R.string.native_id),
-                    if (native_splash_bottom) native_splash_bottom else native_splash_top,
-                    if (native_splash_bottom) binding.nativeSplashBottom else binding.nativeSplash,
+                    if (Constants.val_native_splash_bottom) getString(R.string.native_id) else getString(R.string.native_id),
+                    if (Constants.val_native_splash_bottom) Constants.val_native_splash_bottom else Constants.val_native_splash_top,
+                    if (Constants.val_native_splash_bottom) binding.nativeSplashBottom else binding.nativeSplash,
                     bindAdSplash.root,
                     bindAdSplash.adAppIcon,
                     bindAdSplash.adHeadline,
@@ -125,7 +210,7 @@ class SplashFragment : Fragment() {
                 )
             InterstitialAdUtils(requireActivity(), "splash").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                fullscreen_splash,
+                Constants.val_fullscreen_splash,
                 adAlreadyLoaded = {
                     CoroutineScope(Dispatchers.Main).launch {
                         if (isWaitForNative) {
@@ -210,7 +295,7 @@ class SplashFragment : Fragment() {
             "splash"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            fullscreen_splash,
+            Constants.val_fullscreen_splash,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

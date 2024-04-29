@@ -89,7 +89,7 @@ class AndroidUpdateFragment : Fragment() {
             ).setAdCallerName("SystemUpdate")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_system_update,
+                    Constants.val_native_system_update,
                     binding.updateNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -106,7 +106,7 @@ class AndroidUpdateFragment : Fragment() {
                         BannerAdUtils(activity = requireActivity(), screenName = "SystemUpdate")
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_system_update, // give remote config here
+                                remoteConfig = Constants.val_banner_system_update, // give remote config here
                                 adsView = binding.updateNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -129,7 +129,7 @@ class AndroidUpdateFragment : Fragment() {
                 )
             InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                if (Constants.fullscreen_system_update_details) Constants.fullscreen_system_update_details else Constants.fullscreen_system_update_back,
+                if (Constants.val_fullscreen_system_update_details) Constants.val_fullscreen_system_update_details else Constants.val_fullscreen_system_update_back,
                 adAlreadyLoaded = {
 
                 },
@@ -154,7 +154,7 @@ class AndroidUpdateFragment : Fragment() {
             "SystemUpdate"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_system_update_back,
+            Constants.val_fullscreen_system_update_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

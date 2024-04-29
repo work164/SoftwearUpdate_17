@@ -4,7 +4,7 @@ package com.app.update.softwareupdatekkappsstudio.database;
 @androidx.room.Dao
 public abstract interface WordDao {
     
-    @androidx.room.Query(value = "SELECT * FROM word_table ORDER BY word ASC")
+    @androidx.room.Query(value = "SELECT * FROM word_table ORDER BY link ASC")
     @org.jetbrains.annotations.NotNull
     public abstract kotlinx.coroutines.flow.Flow<java.util.List<com.app.update.softwareupdatekkappsstudio.database.Word>> getAlphabetizedWords();
     

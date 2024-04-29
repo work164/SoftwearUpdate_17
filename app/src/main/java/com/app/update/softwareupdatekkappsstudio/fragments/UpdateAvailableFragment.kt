@@ -57,7 +57,7 @@ class UpdateAvailableFragment : Fragment() {
                 "fullscreen_update_app_details"
             ).showInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                Constants.fullscreen_update_app_details,
+                Constants.val_fullscreen_update_app_details,
                 fullScreenAdShow = {},
                 fullScreenAdDismissed = {},
                 fullScreenAdFailedToShow = {},
@@ -129,7 +129,7 @@ class UpdateAvailableFragment : Fragment() {
             ).setAdCallerName("updatesNativeAdOrBanner")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_scan_apps,
+                    Constants.val_native_scan_apps,
                     binding?.updatesNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -149,7 +149,7 @@ class UpdateAvailableFragment : Fragment() {
                         )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_scan_apps, // give remote config here
+                                remoteConfig = Constants.val_banner_scan_apps, // give remote config here
                                 adsView = binding?.updatesNativeAdOrBanner
                                     ?: return@loadNativeAd, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -173,7 +173,7 @@ class UpdateAvailableFragment : Fragment() {
                 )
             InterstitialAdUtils(requireActivity(), "fullscreen_update_back").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                if (Constants.fullscreen_update_back) Constants.fullscreen_update_back else Constants.fullscreen_update_app_details,
+                if (Constants.val_fullscreen_update_back) Constants.val_fullscreen_update_back else Constants.val_fullscreen_update_app_details,
                 adAlreadyLoaded = {
 
                 },
@@ -198,7 +198,7 @@ class UpdateAvailableFragment : Fragment() {
             "fullscreen_update_back"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_update_back,
+            Constants.val_fullscreen_update_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

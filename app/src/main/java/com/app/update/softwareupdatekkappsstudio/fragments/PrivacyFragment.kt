@@ -16,7 +16,7 @@ import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentPrivacyBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.banner_privacy
+import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_banner_privacy
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.native_ad.NativeAdUtils
@@ -65,7 +65,7 @@ class PrivacyFragment : Fragment() {
             NativeAdUtils(requireActivity().application, "Privacy").setAdCallerName("Privacy")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_privacy,
+                    Constants.val_native_privacy,
                     binding.privacyNativeAdOrBanner,
                     bindAdPrivacy.root,
                     bindAdPrivacy.adAppIcon,
@@ -82,7 +82,7 @@ class PrivacyFragment : Fragment() {
                         BannerAdUtils(activity = requireActivity(), screenName = "Privacy")
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = banner_privacy, // give remote config here
+                                remoteConfig = Constants.val_banner_privacy, // give remote config here
                                 adsView = binding.privacyNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {

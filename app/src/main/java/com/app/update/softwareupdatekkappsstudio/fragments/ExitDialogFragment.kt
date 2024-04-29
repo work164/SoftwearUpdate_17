@@ -67,7 +67,7 @@ class ExitDialogFragment : BottomSheetDialogFragment() {
             ).setAdCallerName("Exit")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_exit,
+                    Constants.val_native_exit,
                     binding.flNativeExit,
                     bindAdExit.root,
                     bindAdExit.adAppIcon,

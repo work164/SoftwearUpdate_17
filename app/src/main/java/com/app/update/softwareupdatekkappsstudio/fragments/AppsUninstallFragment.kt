@@ -158,7 +158,7 @@ class AppsUninstallFragment : Fragment(), HomeClick {
             "SystemUpdate"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_uninstall_app_details,
+            Constants.val_fullscreen_uninstall_app_details,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},
@@ -195,7 +195,7 @@ class AppsUninstallFragment : Fragment(), HomeClick {
             ).setAdCallerName("NativeWithOutMediaBinding")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_uninstall,
+                    Constants.val_native_uninstall,
                     binding.uninstallNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -212,7 +212,7 @@ class AppsUninstallFragment : Fragment(), HomeClick {
                         BannerAdUtils(activity = requireActivity(), screenName = "banner_uninstall")
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_uninstall, // give remote config here
+                                remoteConfig = Constants.val_banner_uninstall, // give remote config here
                                 adsView = binding.uninstallNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -235,7 +235,7 @@ class AppsUninstallFragment : Fragment(), HomeClick {
                 )
             InterstitialAdUtils(requireActivity(), "fullscreen_uninstall_app_back").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                if (Constants.fullscreen_uninstall_app_back) Constants.fullscreen_uninstall_app_back else Constants.fullscreen_uninstall_app_details,
+                if (Constants.val_fullscreen_uninstall_app_back) Constants.val_fullscreen_uninstall_app_back else Constants.val_fullscreen_uninstall_app_details,
                 adAlreadyLoaded = {
 
                 },
@@ -260,7 +260,7 @@ class AppsUninstallFragment : Fragment(), HomeClick {
             "fullscreen_uninstall_app_back"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_uninstall_app_back,
+            Constants.val_fullscreen_uninstall_app_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

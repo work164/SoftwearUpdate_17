@@ -60,7 +60,7 @@ class AndroidVersionFragment : Fragment() {
             ).setAdCallerName("androidVersionsNativeAdOrBanner")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_android_details,
+                    Constants.val_native_android_details,
                     binding.androidVersionsNativeAdOrBanner,
                     bindAdandroidVersionsNativeAdOrBanner.root,
                     bindAdandroidVersionsNativeAdOrBanner.adAppIcon,
@@ -80,7 +80,7 @@ class AndroidVersionFragment : Fragment() {
                         )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_android_details, // give remote config here
+                                remoteConfig = Constants.val_banner_android_details, // give remote config here
                                 adsView = binding.androidVersionsNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -106,7 +106,7 @@ class AndroidVersionFragment : Fragment() {
                 "androidVersionsNativeAdOrBanner"
             ).loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                Constants.fullscreen_android_details_back,
+                Constants.val_fullscreen_android_details_back,
                 adAlreadyLoaded = {
 
                 },
@@ -131,7 +131,7 @@ class AndroidVersionFragment : Fragment() {
             "androidVersionsNativeAdOrBanner"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_android_details_back,
+            Constants.val_fullscreen_android_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

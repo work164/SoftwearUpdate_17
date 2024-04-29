@@ -49,7 +49,7 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
                 "fullscreen_app_usage_details"
             ).showInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                Constants.fullscreen_app_usage_details,
+                Constants.val_fullscreen_app_usage_details,
                 fullScreenAdShow = {},
                 fullScreenAdDismissed = {},
                 fullScreenAdFailedToShow = {},
@@ -234,7 +234,7 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
             ).setAdCallerName("fullscreen_app_usage_details")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_app_usage,
+                    Constants.val_native_app_usage,
                     binding?.appUsageNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -254,7 +254,7 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
                         )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_app_usage, // give remote config here
+                                remoteConfig = Constants.val_banner_app_usage, // give remote config here
                                 adsView = binding?.appUsageNativeAdOrBanner
                                     ?: return@loadNativeAd, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
@@ -281,7 +281,7 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
                 "fullscreen_app_usage_details"
             ).loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                if (Constants.fullscreen_app_usage_back) Constants.fullscreen_app_usage_back else Constants.fullscreen_app_usage_details,
+                if (Constants.val_fullscreen_app_usage_back) Constants.val_fullscreen_app_usage_back else Constants.val_fullscreen_app_usage_details,
                 adAlreadyLoaded = {
 
                 },
@@ -306,7 +306,7 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
             "fullscreen_app_usage_details"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_app_usage_back,
+            Constants.val_fullscreen_app_usage_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

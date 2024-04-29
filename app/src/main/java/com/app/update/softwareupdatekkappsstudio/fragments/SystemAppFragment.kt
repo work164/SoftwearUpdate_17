@@ -146,7 +146,7 @@ class SystemAppFragment : Fragment(), HomeClick {
             ).setAdCallerName("native_system_apps")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_system_apps,
+                    Constants.val_native_system_apps,
                     binding.systemAppsNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -166,7 +166,7 @@ class SystemAppFragment : Fragment(), HomeClick {
                         )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_system_apps, // give remote config here
+                                remoteConfig = Constants.val_banner_system_apps, // give remote config here
                                 adsView = binding.systemAppsNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -192,7 +192,7 @@ class SystemAppFragment : Fragment(), HomeClick {
                 "fullscreen_system_app_details"
             ).loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                if (Constants.fullscreen_system_app_back) Constants.fullscreen_system_app_back else Constants.fullscreen_system_app_details,
+                if (Constants.val_fullscreen_system_app_back) Constants.val_fullscreen_system_app_back else Constants.val_fullscreen_system_app_details,
                 adAlreadyLoaded = {
 
                 },
@@ -217,7 +217,7 @@ class SystemAppFragment : Fragment(), HomeClick {
             "fullscreen_system_app_back"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_system_app_back,
+            Constants.val_fullscreen_system_app_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

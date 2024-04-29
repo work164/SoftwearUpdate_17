@@ -85,7 +85,7 @@ class DeviceInfoFragment : Fragment() {
             ).setAdCallerName("SystemUpdate")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_device_details,
+                    Constants.val_native_device_details,
                     binding.deviceNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -102,7 +102,7 @@ class DeviceInfoFragment : Fragment() {
                         BannerAdUtils(activity = requireActivity(), screenName = "SystemUpdate")
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_device_details, // give remote config here
+                                remoteConfig = Constants.val_banner_device_details, // give remote config here
                                 adsView = binding.deviceNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -125,7 +125,7 @@ class DeviceInfoFragment : Fragment() {
                 )
             InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-               Constants.fullscreen_device_details_back,
+               Constants.val_fullscreen_device_details_back,
                 adAlreadyLoaded = {
 
                 },
@@ -150,7 +150,7 @@ class DeviceInfoFragment : Fragment() {
             "SystemUpdate"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_device_details_back,
+            Constants.val_fullscreen_device_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

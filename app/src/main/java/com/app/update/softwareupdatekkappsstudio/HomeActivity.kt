@@ -39,6 +39,7 @@ import com.gun0912.tedpermission.normal.TedPermission
 
 
 class HomeActivity : AppCompatActivity(), ExitDialogListener {
+
     private var exitDialogFragment: ExitDialogFragment? = null
     private var bottomNavigationView: BottomNavigationView? = null
     private var drawerLayout: DrawerLayout? = null
@@ -179,8 +180,6 @@ class HomeActivity : AppCompatActivity(), ExitDialogListener {
 
             true
         }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (actionBarDrawerToggle!!.onOptionsItemSelected(item)) {

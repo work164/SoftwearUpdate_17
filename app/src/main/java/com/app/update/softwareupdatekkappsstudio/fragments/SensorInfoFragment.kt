@@ -58,7 +58,7 @@ class SensorInfoFragment : Fragment() {
             ).setAdCallerName("native_mobile_sensor")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_mobile_sensor,
+                    Constants.val_native_mobile_sensor,
                     binding.sensorNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -78,7 +78,7 @@ class SensorInfoFragment : Fragment() {
                         )
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_mobile_sensor, // give remote config here
+                                remoteConfig = Constants.val_banner_mobile_sensor, // give remote config here
                                 adsView = binding.sensorNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -104,7 +104,7 @@ class SensorInfoFragment : Fragment() {
                 "fullscreen_mobile_sensor_back"
             ).loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                Constants.fullscreen_mobile_sensor_back,
+                Constants.val_fullscreen_mobile_sensor_back,
                 adAlreadyLoaded = {
 
                 },
@@ -129,7 +129,7 @@ class SensorInfoFragment : Fragment() {
             "fullscreen_mobile_sensor_back"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_mobile_sensor_back,
+            Constants.val_fullscreen_mobile_sensor_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

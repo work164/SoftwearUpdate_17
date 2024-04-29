@@ -17,7 +17,6 @@ import com.app.update.softwareupdatekkappsstudio.databinding.FragmentIntroBindin
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.model.OnboardingItem
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.banner_intro
 import com.example.adssdk.advert.PurchasePrefs
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
@@ -74,7 +73,7 @@ class IntroFragment : Fragment() {
                 NativeAdUtils(requireActivity().application, "Intro").setAdCallerName("Intro")
                     .loadNativeAd(
                         getString(R.string.native_id),
-                        Constants.native_intro,
+                        Constants.val_native_intro,
                         binding.introNativeAdOrBanner,
                         bindAdIntro.root,
                         bindAdIntro.adAppIcon,
@@ -91,7 +90,7 @@ class IntroFragment : Fragment() {
                             BannerAdUtils(activity = requireActivity(), screenName = "Intro")
                                 .loadBanner(
                                     adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                    remoteConfig = banner_intro, // give remote config here
+                                    remoteConfig = Constants.val_banner_intro, // give remote config here
                                     adsView = binding.introNativeAdOrBanner, //give your frameLayout here
                                     onAdClicked = {}, //if ad clicked you will receive this callback
                                     onAdFailedToLoad = {
@@ -114,7 +113,7 @@ class IntroFragment : Fragment() {
                     )
                 InterstitialAdUtils(requireActivity(), "Language").loadInterstitialAd(
                     getString(R.string.admob_splash_fullscreen),
-                    Constants.fullscreen_intro,
+                    Constants.val_fullscreen_intro,
                     adAlreadyLoaded = {
 
                     },
@@ -232,7 +231,7 @@ class IntroFragment : Fragment() {
             "Intro"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_intro,
+            Constants.val_fullscreen_intro,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

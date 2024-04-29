@@ -153,7 +153,7 @@ class BatteryInfoFragment : Fragment() {
             ).setAdCallerName("batteryNativeAdOrBanner")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_battery_info,
+                    Constants.val_native_battery_info,
                     binding.batteryNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -171,7 +171,7 @@ class BatteryInfoFragment : Fragment() {
                         BannerAdUtils(activity = requireActivity(), screenName = "batteryNativeAdOrBanner")
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_battery_info, // give remote config here
+                                remoteConfig = Constants.val_banner_battery_info, // give remote config here
                                 adsView = binding.batteryNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -194,7 +194,7 @@ class BatteryInfoFragment : Fragment() {
                 )
             InterstitialAdUtils(requireActivity(), "batteryNativeAdOrBanner").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                 Constants.fullscreen_battery_details_back,
+                 Constants.val_fullscreen_battery_details_back,
                 adAlreadyLoaded = {
 
                 },
@@ -219,7 +219,7 @@ class BatteryInfoFragment : Fragment() {
             "batteryNativeAdOrBanner"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_battery_details_back,
+            Constants.val_fullscreen_battery_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

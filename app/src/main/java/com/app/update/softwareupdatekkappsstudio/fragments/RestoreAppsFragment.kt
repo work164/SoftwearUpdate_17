@@ -79,7 +79,7 @@ class RestoreAppsFragment : Fragment() {
             ).setAdCallerName("native_apps_restore")
                 .loadNativeAd(
                     getString(R.string.native_id),
-                    Constants.native_apps_restore,
+                    Constants.val_native_apps_restore,
                     binding.restoreNativeAdOrBanner,
                     bindAdSystemUpdate.root,
                     bindAdSystemUpdate.adAppIcon,
@@ -96,7 +96,7 @@ class RestoreAppsFragment : Fragment() {
                         BannerAdUtils(activity = requireActivity(), screenName = "restoreNativeAdOrBanner")
                             .loadBanner(
                                 adsKey = getString(R.string.admob_banner_id), // give ad id here
-                                remoteConfig = Constants.banner_apps_restore, // give remote config here
+                                remoteConfig = Constants.val_banner_apps_restore, // give remote config here
                                 adsView = binding.restoreNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
@@ -119,7 +119,7 @@ class RestoreAppsFragment : Fragment() {
                 )
             InterstitialAdUtils(requireActivity(), "fullscreen_app_restore_back").loadInterstitialAd(
                 getString(R.string.admob_splash_fullscreen),
-                if (Constants.fullscreen_app_restore_back) Constants.fullscreen_app_restore_back else Constants.fullscreen_app_restore_details,
+                if (Constants.val_fullscreen_app_restore_back) Constants.val_fullscreen_app_restore_back else Constants.val_fullscreen_app_restore_details,
                 adAlreadyLoaded = {
 
                 },
@@ -144,7 +144,7 @@ class RestoreAppsFragment : Fragment() {
             "fullscreen_app_restore_back"
         ).showInterstitialAd(
             getString(R.string.admob_splash_fullscreen),
-            Constants.fullscreen_app_restore_back,
+            Constants.val_fullscreen_app_restore_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},
