@@ -13,14 +13,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.app.update.softwareupdatekkappsstudio.MyApp
 import com.app.update.softwareupdatekkappsstudio.R
+import com.app.update.softwareupdatekkappsstudio.database.Word
+import com.app.update.softwareupdatekkappsstudio.database.WordViewModel
+import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAppDetailsBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
-import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_all_details_back
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.fullscreen_scan_app_details
 import com.app.update.softwareupdatekkappsstudio.utils.toSizeString
 import com.bumptech.glide.Glide
 import com.example.adssdk.banner_ads.BannerAdUtils
@@ -36,7 +40,9 @@ class AppDetailsFragment : Fragment() {
 
 
     private var binding: FragmentAppDetailsBinding? = null
-
+    private val wordViewModel: WordViewModel by viewModels {
+        WordViewModelFactory((requireActivity().application as MyApp).repository)
+    }
     private val appPackageName by lazy {
         arguments?.getString("appPackageName")
     }
@@ -177,6 +183,8 @@ class AppDetailsFragment : Fragment() {
         if (requestCode == UNINSTALL_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 // Uninstallation successful
+                val word = Word("reply","reply","reply","reply",)
+                wordViewModel.insert(word)
                 findNavController().popBackStack()
             } else {
                 // Uninstallation failed or user canceled

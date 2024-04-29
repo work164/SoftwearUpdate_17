@@ -44,7 +44,7 @@ class IntroFragment : Fragment() {
             purchasePrefs = PurchasePrefs(requireContext())
 
             requireActivity().onBackPressedDispatcher.addCallback(
-                object : OnBackPressedCallback(true) {
+                object : OnBackPressedCallback(false) {
                     override fun handleOnBackPressed() {
 
                         Log.d("onBackPressed", "Intro: ")

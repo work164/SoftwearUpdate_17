@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.app.update.softwareupdatekkappsstudio.R
@@ -34,6 +35,8 @@ import com.example.adssdk.native_ad.NativeAdUtils
 
 class HomeFragment : Fragment(), HomeClick {
     private lateinit var binding: FragmentHomeBinding
+    private var exitDialogFragment: ExitDialogFragment? = null
+
     private var mList = arrayListOf(
         HomeViewModel(R.drawable.ic_home_scan, "Scan Apps", "", 0),
         HomeViewModel(R.drawable.ic_home_install, "Installed Apps", "", 1),
@@ -53,6 +56,18 @@ class HomeFragment : Fragment(), HomeClick {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
+        exitDialogFragment = ExitDialogFragment()
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    exitDialogFragment?.show(childFragmentManager, exitDialogFragment?.tag)
+                }
+            }
+        )
+
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         with(binding) {
             setting.setOnClickListener {

@@ -15,7 +15,8 @@
     <color name="ad_bg">#EBE9E9</color>
     <color name="black">#FF000000</color>
     <color name="colorPrimary">#2196F3</color>
-    <color name="colorPrimaryVariant">#2196F3</color>
+    <color name="colorPrimaryVariant">#018FFF</color>
+    <color name="colorRed">#FF4F3D</color>
     <color name="colorSecondary">#2196F3</color>
     <color name="colorSecondaryVariant">#2196F3</color>
     <color name="device_info_color">#62AE53</color>
@@ -26,7 +27,7 @@
     <color name="item_gray">#F5F5F5</color>
     <color name="link_color">#0094FF</color>
     <color name="link_color_frag">#62AE53</color>
-    <color name="link_color_frag_deactive">#898989</color>
+    <color name="link_color_frag_deactive">#656565</color>
     <color name="nav_view_color">#62AE53</color>
     <color name="textcolor">#62AE53</color>
     <color name="white">#FFFFFF</color>
@@ -48,6 +49,7 @@
     <string name="app_usage_fragment_yesterday">Yesterday</string>
     <string name="app_version">App Version</string>
     <string name="billing_product" translatable="false">"android.test.purchased"</string>
+    <string name="by_continuing_by_term_and_policy">By continuing, you agree to \n<a href="https://unseenmessage.blogspot.com/2023/12/term-and-conditions.html">Terms of Service.</a> and <a href="https://mobiledatatransferapp.blogspot.com/2023/12/privacy-policy.html">Privacy Policy</a></string>
     <string name="change_language">Change Language</string>
     <string name="checking_updates">Checking Updates:</string>
     <string name="close">close</string>
@@ -56,6 +58,8 @@
     <string name="continue_language">Continue</string>
     <string name="copied_to_clipboard">Copied to Clipboard</string>
     <string name="device_info">Device Info</string>
+    <string name="enjoy_all_features_without_ads">Effortable Price</string>
+    <string name="enjoy_all_unlimited_data">Unlock Pro features</string>
     <string name="env_dev" translatable="false">true</string>
     <string name="gcm_defaultSenderId" translatable="false">435016968660</string>
     <string name="google_api_key" translatable="false">AIzaSyCJkKfJQOXyBX2iN4WB9CUmlVJVRPmX8Nc</string>
@@ -65,7 +69,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="installed_apps">Installed Apps</string>
     <string name="last_update">Last Update</string>
+    <string name="launch">Launch</string>
     <string name="lets_update_mobile_software">Lets Update Mobile Software</string>
+    <string name="lifeTime">Life Time</string>
+    <string name="monthly">Monthly</string>
     <string name="na">N/A</string>
     <string name="native_id" translatable="false">"ca-app-pub-3940256099942544/2247696110"</string>
     <string name="next">Next</string>
@@ -73,22 +80,33 @@
     <string name="policy_text">By tapping the ‘Accept’ button, you confirm that you agree with our Privacy Policy.</string>
     <string name="preference_file_key">alarm_pref</string>
     <string name="privacu_link">https://unseenmessage.blogspot.com/2023/09/app-updater-privacy-policy.html</string>
+    <string name="pro_experiance">Papuler</string>
     <string name="project_id" translatable="false">software-updater-236e5</string>
     <string name="public_ip_address">Ip Address</string>
+    <string name="registration_agreement">By continuing, you agree to our
+        \n<a href="terms://">Privacy Policy</a> and <a href="privacy://">Terms of Services</a> \n <a href="terms://">Cancel or Restore</a>
+</string>
     <string name="restore_apps">Restore Apps</string>
     <string name="scanning">Scanning...</string>
     <string name="sensor">All Sensors</string>
+    <string name="share">Share</string>
     <string name="skip">Skip</string>
     <string name="software_update">Software Update</string>
     <string name="software_update_amp_apps_update"><![CDATA[SOFTWARE UPDATE & Apps Update]]></string>
     <string name="start">START</string>
+    <string name="subscribe">Subscribe</string>
     <string name="system_update">System Update</string>
+    <string name="tite_pro">PREMIUM <font fgcolor="#2FC75C">ACCESS</font></string>
     <string name="total_update_found">Total Update Found</string>
+    <string name="uninstalle">Uninstall</string>
     <string name="uninstalled_apps">Uninstall Apps</string>
+    <string name="update">Update</string>
     <string name="update_available">Available Update</string>
     <string name="update_your_device_software">Update Your Device Software</string>
     <string name="view_on_play_store">View on Play Store</string>
+    <string name="weekly">Weekly</string>
     <string name="welcome_to">Welcome to</string>
+    <string name="yearly">Yearly</string>
     <string name="your_ip"><ns2:g example="192.168.0.1" id="ip">%s</ns2:g></string>
     <string name="your_ip_na">N/A</string>
     <style name="AdTheme">

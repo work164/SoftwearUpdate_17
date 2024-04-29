@@ -5,14 +5,15 @@
 
     <color name="link_color">#0094FF</color>
     <color name="link_color_frag">#62AE53</color>
-    <color name="link_color_frag_deactive">#898989</color>
+    <color name="link_color_frag_deactive">#656565</color>
     <color name="ad_bg">#EBE9E9</color>
     <color name="item_gray">#F5F5F5</color>
     <color name="nav_view_color">#62AE53</color>
 
 
     <color name="colorPrimary">#2196F3</color>
-    <color name="colorPrimaryVariant">#2196F3</color>
+    <color name="colorPrimaryVariant">#018FFF</color>
+    <color name="colorRed">#FF4F3D</color>
     <color name="colorSecondary">#2196F3</color>
     <color name="colorSecondaryVariant">#2196F3</color>
     <color name="gray">#F4F4F4</color>

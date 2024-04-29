@@ -32,7 +32,22 @@ public final class FragmentSettingsBinding implements ViewBinding {
   public final ImageView btnInAppForwardDevice;
 
   @NonNull
-  public final ImageView iconView;
+  public final ImageView icFeedback;
+
+  @NonNull
+  public final ImageView icMoreApps;
+
+  @NonNull
+  public final ImageView icNotification;
+
+  @NonNull
+  public final ImageView icPrivacy;
+
+  @NonNull
+  public final ImageView icRate;
+
+  @NonNull
+  public final ImageView icShare;
 
   @NonNull
   public final ConstraintLayout menues;
@@ -42,13 +57,20 @@ public final class FragmentSettingsBinding implements ViewBinding {
 
   private FragmentSettingsBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull ImageView btnInAppForwardDevice, @NonNull ImageView iconView,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull ImageView icFeedback,
+      @NonNull ImageView icMoreApps, @NonNull ImageView icNotification,
+      @NonNull ImageView icPrivacy, @NonNull ImageView icRate, @NonNull ImageView icShare,
       @NonNull ConstraintLayout menues, @NonNull FrameLayout settingsNativeAdOrBanner) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.backDevice = backDevice;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
-    this.iconView = iconView;
+    this.icFeedback = icFeedback;
+    this.icMoreApps = icMoreApps;
+    this.icNotification = icNotification;
+    this.icPrivacy = icPrivacy;
+    this.icRate = icRate;
+    this.icShare = icShare;
     this.menues = menues;
     this.settingsNativeAdOrBanner = settingsNativeAdOrBanner;
   }
@@ -98,9 +120,39 @@ public final class FragmentSettingsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.iconView;
-      ImageView iconView = ViewBindings.findChildViewById(rootView, id);
-      if (iconView == null) {
+      id = R.id.ic_feedback;
+      ImageView icFeedback = ViewBindings.findChildViewById(rootView, id);
+      if (icFeedback == null) {
+        break missingId;
+      }
+
+      id = R.id.ic_more_apps;
+      ImageView icMoreApps = ViewBindings.findChildViewById(rootView, id);
+      if (icMoreApps == null) {
+        break missingId;
+      }
+
+      id = R.id.ic_notification;
+      ImageView icNotification = ViewBindings.findChildViewById(rootView, id);
+      if (icNotification == null) {
+        break missingId;
+      }
+
+      id = R.id.ic_privacy;
+      ImageView icPrivacy = ViewBindings.findChildViewById(rootView, id);
+      if (icPrivacy == null) {
+        break missingId;
+      }
+
+      id = R.id.ic_rate;
+      ImageView icRate = ViewBindings.findChildViewById(rootView, id);
+      if (icRate == null) {
+        break missingId;
+      }
+
+      id = R.id.ic_share;
+      ImageView icShare = ViewBindings.findChildViewById(rootView, id);
+      if (icShare == null) {
         break missingId;
       }
 
@@ -117,7 +169,8 @@ public final class FragmentSettingsBinding implements ViewBinding {
       }
 
       return new FragmentSettingsBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          btnInAppForwardDevice, iconView, menues, settingsNativeAdOrBanner);
+          btnInAppForwardDevice, icFeedback, icMoreApps, icNotification, icPrivacy, icRate, icShare,
+          menues, settingsNativeAdOrBanner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

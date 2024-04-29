@@ -4,25 +4,119 @@ package com.app.update.softwareupdatekkappsstudio.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.app.update.softwareupdatekkappsstudio.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentProBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentProBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final ConstraintLayout cardLifetime;
+
+  @NonNull
+  public final ConstraintLayout cardMonthly;
+
+  @NonNull
+  public final ConstraintLayout cardWeekly;
+
+  @NonNull
+  public final ConstraintLayout cardYearly;
+
+  @NonNull
+  public final ImageView image;
+
+  @NonNull
+  public final ImageView image1;
+
+  @NonNull
+  public final ImageView image2;
+
+  @NonNull
+  public final ConstraintLayout one;
+
+  @NonNull
+  public final TextView priceLifetime;
+
+  @NonNull
+  public final TextView priceMonth;
+
+  @NonNull
+  public final TextView priceYear;
+
+  @NonNull
+  public final TextView privacyLink;
+
+  @NonNull
+  public final AppCompatButton proButton;
+
+  @NonNull
+  public final ScrollView scrollView;
+
+  @NonNull
+  public final TextView text;
+
+  @NonNull
+  public final TextView tvLifeTime;
+
+  @NonNull
+  public final TextView tvMonth;
+
+  @NonNull
+  public final TextView tvWeek;
+
+  @NonNull
+  public final TextView tvYear;
+
+  @NonNull
+  public final TextView weekPrice;
+
+  private FragmentProBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ConstraintLayout cardLifetime, @NonNull ConstraintLayout cardMonthly,
+      @NonNull ConstraintLayout cardWeekly, @NonNull ConstraintLayout cardYearly,
+      @NonNull ImageView image, @NonNull ImageView image1, @NonNull ImageView image2,
+      @NonNull ConstraintLayout one, @NonNull TextView priceLifetime, @NonNull TextView priceMonth,
+      @NonNull TextView priceYear, @NonNull TextView privacyLink,
+      @NonNull AppCompatButton proButton, @NonNull ScrollView scrollView, @NonNull TextView text,
+      @NonNull TextView tvLifeTime, @NonNull TextView tvMonth, @NonNull TextView tvWeek,
+      @NonNull TextView tvYear, @NonNull TextView weekPrice) {
     this.rootView = rootView;
+    this.cardLifetime = cardLifetime;
+    this.cardMonthly = cardMonthly;
+    this.cardWeekly = cardWeekly;
+    this.cardYearly = cardYearly;
+    this.image = image;
+    this.image1 = image1;
+    this.image2 = image2;
+    this.one = one;
+    this.priceLifetime = priceLifetime;
+    this.priceMonth = priceMonth;
+    this.priceYear = priceYear;
+    this.privacyLink = privacyLink;
+    this.proButton = proButton;
+    this.scrollView = scrollView;
+    this.text = text;
+    this.tvLifeTime = tvLifeTime;
+    this.tvMonth = tvMonth;
+    this.tvWeek = tvWeek;
+    this.tvYear = tvYear;
+    this.weekPrice = weekPrice;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +137,135 @@ public final class FragmentProBinding implements ViewBinding {
 
   @NonNull
   public static FragmentProBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.cardLifetime;
+      ConstraintLayout cardLifetime = ViewBindings.findChildViewById(rootView, id);
+      if (cardLifetime == null) {
+        break missingId;
+      }
 
-    return new FragmentProBinding((FrameLayout) rootView);
+      id = R.id.cardMonthly;
+      ConstraintLayout cardMonthly = ViewBindings.findChildViewById(rootView, id);
+      if (cardMonthly == null) {
+        break missingId;
+      }
+
+      id = R.id.cardWeekly;
+      ConstraintLayout cardWeekly = ViewBindings.findChildViewById(rootView, id);
+      if (cardWeekly == null) {
+        break missingId;
+      }
+
+      id = R.id.cardYearly;
+      ConstraintLayout cardYearly = ViewBindings.findChildViewById(rootView, id);
+      if (cardYearly == null) {
+        break missingId;
+      }
+
+      id = R.id.image;
+      ImageView image = ViewBindings.findChildViewById(rootView, id);
+      if (image == null) {
+        break missingId;
+      }
+
+      id = R.id.image1;
+      ImageView image1 = ViewBindings.findChildViewById(rootView, id);
+      if (image1 == null) {
+        break missingId;
+      }
+
+      id = R.id.image2;
+      ImageView image2 = ViewBindings.findChildViewById(rootView, id);
+      if (image2 == null) {
+        break missingId;
+      }
+
+      id = R.id.one;
+      ConstraintLayout one = ViewBindings.findChildViewById(rootView, id);
+      if (one == null) {
+        break missingId;
+      }
+
+      id = R.id.priceLifetime;
+      TextView priceLifetime = ViewBindings.findChildViewById(rootView, id);
+      if (priceLifetime == null) {
+        break missingId;
+      }
+
+      id = R.id.priceMonth;
+      TextView priceMonth = ViewBindings.findChildViewById(rootView, id);
+      if (priceMonth == null) {
+        break missingId;
+      }
+
+      id = R.id.priceYear;
+      TextView priceYear = ViewBindings.findChildViewById(rootView, id);
+      if (priceYear == null) {
+        break missingId;
+      }
+
+      id = R.id.privacyLink;
+      TextView privacyLink = ViewBindings.findChildViewById(rootView, id);
+      if (privacyLink == null) {
+        break missingId;
+      }
+
+      id = R.id.proButton;
+      AppCompatButton proButton = ViewBindings.findChildViewById(rootView, id);
+      if (proButton == null) {
+        break missingId;
+      }
+
+      id = R.id.scrollView;
+      ScrollView scrollView = ViewBindings.findChildViewById(rootView, id);
+      if (scrollView == null) {
+        break missingId;
+      }
+
+      id = R.id.text;
+      TextView text = ViewBindings.findChildViewById(rootView, id);
+      if (text == null) {
+        break missingId;
+      }
+
+      id = R.id.tvLifeTime;
+      TextView tvLifeTime = ViewBindings.findChildViewById(rootView, id);
+      if (tvLifeTime == null) {
+        break missingId;
+      }
+
+      id = R.id.tvMonth;
+      TextView tvMonth = ViewBindings.findChildViewById(rootView, id);
+      if (tvMonth == null) {
+        break missingId;
+      }
+
+      id = R.id.tvWeek;
+      TextView tvWeek = ViewBindings.findChildViewById(rootView, id);
+      if (tvWeek == null) {
+        break missingId;
+      }
+
+      id = R.id.tvYear;
+      TextView tvYear = ViewBindings.findChildViewById(rootView, id);
+      if (tvYear == null) {
+        break missingId;
+      }
+
+      id = R.id.weekPrice;
+      TextView weekPrice = ViewBindings.findChildViewById(rootView, id);
+      if (weekPrice == null) {
+        break missingId;
+      }
+
+      return new FragmentProBinding((ConstraintLayout) rootView, cardLifetime, cardMonthly,
+          cardWeekly, cardYearly, image, image1, image2, one, priceLifetime, priceMonth, priceYear,
+          privacyLink, proButton, scrollView, text, tvLifeTime, tvMonth, tvWeek, tvYear, weekPrice);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

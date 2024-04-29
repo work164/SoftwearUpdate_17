@@ -52,7 +52,7 @@ class PrivacyFragment : Fragment() {
         )
         binding.privacyText.text = spannable
         requireActivity().onBackPressedDispatcher.addCallback(
-            object : OnBackPressedCallback(true) {
+            object : OnBackPressedCallback(false) {
                 override fun handleOnBackPressed() {
                     Log.d("onBackPressed", "Privacy: ")
                 }

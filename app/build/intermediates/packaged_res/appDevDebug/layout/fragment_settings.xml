@@ -63,19 +63,73 @@
         android:id="@+id/menues"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/green_corner_background"
         app:layout_constraintBottom_toTopOf="@+id/settingsNativeAdOrBanner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/action_bar">
 
         <ImageView
-            android:id="@+id/iconView"
+            android:id="@+id/ic_notification"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_margin="20dp"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+<!--
+        <TextView
+            android:id="@+id/title_notification"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>-->
 
+
+
+        <ImageView
+            android:id="@+id/ic_rate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
+
+        <ImageView
+            android:id="@+id/ic_share"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_rate" />
+
+        <ImageView
+            android:id="@+id/ic_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_share" />
+
+        <ImageView
+            android:id="@+id/ic_privacy"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_feedback" />
+
+        <ImageView
+            android:id="@+id/ic_more_apps"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_privacy" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,7 @@ import android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -21,6 +22,7 @@ import androidx.core.content.ContextCompat
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModel
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.fragments.DatePickerFragment
+import com.app.update.softwareupdatekkappsstudio.fragments.ExitDialogFragment
 import com.app.update.softwareupdatekkappsstudio.fragments.TimePickerFragment
 import com.app.update.softwareupdatekkappsstudio.listeners.OnDateSet
 import com.app.update.softwareupdatekkappsstudio.listeners.OnTimeSet
@@ -44,17 +46,17 @@ class MainActivity : AppCompatActivity() {
 //    private var alarmNameEdiText: TextView? = null
 //    private var isRepeatedCheckBox: CheckBox? = null
 
-    val resultLauncher =
+    private val resultLauncher =
         registerForActivityResult(StartActivityForResult()) { result ->
             Log.d(TAG, "Request permission: " + result.resultCode)
         }
     private val wordViewModel: WordViewModel by viewModels {
         WordViewModelFactory((application as MyApp).repository)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 //        setAlarmButton = findViewById(R.id.setAlarmButton)
 //        dateButton = findViewById(R.id.dateButton)
@@ -73,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         wordViewModel.allWords.observe(this) { words ->
             // Update the cached copy of the words in the adapter.
-            Log.d("working","  $words")
+            Log.d("working", "  $words")
 
         }
 
@@ -86,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 this@MainActivity.day = day
                 this@MainActivity.month = month
                 this@MainActivity.year = year
-              //  dateButton?.text = "${year}/${month}/${day}"
+                //  dateButton?.text = "${year}/${month}/${day}"
             }
         }).show(supportFragmentManager, "datePicker")
     }
@@ -96,7 +98,7 @@ class MainActivity : AppCompatActivity() {
             override fun pickedTime(hoursOfDay: Int, minutes: Int) {
                 this@MainActivity.hour = hoursOfDay
                 this@MainActivity.minute = minutes
-              //  timeButton?.text = "$hoursOfDay : $minutes"
+                //  timeButton?.text = "$hoursOfDay : $minutes"
             }
         }).show(supportFragmentManager, "timePicker")
     }
@@ -128,9 +130,9 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.preference_file_key), Context.MODE_PRIVATE
         )
 
-    //    sharedPref.edit().putString("alarm_details", Gson().toJson(alarm)).apply()
+        //    sharedPref.edit().putString("alarm_details", Gson().toJson(alarm)).apply()
 
-     //   scheduleAlarm(this, alarm)
+        //   scheduleAlarm(this, alarm)
     }
 
     private fun requestAlertPermission() {
@@ -188,8 +190,6 @@ class MainActivity : AppCompatActivity() {
 
         return false
     }
-
-
 
 
 }

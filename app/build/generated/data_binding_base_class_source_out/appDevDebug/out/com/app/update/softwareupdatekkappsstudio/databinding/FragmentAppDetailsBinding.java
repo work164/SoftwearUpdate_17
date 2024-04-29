@@ -42,13 +42,13 @@ public final class FragmentAppDetailsBinding implements ViewBinding {
   public final ConstraintLayout clLastUpdate;
 
   @NonNull
-  public final ImageFilterView ifvAppDetailLaunch;
+  public final TextView ifvAppDetailLaunch;
 
   @NonNull
-  public final ImageFilterView ifvAppDetailShare;
+  public final TextView ifvAppDetailShare;
 
   @NonNull
-  public final ImageFilterView ifvAppDetailUninstall;
+  public final TextView ifvAppDetailUninstall;
 
   @NonNull
   public final ImageFilterView ifvAppIcon;
@@ -78,8 +78,8 @@ public final class FragmentAppDetailsBinding implements ViewBinding {
       @NonNull AppBarLayout actionBar, @NonNull FrameLayout appDetailsNativeAdOrBanner,
       @NonNull ImageFilterView backDevice, @NonNull ImageView btnInAppForwardDevice,
       @NonNull ConstraintLayout clAppVersion, @NonNull ConstraintLayout clLastUpdate,
-      @NonNull ImageFilterView ifvAppDetailLaunch, @NonNull ImageFilterView ifvAppDetailShare,
-      @NonNull ImageFilterView ifvAppDetailUninstall, @NonNull ImageFilterView ifvAppIcon,
+      @NonNull TextView ifvAppDetailLaunch, @NonNull TextView ifvAppDetailShare,
+      @NonNull TextView ifvAppDetailUninstall, @NonNull ImageFilterView ifvAppIcon,
       @NonNull TextView tvAppName, @NonNull TextView tvAppSize, @NonNull TextView tvAppVersion,
       @NonNull TextView tvLastUpdateValue, @NonNull TextView tvTextLastUpdate,
       @NonNull TextView tvVersion, @NonNull TextView tvViewOnPlayStore) {
@@ -167,19 +167,19 @@ public final class FragmentAppDetailsBinding implements ViewBinding {
       }
 
       id = R.id.ifvAppDetailLaunch;
-      ImageFilterView ifvAppDetailLaunch = ViewBindings.findChildViewById(rootView, id);
+      TextView ifvAppDetailLaunch = ViewBindings.findChildViewById(rootView, id);
       if (ifvAppDetailLaunch == null) {
         break missingId;
       }
 
       id = R.id.ifvAppDetailShare;
-      ImageFilterView ifvAppDetailShare = ViewBindings.findChildViewById(rootView, id);
+      TextView ifvAppDetailShare = ViewBindings.findChildViewById(rootView, id);
       if (ifvAppDetailShare == null) {
         break missingId;
       }
 
       id = R.id.ifvAppDetailUninstall;
-      ImageFilterView ifvAppDetailUninstall = ViewBindings.findChildViewById(rootView, id);
+      TextView ifvAppDetailUninstall = ViewBindings.findChildViewById(rootView, id);
       if (ifvAppDetailUninstall == null) {
         break missingId;
       }

@@ -21,6 +21,8 @@ import com.example.adssdk.consentform.AdmobConsentForm
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
 import com.example.adssdk.native_ad.NativeAdUtils
+import com.example.adssdk.remote_config.RemoteConfiguration
+import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -44,7 +46,7 @@ class SplashFragment : Fragment() {
 
         try {
             requireActivity().onBackPressedDispatcher.addCallback(
-                object : OnBackPressedCallback(true) {
+                object : OnBackPressedCallback(false) {
                     override fun handleOnBackPressed() {
                         Log.d("onBackPressed", "handleOnBackPressed: ")
                     }
@@ -69,6 +71,14 @@ class SplashFragment : Fragment() {
                 splashTime = 4000L
                 showAndMove(splashTime)
             }
+
+            if (AppUtils.isNetworkAvailable(requireContext())) {
+
+//                RemoteConfiguration(requireActivity()).initializeConfig(1,"0", onSuccess-> {})
+            }
+
+
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -185,7 +195,7 @@ class SplashFragment : Fragment() {
     private fun moveNext() {
         val fromSplashBundle = Bundle()
         fromSplashBundle.putString("from", "SplashFragment")
-        if (purchasePrefs?.getBoolean("isFirstTime") == true) {
+        if (purchasePrefs?.getBoolean("isFirstTime") != true) {
             findNavController().navigate(
                 R.id.action_splashFragment_to_languageFragment,
                 fromSplashBundle

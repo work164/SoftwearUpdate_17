@@ -78,7 +78,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/sensorNativeAdOrBanner"
+        app:layout_constraintBottom_toTopOf="@+id/systemAppsNativeAdOrBanner"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layout_editor_absoluteX="16dp" />
 

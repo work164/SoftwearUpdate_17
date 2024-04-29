@@ -49,6 +49,25 @@
     <string name="update_available">Available Update</string>
     <string name="connection_wifi">Connections Details</string>
     <string name="update_your_device_software">Update Your Device Software</string>
+    <string name="update">Update</string>
+    <string name="share">Share</string>
+    <string name="uninstalle">Uninstall</string>
+    <string name="registration_agreement">By continuing, you agree to our
+        \n<a href="terms://">Privacy Policy</a> and <a href="privacy://">Terms of Services</a> \n <a href="terms://">Cancel or Restore</a>
+</string>
+
+    <string name="by_continuing_by_term_and_policy">By continuing, you agree to \n<a href="https://unseenmessage.blogspot.com/2023/12/term-and-conditions.html">Terms of Service.</a> and <a href="https://mobiledatatransferapp.blogspot.com/2023/12/privacy-policy.html">Privacy Policy</a></string>
+
+    <string name="launch">Launch</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="enjoy_all_features_without_ads">Effortable Price</string>
+    <string name="enjoy_all_unlimited_data">Unlock Pro features</string>
+    <string name="pro_experiance">Papuler</string>
+    <string name="tite_pro">PREMIUM <font fgcolor="#2FC75C">ACCESS</font></string>
+    <string name="lifeTime">Life Time</string>
 
 
     <string-array name="size_array">

@@ -30,37 +30,34 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
   public final ImageFilterView backDevice;
 
   @NonNull
+  public final TextView batteryHealthVal;
+
+  @NonNull
+  public final TextView batteryLevelStringVal;
+
+  @NonNull
   public final FrameLayout batteryNativeAdOrBanner;
+
+  @NonNull
+  public final TextView batteryPowerSourceVal;
+
+  @NonNull
+  public final TextView batteryStatusVal;
+
+  @NonNull
+  public final TextView batteryTempVal;
+
+  @NonNull
+  public final TextView batteryTypeVal;
+
+  @NonNull
+  public final TextView batteryVoltageVal;
 
   @NonNull
   public final ImageView btnInAppForwardDevice;
 
   @NonNull
-  public final TextView device;
-
-  @NonNull
-  public final TextView deviceBoard;
-
-  @NonNull
-  public final TextView deviceHardware;
-
-  @NonNull
-  public final TextView deviceId;
-
-  @NonNull
-  public final TextView deviceManufacture;
-
-  @NonNull
-  public final TextView deviceModel;
-
-  @NonNull
-  public final TextView deviceName;
-
-  @NonNull
   public final TextView deviceStatus;
-
-  @NonNull
-  public final TextView deviceTemperature;
 
   @NonNull
   public final ConstraintLayout group1;
@@ -73,9 +70,6 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout group4;
-
-  @NonNull
-  public final ConstraintLayout group5;
 
   @NonNull
   public final ConstraintLayout group6;
@@ -94,35 +88,33 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
 
   private FragmentBatteryInfoBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout actionBar, @NonNull ImageFilterView backDevice,
-      @NonNull FrameLayout batteryNativeAdOrBanner, @NonNull ImageView btnInAppForwardDevice,
-      @NonNull TextView device, @NonNull TextView deviceBoard, @NonNull TextView deviceHardware,
-      @NonNull TextView deviceId, @NonNull TextView deviceManufacture,
-      @NonNull TextView deviceModel, @NonNull TextView deviceName, @NonNull TextView deviceStatus,
-      @NonNull TextView deviceTemperature, @NonNull ConstraintLayout group1,
-      @NonNull ConstraintLayout group2, @NonNull ConstraintLayout group3,
-      @NonNull ConstraintLayout group4, @NonNull ConstraintLayout group5,
+      @NonNull TextView batteryHealthVal, @NonNull TextView batteryLevelStringVal,
+      @NonNull FrameLayout batteryNativeAdOrBanner, @NonNull TextView batteryPowerSourceVal,
+      @NonNull TextView batteryStatusVal, @NonNull TextView batteryTempVal,
+      @NonNull TextView batteryTypeVal, @NonNull TextView batteryVoltageVal,
+      @NonNull ImageView btnInAppForwardDevice, @NonNull TextView deviceStatus,
+      @NonNull ConstraintLayout group1, @NonNull ConstraintLayout group2,
+      @NonNull ConstraintLayout group3, @NonNull ConstraintLayout group4,
       @NonNull ConstraintLayout group6, @NonNull ConstraintLayout group7,
       @NonNull ConstraintLayout group8, @NonNull ConstraintLayout group9,
       @NonNull View viewBattery) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.backDevice = backDevice;
+    this.batteryHealthVal = batteryHealthVal;
+    this.batteryLevelStringVal = batteryLevelStringVal;
     this.batteryNativeAdOrBanner = batteryNativeAdOrBanner;
+    this.batteryPowerSourceVal = batteryPowerSourceVal;
+    this.batteryStatusVal = batteryStatusVal;
+    this.batteryTempVal = batteryTempVal;
+    this.batteryTypeVal = batteryTypeVal;
+    this.batteryVoltageVal = batteryVoltageVal;
     this.btnInAppForwardDevice = btnInAppForwardDevice;
-    this.device = device;
-    this.deviceBoard = deviceBoard;
-    this.deviceHardware = deviceHardware;
-    this.deviceId = deviceId;
-    this.deviceManufacture = deviceManufacture;
-    this.deviceModel = deviceModel;
-    this.deviceName = deviceName;
     this.deviceStatus = deviceStatus;
-    this.deviceTemperature = deviceTemperature;
     this.group1 = group1;
     this.group2 = group2;
     this.group3 = group3;
     this.group4 = group4;
-    this.group5 = group5;
     this.group6 = group6;
     this.group7 = group7;
     this.group8 = group8;
@@ -169,9 +161,51 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.batteryHealthVal;
+      TextView batteryHealthVal = ViewBindings.findChildViewById(rootView, id);
+      if (batteryHealthVal == null) {
+        break missingId;
+      }
+
+      id = R.id.batteryLevelStringVal;
+      TextView batteryLevelStringVal = ViewBindings.findChildViewById(rootView, id);
+      if (batteryLevelStringVal == null) {
+        break missingId;
+      }
+
       id = R.id.batteryNativeAdOrBanner;
       FrameLayout batteryNativeAdOrBanner = ViewBindings.findChildViewById(rootView, id);
       if (batteryNativeAdOrBanner == null) {
+        break missingId;
+      }
+
+      id = R.id.batteryPowerSourceVal;
+      TextView batteryPowerSourceVal = ViewBindings.findChildViewById(rootView, id);
+      if (batteryPowerSourceVal == null) {
+        break missingId;
+      }
+
+      id = R.id.batteryStatusVal;
+      TextView batteryStatusVal = ViewBindings.findChildViewById(rootView, id);
+      if (batteryStatusVal == null) {
+        break missingId;
+      }
+
+      id = R.id.batteryTempVal;
+      TextView batteryTempVal = ViewBindings.findChildViewById(rootView, id);
+      if (batteryTempVal == null) {
+        break missingId;
+      }
+
+      id = R.id.batteryTypeVal;
+      TextView batteryTypeVal = ViewBindings.findChildViewById(rootView, id);
+      if (batteryTypeVal == null) {
+        break missingId;
+      }
+
+      id = R.id.batteryVoltageVal;
+      TextView batteryVoltageVal = ViewBindings.findChildViewById(rootView, id);
+      if (batteryVoltageVal == null) {
         break missingId;
       }
 
@@ -181,57 +215,9 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.device;
-      TextView device = ViewBindings.findChildViewById(rootView, id);
-      if (device == null) {
-        break missingId;
-      }
-
-      id = R.id.deviceBoard;
-      TextView deviceBoard = ViewBindings.findChildViewById(rootView, id);
-      if (deviceBoard == null) {
-        break missingId;
-      }
-
-      id = R.id.deviceHardware;
-      TextView deviceHardware = ViewBindings.findChildViewById(rootView, id);
-      if (deviceHardware == null) {
-        break missingId;
-      }
-
-      id = R.id.deviceId;
-      TextView deviceId = ViewBindings.findChildViewById(rootView, id);
-      if (deviceId == null) {
-        break missingId;
-      }
-
-      id = R.id.deviceManufacture;
-      TextView deviceManufacture = ViewBindings.findChildViewById(rootView, id);
-      if (deviceManufacture == null) {
-        break missingId;
-      }
-
-      id = R.id.deviceModel;
-      TextView deviceModel = ViewBindings.findChildViewById(rootView, id);
-      if (deviceModel == null) {
-        break missingId;
-      }
-
-      id = R.id.deviceName;
-      TextView deviceName = ViewBindings.findChildViewById(rootView, id);
-      if (deviceName == null) {
-        break missingId;
-      }
-
       id = R.id.deviceStatus;
       TextView deviceStatus = ViewBindings.findChildViewById(rootView, id);
       if (deviceStatus == null) {
-        break missingId;
-      }
-
-      id = R.id.deviceTemperature;
-      TextView deviceTemperature = ViewBindings.findChildViewById(rootView, id);
-      if (deviceTemperature == null) {
         break missingId;
       }
 
@@ -256,12 +242,6 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
       id = R.id.group4;
       ConstraintLayout group4 = ViewBindings.findChildViewById(rootView, id);
       if (group4 == null) {
-        break missingId;
-      }
-
-      id = R.id.group5;
-      ConstraintLayout group5 = ViewBindings.findChildViewById(rootView, id);
-      if (group5 == null) {
         break missingId;
       }
 
@@ -296,9 +276,10 @@ public final class FragmentBatteryInfoBinding implements ViewBinding {
       }
 
       return new FragmentBatteryInfoBinding((ConstraintLayout) rootView, actionBar, backDevice,
-          batteryNativeAdOrBanner, btnInAppForwardDevice, device, deviceBoard, deviceHardware,
-          deviceId, deviceManufacture, deviceModel, deviceName, deviceStatus, deviceTemperature,
-          group1, group2, group3, group4, group5, group6, group7, group8, group9, viewBattery);
+          batteryHealthVal, batteryLevelStringVal, batteryNativeAdOrBanner, batteryPowerSourceVal,
+          batteryStatusVal, batteryTempVal, batteryTypeVal, batteryVoltageVal,
+          btnInAppForwardDevice, deviceStatus, group1, group2, group3, group4, group6, group7,
+          group8, group9, viewBattery);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

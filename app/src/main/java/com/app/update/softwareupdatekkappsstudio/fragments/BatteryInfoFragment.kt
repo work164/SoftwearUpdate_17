@@ -52,25 +52,27 @@ class BatteryInfoFragment : Fragment() {
                 if (rawLevel >= 0 && scale > 0) {
                     level = rawLevel * 100 / scale
                 }
+                binding.run {
+                  //  batteryLevelIntVal.value = level
+                    batteryLevelStringVal.text = (+level).toString() + "%"
+                    if (technology != null)
+                        batteryTypeVal.text = technology
+                    else
+                        batteryTypeVal.text = "Unknown"
 
-//                batteryLevelIntVal.value = level
-//                batteryLevelStringVal.value = (+level).toString() + "%"
-//                if (technology != null)
-//                    batteryTypeVal.value = technology
-//                else
-//                    batteryTypeVal.value = "Unknown"
-//
-//                batteryPowerSourceVal.value = getPlugTypeResultString(plugged)
-//                batteryVoltageVal.value = Constants.STRING_EMPTY + voltage / 1000.0f + " V"
-//                batteryStatusVal.value = getStatusResultString(status)
-//                batteryHealthVal.value = getHealthResultString(health)
-//                batteryFastChargingVal.value = Constants.STRING_EMPTY + fastChargeStatus
-//
-//                val tempInCelsius = temperature / 10.0f
-//                val tempInFahrenheit = 9 / 5 * tempInCelsius + 32.0f
-//
-//                batteryTempVal.value =
-//                    Constants.STRING_EMPTY + tempInCelsius + " C / " + tempInFahrenheit + " F"
+                    batteryPowerSourceVal.text = getPlugTypeResultString(plugged)
+                    batteryVoltageVal.text = Constants.STRING_EMPTY + voltage / 1000.0f + " V"
+                    batteryStatusVal.text = getStatusResultString(status)
+                    batteryHealthVal.text = getHealthResultString(health)
+                  //  batteryFastChargingVal.text = Constants.STRING_EMPTY + fastChargeStatus
+
+                    val tempInCelsius = temperature / 10.0f
+                    val tempInFahrenheit = 9 / 5 * tempInCelsius + 32.0f
+
+                    batteryTempVal.text =
+                        Constants.STRING_EMPTY + tempInCelsius + " C / " + tempInFahrenheit + " F"
+                }
+
             }
         }
     }

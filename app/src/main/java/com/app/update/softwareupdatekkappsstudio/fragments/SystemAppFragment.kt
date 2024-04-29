@@ -72,6 +72,7 @@ class SystemAppFragment : Fragment(), HomeClick {
         }
 
         binding.appsRecyclerView.layoutManager = LinearLayoutManager(activity)
+        appsList.clear()
         appsAdapter = AppsAdapter(this, appsList, requireActivity())
         binding.appsRecyclerView.adapter = appsAdapter
         loadInstalledApps()
