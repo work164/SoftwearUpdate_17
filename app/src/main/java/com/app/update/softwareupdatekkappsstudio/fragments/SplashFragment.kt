@@ -72,7 +72,7 @@ class SplashFragment : Fragment() {
             }
 
             if (AppUtils.isNetworkAvailable(requireContext())) {
-
+//                AD18F158678E8EC70B0997889CFF7A6C
                 RemoteConfiguration(requireActivity()).initializeConfig(
                     R.xml.remote_config_defaults,
                     "ads_update",

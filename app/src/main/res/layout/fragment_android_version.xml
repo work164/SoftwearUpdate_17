@@ -89,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Device Name:"
+                android:text="@string/device_name"
                 android:textColor="#000000"
                 android:textSize="15.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"

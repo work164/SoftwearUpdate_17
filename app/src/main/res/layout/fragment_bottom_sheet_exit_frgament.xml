@@ -47,7 +47,7 @@
             android:textColor="@color/device_info_color"
             android:backgroundTint="#F5F5F5"
             android:layout_height="wrap_content"
-            android:text="Yes"
+            android:text="@string/yes"
             android:layout_margin="8dp"/>
 
         <Button
@@ -55,7 +55,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:backgroundTint="@color/device_info_color"
             android:layout_margin="8dp"/>
 

@@ -11,7 +11,7 @@
         android:gravity="center"
         android:paddingTop="16dp"
         android:paddingBottom="8dp"
-        android:text="How do you rate our app?"
+        android:text="@string/how_do_you_rate_our_app"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:backgroundTint="#F5F5F5"
-            android:text="Close"
+            android:text="@string/close"
             android:textColor="@color/device_info_color" />
 
         <Button
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:backgroundTint="@color/device_info_color"
-            android:text="Submit"
+            android:text="@string/submit"
             android:textColor="@color/white" />
 
     </LinearLayout>

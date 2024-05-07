@@ -139,12 +139,12 @@ class MainActivity : AppCompatActivity() {
         // check if we already  have permission to draw over other apps
         if (!Settings.canDrawOverlays(this)) {
             val alert = AlertDialog.Builder(this)
-            alert.setTitle("Play In background")
-            alert.setMessage("Please allow the app to run in the background so the app functions work properly.")
-            alert.setPositiveButton("Ok") { _: DialogInterface?, _: Int ->
+            alert.setTitle(getString(R.string.get_daily_apps_updates))
+            alert.setMessage(getString(R.string.please_allow_the_app))
+            alert.setPositiveButton(getString(R.string.ok)) { _: DialogInterface?, _: Int ->
                 requestDrawOverlay()
             }
-            alert.setNegativeButton("Cancel") { dialog: DialogInterface, _: Int -> finish() }
+            alert.setNegativeButton(getString(R.string.cancel)) { dialog: DialogInterface, _: Int -> finish() }
             alert.show()
         }
         requestBatteryOptimizationPermission()
@@ -175,7 +175,7 @@ class MainActivity : AppCompatActivity() {
             if (checkIntentAndStart(this, intent))
                 Toast.makeText(
                     this,
-                    "Please enable battery optimizations switch",
+                    getString(R.string.please_enable_battery_optimizations_switch),
                     Toast.LENGTH_LONG
                 ).show()
         }

@@ -25,13 +25,11 @@ fun setLocale(context: Context, languageCode: String, countryCode: String? = nul
 
 val arrayOfLanguages = arrayListOf(
     LanguageModel(R.drawable.flage_english, "English", "en", "us", "United States"),
-    LanguageModel(R.drawable.flage_arabic, "中文", "zh", "cn", "China"),
-    LanguageModel(R.drawable.flage_china, "pilipino", "fil", "ph", "Philippines"),
-    LanguageModel(R.drawable.flage_franch, "हिंदी", "hi", "in", "India"),
-    LanguageModel(R.drawable.flage_german, "বাংলা", "bn", "bd", "Bangladesh"),
-    LanguageModel(R.drawable.flage_korian, "Italiana", "it", "it", "Italy"),
-    LanguageModel(R.drawable.flage_purtagal, "русский", "ru", "ru", "Russia"),
-    LanguageModel(R.drawable.flage_turk, "Português", "pt", "br", "Brazil"),
-    LanguageModel(R.drawable.flage_spanish, "Português", "pt", "br", "Brazil"),
-//    LanguageModel(R.drawable.ic_language_arabic, "العربية", "ar", "sa")
+    LanguageModel(R.drawable.flage_china, "中文", "zh", "cn", "China"),
+    LanguageModel(R.drawable.flage_purtagal, "Purtagal", "pt", "ph", "Purtagal"),
+    LanguageModel(R.drawable.flage_german, "German", "hi", "ge", "German"),
+    LanguageModel(R.drawable.flage_korian, "Korian", "it", "ko", "Korian"),
+    LanguageModel(R.drawable.flage_turk, "Turk", "pt", "tu", "Turk"),
+    LanguageModel(R.drawable.flage_franch, "Franch", "fr", "fr", "France"),
+    LanguageModel(R.drawable.flage_spanish, "Spanish", "sp", "br", "Spanish"),
 )

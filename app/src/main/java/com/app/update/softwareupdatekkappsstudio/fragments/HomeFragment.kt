@@ -38,18 +38,14 @@ class HomeFragment : Fragment(), HomeClick {
     private var exitDialogFragment: ExitDialogFragment? = null
 
     private var mList = arrayListOf(
-        HomeViewModel(R.drawable.ic_home_scan, "Scan Apps", "", 0),
-        HomeViewModel(R.drawable.ic_home_install, "Installed Apps", "", 1),
-        HomeViewModel(R.drawable.ic_home_uninstall, "Uninstall Apps", "", 2),
-        HomeViewModel(R.drawable.ic_home_system, "System Apps", "", 3),
-        HomeViewModel(R.drawable.ic_home_app_usage, "App Usage", "", 4),
-        HomeViewModel(R.drawable.ic_device_info, "Device Info", "", 5),
-        HomeViewModel(R.drawable.ic_home_system_update, "System Update", "", 6),
-//        HomeViewModel(R.drawable.ic_home_wifi, "Wifi Status", "", 7),
-//        HomeViewModel(R.drawable.ic_home_mobile_sensor, "Mobile Sensor", "", 8),
-//        HomeViewModel(R.drawable.ic_home_app_restore, "App Restore", "", 9),
-        HomeViewModel(R.drawable.ic_home_battery, "Battery Info", "", 10),
-//        HomeViewModel(R.drawable.ic_home_android_version, "Android Version", "", 11)
+        HomeViewModel(R.drawable.ic_home_scan, getString(R.string.scan_apps), "", 0),
+        HomeViewModel(R.drawable.ic_home_install, getString(R.string.installed_apps), "", 1),
+        HomeViewModel(R.drawable.ic_home_uninstall, getString(R.string.uninstall_apps), "", 2),
+        HomeViewModel(R.drawable.ic_home_system, getString(R.string.system_apps), "", 3),
+        HomeViewModel(R.drawable.ic_home_app_usage, getString(R.string.app_usage), "", 4),
+        HomeViewModel(R.drawable.ic_device_info, getString(R.string.device_info), "", 5),
+        HomeViewModel(R.drawable.ic_home_system_update,getString(R.string.system_update), "", 6),
+        HomeViewModel(R.drawable.ic_home_battery, getString(R.string.battery_info), "", 10),
     )
 
     override fun onCreateView(

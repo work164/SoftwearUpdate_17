@@ -179,7 +179,14 @@ class BatteryInfoFragment : Fragment() {
                                 }, // if ad failed to load you will receive this callback
                                 onAdImpression = {}, // if ad impression will receive this callback
                                 onAdLoaded = {}, // if ad loaded you will receive this callback
-                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdOpened = {},
+
+
+
+
+
+
+                                // if ad opened you will receive this callback
                                 onAdValidate = {
                                     binding.batteryNativeAdOrBanner.visibility = View.GONE
                                 }) //if remote off or no internet or user is premium user you will receive callback here

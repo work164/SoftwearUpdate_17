@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.PRIORITY_MIN
 import com.app.update.softwareupdatekkappsstudio.AlarmActivity
+import com.app.update.softwareupdatekkappsstudio.MainActivity
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.model.AlarmData
 import com.app.update.softwareupdatekkappsstudio.utils.Constants.ALARM_DATA
@@ -86,7 +87,7 @@ class AlarmsForegroundService : Service() {
             if (alarm.repeated)
                 scheduleAlarm(this@AlarmsForegroundService, alarm)
 
-            val ringer = Intent(applicationContext, AlarmActivity::class.java)
+            val ringer = Intent(applicationContext, MainActivity::class.java)
             ringer.putExtra(ALARM_DATA, alarm)
             ringer.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(ringer)
