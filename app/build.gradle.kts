@@ -630,4 +630,5 @@ dependencies {
 * Module Android Versions info
 * Android App Permissions Sheet
 * Native Ad Design SS ask from Mahboob Sigma Status
+* Localization of languages
 * */
