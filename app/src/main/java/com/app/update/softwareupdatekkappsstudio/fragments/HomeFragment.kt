@@ -75,7 +75,7 @@ class HomeFragment : Fragment(), HomeClick {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        mList.clear()
         mList.add(HomeViewModel(R.drawable.ic_home_scan, getString(R.string.scan_apps), "", 0))
         mList.add(HomeViewModel(R.drawable.ic_home_install, getString(R.string.installed_apps), "", 1))
         mList.add(HomeViewModel(R.drawable.ic_home_uninstall, getString(R.string.uninstall_apps), "", 2))
@@ -84,8 +84,6 @@ class HomeFragment : Fragment(), HomeClick {
         mList.add(HomeViewModel(R.drawable.ic_device_info, getString(R.string.device_info), "", 5))
         mList.add(HomeViewModel(R.drawable.ic_home_system_update,getString(R.string.system_update), "", 6))
         mList.add(HomeViewModel(R.drawable.ic_home_battery, getString(R.string.battery_info), "", 10))
-
-
 
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = HomeAdapter(requireContext(), mList, this)
