@@ -61,10 +61,14 @@ class IntroFragment : Fragment() {
                     binding.viewPager.currentItem = binding.viewPager.currentItem + 1
                 } else {
                     showStartButton()
+                    Log.d("onBackPressed", "Intro:next ")
+
                 }
             }
             binding.btnSkip.setOnClickListener {
                 showStartButton()
+                Log.d("onBackPressed", "Intro:skip ")
+
 
             }
 
@@ -217,13 +221,11 @@ class IntroFragment : Fragment() {
 
 
     private fun showStartButton() {
-        try {
+
             findNavController().navigate(R.id.action_introFragment_to_homeFragment)
             purchasePrefs?.putBoolean("isFirstTime", true)
             showAd()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+
     }
 
     private fun showAd() {

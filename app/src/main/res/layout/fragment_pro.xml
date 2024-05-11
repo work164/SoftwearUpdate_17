@@ -354,7 +354,7 @@
         android:layout_marginVertical="10dp"
         android:gravity="center"
         android:text="@string/by_continuing_by_term_and_policy"
-        android:textSize="20sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
