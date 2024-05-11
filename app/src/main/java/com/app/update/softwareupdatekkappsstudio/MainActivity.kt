@@ -73,11 +73,11 @@ class MainActivity : AppCompatActivity() {
         //show dialog for request work in background and over lay
         requestAlertPermission()
 
-        wordViewModel.allWords.observe(this) { words ->
-            // Update the cached copy of the words in the adapter.
-            Log.d("working", "  $words")
-
-        }
+//        wordViewModel.allWords.observe(this) { words ->
+//            // Update the cached copy of the words in the adapter.
+//            Log.d("working", "  $words")
+//
+//        }
 
 
     }
@@ -137,49 +137,49 @@ class MainActivity : AppCompatActivity() {
 
     private fun requestAlertPermission() {
         // check if we already  have permission to draw over other apps
-        if (!Settings.canDrawOverlays(this)) {
-            val alert = AlertDialog.Builder(this)
-            alert.setTitle(getString(R.string.get_daily_apps_updates))
-            alert.setMessage(getString(R.string.please_allow_the_app))
-            alert.setPositiveButton(getString(R.string.ok)) { _: DialogInterface?, _: Int ->
-                requestDrawOverlay()
-            }
-            alert.setNegativeButton(getString(R.string.cancel)) { dialog: DialogInterface, _: Int -> finish() }
-            alert.show()
-        }
-        requestBatteryOptimizationPermission()
+//        if (!Settings.canDrawOverlays(this)) {
+//            val alert = AlertDialog.Builder(this)
+//            alert.setTitle(getString(R.string.get_daily_apps_updates))
+//            alert.setMessage(getString(R.string.please_allow_the_app))
+//            alert.setPositiveButton(getString(R.string.ok)) { _: DialogInterface?, _: Int ->
+//                requestDrawOverlay()
+//            }
+//            alert.setNegativeButton(getString(R.string.cancel)) { dialog: DialogInterface, _: Int -> finish() }
+//            alert.show()
+//        }
+//        requestBatteryOptimizationPermission()
 
     }
 
-    private fun requestDrawOverlay() {
-        // if not construct intent to request permission
-        val intent = Intent(
-            Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-            Uri.parse("package:" + applicationContext.packageName)
-        )
-        resultLauncher.launch(intent)
-    }
+//    private fun requestDrawOverlay() {
+//        // if not construct intent to request permission
+//        val intent = Intent(
+//            Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+//            Uri.parse("package:" + applicationContext.packageName)
+//        )
+//        resultLauncher.launch(intent)
+//    }
 
-    @SuppressLint("BatteryLife")
-    private fun requestBatteryOptimizationPermission() {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            val intent = Intent(ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
-            intent.data = Uri.parse("package:" + this.applicationContext.packageName)
-            checkIntentAndStart(this, intent)
-        } else {
-            val intent = Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
-            if (checkIntentAndStart(this, intent))
-                Toast.makeText(
-                    this,
-                    getString(R.string.please_enable_battery_optimizations_switch),
-                    Toast.LENGTH_LONG
-                ).show()
-        }
-    }
+//    @SuppressLint("BatteryLife")
+//    private fun requestBatteryOptimizationPermission() {
+//        if (ContextCompat.checkSelfPermission(
+//                this,
+//                Manifest.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+//            ) == PackageManager.PERMISSION_GRANTED
+//        ) {
+//            val intent = Intent(ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
+//            intent.data = Uri.parse("package:" + this.applicationContext.packageName)
+//            checkIntentAndStart(this, intent)
+//        } else {
+//            val intent = Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
+//            if (checkIntentAndStart(this, intent))
+//                Toast.makeText(
+//                    this,
+//                    getString(R.string.please_enable_battery_optimizations_switch),
+//                    Toast.LENGTH_LONG
+//                ).show()
+//        }
+//    }
 
 
     private fun checkIntentAndStart(context: Context, intent: Intent): Boolean {

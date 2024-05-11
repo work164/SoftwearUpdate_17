@@ -57,6 +57,18 @@ class ProFragment : Fragment(), Billing6Listener {
 
                 }
             })
+
+        binding?.restore?.setOnClickListener {
+            openUrl("https://play.google.com/store/account/subscriptions")
+
+        }
+
+          binding?.close?.setOnClickListener {
+              findNavController().popBackStack()
+
+          }
+
+
         subscriptionIds.add("sub_weekly")//11.99
         subscriptionIds.add("sub_month")//5.99usd
         subscriptionIds.add("sub_year")//16.99

@@ -60,11 +60,12 @@ class IntroFragment : Fragment() {
                 if (binding.viewPager.currentItem < onboardingItems.size - 1) {
                     binding.viewPager.currentItem = binding.viewPager.currentItem + 1
                 } else {
-                    Handler(Looper.getMainLooper()).postDelayed({ showStartButton() }, 50)
+                    showStartButton()
                 }
             }
             binding.btnSkip.setOnClickListener {
-                Handler(Looper.getMainLooper()).postDelayed({ showStartButton() }, 50)
+                showStartButton()
+
             }
 
             if (AppUtils.isNetworkAvailable(requireContext())) {
@@ -217,8 +218,8 @@ class IntroFragment : Fragment() {
 
     private fun showStartButton() {
         try {
-            purchasePrefs?.putBoolean("isFirstTime", true)
             findNavController().navigate(R.id.action_introFragment_to_homeFragment)
+            purchasePrefs?.putBoolean("isFirstTime", true)
             showAd()
         } catch (e: Exception) {
             e.printStackTrace()

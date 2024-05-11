@@ -39,13 +39,13 @@ class HomeFragment : Fragment(), HomeClick {
 
     private var mList = arrayListOf(
         HomeViewModel(R.drawable.ic_home_scan, getString(R.string.scan_apps), "", 0),
-        HomeViewModel(R.drawable.ic_home_install, getString(R.string.installed_apps), "", 1),
-        HomeViewModel(R.drawable.ic_home_uninstall, getString(R.string.uninstall_apps), "", 2),
-        HomeViewModel(R.drawable.ic_home_system, getString(R.string.system_apps), "", 3),
-        HomeViewModel(R.drawable.ic_home_app_usage, getString(R.string.app_usage), "", 4),
-        HomeViewModel(R.drawable.ic_device_info, getString(R.string.device_info), "", 5),
-        HomeViewModel(R.drawable.ic_home_system_update,getString(R.string.system_update), "", 6),
-        HomeViewModel(R.drawable.ic_home_battery, getString(R.string.battery_info), "", 10),
+//        HomeViewModel(R.drawable.ic_home_install, getString(R.string.installed_apps), "", 1),
+//        HomeViewModel(R.drawable.ic_home_uninstall, getString(R.string.uninstall_apps), "", 2),
+//        HomeViewModel(R.drawable.ic_home_system, getString(R.string.system_apps), "", 3),
+//        HomeViewModel(R.drawable.ic_home_app_usage, getString(R.string.app_usage), "", 4),
+//        HomeViewModel(R.drawable.ic_device_info, getString(R.string.device_info), "", 5),
+//        HomeViewModel(R.drawable.ic_home_system_update,getString(R.string.system_update), "", 6),
+//        HomeViewModel(R.drawable.ic_home_battery, getString(R.string.battery_info), "", 10),
     )
 
     override fun onCreateView(

@@ -90,6 +90,7 @@
     <string name="temperature">Temperature</string>
     <string name="overall_status">Overall Status</string>
     <string name="yes">Yes</string>
+    <string name="restore">Restore</string>
 
 
     <string-array name="size_array">
