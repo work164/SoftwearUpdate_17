@@ -104,13 +104,21 @@ class DeviceInfoFragment : Fragment() {
                                 adsKey = getString(R.string.val_banner_device_details), // give ad id here
                                 remoteConfig = Constants.val_banner_device_details, // give remote config here
                                 adsView = binding.deviceNativeAdOrBanner, //give your frameLayout here
-                                onAdClicked = {}, //if ad clicked you will receive this callback
+                                onAdClicked = {
+
+                                }, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
                                     binding.deviceNativeAdOrBanner.visibility = View.GONE
                                 }, // if ad failed to load you will receive this callback
-                                onAdImpression = {}, // if ad impression will receive this callback
-                                onAdLoaded = {}, // if ad loaded you will receive this callback
-                                onAdOpened = {}, // if ad opened you will receive this callback
+                                onAdImpression = {
+
+                                }, // if ad impression will receive this callback
+                                onAdLoaded = {
+
+                                }, // if ad loaded you will receive this callback
+                                onAdOpened = {
+
+                                }, // if ad opened you will receive this callback
                                 onAdValidate = {
                                     binding.deviceNativeAdOrBanner.visibility = View.GONE
                                 }) //if remote off or no internet or user is premium user you will receive callback here
