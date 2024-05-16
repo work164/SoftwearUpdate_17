@@ -3,11 +3,11 @@ package com.app.update.softwareupdatekkappsstudio.fragments
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentSplashBinding
@@ -21,6 +21,7 @@ import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
 import com.example.adssdk.native_ad.NativeAdUtils
 import com.example.adssdk.remote_config.RemoteConfiguration
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,6 +36,12 @@ class SplashFragment : Fragment() {
     private var isWaitForNative = true
     private var splashTime = 20000L
     private var purchasePrefs: PurchasePrefs? = null
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        FirebaseMessaging.getInstance().subscribeToTopic(requireActivity().packageName)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,6 +64,8 @@ class SplashFragment : Fragment() {
                     R.id.action_splashFragment_to_languageFragment,
                     fromSplashBundle
                 )
+
+
             }
 
 
@@ -67,6 +76,10 @@ class SplashFragment : Fragment() {
                         showAndMove(splashTime)
                     }
             } else {
+                firebaseAnalytics(
+                    "splash_internet_not_connected",
+                    "splash_internet_not_connected"
+                )
                 splashTime = 4000L
                 showAndMove(splashTime)
             }
@@ -321,14 +334,28 @@ class SplashFragment : Fragment() {
         val fromSplashBundle = Bundle()
         fromSplashBundle.putString("from", "SplashFragment")
         if (purchasePrefs?.getBoolean("isFirstTime") != true) {
-            findNavController().navigate(
-                R.id.action_splashFragment_to_languageFragment,
-                fromSplashBundle
-            )
+            if (findNavController().currentDestination?.id == R.id.splashFragment) {
+
+                findNavController().navigate(
+                    R.id.action_splashFragment_to_languageFragment,
+                    fromSplashBundle
+                )
+                firebaseAnalytics(
+                    "going_splash_to_language",
+                    "going_splash_to_language"
+                )
+            }
+
         } else {
-            findNavController().navigate(
-                R.id.action_splashFragment_to_homeFragment
-            )
+            if (findNavController().currentDestination?.id == R.id.splashFragment) {
+                firebaseAnalytics(
+                    "going_splash_to_home",
+                    "going_splash_to_home"
+                )
+                findNavController().navigate(
+                    R.id.action_splashFragment_to_homeFragment
+                )
+            }
         }
         InterstitialAdUtils(
             requireActivity(),
@@ -336,10 +363,30 @@ class SplashFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_splash),
             Constants.val_fullscreen_splash,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
-            fullScreenAdNotAvailable = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "splash_interstitial_show",
+                    "splash_interstitial_show"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "splash_interstitial_dismissed",
+                    "splash_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "splash_interstitial_failed_to_show",
+                    "splash_interstitial_failed_to_show"
+                )
+            },
+            fullScreenAdNotAvailable = {
+                firebaseAnalytics(
+                    "splash_interstitial_ad_not_avialable",
+                    "splash_interstitial_ad_not_avialable"
+                )
+            },
         )
     }
 
@@ -360,6 +407,11 @@ class SplashFragment : Fragment() {
             showAndMove(splashTime)
         }
         super.onResume()
+
+        firebaseAnalytics(
+            "splashOnResume",
+            "splashOnResume-->In splash"
+        )
     }
 
     override fun onDestroy() {

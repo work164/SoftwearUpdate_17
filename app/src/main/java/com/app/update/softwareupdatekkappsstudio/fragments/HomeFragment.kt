@@ -2,11 +2,11 @@ package com.app.update.softwareupdatekkappsstudio.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.app.update.softwareupdatekkappsstudio.R
@@ -16,18 +16,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaB
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.model.HomeViewModel
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_android_versions
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_app_usage
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_battery
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_device_info
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_install_apps
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_menu_scan_apps
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_restore_apps
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_sensor
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_settings
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_system_apps
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_system_update
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_main_uninstall
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -59,11 +48,19 @@ class HomeFragment : Fragment(), HomeClick {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         with(binding) {
             setting.setOnClickListener {
+                firebaseAnalytics(
+                    "home_click_setting",
+                    "home_click_setting"
+                )
                 findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
                 showAd(Constants.val_fullscreen_main_settings)
 
             }
             giftHome.setOnClickListener {
+                firebaseAnalytics(
+                    "home_click_pro",
+                    "home_click_pro"
+                )
                 findNavController().navigate(R.id.action_homeFragment_to_appProFragment)
 
             }
@@ -77,13 +74,49 @@ class HomeFragment : Fragment(), HomeClick {
         super.onViewCreated(view, savedInstanceState)
         mList.clear()
         mList.add(HomeViewModel(R.drawable.ic_home_scan, getString(R.string.scan_apps), "", 0))
-        mList.add(HomeViewModel(R.drawable.ic_home_install, getString(R.string.installed_apps), "", 1))
-        mList.add(HomeViewModel(R.drawable.ic_home_uninstall, getString(R.string.uninstall_apps), "", 2))
+        mList.add(
+            HomeViewModel(
+                R.drawable.ic_home_install,
+                getString(R.string.installed_apps),
+                "",
+                1
+            )
+        )
+        mList.add(
+            HomeViewModel(
+                R.drawable.ic_home_uninstall,
+                getString(R.string.uninstall_apps),
+                "",
+                2
+            )
+        )
         mList.add(HomeViewModel(R.drawable.ic_home_system, getString(R.string.system_apps), "", 3))
         mList.add(HomeViewModel(R.drawable.ic_home_app_usage, getString(R.string.app_usage), "", 4))
         mList.add(HomeViewModel(R.drawable.ic_device_info, getString(R.string.device_info), "", 5))
-        mList.add(HomeViewModel(R.drawable.ic_home_system_update,getString(R.string.system_update), "", 6))
-        mList.add(HomeViewModel(R.drawable.ic_home_battery, getString(R.string.battery_info), "", 10))
+        mList.add(
+            HomeViewModel(
+                R.drawable.ic_home_system_update,
+                getString(R.string.system_update),
+                "",
+                6
+            )
+        )
+        mList.add(
+            HomeViewModel(
+                R.drawable.ic_home_app_restore,
+                getString(R.string.restore_apps),
+                "",
+                9
+            )
+        )
+        mList.add(
+            HomeViewModel(
+                R.drawable.ic_home_battery,
+                getString(R.string.battery_info),
+                "",
+                10
+            )
+        )
 
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = HomeAdapter(requireContext(), mList, this)
@@ -202,8 +235,16 @@ class HomeFragment : Fragment(), HomeClick {
 
                         binding.nativeMainBottom.visibility = View.GONE
                         binding.nativeMain.visibility = View.GONE
+                        firebaseAnalytics(
+                            "home_native_failed",
+                            "home_native_failed"
+                        )
                     },
                     adValidate = {
+                        firebaseAnalytics(
+                            "home_native_ad_validate",
+                            "home_native_ad_validate"
+                        )
                         if (Constants.val_banner_main_menu_top) binding.nativeMain.visibility =
                             View.GONE
                         else binding.nativeMainBottom.visibility = View.GONE
@@ -245,12 +286,18 @@ class HomeFragment : Fragment(), HomeClick {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "home_interstitial_ad_loaded",
+                        "home_interstitial_ad_loaded"
+                    )
 
                 },
                 adFailed = {
 
-
+                    firebaseAnalytics(
+                        "home_interstitial_ad_failed",
+                        "home_interstitial_ad_failed"
+                    )
                 },
                 adValidate = {
 
@@ -272,9 +319,24 @@ class HomeFragment : Fragment(), HomeClick {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_main_load),
             remoteConf,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "home_interstitial_ad_show",
+                    "home_interstitial_ad_show"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "home_interstitial_ad_dismissed",
+                    "home_interstitial_ad_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "home_interstitial_ad_failed_to_show",
+                    "home_interstitial_ad_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

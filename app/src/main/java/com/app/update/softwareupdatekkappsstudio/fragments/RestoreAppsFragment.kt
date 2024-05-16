@@ -1,16 +1,24 @@
 package com.app.update.softwareupdatekkappsstudio.fragments
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.update.softwareupdatekkappsstudio.MyApp
 import com.app.update.softwareupdatekkappsstudio.R
-import com.app.update.softwareupdatekkappsstudio.databinding.FragmentDeviceInfoBinding
+import com.app.update.softwareupdatekkappsstudio.adapter.UninstalledAppAdapter
+import com.app.update.softwareupdatekkappsstudio.database.WordViewModel
+import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentRestoreAppsBinding
-import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.example.adssdk.banner_ads.BannerAdUtils
@@ -23,6 +31,11 @@ class RestoreAppsFragment : Fragment() {
 
     private lateinit var binding: FragmentRestoreAppsBinding
 
+    private var appsAdapter: UninstalledAppAdapter? = null
+
+    private val wordViewModel: WordViewModel by viewModels {
+        WordViewModelFactory((requireActivity().application as MyApp).repository)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,6 +82,37 @@ class RestoreAppsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        wordViewModel.allWords.observe(viewLifecycleOwner) { words ->
+            binding.loadingApps.visibility = View.GONE
+            if (words.isNotEmpty()) {
+                binding.tvEmpty.visibility = View.INVISIBLE
+                appsAdapter = UninstalledAppAdapter(onItemClick = {
+openUrl(requireContext(),"https://play.google.com/store/apps/details?id=$it")
+                }, words, requireContext())
+                binding.appsRecyclerView.layoutManager = LinearLayoutManager(activity)
+
+                binding.appsRecyclerView.adapter = appsAdapter
+            } else {
+                binding.tvEmpty.visibility = View.VISIBLE
+
+            }
+        }
+
+    }
+    fun openUrl(context: Context, url: String) {
+        try {
+            val shareIntent = Intent(Intent.ACTION_VIEW)
+            shareIntent.data = Uri.parse(url)
+            context.startActivity(shareIntent)
+        } catch (e: Exception) {
+            Toast.makeText(context, "No browser found", Toast.LENGTH_SHORT).show()
+            e.printStackTrace()
+
+        }
+    }
+
     private fun loadAds() {
         if (AppUtils.isNetworkAvailable(requireContext())) {
             binding.restoreNativeAdOrBanner.visibility = View.VISIBLE
@@ -93,7 +137,10 @@ class RestoreAppsFragment : Fragment() {
                     },
                     adValidate = {
                         binding.restoreNativeAdOrBanner.visibility = View.VISIBLE
-                        BannerAdUtils(activity = requireActivity(), screenName = "restoreNativeAdOrBanner")
+                        BannerAdUtils(
+                            activity = requireActivity(),
+                            screenName = "restoreNativeAdOrBanner"
+                        )
                             .loadBanner(
                                 adsKey = getString(R.string.val_banner_apps_restore), // give ad id here
                                 remoteConfig = Constants.val_banner_apps_restore, // give remote config here
@@ -117,7 +164,10 @@ class RestoreAppsFragment : Fragment() {
 
                     }
                 )
-            InterstitialAdUtils(requireActivity(), "fullscreen_app_restore_back").loadInterstitialAd(
+            InterstitialAdUtils(
+                requireActivity(),
+                "fullscreen_app_restore_back"
+            ).loadInterstitialAd(
                 getString(R.string.val_fullscreen_app_restore_details),
                 if (Constants.val_fullscreen_app_restore_back) Constants.val_fullscreen_app_restore_back else Constants.val_fullscreen_app_restore_details,
                 adAlreadyLoaded = {

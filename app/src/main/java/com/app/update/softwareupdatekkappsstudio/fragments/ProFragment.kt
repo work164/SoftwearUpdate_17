@@ -295,6 +295,8 @@ class ProFragment : Fragment(), Billing6Listener {
                 Log.d("uiChange", "sub_year")
                 binding?.run {
 
+                    proButton.text = getString(R.string.start_free_trail)
+
                     weekPrice.setTextColor(resources.getColor(R.color.green_main))
                     priceYear.setTextColor(resources.getColor(R.color.white))
                     priceMonth.setTextColor(resources.getColor(R.color.green_main))
@@ -323,6 +325,8 @@ class ProFragment : Fragment(), Billing6Listener {
             "sub_month" -> {
                 Log.d("uiChange", "sub_month")
                 binding?.run {
+                    proButton.text = getString(R.string.start_free_trail)
+
 
                     weekPrice.setTextColor(resources.getColor(R.color.green_main))
                     priceYear.setTextColor(resources.getColor(R.color.green_main))
@@ -352,6 +356,8 @@ class ProFragment : Fragment(), Billing6Listener {
                 Log.d("uiChange", "sub_weekly")
 
                 binding?.run {
+                    proButton.text = getString(R.string.start_free_trail)
+
 
                     weekPrice.setTextColor(resources.getColor(R.color.white))
                     priceYear.setTextColor(resources.getColor(R.color.green_main))
@@ -382,6 +388,9 @@ class ProFragment : Fragment(), Billing6Listener {
                 Log.d("uiChange", "sub_life")
 
                 binding?.run {
+
+                    proButton.text = "Buy"
+
 
                     weekPrice.setTextColor(resources.getColor(R.color.green_main))
                     priceYear.setTextColor(resources.getColor(R.color.green_main))
