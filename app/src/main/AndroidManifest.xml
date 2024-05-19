@@ -74,7 +74,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id" />
 
-        <receiver
+        <!--<receiver
             android:name=".info.AlarmsReceiver"
             android:exported="false">
             <intent-filter>
@@ -91,7 +91,7 @@
             android:name=".info.AlarmsForegroundService"
             android:enabled="true"
             android:exported="false"
-            android:foregroundServiceType="shortService" />
+            android:foregroundServiceType="shortService" />-->
     </application>
 
 </manifest>

@@ -70,7 +70,7 @@
           <theme>@style/Theme.NewSoftware</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_unstalled_apps.xml">
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_splash.xml">
         <config>
           <theme>@style/Theme.NewSoftware</theme>
         </config>
@@ -91,15 +91,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c81f2605-03d1-47d4-b3c1-205d91867e16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/adapter/UninstalledAppAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fcm/FirebaseMessagingServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fcm/MyNotificationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fcm_notification.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_uninstalled_apps.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/checksums/sha1-checksums.bin" afterDir="false" />
+    <list default="true" id="c81f2605-03d1-47d4-b3c1-205d91867e16" name="Changes" comment="16/05/2024">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_splash_lottie.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appProd/release/app-appProd-release.aab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" afterDir="false" />
@@ -108,37 +102,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/FragmentSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/FragmentSettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/adapter/HomeAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/adapter/HomeAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/Word.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/Word.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppDetailsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppInstalledFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppInstalledFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppsUninstallFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppsUninstallFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/IntroFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/IntroFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/ProFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/ProFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/RestoreAppsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/RestoreAppsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/SplashFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/SplashFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/aboutus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/aboutus.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/feedback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/feedback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/moreapps.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/moreapps.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/privacypolicy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/privacypolicy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/rateus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rateus.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shareapp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/shareapp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_pro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_pro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_restore_apps.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_restore_apps.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appProd/release/appupdateapp-appProd-release.aab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordRoomDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordRoomDatabase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appProd/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/appProd/release/output-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +116,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[YSAUKVGMB6BUVS7D]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -176,6 +144,7 @@
       <list>
         <option value="navigationResourceFile" />
         <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -207,30 +176,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ApkExportedModule": "NewSoftware.app",
-    "BundleExportedModule": "NewSoftware.app",
-    "ExportApk.ApkPathForNewSoftware.app": "F:\\Mahboob\\SoftwearUpdate_17",
-    "ExportBundle.BundlePathForNewSoftware.app": "F:\\Mahboob\\SoftwearUpdate_17",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "android-custom-viewC:/Users/integ/.gradle/caches/modules-2/files-2.1/com.airbnb.android/lottie/6.1.0/eca8588c02c739215d8d56157c97b49783766c97/lottie-6.1.0-sources.jar!/com/airbnb/lottie/LottieAnimationView.java_SELECTED": "LottieAnimationView",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/Mahboob/SoftwearUpdate_17",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ApkExportedModule&quot;: &quot;NewSoftware.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;NewSoftware.app&quot;,
+    &quot;ExportApk.ApkPathForNewSoftware.app&quot;: &quot;F:\\Mahboob\\SoftwearUpdate_17&quot;,
+    &quot;ExportBundle.BundlePathForNewSoftware.app&quot;: &quot;F:\\Mahboob\\SoftwearUpdate_17&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;android-custom-viewC:/Users/integ/.gradle/caches/modules-2/files-2.1/com.airbnb.android/lottie/6.1.0/eca8588c02c739215d8d56157c97b49783766c97/lottie-6.1.0-sources.jar!/com/airbnb/lottie/LottieAnimationView.java_SELECTED&quot;: &quot;LottieAnimationView&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Mahboob/SoftwearUpdate_17&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "appProdRelease"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;appProdRelease&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Software-Update-master\app\src\main\res\drawable" />
@@ -326,6 +295,15 @@
       <option name="presentableId" value="Default" />
       <updated>1708853483275</updated>
     </task>
+    <task id="LOCAL-00001" summary="16/05/2024">
+      <option name="closed" value="true" />
+      <created>1715884749876</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715884749876</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -351,5 +329,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="16/05/2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="16/05/2024" />
   </component>
 </project>
