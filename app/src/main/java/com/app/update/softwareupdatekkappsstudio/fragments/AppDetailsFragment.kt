@@ -7,13 +7,13 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.viewModels
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.MyApp
@@ -24,13 +24,15 @@ import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAppDetailsBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
-import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_all_details_back
 import com.app.update.softwareupdatekkappsstudio.utils.toSizeString
 import com.bumptech.glide.Glide
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
 import com.example.adssdk.native_ad.NativeAdUtils
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -45,6 +47,34 @@ class AppDetailsFragment : Fragment() {
     }
     private val appPackageName by lazy {
         arguments?.getString("appPackageName")
+    }
+
+
+    private val uninstallLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+
+
+        CoroutineScope(Dispatchers.Main).launch {
+
+            try {// You can access the details of the uninstalled app here
+                val word = Word(
+                    word = binding?.tvAppName?.text.toString(),
+                    size = binding?.tvAppSize?.text.toString(),
+                    vcode = binding?.tvVersion?.text.toString(),
+                    pname = appPackageName.toString()
+                )
+                wordViewModel.insert(word)
+                Toast.makeText(
+                    requireContext(),
+                    "App uninstalled successfully!",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().popBackStack()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     override fun onCreateView(
@@ -168,9 +198,9 @@ class AppDetailsFragment : Fragment() {
     private fun uninstallApp(packageName: String) {
         try {
             val packageUri = Uri.parse("package:$packageName")
-            val uninstallIntent = Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri)
-            uninstallIntent.putExtra(Intent.EXTRA_RETURN_RESULT, true)
-            startActivityForResult(uninstallIntent, UNINSTALL_REQUEST_CODE)
+            val uninstallIntent = Intent(Intent.ACTION_DELETE)
+            uninstallIntent.data = packageUri
+            uninstallLauncher.launch(uninstallIntent)
         } catch (e: ClassNotFoundException) {
             e.printStackTrace()
         } catch (e: Exception) {
@@ -183,7 +213,7 @@ class AppDetailsFragment : Fragment() {
         if (requestCode == UNINSTALL_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 // Uninstallation successful
-                val word = Word(0,"reply","reply","reply","reply",)
+                val word = Word(0, "reply", "reply", "reply", "reply")
                 wordViewModel.insert(word)
                 findNavController().popBackStack()
             } else {
@@ -278,7 +308,7 @@ class AppDetailsFragment : Fragment() {
             "appDetailsNativeAdOrBanner"
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_all_details_back),
-              Constants.val_fullscreen_all_details_back,
+            Constants.val_fullscreen_all_details_back,
             fullScreenAdShow = {},
             fullScreenAdDismissed = {},
             fullScreenAdFailedToShow = {},

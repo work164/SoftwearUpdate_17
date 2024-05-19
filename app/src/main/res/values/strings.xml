@@ -57,9 +57,11 @@
 </string>
 
     <string name="by_continuing_by_term_and_policy">By continuing, you agree to \n<a href="https://unseenmessage.blogspot.com/2023/12/term-and-conditions.html">Terms of Service.</a> and <a href="https://mobiledatatransferapp.blogspot.com/2023/12/privacy-policy.html">Privacy Policy</a></string>
+    <string name="trail_premium">3 days free trail after payment will be charged from Google Play account. Subscription automatically renews unless it id cancelled at least 24 hours before the end of current period. Your account will be charged for renewal within 24 hours proir to end of the current period. You can manage and cancel your subscription at any time from the Google Play store</string>
 
     <string name="launch">Launch</string>
     <string name="subscribe">Subscribe</string>
+    <string name="start_free_trail">Start Free Trail</string>
     <string name="weekly">Weekly</string>
     <string name="monthly">Monthly</string>
     <string name="yearly">Yearly</string>
@@ -91,6 +93,12 @@
     <string name="overall_status">Overall Status</string>
     <string name="yes">Yes</string>
     <string name="restore">Restore</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="about_us">About Us</string>
+    <string name="share_app">Share App</string>
+    <string name="feedback">Feedback</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="more_app">More Apps (AD)</string>
 
 
     <string-array name="size_array">

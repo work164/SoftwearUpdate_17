@@ -89,6 +89,7 @@ class AppsUninstallFragment : Fragment(), HomeClick {
     private fun loadInstalledApps() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
+                appsList.clear()
                 val packageManager = activity?.packageManager
                 val apps = packageManager?.getInstalledApplications(PackageManager.GET_META_DATA)
                 for (app in apps ?: return@launch) {

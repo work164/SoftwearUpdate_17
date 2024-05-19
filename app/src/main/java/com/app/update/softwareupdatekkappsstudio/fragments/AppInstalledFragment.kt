@@ -8,19 +8,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.app.update.softwareupdatekkappsstudio.AppInfo
+import com.app.update.softwareupdatekkappsstudio.MyApp
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.adapter.AppsAdapter
+import com.app.update.softwareupdatekkappsstudio.adapter.UninstalledAppAdapter
+import com.app.update.softwareupdatekkappsstudio.database.WordViewModel
+import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAppInstalledBinding
-import com.app.update.softwareupdatekkappsstudio.databinding.FragmentIntroBinding
-import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
@@ -121,12 +121,12 @@ class AppInstalledFragment : Fragment(), HomeClick {
             fullScreenAdNotAvailable = {},
         )
 
-       /*
-        val intent = Intent(Intent.ACTION_VIEW)
-        intent.data = Uri.parse("market://details?id=$packegeName")
-        intent.setPackage("com.android.vending") // Explicitly set the Play Store app to handle the intent
-        startActivity(intent)
-        */
+        /*
+         val intent = Intent(Intent.ACTION_VIEW)
+         intent.data = Uri.parse("market://details?id=$packegeName")
+         intent.setPackage("com.android.vending") // Explicitly set the Play Store app to handle the intent
+         startActivity(intent)
+         */
         super.onUninstallItemClick(name, packegeName, position)
     }
     private fun loadInstalledApps(): List<AppInfo> {

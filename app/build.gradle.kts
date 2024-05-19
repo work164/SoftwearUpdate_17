@@ -32,8 +32,8 @@ android {
         applicationId = "com.app.update.softwareupdatekkappsstudio"
         minSdk = 24
         targetSdk = 34
-        versionCode = 20
-        versionName = "3.0"
+        versionCode = 23
+        versionName = "3.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -560,7 +560,6 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics-ktx")
     implementation("com.google.firebase:firebase-config-ktx")
     implementation("com.google.firebase:firebase-messaging-ktx")
-
     implementation("com.google.firebase:firebase-inappmessaging-display-ktx")
     implementation("com.google.android.play:core-ktx:1.8.1")
 
@@ -609,6 +608,9 @@ dependencies {
     implementation("org.jsoup:jsoup:1.13.1")
     implementation("com.github.TheBotBox:AppsUsageMonitorAPI:1.1")
     implementation("com.facebook.infer.annotation:infer-annotation:0.18.0")
+
+    implementation("com.squareup.picasso:picasso:2.71828")
+
 
 }
 

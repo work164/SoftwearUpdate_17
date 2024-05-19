@@ -18,6 +18,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaB
 import com.app.update.softwareupdatekkappsstudio.model.OnboardingItem
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.example.adssdk.advert.PurchasePrefs
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -37,7 +38,10 @@ class IntroFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentIntroBinding.inflate(inflater, container, false)
-
+        firebaseAnalytics(
+            "intro_on_create_view",
+            "intro_on_create_view"
+        )
 
         try {
             purchasePrefs = PurchasePrefs(requireContext())
@@ -61,12 +65,20 @@ class IntroFragment : Fragment() {
                     binding.viewPager.currentItem = binding.viewPager.currentItem + 1
                 } else {
                     showStartButton()
+                    firebaseAnalytics(
+                        "intro_click_next",
+                        "intro_click_next"
+                    )
                     Log.d("onBackPressed", "Intro:next ")
 
                 }
             }
             binding.btnSkip.setOnClickListener {
                 showStartButton()
+                firebaseAnalytics(
+                    "intro_click_skip",
+                    "intro_click_skip"
+                )
                 Log.d("onBackPressed", "Intro:skip ")
 
 
@@ -89,8 +101,16 @@ class IntroFragment : Fragment() {
                         null,
                         adFailed = {
                             binding.introNativeAdOrBanner.visibility = View.GONE
+                            firebaseAnalytics(
+                                "intro_native_failed",
+                                "intro_native_failed"
+                            )
                         },
                         adValidate = {
+                            firebaseAnalytics(
+                                "intro_native_validate",
+                                "intro_native_validate"
+                            )
                             binding.introNativeAdOrBanner.visibility = View.VISIBLE
                             BannerAdUtils(activity = requireActivity(), screenName = "Intro")
                                 .loadBanner(
@@ -120,15 +140,24 @@ class IntroFragment : Fragment() {
                     getString(R.string.val_fullscreen_intro),
                     Constants.val_fullscreen_intro,
                     adAlreadyLoaded = {
-
+                        firebaseAnalytics(
+                            "intro_interstitial_alre_loaded",
+                            "intro_interstitial_alre_loaded"
+                        )
                     },
                     adLoaded = {
-
+                        firebaseAnalytics(
+                            "intro_interstitial_loaded",
+                            "intro_interstitial_loaded"
+                        )
 
                     },
                     adFailed = {
 
-
+                        firebaseAnalytics(
+                            "intro_interstitial_failed",
+                            "intro_interstitial_failed"
+                        )
                     },
                     adValidate = {
 

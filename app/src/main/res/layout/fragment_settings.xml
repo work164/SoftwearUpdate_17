@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="@string/update_available"
+                android:text="Setting"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -78,58 +78,198 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-<!--
-        <TextView
-            android:id="@+id/title_notification"
-            android:layout_width="0dp"
-            android:layout_height="0dp"/>-->
+        <!--
+                <TextView
+                    android:id="@+id/title_notification"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>-->
 
-
-
-        <ImageView
-            android:id="@+id/ic_rate"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            app:layout_constraintDimensionRatio="1:1"
+        <LinearLayout
+            android:id="@+id/llRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ic_share"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ic_rate" />
+            <ImageView
+                android:id="@+id/ic_rate"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/rateus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
 
-        <ImageView
-            android:id="@+id/ic_feedback"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ic_share" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:fontFamily="@font/medium"
+                android:gravity="start|center_vertical"
+                android:singleLine="true"
+                android:text="@string/rate_us"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
 
-        <ImageView
-            android:id="@+id/ic_privacy"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ic_feedback" />
 
-        <ImageView
-            android:id="@+id/ic_more_apps"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            app:layout_constraintDimensionRatio="1:1"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ic_privacy" />
+            app:layout_constraintTop_toBottomOf="@id/llRate">
+
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/aboutus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:fontFamily="@font/medium"
+                android:gravity="start|center_vertical"
+                android:singleLine="true"
+                android:text="@string/about_us"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFeedBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llAboutUs">
+
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/feedback"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:fontFamily="@font/medium"
+                android:gravity="start|center_vertical"
+                android:singleLine="true"
+                android:text="@string/feedback"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llShareApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llFeedBack">
+
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/shareapp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:fontFamily="@font/medium"
+                android:gravity="start|center_vertical"
+                android:singleLine="true"
+                android:text="@string/share_app"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPrivacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llShareApp">
+
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/privacypolicy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:fontFamily="@font/medium"
+                android:gravity="start|center_vertical"
+                android:singleLine="true"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMoreApps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llPrivacyPolicy">
+
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/moreapps"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:fontFamily="@font/medium"
+                android:gravity="start|center_vertical"
+                android:singleLine="true"
+                android:text="@string/more_app"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

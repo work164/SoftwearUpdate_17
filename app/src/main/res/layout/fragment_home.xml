@@ -46,7 +46,6 @@
                     android:layout_height="match_parent"
                     android:contentDescription="@string/app_name"
                     android:padding="@dimen/_12sdp"
-                    android:visibility="invisible"
                     android:src="@drawable/ic_home_setting"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"

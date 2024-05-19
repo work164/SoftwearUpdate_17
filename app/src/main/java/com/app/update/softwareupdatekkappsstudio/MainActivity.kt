@@ -1,32 +1,23 @@
 package com.app.update.softwareupdatekkappsstudio
 
-import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
-import android.provider.Settings
-import android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModel
 import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.fragments.DatePickerFragment
-import com.app.update.softwareupdatekkappsstudio.fragments.ExitDialogFragment
 import com.app.update.softwareupdatekkappsstudio.fragments.TimePickerFragment
 import com.app.update.softwareupdatekkappsstudio.listeners.OnDateSet
 import com.app.update.softwareupdatekkappsstudio.listeners.OnTimeSet
-import java.util.*
+import com.example.adssdk.advert.InAppUpdateManager
+import com.google.android.play.core.install.model.AppUpdateType
+import java.util.Calendar
 
 
 class MainActivity : AppCompatActivity() {
@@ -53,6 +44,12 @@ class MainActivity : AppCompatActivity() {
     private val wordViewModel: WordViewModel by viewModels {
         WordViewModelFactory((application as MyApp).repository)
     }
+    val inAppUpdateManager by lazy {
+        InAppUpdateManager(
+            this,
+            AppUpdateType.FLEXIBLE
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +75,8 @@ class MainActivity : AppCompatActivity() {
 //            Log.d("working", "  $words")
 //
 //        }
+
+        inAppUpdateManager.checkUpdate()
 
 
     }
@@ -192,6 +191,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    override fun onDestroy() {
+        super.onDestroy()
+        inAppUpdateManager.unregisterAppUpdate()
+    }
 }
 
 

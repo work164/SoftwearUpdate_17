@@ -7,8 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.update.softwareupdatekkappsstudio.databinding.ItemHomeBinding
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.model.HomeViewModel
+import com.example.adssdk.advert.firebaseAnalytics
 
-class HomeAdapter(val context: Context, private var mList:ArrayList<HomeViewModel>,val homeClick: HomeClick) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(
+    val context: Context,
+    private var mList: ArrayList<HomeViewModel>,
+    val homeClick: HomeClick
+) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,7 +33,11 @@ class HomeAdapter(val context: Context, private var mList:ArrayList<HomeViewMode
             homeText1.text = homeModel.featureName
             itemCount.text = homeModel.text
             holder.itemView.setOnClickListener {
-                homeClick.onItemClick(homeModel.featureName,homeModel.position)
+                firebaseAnalytics(
+                    "home_click_${homeModel.featureName}",
+                    "home_click_${homeModel.featureName}"
+                )
+                homeClick.onItemClick(homeModel.featureName, homeModel.position)
             }
 
 
