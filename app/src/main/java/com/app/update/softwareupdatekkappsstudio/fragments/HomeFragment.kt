@@ -40,6 +40,10 @@ class HomeFragment : Fragment(), HomeClick {
         requireActivity().onBackPressedDispatcher.addCallback(
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
+                    firebaseAnalytics(
+                        "home_press_back",
+                        "home_press_back"
+                    )
                     exitDialogFragment?.show(childFragmentManager, exitDialogFragment?.tag)
                 }
             }
@@ -124,8 +128,13 @@ class HomeFragment : Fragment(), HomeClick {
 
     override fun onItemClick(name: String, position: Int) {
         Log.i("TAGHome", "onItemClick: $name position $position")
+        firebaseAnalytics(
+            "home_click_position_$position",
+            "home_click_position_$position"
+        )
         when (position) {
             0 -> {
+
                 findNavController().navigate(R.id.action_homeFragment_to_scanFragment)
                 showAd(Constants.val_fullscreen_main_menu_scan_apps)
             }

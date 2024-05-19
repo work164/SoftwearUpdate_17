@@ -18,6 +18,7 @@ import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentBatteryInfoBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -206,11 +207,17 @@ class BatteryInfoFragment : Fragment() {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "battery_info_interstitial_loaded",
+                        "battery_info_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "battery_info_interstitial_failed",
+                        "battery_info_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -227,9 +234,24 @@ class BatteryInfoFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_battery_details_back),
             Constants.val_fullscreen_battery_details_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "battery_info_interstitial_failed",
+                    "battery_info_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "battery_info_interstitial_dismissed",
+                    "battery_info_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "battery_info_interstitial_failed_to_show",
+                    "battery_info_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

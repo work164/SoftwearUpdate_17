@@ -91,22 +91,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c81f2605-03d1-47d4-b3c1-205d91867e16" name="Changes" comment="16/05/2024">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_splash_lottie.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appProd/release/app-appProd-release.aab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="c81f2605-03d1-47d4-b3c1-205d91867e16" name="Changes" comment="19/05/2024">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordRoomDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/database/WordRoomDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appProd/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/appProd/release/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AndroidUpdateFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AndroidUpdateFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AndroidVersionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AndroidVersionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppDetailsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppInstalledFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppInstalledFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppUsageFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppUsageFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppsUninstallFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/AppsUninstallFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/BatteryInfoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/BatteryInfoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/DeviceInfoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/DeviceInfoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/LanguageFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/LanguageFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/RestoreAppsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/RestoreAppsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/ScanAppFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/ScanAppFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/SensorInfoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/SensorInfoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/SystemAppFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/SystemAppFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/UpdateAvailableFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/update/softwareupdatekkappsstudio/fragments/UpdateAvailableFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715884749876</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="19/05/2024">
+      <option name="closed" value="true" />
+      <created>1716117054574</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716117054574</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -330,6 +339,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="16/05/2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="16/05/2024" />
+    <MESSAGE value="19/05/2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="19/05/2024" />
   </component>
 </project>

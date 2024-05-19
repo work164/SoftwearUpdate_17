@@ -17,6 +17,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaB
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.app.update.softwareupdatekkappsstudio.utils.navigateFragment
 import com.app.update.softwareupdatekkappsstudio.view_model.ViewModelclass
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -58,9 +59,24 @@ class UpdateAvailableFragment : Fragment() {
             ).showInterstitialAd(
                 getString(R.string.val_fullscreen_update_app_details),
                 Constants.val_fullscreen_update_app_details,
-                fullScreenAdShow = {},
-                fullScreenAdDismissed = {},
-                fullScreenAdFailedToShow = {},
+                fullScreenAdShow = {
+                    firebaseAnalytics(
+                        "update_available_interstitial_failed",
+                        "update_available_interstitial_failed"
+                    )
+                },
+                fullScreenAdDismissed = {
+                    firebaseAnalytics(
+                        "update_available_interstitial_dismissed",
+                        "update_available_interstitial_dismissed"
+                    )
+                },
+                fullScreenAdFailedToShow = {
+                    firebaseAnalytics(
+                        "update_available_interstitial_failed_to_show",
+                        "update_available_interstitial_failed_to_show"
+                    )
+                },
                 fullScreenAdNotAvailable = {},
             )
         })
@@ -178,11 +194,17 @@ class UpdateAvailableFragment : Fragment() {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "update_available_interstitial_loaded",
+                        "update_available_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "update_available_interstitial_failed",
+                        "update_available_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},

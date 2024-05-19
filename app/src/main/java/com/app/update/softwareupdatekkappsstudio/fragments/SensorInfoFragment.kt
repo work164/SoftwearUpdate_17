@@ -12,6 +12,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.FragmentSensorInfoB
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -109,11 +110,17 @@ class SensorInfoFragment : Fragment() {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "sensor_info_interstitial_loaded",
+                        "sensor_info_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "sensor_info_interstitial_failed",
+                        "sensor_info_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -130,9 +137,24 @@ class SensorInfoFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_device_sensor_back),
             Constants.val_fullscreen_mobile_sensor_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "sensor_info_interstitial_failed",
+                    "sensor_info_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "sensor_info_interstitial_dismissed",
+                    "sensor_info_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "sensor_info_interstitial_failed_to_show",
+                    "sensor_info_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

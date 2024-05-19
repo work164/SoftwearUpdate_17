@@ -27,6 +27,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaB
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.model.SystemModel
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -197,11 +198,17 @@ class SystemAppFragment : Fragment(), HomeClick {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "system_app_interstitial_loaded",
+                        "system_app_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "system_app_interstitial_failed",
+                        "system_app_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -218,9 +225,24 @@ class SystemAppFragment : Fragment(), HomeClick {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_system_app_details),
             Constants.val_fullscreen_system_app_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "system_app_interstitial_failed",
+                    "system_app_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "system_app_interstitial_dismissed",
+                    "system_app_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "system_app_interstitial_failed_to_show",
+                    "system_app_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

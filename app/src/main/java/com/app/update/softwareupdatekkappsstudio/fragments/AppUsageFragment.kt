@@ -25,6 +25,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBind
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.app.update.softwareupdatekkappsstudio.utils.navigateFragment
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -50,9 +51,24 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
             ).showInterstitialAd(
                 getString(R.string.val_fullscreen_app_usage_details),
                 Constants.val_fullscreen_app_usage_details,
-                fullScreenAdShow = {},
-                fullScreenAdDismissed = {},
-                fullScreenAdFailedToShow = {},
+                fullScreenAdShow = {
+                    firebaseAnalytics(
+                        "app_usage_interstitial_failed",
+                        "app_usage_interstitial_failed"
+                    )
+                },
+                fullScreenAdDismissed = {
+                    firebaseAnalytics(
+                        "app_usage_interstitial_dismissed",
+                        "app_usage_interstitial_dismissed"
+                    )
+                },
+                fullScreenAdFailedToShow = {
+                    firebaseAnalytics(
+                        "app_usage_interstitial_failed_to_show",
+                        "app_usage_interstitial_failed_to_show"
+                    )
+                },
                 fullScreenAdNotAvailable = {},
             )
         })
@@ -286,11 +302,17 @@ class AppUsageFragment : Fragment(), UsageContracts.View {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "app_usage_interstitial_loaded",
+                        "app_usage_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "app_usage_interstitial_failed",
+                        "app_usage_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},

@@ -12,8 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAndroidUpdateBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
-import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -34,6 +34,10 @@ class AndroidUpdateFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
+                    firebaseAnalytics(
+                        "android_update_press_back",
+                        "android_update_press_back"
+                    )
                     findNavController().popBackStack()
                     showAd()
 
@@ -41,10 +45,18 @@ class AndroidUpdateFragment : Fragment() {
             })
 
         binding.backDevice.setOnClickListener {
+            firebaseAnalytics(
+                "android_update_ui_click_back",
+                "android_update_ui_click_back"
+            )
             findNavController().popBackStack()
             showAd()
         }
         binding.btnInAppForwardDevice.setOnClickListener {
+            firebaseAnalytics(
+                "android_update_click_pro",
+                "android_update_click_pro"
+            )
             findNavController().navigate(R.id.action_androidUpdateFragment_to_appProFragment)
         }
 
@@ -54,6 +66,10 @@ class AndroidUpdateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnOSNext.setOnClickListener {
+            firebaseAnalytics(
+                "android_update_click_system_update",
+                "android_update_click_system_update"
+            )
             try {
                 openSystemUpdateSettings()
 
@@ -99,7 +115,17 @@ class AndroidUpdateFragment : Fragment() {
                     bindAdSystemUpdate.adMedia,
                     null,
                     adFailed = {
+                        firebaseAnalytics(
+                            "android_update_native_failed",
+                            "android_update_native_failed"
+                        )
                         binding.updateNativeAdOrBanner.visibility = View.GONE
+                    },
+                    adLoaded = {
+                        firebaseAnalytics(
+                            "android_update_native_loaded",
+                            "android_update_native_loaded"
+                        )
                     },
                     adValidate = {
                         binding.updateNativeAdOrBanner.visibility = View.VISIBLE
@@ -110,10 +136,19 @@ class AndroidUpdateFragment : Fragment() {
                                 adsView = binding.updateNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
+                                    firebaseAnalytics(
+                                        "android_update_banner_failed",
+                                        "android_update_banner_failed"
+                                    )
                                     binding.updateNativeAdOrBanner.visibility = View.GONE
                                 }, // if ad failed to load you will receive this callback
                                 onAdImpression = {}, // if ad impression will receive this callback
-                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdLoaded = {
+                                    firebaseAnalytics(
+                                        "android_update_banner_loaded",
+                                        "android_update_banner_loaded"
+                                    )
+                                }, // if ad loaded you will receive this callback
                                 onAdOpened = {}, // if ad opened you will receive this callback
                                 onAdValidate = {
                                     binding.updateNativeAdOrBanner.visibility = View.GONE
@@ -135,10 +170,16 @@ class AndroidUpdateFragment : Fragment() {
                 },
                 adLoaded = {
 
-
+                    firebaseAnalytics(
+                        "android_update_interstitial_loaded",
+                        "android_update_interstitial_loaded"
+                    )
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "android_update_interstitial_failed",
+                        "android_update_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -155,9 +196,15 @@ class AndroidUpdateFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_system_update_details),
             Constants.val_fullscreen_system_update_back,
-            fullScreenAdShow = {},
+            fullScreenAdShow = { firebaseAnalytics(
+                "android_update_interstitial_show",
+                "android_update_interstitial_show"
+            )},
             fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdFailedToShow = {firebaseAnalytics(
+                "android_update_interstitial_failed_to_show",
+                "android_update_interstitial_failed_to_show"
+            )},
             fullScreenAdNotAvailable = {},
         )
     }
