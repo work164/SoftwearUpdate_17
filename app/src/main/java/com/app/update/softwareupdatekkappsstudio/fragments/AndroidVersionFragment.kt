@@ -1,17 +1,17 @@
 package com.app.update.softwareupdatekkappsstudio.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.app.update.softwareupdatekkappsstudio.R
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentAndroidVersionBinding
-import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -29,6 +29,10 @@ class AndroidVersionFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
+                    firebaseAnalytics(
+                        "android_version_press_back",
+                        "android_version_press_back"
+                    )
                     findNavController().popBackStack()
                     showAd()
 
@@ -38,10 +42,18 @@ class AndroidVersionFragment : Fragment() {
         binding = FragmentAndroidVersionBinding.inflate(inflater, container, false)
 
         binding.backDevice.setOnClickListener {
+            firebaseAnalytics(
+                "android_version_ui_click_back",
+                "android_version_ui_click_back"
+            )
             findNavController().popBackStack()
             showAd()
         }
         binding.btnInAppForwardDevice.setOnClickListener {
+            firebaseAnalytics(
+                "android_version_click_pro",
+                "android_version_click_pro"
+            )
             findNavController().navigate(R.id.action_androidVersionFragment_to_appProFragment)
         }
 
@@ -70,6 +82,10 @@ class AndroidVersionFragment : Fragment() {
                     null,
                     null,
                     adFailed = {
+                        firebaseAnalytics(
+                            "android_version_native_failed",
+                            "android_version_native_failed"
+                        )
                         binding.androidVersionsNativeAdOrBanner.visibility = View.GONE
                     },
                     adValidate = {
@@ -84,10 +100,19 @@ class AndroidVersionFragment : Fragment() {
                                 adsView = binding.androidVersionsNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
+                                    firebaseAnalytics(
+                                        "android_version_banner_failed",
+                                        "android_version_banner_failed"
+                                    )
                                     binding.androidVersionsNativeAdOrBanner.visibility = View.GONE
                                 }, // if ad failed to load you will receive this callback
                                 onAdImpression = {}, // if ad impression will receive this callback
-                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdLoaded = {
+                                    firebaseAnalytics(
+                                        "android_version_banner_loaded",
+                                        "android_version_banner_loaded"
+                                    )
+                                }, // if ad loaded you will receive this callback
                                 onAdOpened = {}, // if ad opened you will receive this callback
                                 onAdValidate = {
                                     binding.androidVersionsNativeAdOrBanner.visibility = View.GONE
@@ -96,6 +121,12 @@ class AndroidVersionFragment : Fragment() {
                     },
                     adClicked = {
 
+                    },
+                    adLoaded = {
+                        firebaseAnalytics(
+                            "android_version_native_loaded",
+                            "android_version_native_loaded"
+                        )
                     },
                     adImpression = {
 
@@ -111,11 +142,17 @@ class AndroidVersionFragment : Fragment() {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "android_version_interstitial_loaded",
+                        "android_version_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "android_version_interstitial_failed",
+                        "android_version_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -132,9 +169,24 @@ class AndroidVersionFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_android_details_back),
             Constants.val_fullscreen_android_details_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "android_version_interstitial_show",
+                    "android_version_interstitial_show"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "android_version_interstitial_dismiss",
+                    "android_version_interstitial_dismiss"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "android_version_interstitial_failed_to_show",
+                    "android_version_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

@@ -19,6 +19,7 @@ import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_banner_lang
 import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_fullscreen_language_from_app
 import com.app.update.softwareupdatekkappsstudio.utils.Constants.val_native_language
 import com.app.update.softwareupdatekkappsstudio.utils.setLocale
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -125,11 +126,17 @@ class LanguageFragment : Fragment() {
 
                         },
                         adLoaded = {
-
+                            firebaseAnalytics(
+                                "language_interstitial_loaded",
+                                "language_interstitial_loaded"
+                            )
 
                         },
                         adFailed = {
-
+                            firebaseAnalytics(
+                                "language_interstitial_failed",
+                                "language_interstitial_failed"
+                            )
 
                         },
                         adValidate = {},
@@ -168,9 +175,24 @@ class LanguageFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_language_from_app),
             Constants.val_fullscreen_language_from_app,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "language_interstitial_failed",
+                    "language_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "language_interstitial_dismissed",
+                    "language_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "language_interstitial_failed_to_show",
+                    "language_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

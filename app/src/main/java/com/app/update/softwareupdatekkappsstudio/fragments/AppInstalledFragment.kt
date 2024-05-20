@@ -61,6 +61,10 @@ class AppInstalledFragment : Fragment(), HomeClick {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
+                    firebaseAnalytics(
+                        "app_installed_press_back",
+                        "app_installed_press_back"
+                    )
                     findNavController().popBackStack()
                     showAd()
 
@@ -68,10 +72,18 @@ class AppInstalledFragment : Fragment(), HomeClick {
             })
 
         binding.backDevice.setOnClickListener {
+            firebaseAnalytics(
+                "app_installed_click_ui_back",
+                "app_installed_click_ui_back"
+            )
             findNavController().popBackStack()
             showAd()
         }
         binding.btnInAppForwardDevice.setOnClickListener {
+            firebaseAnalytics(
+                "app_installed_click_pro",
+                "app_installed_click_pro"
+            )
             findNavController().navigate(R.id.action_appCounterFragment_to_appProFragment)
         }
         appsAdapter = AppsAdapter(this,appsList, requireActivity())
@@ -104,6 +116,10 @@ class AppInstalledFragment : Fragment(), HomeClick {
     }
 
     override fun onUninstallItemClick(name: String, packegeName: String, position: Int) {
+        firebaseAnalytics(
+            "app_installed_click_item",
+            "app_installed_click_item"
+        )
         findNavController().navigate(R.id.action_appCounterFragment_to_appDetailFragment, Bundle().apply {
             putString("appPackageName", packegeName)
         })
@@ -115,9 +131,24 @@ class AppInstalledFragment : Fragment(), HomeClick {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_install_app_details),
             Constants.val_fullscreen_install_app_details,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "app_installed_interstitial_failed",
+                    "app_installed_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "app_installed_interstitial_dismissed",
+                    "app_installed_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "app_installed_interstitial_failed_to_show",
+                    "app_installed_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
 
@@ -185,6 +216,10 @@ class AppInstalledFragment : Fragment(), HomeClick {
                     null,
                     null,
                     adFailed = {
+                        firebaseAnalytics(
+                            "app_installed_native_failed",
+                            "app_installed_native_failed"
+                        )
                         binding.installAppsNativeAdOrBanner.visibility = View.GONE
                     },
                     adValidate = {
@@ -195,11 +230,17 @@ class AppInstalledFragment : Fragment(), HomeClick {
                                 remoteConfig = Constants.val_banner_install, // give remote config here
                                 adsView = binding.installAppsNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
-                                onAdFailedToLoad = {
+                                onAdFailedToLoad = {firebaseAnalytics(
+                                    "app_installed_banner_failed",
+                                    "app_installed_banner_failed"
+                                )
                                     binding.installAppsNativeAdOrBanner.visibility = View.GONE
                                 }, // if ad failed to load you will receive this callback
                                 onAdImpression = {}, // if ad impression will receive this callback
-                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdLoaded = {firebaseAnalytics(
+                                    "app_installed_banner_loaded",
+                                    "app_installed_banner_loaded"
+                                )}, // if ad loaded you will receive this callback
                                 onAdOpened = {}, // if ad opened you will receive this callback
                                 onAdValidate = {
                                     binding.installAppsNativeAdOrBanner.visibility = View.GONE
@@ -208,6 +249,12 @@ class AppInstalledFragment : Fragment(), HomeClick {
                     },
                     adClicked = {
 
+                    },
+                    adLoaded = {
+                        firebaseAnalytics(
+                            "app_installed_native_loaded",
+                            "app_installed_native_loaded"
+                        )
                     },
                     adImpression = {
 
@@ -220,11 +267,17 @@ class AppInstalledFragment : Fragment(), HomeClick {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "app_installed_interstitial_loaded",
+                        "app_installed_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "app_installed_interstitial_failed",
+                        "app_installed_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -241,9 +294,24 @@ class AppInstalledFragment : Fragment(), HomeClick {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_install_app_details),
             Constants.val_fullscreen_install_app_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "app_installed_interstitial_failed",
+                    "app_installed_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "app_installed_interstitial_dismissed",
+                    "app_installed_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "app_installed_interstitial_failed_to_show",
+                    "app_installed_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

@@ -15,6 +15,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBind
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.info.PhoneDetail
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -138,11 +139,17 @@ class DeviceInfoFragment : Fragment() {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "device_info_interstitial_loaded",
+                        "device_info_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "device_info_interstitial_failed",
+                        "device_info_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -159,9 +166,24 @@ class DeviceInfoFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_device_details_back),
             Constants.val_fullscreen_device_details_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "device_info_interstitial_failed",
+                    "device_info_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "device_info_interstitial_dismissed",
+                    "device_info_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "device_info_interstitial_failed_to_show",
+                    "device_info_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

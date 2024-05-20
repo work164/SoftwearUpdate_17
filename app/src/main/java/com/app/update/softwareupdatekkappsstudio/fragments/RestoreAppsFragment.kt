@@ -21,6 +21,7 @@ import com.app.update.softwareupdatekkappsstudio.database.WordViewModelFactory
 import com.app.update.softwareupdatekkappsstudio.databinding.FragmentRestoreAppsBinding
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -89,7 +90,7 @@ class RestoreAppsFragment : Fragment() {
             if (words.isNotEmpty()) {
                 binding.tvEmpty.visibility = View.INVISIBLE
                 appsAdapter = UninstalledAppAdapter(onItemClick = {
-openUrl(requireContext(),"https://play.google.com/store/apps/details?id=$it")
+                    openUrl(requireContext(), "https://play.google.com/store/apps/details?id=$it")
                 }, words, requireContext())
                 binding.appsRecyclerView.layoutManager = LinearLayoutManager(activity)
 
@@ -101,6 +102,7 @@ openUrl(requireContext(),"https://play.google.com/store/apps/details?id=$it")
         }
 
     }
+
     fun openUrl(context: Context, url: String) {
         try {
             val shareIntent = Intent(Intent.ACTION_VIEW)
@@ -174,11 +176,17 @@ openUrl(requireContext(),"https://play.google.com/store/apps/details?id=$it")
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "restore_app_interstitial_loaded",
+                        "restore_app_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "restore_app_interstitial_failed",
+                        "restore_app_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -195,9 +203,24 @@ openUrl(requireContext(),"https://play.google.com/store/apps/details?id=$it")
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_app_restore_details),
             Constants.val_fullscreen_app_restore_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "restore_app_interstitial_failed",
+                    "restore_app_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "restore_app_interstitial_dismissed",
+                    "restore_app_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "restore_app_interstitial_failed_to_show",
+                    "restore_app_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

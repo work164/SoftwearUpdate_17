@@ -26,6 +26,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBind
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.app.update.softwareupdatekkappsstudio.utils.toSizeString
 import com.bumptech.glide.Glide
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -89,15 +90,25 @@ class AppDetailsFragment : Fragment() {
                 override fun handleOnBackPressed() {
                     findNavController().popBackStack()
                     showAd()
-
+                    firebaseAnalytics(
+                        "app_detail_press_back",
+                        "app_detail_press_back"
+                    )
                 }
             })
 
         binding?.backDevice?.setOnClickListener {
+            firebaseAnalytics(
+                "app_detail_click_ui_back",
+                "app_detail_click_ui_back"
+            )
             findNavController().popBackStack()
             showAd()
         }
-        binding?.btnInAppForwardDevice?.setOnClickListener {
+        binding?.btnInAppForwardDevice?.setOnClickListener {firebaseAnalytics(
+            "app_detail_click_pro",
+            "app_detail_click_pro"
+        )
             findNavController().navigate(R.id.action_appDetailFragment_to_appProFragment)
         }
         getAppDetailsByPackageName(appPackageName ?: "", requireContext().packageManager)
@@ -112,6 +123,10 @@ class AppDetailsFragment : Fragment() {
 
         binding?.run {
             ifvAppDetailLaunch.setOnClickListener {
+                firebaseAnalytics(
+                "app_detail_click_launch",
+                "app_detail_click_launch"
+            )
                 launchApp(
                     appPackageName ?: return@setOnClickListener,
                     requireContext().packageManager,
@@ -119,13 +134,25 @@ class AppDetailsFragment : Fragment() {
                 )
             }
             ifvAppDetailShare.setOnClickListener {
+                firebaseAnalytics(
+                "app_detail_click_share_app",
+                "app_detail_click_share_app"
+            )
                 shareAppDetails(requireContext(), appPackageName ?: return@setOnClickListener)
 
             }
             ifvAppDetailUninstall.setOnClickListener {
+                firebaseAnalytics(
+                "app_detail_click_uninstall",
+                "app_detail_click_uninstall"
+            )
                 uninstallApp(appPackageName ?: return@setOnClickListener)
             }
             tvViewOnPlayStore.setOnClickListener {
+                firebaseAnalytics(
+                "app_detail_click_view_on_play_store",
+                "app_detail_click_view_on_play_store"
+            )
                 openPlayStore(requireContext(), appPackageName ?: return@setOnClickListener)
             }
         }
@@ -249,6 +276,10 @@ class AppDetailsFragment : Fragment() {
                     bindAdSystemUpdate.adMedia,
                     null,
                     adFailed = {
+                        firebaseAnalytics(
+                            "app_detail_native_failed",
+                            "app_detail_native_failed"
+                        )
                         binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE
                     },
                     adValidate = {
@@ -264,10 +295,17 @@ class AppDetailsFragment : Fragment() {
                                     ?: return@loadNativeAd, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
                                 onAdFailedToLoad = {
+                                    firebaseAnalytics(
+                                        "app_detail_banner_failed",
+                                        "app_detail_banner_failed"
+                                    )
                                     binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE
                                 }, // if ad failed to load you will receive this callback
                                 onAdImpression = {}, // if ad impression will receive this callback
-                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdLoaded = {firebaseAnalytics(
+                                    "app_detail_banner_loaded",
+                                    "app_detail_banner_loaded"
+                                )}, // if ad loaded you will receive this callback
                                 onAdOpened = {}, // if ad opened you will receive this callback
                                 onAdValidate = {
                                     binding?.appDetailsNativeAdOrBanner?.visibility = View.GONE
@@ -276,6 +314,12 @@ class AppDetailsFragment : Fragment() {
                     },
                     adClicked = {
 
+                    },
+                    adLoaded = {
+                        firebaseAnalytics(
+                            "app_detail_native_loaded",
+                            "app_detail_native_loaded"
+                        )
                     },
                     adImpression = {
 
@@ -288,11 +332,17 @@ class AppDetailsFragment : Fragment() {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "app_detail_interstitial_loaded",
+                        "app_detail_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "app_detail_interstitial_failed",
+                        "app_detail_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -309,9 +359,20 @@ class AppDetailsFragment : Fragment() {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_all_details_back),
             Constants.val_fullscreen_all_details_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "app_detail_interstitial_show",
+                    "app_detail_interstitial_show"
+                )
+            },
+            fullScreenAdDismissed = {firebaseAnalytics(
+                "app_detail_interstitial_dismissed",
+                "app_detail_interstitial_dismissed"
+            )},
+            fullScreenAdFailedToShow = {firebaseAnalytics(
+                "app_detail_interstitial_failed_to_show",
+                "app_detail_interstitial_failed_to_show"
+            )},
             fullScreenAdNotAvailable = {},
         )
     }

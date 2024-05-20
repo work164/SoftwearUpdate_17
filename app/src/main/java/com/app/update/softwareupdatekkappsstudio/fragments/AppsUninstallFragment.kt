@@ -27,6 +27,7 @@ import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithMediaBind
 import com.app.update.softwareupdatekkappsstudio.databinding.NativeWithOutMediaBinding
 import com.app.update.softwareupdatekkappsstudio.listeners.HomeClick
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -52,6 +53,10 @@ class AppsUninstallFragment : Fragment(), HomeClick {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
+                    firebaseAnalytics(
+                        "app_un_install_press_back",
+                        "app_un_install_press_back"
+                    )
                     findNavController().popBackStack()
                     showAd()
 
@@ -62,10 +67,18 @@ class AppsUninstallFragment : Fragment(), HomeClick {
         binding = FragmentAppsUninstallBinding.inflate(inflater, container, false)
 
         binding.backDevice.setOnClickListener {
+            firebaseAnalytics(
+                "app_un_install_click_back",
+                "app_un_install_click_back"
+            )
             findNavController().popBackStack()
             showAd()
         }
         binding.btnInAppForwardDevice.setOnClickListener {
+            firebaseAnalytics(
+                "app_un_install_click_pro",
+                "app_un_install_click_pro"
+            )
             findNavController().navigate(R.id.action_appUninstallFragment_to_appProFragment)
         }
         loadAds()
@@ -148,7 +161,10 @@ class AppsUninstallFragment : Fragment(), HomeClick {
 
 
     override fun onUninstallItemClick(name: String, packegeName: String, position: Int) {
-
+        firebaseAnalytics(
+            "app_un_install_click_item",
+            "app_un_install_click_item"
+        )
         findNavController().navigate(
             R.id.action_appUninstallFragment_to_appDetailFragment,
             Bundle().apply {
@@ -160,9 +176,24 @@ class AppsUninstallFragment : Fragment(), HomeClick {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_uninstall_app_details),
             Constants.val_fullscreen_uninstall_app_details,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "app_uninstall_interstitial_failed",
+                    "app_uninstall_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "app_uninstall_interstitial_dismissed",
+                    "app_uninstall_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "app_uninstall_interstitial_failed_to_show",
+                    "app_uninstall_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
 
@@ -206,6 +237,10 @@ class AppsUninstallFragment : Fragment(), HomeClick {
                     null,
                     null,
                     adFailed = {
+                        firebaseAnalytics(
+                            "app_un_install_native_failed",
+                            "app_un_install_native_failed"
+                        )
                         binding.uninstallNativeAdOrBanner.visibility = View.GONE
                     },
                     adValidate = {
@@ -216,11 +251,17 @@ class AppsUninstallFragment : Fragment(), HomeClick {
                                 remoteConfig = Constants.val_banner_uninstall, // give remote config here
                                 adsView = binding.uninstallNativeAdOrBanner, //give your frameLayout here
                                 onAdClicked = {}, //if ad clicked you will receive this callback
-                                onAdFailedToLoad = {
+                                onAdFailedToLoad = {firebaseAnalytics(
+                                    "app_un_install_banner_failed",
+                                    "app_un_install_banner_failed"
+                                )
                                     binding.uninstallNativeAdOrBanner.visibility = View.GONE
                                 }, // if ad failed to load you will receive this callback
                                 onAdImpression = {}, // if ad impression will receive this callback
-                                onAdLoaded = {}, // if ad loaded you will receive this callback
+                                onAdLoaded = {firebaseAnalytics(
+                                    "app_un_install_banner_loaded",
+                                    "app_un_install_banner_loaded"
+                                )}, // if ad loaded you will receive this callback
                                 onAdOpened = {}, // if ad opened you will receive this callback
                                 onAdValidate = {
                                     binding.uninstallNativeAdOrBanner.visibility = View.GONE
@@ -229,6 +270,12 @@ class AppsUninstallFragment : Fragment(), HomeClick {
                     },
                     adClicked = {
 
+                    },
+                    adLoaded = {
+                        firebaseAnalytics(
+                            "app_un_install_native_loaded",
+                            "app_un_install_native_loaded"
+                        )
                     },
                     adImpression = {
 
@@ -241,11 +288,17 @@ class AppsUninstallFragment : Fragment(), HomeClick {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "app_uninstall_interstitial_loaded",
+                        "app_uninstall_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "app_uninstall_interstitial_failed",
+                        "app_uninstall_interstitial_failed"
+                    )
 
                 },
                 adValidate = {},
@@ -262,9 +315,24 @@ class AppsUninstallFragment : Fragment(), HomeClick {
         ).showInterstitialAd(
             getString(R.string.val_fullscreen_uninstall_app_details),
             Constants.val_fullscreen_uninstall_app_back,
-            fullScreenAdShow = {},
-            fullScreenAdDismissed = {},
-            fullScreenAdFailedToShow = {},
+            fullScreenAdShow = {
+                firebaseAnalytics(
+                    "app_uninstall_interstitial_failed",
+                    "app_uninstall_interstitial_failed"
+                )
+            },
+            fullScreenAdDismissed = {
+                firebaseAnalytics(
+                    "app_uninstall_interstitial_dismissed",
+                    "app_uninstall_interstitial_dismissed"
+                )
+            },
+            fullScreenAdFailedToShow = {
+                firebaseAnalytics(
+                    "app_uninstall_interstitial_failed_to_show",
+                    "app_uninstall_interstitial_failed_to_show"
+                )
+            },
             fullScreenAdNotAvailable = {},
         )
     }

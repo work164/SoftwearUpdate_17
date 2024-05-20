@@ -29,6 +29,7 @@ import com.app.update.softwareupdatekkappsstudio.model.AppModel
 import com.app.update.softwareupdatekkappsstudio.utils.Constants
 import com.app.update.softwareupdatekkappsstudio.view_model.ViewModelclass
 import com.bumptech.glide.Glide
+import com.example.adssdk.advert.firebaseAnalytics
 import com.example.adssdk.banner_ads.BannerAdUtils
 import com.example.adssdk.constants.AppUtils
 import com.example.adssdk.intertesialAds.InterstitialAdUtils
@@ -300,9 +301,24 @@ class ScanAppFragment : Fragment() {
                         ).showInterstitialAd(
                             getString(R.string.val_fullscreen_scan_app_details),
                             Constants.val_fullscreen_scan_app_details,
-                            fullScreenAdShow = {},
-                            fullScreenAdDismissed = {},
-                            fullScreenAdFailedToShow = {},
+                            fullScreenAdShow = {
+                                firebaseAnalytics(
+                                    "scan_app_interstitial_failed",
+                                    "scan_app_interstitial_failed"
+                                )
+                            },
+                            fullScreenAdDismissed = {
+                                firebaseAnalytics(
+                                    "scan_app_interstitial_dismissed",
+                                    "scan_app_interstitial_dismissed"
+                                )
+                            },
+                            fullScreenAdFailedToShow = {
+                                firebaseAnalytics(
+                                    "scan_app_interstitial_failed_to_show",
+                                    "scan_app_interstitial_failed_to_show"
+                                )
+                            },
                             fullScreenAdNotAvailable = {},
                         )
                     }
@@ -491,11 +507,17 @@ class ScanAppFragment : Fragment() {
 
                 },
                 adLoaded = {
-
+                    firebaseAnalytics(
+                        "scan_app_interstitial_loaded",
+                        "scan_app_interstitial_loaded"
+                    )
 
                 },
                 adFailed = {
-
+                    firebaseAnalytics(
+                        "scan_app_interstitial_failed",
+                        "scan_app_interstitial_failed"
+                    )
 
                 },
                 adValidate = {
