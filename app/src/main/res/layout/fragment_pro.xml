@@ -13,7 +13,7 @@
         android:contentDescription="@string/ad"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHeight_percent="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +65,7 @@
         android:textColor="@color/black"
         android:textSize="22.5sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/image"
+        app:layout_constraintBottom_toTopOf="@id/scrollGuid"
         app:layout_constraintEnd_toEndOf="@id/image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image2" />
@@ -99,12 +99,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/scrollGuid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.5"/>
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="10dp"
         app:layout_constraintBottom_toTopOf="@+id/proButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +123,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardWeekly"
                 android:layout_width="0dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/checking_update_background"
                 android:elevation="2dp"
@@ -132,7 +136,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3 days freee trail"
+                    android:text="3 days free trail"
                     android:textColor="@color/white"
                     android:textSize="11sp"
                     app:layout_constraintBottom_toTopOf="@id/tvWeek"
@@ -182,7 +186,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardMonthly"
                 android:layout_width="0dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/green_corner_background"
                 android:elevation="2dp"
@@ -195,7 +199,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3 days freee trail"
+                    android:text="3 days free trail"
                     android:textColor="@color/white"
                     android:textSize="11sp"
                     app:layout_constraintBottom_toTopOf="@id/tvMonth"
@@ -246,7 +250,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardYearly"
                 android:layout_width="0dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/green_corner_background"
                 android:elevation="2dp"
@@ -260,7 +264,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3 days freee trail"
+                    android:text="3 days free trail"
                     android:textColor="@color/white"
                     android:textSize="11sp"
                     app:layout_constraintBottom_toTopOf="@id/tvYear"
@@ -311,7 +315,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardLifetime"
                 android:layout_width="0dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/green_corner_background"
                 android:elevation="2dp"

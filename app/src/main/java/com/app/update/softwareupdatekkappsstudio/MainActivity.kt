@@ -44,12 +44,12 @@ class MainActivity : AppCompatActivity() {
     private val wordViewModel: WordViewModel by viewModels {
         WordViewModelFactory((application as MyApp).repository)
     }
-    val inAppUpdateManager by lazy {
-        InAppUpdateManager(
-            this,
-            AppUpdateType.FLEXIBLE
-        )
-    }
+//    val inAppUpdateManager by lazy {
+//        InAppUpdateManager(
+//            this,
+//            AppUpdateType.FLEXIBLE
+//        )
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 //
 //        }
 
-        inAppUpdateManager.checkUpdate()
+//        inAppUpdateManager.checkUpdate()
 
 
     }
@@ -193,7 +193,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        inAppUpdateManager.unregisterAppUpdate()
+//        inAppUpdateManager.unregisterAppUpdate()
     }
 }
 

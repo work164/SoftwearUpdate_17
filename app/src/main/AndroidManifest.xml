@@ -3,35 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />-->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!--
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+-->
+<!--
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+-->
+<!--
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+-->
+<!--
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+-->
+<!--
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+-->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
-
+<!--
     <uses-permission
         android:name="android.permission.LOCAL_MAC_ADDRESS"
-        tools:ignore="ProtectedPermissions" />
+        tools:ignore="ProtectedPermissions" />-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
+<!--
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission
+ <!--   <uses-permission
         android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
-        tools:ignore="ProtectedPermissions" />
+        tools:ignore="ProtectedPermissions" />-->
+<!--
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+-->
+<!--
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+-->
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
@@ -74,24 +90,6 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id" />
 
-        <!--<receiver
-            android:name=".info.AlarmsReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
-
-
-        <service
-            android:name=".info.AlarmsForegroundService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="shortService" />-->
     </application>
 
 </manifest>
