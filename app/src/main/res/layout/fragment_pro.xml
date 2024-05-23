@@ -24,6 +24,7 @@
         android:layout_margin="20dp"
         android:gravity="center_vertical"
         android:text="@string/restore"
+        android:visibility="invisible"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -125,6 +126,7 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="10dp"
+                android:visibility="gone"
                 android:background="@drawable/checking_update_background"
                 android:elevation="2dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardYearly"
@@ -188,6 +190,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="10dp"
+                android:visibility="gone"
+
                 android:background="@drawable/green_corner_background"
                 android:elevation="2dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardLifetime"
@@ -254,6 +258,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/green_corner_background"
                 android:elevation="2dp"
+                android:visibility="gone"
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/cardLifetime"
@@ -314,8 +319,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardLifetime"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/green_corner_background"
                 android:elevation="2dp"
@@ -323,11 +328,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cardYearly"
                 app:layout_constraintTop_toBottomOf="@id/cardMonthly"
-                app:layout_constraintWidth_percent="0.38">
+                >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="One Time Payment"
+                    android:text="Get Ads Free Experience"
                     android:textColor="@color/white"
                     android:textSize="11sp"
                     app:layout_constraintBottom_toTopOf="@id/tvLifeTime"
@@ -416,6 +421,7 @@
         android:gravity="center"
         android:text="@string/trail_premium"
         android:textSize="11sp"
+        android:visibility="invisible"
         android:paddingHorizontal="@dimen/_2sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@id/privacyLink"

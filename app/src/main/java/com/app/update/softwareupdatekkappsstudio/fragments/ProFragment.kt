@@ -58,10 +58,12 @@ class ProFragment : Fragment(), Billing6Listener {
                 }
             })
 
+/*
         binding?.restore?.setOnClickListener {
             openUrl("https://play.google.com/store/account/subscriptions")
 
         }
+*/
 
           binding?.close?.setOnClickListener {
               findNavController().popBackStack()
@@ -90,7 +92,7 @@ class ProFragment : Fragment(), Billing6Listener {
         binding?.proButton?.setOnClickListener {
             Log.d(logTag, "trigger isSelected $isSelected")
 
-            if (isSelected == "sub_year") {
+        /*    if (isSelected == "sub_year") {
 
                 if (!isYearly) {
                     Log.d(logTag, "trigger sub_year")
@@ -102,7 +104,8 @@ class ProFragment : Fragment(), Billing6Listener {
                         .show()
                 }
 
-            } else if (isSelected == "sub_month") {
+            }
+            else if (isSelected == "sub_month") {
                 Log.d(logTag, "trigger sub_month")
 
                 if (!isMonthly) {
@@ -112,7 +115,8 @@ class ProFragment : Fragment(), Billing6Listener {
                     Toast.makeText(requireContext(), "Already Subscribed!", Toast.LENGTH_SHORT)
                         .show()
                 }
-            } else if (isSelected == "sub_weekly") {
+            }
+            else if (isSelected == "sub_weekly") {
                 Log.d(logTag, "trigger sub_weekly")
 
                 if (!isWeekly) {
@@ -123,22 +127,25 @@ class ProFragment : Fragment(), Billing6Listener {
                     Toast.makeText(requireContext(), "Already Subscribed!", Toast.LENGTH_SHORT)
                         .show()
                 }
-            } else if (isSelected == "sub_life") {
+            }
+            else*/
+            billing6Play?.oneTimeProduct()
+
+        /*    if (isSelected == "sub_life") {
                 Log.d(logTag, "trigger sub_life")
 
                 if (!isWeekly) {
 
-                    billing6Play?.oneTimeProduct()
                 } else {
 
                     Toast.makeText(requireContext(), "Already Purchased!", Toast.LENGTH_SHORT)
                         .show()
                 }
-            }
+            }*/
 
         }
 
-        binding?.cardMonthly?.setOnClickListener {
+       /* binding?.cardMonthly?.setOnClickListener {
             Log.d("uiChange", "cardMonthly")
 
             isSelected = "sub_month"
@@ -159,8 +166,11 @@ class ProFragment : Fragment(), Billing6Listener {
             changeDesignNow(
                 isSelected
             )
-        }
-
+        }*/
+        isSelected = "sub_life"
+        changeDesignNow(
+            isSelected
+        )
         binding?.cardLifetime?.setOnClickListener {
             isSelected = "sub_life"
             changeDesignNow(
@@ -176,7 +186,7 @@ class ProFragment : Fragment(), Billing6Listener {
     override fun subList(subscriptionDetailsList: MutableList<ProductDetails>?) {
         Log.d(logTag, "$subscriptionDetailsList")
 
-        try {
+    /*    try {
             if (!subscriptionDetailsList.isNullOrEmpty() && subscriptionDetailsList.size > 0) {
 
                 Log.d(logTag, "subList: $subscriptionDetailsList")
@@ -213,7 +223,7 @@ class ProFragment : Fragment(), Billing6Listener {
             e.printStackTrace()
         } catch (e: ConcurrentModificationException) {
             e.printStackTrace()
-        }
+        }*/
         super.subList(subscriptionDetailsList)
     }
 
